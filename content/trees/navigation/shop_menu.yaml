@@ -1,0 +1,157 @@
+tree:
+  -
+    title: 'Man'
+    url: /shop
+    children:
+      -
+        title: 'T-shirt'
+        url: /shop
+      -
+        title: 'Shirt'
+        url: /shop
+      -
+        title: 'Shoes'
+        url: /shop
+      -
+        title: 'Belts'
+        url: /shop
+  -
+    title: 'Beauty'
+    url: /shop
+    children:
+      -
+        title: 'Mackup'
+        url: /shop
+      -
+        title: 'Skincare'
+        url: /shop
+      -
+        title: 'Fragrance'
+        url: /shop
+      -
+        title: 'Perfumes'
+        url: /shop
+  -
+    title: 'Woman'
+    url: /shop
+    children:
+      -
+        title: 'Jeans'
+        url: /shop
+      -
+        title: 'T-shirts'
+        url: /shop
+      -
+        title: 'Shirts'
+        url: /shop
+      -
+        title: 'Tops'
+        url: /shop
+      -
+        title: 'Jumpsuits'
+        url: /shop
+      -
+        title: 'Coats'
+        url: /shop
+      -
+        title: 'Mackup'
+        url: /shop
+      -
+        title: 'Sweater'
+        url: /shop
+  -
+    title: 'Footwear'
+    url: /shop
+    children:
+      -
+        title: 'Heals'
+        url: /shop
+      -
+        title: 'Boots'
+        url: /shop
+      -
+        title: 'Casual'
+        url: /shop
+      -
+        title: 'Lofer'
+        url: /shop
+  -
+    title: 'Dresses'
+    url: /shop
+    children:
+      -
+        title: 'Part Dress'
+        url: /shop
+      -
+        title: 'Summer Dress'
+        url: /shop
+      -
+        title: 'Wedding Dress'
+        url: /shop
+      -
+        title: 'Midi Dress'
+        url: /shop
+  -
+    title: 'Bags'
+    url: /shop
+    children:
+      -
+        title: 'Handbag'
+        url: /shop
+      -
+        title: 'Purse'
+        url: /shop
+      -
+        title: 'Makeup Bag'
+        url: /shop
+      -
+        title: 'Wallet'
+        url: /shop
+      -
+        title: 'Laptop Bag'
+        url: /shop
+  -
+    title: 'Accesories'
+    url: /shop
+    children:
+      -
+        title: 'Handbag'
+        url: /shop
+      -
+        title: 'Shoes'
+        url: /shop
+      -
+        title: 'Wallets'
+        url: /shop
+  -
+    title: 'Sunglasses'
+    url: /shop
+    children:
+      -
+        title: 'Aviator'
+        url: /shop
+      -
+        title: 'Rectangle'
+        url: /shop
+      -
+        title: 'Oval'
+        url: /shop
+      -
+        title: 'Cat-eye'
+        url: /shop
+  -
+    title: 'Summerwear'
+    url: /shop
+    children:
+      -
+        title: 'Lounge Wear'
+        url: /shop
+      -
+        title: 'Beach Wear'
+        url: /shop
+      -
+        title: 'Swim Wear'
+        url: /shop
+      -
+        title: 'Short Wear'
+        url: /shop

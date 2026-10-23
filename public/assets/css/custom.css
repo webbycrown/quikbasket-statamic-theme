@@ -1,0 +1,326 @@
+html.dark {
+  background-color: #fff !important;
+}
+
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.wp-country button,
+.wp-currency button {
+  background-color: transparent;
+  height: auto;
+  min-height: auto;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.wp-country button svg.absolute,
+.wp-currency button svg.absolute {
+  position: unset;
+}
+
+.wp-country button .w-\[calc\(100\%_-_theme\(spacing\.unit-6\)\)\] {
+  width: 100%;
+  padding-right: 3px;
+}
+
+.wp-country button:focus {
+  outline: none;
+}
+
+.wp-country button:hover {
+  background-color: #ffffff20;
+}
+
+.wp-country button span {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+details > summary {
+  list-style: none;
+}
+
+details summary::-webkit-details-marker,
+details > summary::marker {
+  display: none;
+}
+
+.wp-country button .pt-4 {
+  padding-top: 0;
+}
+
+.marquee .initial-child-container {
+  align-items: center;
+}
+
+button#toggleVideo.false {
+  display: none;
+}
+
+details[open] summary svg {
+  transform: rotate(180deg);
+}
+
+details summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.color_switch.right-0:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #00000087;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
+
+.main-nav.full-screen::-webkit-scrollbar {
+  width: 5px;
+  background-color: #e9ddd7;
+}
+
+.main-nav.full-screen::-webkit-scrollbar-thumb {
+  background-color: #333;
+  outline: 1px solid #f5efec;
+}
+
+.tabulator .tabulator-header .tabulator-headers .tabulator-col {
+  background-color: #fff;
+  text-transform: uppercase;
+  color: #805a81;
+  font-weight: 600;
+  font-size: 13.2px;
+  border-color: #c8c8c8;
+}
+
+.tabulator {
+  background: #fff !important;
+  border-color: #c8c8c8 !important;
+}
+
+.tabulator .tabulator-row,
+.tabulator .tabulator-row.tabulator-row-even {
+  background-color: #f9f8f8;
+  color: #2f2f2f;
+}
+
+.tabulator .tabulator-row .tabulator-cell,
+.tabulator .tabulator-header {
+  border-color: #c8c8c8 !important;
+  text-transform: uppercase;
+  line-height: 30px;
+  font-size: 12.5px;
+}
+
+.tabulator-row:not(:last-child) .tabulator-cell {
+  border-bottom: 1px solid;
+}
+
+.tabulator .tabulator-row.tabulator-selectable:hover,
+.tabulator .tabulator-row.tabulator-selected,
+.tabulator .tabulator-row.tabulator-row-even.tabulator-selected {
+  background-color: #f5efec;
+}
+
+.tabulator
+  .tabulator-header
+  .tabulator-headers
+  .tabulator-col.tabulator-sortable:hover {
+  cursor: pointer;
+  background-color: #805a81;
+  color: #fff;
+}
+
+.tabulator
+  .tabulator-header
+  .tabulator-col
+  .tabulator-col-content
+  .tabulator-col-sorter {
+  position: unset !important;
+  display: inline-block !important;
+  width: auto;
+  margin-left: 4px;
+}
+
+.tabulator
+  .tabulator-header
+  .tabulator-col.tabulator-sortable
+  .tabulator-col-title {
+  padding-right: 0 !important;
+  width: auto !important;
+}
+
+.tabulator
+  .tabulator-header
+  .tabulator-col
+  .tabulator-col-content
+  .tabulator-col-title-holder {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tabulator
+  .tabulator-header
+  .tabulator-headers
+  .tabulator-col
+  .tabulator-col-content
+  .tabulator-col-sorter
+  .tabulator-arrow {
+  border-top: none !important;
+  border-bottom: 2px solid #805a81 !important;
+  border-left: 2px solid #805a81;
+  border-right: 0;
+  width: 8px;
+  height: 8px;
+  transform: rotate(315deg);
+  margin-bottom: 3px;
+  border-radius: 0.1px;
+}
+
+.tabulator
+  .tabulator-header
+  .tabulator-headers
+  .tabulator-col.tabulator-sortable[aria-sort="asc"]
+  .tabulator-col-content
+  .tabulator-col-sorter {
+  transform: rotate(180deg);
+}
+
+.tabulator
+  .tabulator-header
+  .tabulator-headers
+  .tabulator-col.tabulator-sortable:hover
+  .tabulator-col-sorter
+  .tabulator-arrow {
+  border-color: #fff !important;
+}
+
+.tabulator .tabulator-row .tabulator-cell .table-btn {
+  margin: 0 5px;
+}
+
+.tabulator .tabulator-col-resize-handle {
+  display: none;
+}
+
+.tabulator .tabulator-header .tabulator-headers .tabulator-col:last-child,
+.tabulator .tabulator-row .tabulator-cell:last-child {
+  border-right: 0;
+}
+
+.float-right-icon {
+  overflow: hidden;
+  position: fixed;
+  right: 20px;
+  bottom: 30px;
+  padding: 0px;
+}
+.float-right-icon #scroll-to-top {
+  height: 50px;
+  width: 50px;
+}
+.float-right-icon #scroll-to-top:hover {
+  color: var(--color-primary);
+  background-color: var(--color-white);
+}
+.float-right-icon #scroll-to-top.off {
+  margin-right: -200px;
+}
+@media (max-width: 767px) {
+  .float-right-icon {
+    display: none;
+  }
+}
+
+@media (max-width: 1670px) {
+  #header .container {
+    max-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .wp-top-arrows .swiper .swiper-button-next {
+    right: calc(50% - 40px);
+  }
+
+  .wp-top-arrows .swiper .swiper-button-prev {
+    left: calc(50% - 40px);
+  }
+}
+
+@media (max-width: 768px) {
+  .wp-testimonial .swiper .swiper-button-prev,
+  .wp-testimonial .swiper .swiper-button-next,
+  .mobile-arrows-bottom.swiper .swiper-button-prev,
+  .mobile-arrows-bottom.swiper .swiper-button-next {
+    position: unset;
+    display: inline-flex;
+    margin: 40px 5px 0;
+  }
+
+  .wp-testimonial .swiper,
+  .mobile-arrows-bottom.swiper {
+    text-align: center;
+  }
+
+  .animated_bg_slider .swiper-slide.swiper-slide-next {
+    z-index: auto;
+    position: relative;
+  }
+
+  .animated_bg_slider .swiper-slide img {
+    transform: scale(1);
+  }
+
+  .wp-country button,
+  .wp-currency button {
+    width: auto;
+  }
+
+  .wp-country button svg,
+  .wp-currency button svg {
+    right: 0;
+  }
+}
+
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus,
+summary:focus,
+.dropdown-toggle button:focus,
+.dropdown-toggle2 button:focus {
+  outline: 2px solid #5b21b6 !important;
+  outline-offset: 2px !important;
+}
+
+[x-cloak] {
+  display: none !important;
+}
+
+.stay-connect-alert:empty,
+.stay-connect-success {
+  display: none;
+}
+
+.stay-connect-alert.is-visible,
+.stay-connect-success.is-visible {
+  display: block;
+  margin-bottom: 1rem;
+}

@@ -1,0 +1,18 @@
+{{ partial:partials/crumb :label="heading" }}
+<section class="relative 1xl:py-[30px] md:py-[25px] py-[20px]">
+    <div class="container">
+        <h1 class="font-medium sm:mb-8 mb-6">{{ heading }}</h1>
+        <div class="grid md:grid-cols-2 gap-4">
+            {{ faqs }}
+            <div class="w-full xl:p-3.5 py-3 sm:px-3.5 px-2 bg-white border border-lightborder-200" x-data="{ open: false }">
+                <button type="button" class="flex w-full text-left" @click="open = !open" :aria-expanded="open.toString()" aria-controls="faq-{{ index }}">
+                    <span class="2xl:text-lg text-base text-dark">{{ question }}</span>
+                </button>
+                <div id="faq-{{ index }}" x-show="open" x-cloak>
+                    <p class="py-3 text-gray-800">{{ answer }}</p>
+                </div>
+            </div>
+            {{ /faqs }}
+        </div>
+    </div>
+</section>

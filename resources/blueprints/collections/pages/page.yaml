@@ -1,0 +1,29 @@
+title: Page
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field: { type: text, required: true, validate: required }
+          -
+            import: page_builder
+  seo:
+    display: SEO
+    sections:
+      -
+        fields:
+          -
+            handle: seo_title
+            field: { type: text, display: 'SEO title' }
+          -
+            handle: seo_description
+            field: { type: textarea, display: 'SEO description' }
+          -
+            handle: seo_image
+            field: { type: assets, container: assets, max_files: 1, display: 'SEO image' }
+          -
+            handle: seo_robots
+            field: { type: text, display: Robots, default: 'index, follow' }

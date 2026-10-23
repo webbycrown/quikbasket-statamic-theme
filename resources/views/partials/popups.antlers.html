@@ -1,0 +1,53 @@
+<!-- ===== Popup Section ====== -->
+        <section>
+            <!-- Main Popup (Center) -->
+            <!-- Main Popup -->
+            <div id="popupModal"
+                class="bg-black bg-opacity-50 z-50 fixed inset-0 flex items-center justify-center animate-fadeIn">
+                <div
+                    class="bg-white shadow-lg max-w-[95%] lg:w-[800px] lg:h-[500px] sm:h-[400px] h-full w-[700px] max-h-[95%] flex sm:flex-row flex-col overflow-y-auto popup-content">
+                    <div class="relative sm:h-full h-[375px] sm:w-1/2 w-full">
+                        <img src="/assets/image/popup.webp" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="flex flex-col text-center p-4 bg-white sm:w-1/2 w-full">
+                        <button id="closeModal" class="w-auto ml-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                class="stroke-black hover:stroke-violet-900">
+                                <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M12 12l7 7M12 12l-7 -7M12 12l-7 7M12 12l7 -7" />
+                            </svg>
+                        </button>
+                        <div class="flex flex-col text-center sm:p-4 sm:pt-4 pt-0 items-center">
+                            <h5 class="lg:text-[32px] text-xl sm:leading-10 leading-9 lg:mb-[15px] mb-[10px]">
+                                {{ setting:popup_heading }}
+                            </h5>
+                            <p class="lg:mb-[32px] sm:mb-[25px] mb-[16px] 2xl:text-lg text-base text-gray-400">
+                                {{ setting:popup_text }}
+                            </p>
+                            <a href="/contact" class="all-btn">{{ setting:popup_button }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cookie Consent Popup -->
+            <div id="cookiePopup"
+                class="fixed inset-0 flex items-end p-4 justify-end shadow-lg rounded-lg h-screen z-[60] animate-fadeIn bg-black bg-opacity-50 ">
+                <div
+                    class="bg-white 1xl:w-[800px] w-[630px] max-w-full h-fit 1xl:py-[35px] opacity-100 1xl:px-10 sm:px-7 sm:py-[30px] p-4 relative sm:m-0 mx-auto mb-0">
+                    <h5 class="text-[25px] 1xl:mb-[12px] mb-[5px]">{{ setting:cookie_heading }}</h5>
+                    <p class="2xl:text-lg text-base text-gray-400 1xl:mb-[34px] mb-[25px]">
+                        {{ setting:cookie_text }}
+                        <a href="/privacy"
+                            class="underline underline-offset-2 decoration-violet-900 text-violet-900">Privacy
+                            Policy</a>.
+                    </p>
+                    <div class="flex flex-wrap sm:justify-end justify-center gap-[20px] mt-3">
+                        <a href="/privacy"
+                            class="sm:w-auto w-full bg-transparent hover:bg-violet-900 border hover:border-violet-900 transition-all ease-in-out hover:text-white text-black 2xl:text-lg lg:text-[17px] text-md font-light cursor-pointer xl:py-2.5 lg:py-[9px] md:py-2 py-[0.475rem] md:px-9 px-6 inline-block text-center">{{ setting:cookie_manage }}</a>
+                        <button id="acceptCookies" class="sm:w-auto w-full all-btn">{{ setting:cookie_accept }}</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ===== Popup Section ====== -->

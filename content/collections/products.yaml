@@ -1,0 +1,7 @@
+title: Products
+template: products/show
+layout: layout
+route: '/products/{slug}'
+sort_dir: asc
+taxonomies:
+  - categories

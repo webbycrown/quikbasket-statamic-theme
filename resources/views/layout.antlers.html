@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="{{ site:short_locale ?? 'en' }}">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="csrf-token" content="{{ csrf_token }}">
+	{{ partial:partials/seo-meta }}
+	<link rel="icon" type="image/x-icon" href="{{ partial:partials/media-url :file="setting:favicon" fallback="image/favicon.svg" }}">
+	<link rel="stylesheet" href="/assets/css/swiper-bundle.min.css">
+	<link rel="stylesheet" href="/assets/css/styles.css?v=2">
+	<link rel="stylesheet" href="/assets/css/custom.css?v=4">
+	<script src="/assets/js/jquery.min.js?v=3.7.1"></script>
+	<script src="/assets/js/swiper-bundle.min.js"></script>
+	<script src="/assets/js/custom.js?v=1"></script>
+</head>
+<body>
+	<main class="h-full">
+		{{ if is_homepage }}
+		{{ partial:partials/header }}
+		{{ elseif segment_1 == 'home-two' }}
+		{{ partial:partials/header-home-two }}
+		{{ elseif segment_1 == 'home-three' }}
+		{{ partial:partials/header-home-three }}
+		{{ elseif segment_1 == 'home-four' }}
+		{{ partial:partials/header-home-four }}
+		{{ elseif segment_1 == 'home-five' }}
+		{{ partial:partials/header-home-five }}
+		{{ elseif segment_1 == 'home-six' }}
+		{{ partial:partials/header-home-six }}
+		{{ elseif segment_1 == 'home-seven' }}
+		{{ partial:partials/header-home-seven }}
+		{{ else }}
+		{{ partial:partials/header-inner }}
+		{{ /if }}
+		{{ template_content }}
+		{{ if is_homepage }}
+		{{ partial:partials/footer }}
+		{{ elseif segment_1 == 'home-two' }}
+		{{ partial:partials/footer-home-two }}
+		{{ elseif segment_1 == 'home-three' }}
+		{{ partial:partials/footer-home-three }}
+		{{ elseif segment_1 == 'home-four' }}
+		{{ partial:partials/footer-home-four }}
+		{{ elseif segment_1 == 'home-five' }}
+		{{ partial:partials/footer-home-five }}
+		{{ elseif segment_1 == 'home-six' }}
+		{{ partial:partials/footer-home-six }}
+		{{ elseif segment_1 == 'home-seven' }}
+		{{ partial:partials/footer-home-seven }}
+		{{ else }}
+		{{ partial:partials/footer-inner }}
+		{{ /if }}
+		{{ if is_homepage }}
+		{{ partial:partials/popups }}
+		{{ /if }}
+	</main>
+	<script defer src="/assets/js/alpine.min.js?v=3.14.1"></script>
+	<script defer src="/assets/js/custom-2.js?v=1"></script>
+	<script defer src="/assets/js/custom.js?v=1"></script>
+	<script src="/assets/js/theme-forms.js?v=1"></script>
+</body>
+</html>

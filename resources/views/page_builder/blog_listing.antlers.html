@@ -1,0 +1,7 @@
+{{ if layout == 'list' }}
+{{ partial:page_builder/blog_list }}
+{{ elseif layout == 'masonry' }}
+{{ partial:page_builder/blog_masonry }}
+{{ else }}
+{{ partial:page_builder/blog_grid }}
+{{ /if }}

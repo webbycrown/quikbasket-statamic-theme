@@ -1,0 +1,13 @@
+{{ collection:blogs limit="2" }}
+<div class="flex sm:items-normal items-center 2xl:gap-6 gap-4 group w-full h-full">
+    <a href="{{ url }}" class="1xl:h-20 h-full w-36">
+        <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="{{ title }}" class="w-full h-full object-cover" />
+    </a>
+    <div class="grid 2xl:gap-1 gap-2">
+        <h6 class="font-normal 2xl:leading-6 leading-[1.1rem] 2xl:text-base text-sm group-hover:text-violet-900 text-gray-800">
+            <a href="{{ url }}">{{ title }}</a>
+        </h6>
+        <p class="2xl:text-sm lg:text-xs sm:text-sm text-xs text-black">{{ date format="d M Y" }}</p>
+    </div>
+</div>
+{{ /collection:blogs }}

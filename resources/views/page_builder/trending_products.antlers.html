@@ -1,0 +1,34 @@
+<!-- ====== Trending Products Section ====== -->
+        <section
+            class="2xl:py-[50px] 1xl:py-[45px] xl:py-[40px] lg:py-[35px] md:py-[30px] sm:py-[27px] py-[25px] relative">
+            <div class="trending-product relative overflow-x-clip overflow-y-visible">
+                <div class="container">
+                    <div
+                        class="flex relative md:justify-between justify-center 1xl:mb-[40px] lg:mb-[35px] mb-[25px] items-center">
+                        <h3 class="leading-8 text-[#1F2937] z-10 md:text-start text-center">
+                            {{ heading }}
+                        </h3>
+                        <div class="relative arrow md:block hidden">
+                            <!-- Add Arrows -->
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev pr-[10px]"></div>
+                        </div>
+                    </div>
+                    <div class="swiper wc_trending_products_slider overflow-visible">
+                        <div class="swiper-wrapper">
+{{ collection:products limit="8" }}
+<div class="swiper-slide">
+{{ partial:partials/product-card }}
+</div>
+{{ /collection:products }}
+</div>
+                    </div>
+                    <div class="relative arrow pt-10 mx-auto block md:hidden">
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ====== Trending Products Section ====== -->

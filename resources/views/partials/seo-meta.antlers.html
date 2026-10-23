@@ -1,0 +1,10 @@
+<title>{{ if seo_title }}{{ seo_title }} | {{ elseif title }}{{ title }} | {{ /if }}{{ setting:site_name ?? 'Quikbasket' }}</title>
+<meta name="description" content="{{ seo_description ?? excerpt ?? setting:seo_description }}">
+<meta name="robots" content="{{ seo_robots ?? 'index, follow' }}">
+<meta property="og:title" content="{{ seo_title ?? title ?? setting:site_name }}">
+<meta property="og:description" content="{{ seo_description ?? excerpt ?? setting:seo_description }}">
+{{ if seo_image }}
+<meta property="og:image" content="{{ partial:partials/media-url :file="seo_image" }}">
+{{ elseif setting:seo_image }}
+<meta property="og:image" content="{{ partial:partials/media-url :file="setting:seo_image" }}">
+{{ /if }}

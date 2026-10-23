@@ -1,0 +1,29 @@
+tree:
+  -
+    entry: home
+  -
+    entry: home-two
+  -
+    entry: home-three
+  -
+    entry: home-four
+  -
+    entry: home-five
+  -
+    entry: home-six
+  -
+    entry: home-seven
+  -
+    entry: shop
+  -
+    entry: blog
+  -
+    entry: about
+  -
+    entry: contact
+  -
+    entry: faq
+  -
+    entry: privacy
+  -
+    entry: terms

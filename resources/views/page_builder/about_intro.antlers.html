@@ -1,0 +1,41 @@
+<!-- ====== About Section ====== -->
+        <section
+            class="relative 2xl:py-[50px] 1xl:py-[45px] xl:py-[40px] lg:py-[35px] md:py-[30px] sm:py-[25px] py-[20px]">
+            <div class="container">
+                <div class="flex flex-wrap items-center">
+                    <!-- Left Content -->
+                    <div class="lg:w-[46%] w-full lg:pr-8 1xl:pr-20 2xl:pr-48 lg:order-1 order-2">
+                        <h3 class="text-black lg:text-left lg:mb-8 mb-4 leading-tight lg:mt-0 mt-6">
+                            {{ heading }}
+                        </h3>
+                        <div class="multi-p">
+                            <p class="2xl:leading-7 mb-1">{{ text | nl2br }}</p>
+                        </div>
+                    </div>
+                    <!-- Right Content (Images) -->
+                    <div class="lg:w-[54%] w-full lg:order-2 order-1">
+                        <div class="flex flex-row gap-[16px]">
+                            <!-- Image 1 -->
+                            <div class="sm:w-1/2 w-full m-auto h-auto group">
+                                <div
+                                    class="relative before:block before:content-[''] 2xl:before:pt-[600px] xl:before:pt-[480px] sm:before:pt-[415px] before:pt-[240px] overflow-hidden">
+                                    <img decoding="async" loading="lazy" alt="Fashion Story 1"
+                                        src="{{ partial:partials/media-url :file="image" }}"
+                                        class="absolute top-0 left-0 w-full h-full transition-all object-cover m-auto" />
+                                </div>
+                            </div>
+                            <!-- Image 2 -->
+                            <div class="sm:w-1/2 w-full m-auto h-auto group">
+                                <div
+                                    class="relative before:block before:content-[''] 2xl:before:pt-[600px] xl:before:pt-[480px] sm:before:pt-[415px] before:pt-[240px] overflow-hidden">
+                                    <img decoding="async" loading="lazy" alt="Fashion Story 2"
+                                        src="{{ partial:partials/media-url :file="image_two" }}"
+                                        class="absolute top-0 left-0 w-full h-full transition-all object-cover m-auto" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ====== About Section ====== -->

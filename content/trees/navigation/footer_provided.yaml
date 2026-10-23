@@ -1,0 +1,16 @@
+tree:
+  -
+    entry: terms
+    title: Terms of Service
+  -
+    entry: terms
+    title: 'Terms & Conditions'
+  -
+    title: Payment Methods
+    url: /checkout
+  -
+    entry: faq
+    title: 'Return & Refunds'
+  -
+    title: Order Details
+    url: /account

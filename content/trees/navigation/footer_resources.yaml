@@ -1,0 +1,16 @@
+tree:
+  -
+    entry: shop
+    title: Size Guide
+  -
+    entry: shop
+    title: Product Guide
+  -
+    entry: blog
+    title: Latest Blog
+  -
+    entry: contact
+    title: Custom Order
+  -
+    entry: shop
+    title: Gift Guide

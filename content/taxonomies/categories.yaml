@@ -1,0 +1,6 @@
+title: Categories
+layout: layout
+template: categories/show
+term_template: categories/show
+sites:
+  - default

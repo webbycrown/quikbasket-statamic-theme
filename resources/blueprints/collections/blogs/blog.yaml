@@ -1,0 +1,19 @@
+title: Journal
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field: { type: text, required: true, validate: required }
+          -
+            handle: image
+            field: { type: assets, container: assets, max_files: 1, display: Image }
+          -
+            handle: excerpt
+            field: { type: textarea, display: Excerpt }
+          -
+            handle: content
+            field: { type: markdown, display: Content }

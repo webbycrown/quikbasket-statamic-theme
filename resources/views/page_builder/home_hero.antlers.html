@@ -1,0 +1,29 @@
+<!-- ====== Hero Section ====== -->
+        <div class="hero-sec sm:pb-[12px] pb-4 lg:pb-0 relative">
+            <div class="lg:container">
+                <div class="flex flex-wrap hero-sec lg:gap-20 1xl:min-h-[86vh] xl:min-h-auto lg:min-h-[67vh]">
+                    <div class="xl:w-[58%] lg:w-[55%] w-full h-full lg:absolute md:left-0">
+                        <img decoding="async" loading="eager" width="800"
+                            height="800" class="object-cover w-full h-full" src="{{ partial:partials/media-url :file="image" }}" alt="{{ heading }}" />
+                    </div>
+
+                    <div
+                        class="w-full xl:w-[42%] lg:w-[45%] xl:py-20 lg:py-10 1xl:pl-20 lg:pl-10 md:px-10 p-4 self-center lg:relative md:right-0 ml-auto">
+                        <h4
+                            class="xl:text-[30px] lg:text-[26px] sm:text-[22px] text-[20px] mb-3.5 2xl:mb-6 font-normal leading-tight text-violet-900">
+                            {{ eyebrow }}
+                        </h4>
+                        <h1
+                            class="2xl:text-[50px] xl:text-[43px] md:text-[38px] text-[25px] xl:mb-5 lg:mb-4 mb-3 leading-tight text-black">
+                            {{ heading }}
+                        </h1>
+                        <p class="2xl:text-lg lg:text-[17px] text-base leading-snug mb-4 xl:mb-8 lg:mb-6 text-gray-800">
+                            {{ text }}
+                        </p>
+                        <a class="all-btn" href="{{ button_url }}">{{ button_label }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ====== Hero Section ====== -->

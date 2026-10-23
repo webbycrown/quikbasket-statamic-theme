@@ -1,0 +1,12 @@
+<div class="relative flex lg:flex-row flex-col-reverse w-full group items-center bg-violet-400 ltr:text-left rtl:text-right">
+    <div class="flex flex-col justify-center 2xl:px-[45px] 1xl:px-[35px] lg:px-[27px] md:p-[30px] sm:p-[25px] p-4 bg-violet-400 lg:w-1/2 w-full">
+        <a href="{{ url }}" class="2xl:text-[26px] xl:text-[20px] lg:text-lg text-[20px] 2xl:leading-[35px] xl:leading-[30px] lg:leading-[27px] sm:leading-[30px] leading-[27px] 2xl:mb-[25px] mb-[18px] group-hover:text-violet-900 capitalize">{{ title }}</a>
+        <p class="xl:mb-[25px] mb-[20px] 2xl:text-lg 1xl:text-base xl:text-[15px] lg:text-sm text-[15px] 2xl:leading-7 xl:leading-6 lg:leading-5 leading-6">{{ excerpt }}</p>
+        <div class="flex gap-1 items-center group">
+            <a href="{{ url }}" class="group-hover:text-violet-900 group-hover:decoration-violet-900 2xl:text-[17px] xl:text-base text-sm">{{ button_label ?? 'Read more' }}</a>
+        </div>
+    </div>
+    <a href="{{ url }}" class="2xl:h-[450px] 1xl:h-[400px] lxl:h-[385px] lg:h-[370px] h-[290px] lg:w-1/2 w-full">
+        <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="{{ title }}" class="grid w-full h-full object-cover">
+    </a>
+</div>

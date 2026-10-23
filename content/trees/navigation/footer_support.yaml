@@ -1,0 +1,16 @@
+tree:
+  -
+    entry: faq
+    title: FAQ
+  -
+    entry: privacy
+    title: Privacy policy
+  -
+    entry: contact
+    title: Contact Us
+  -
+    entry: contact
+    title: 'Report & Issue'
+  -
+    entry: contact
+    title: Warranty

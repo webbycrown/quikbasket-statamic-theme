@@ -1,0 +1,19 @@
+<!-- ====== Products Section ====== -->
+        <section
+            class="relative 2xl:py-[50px] 1xl:py-[45px] xl:py-[40px] lg:py-[35px] md:py-[30px] sm:py-[25px] py-[20px]">
+            <div class="container">
+                <div class="flex items-center justify-between lg:mb-10 md:mb-8 sm:mb-7 mb-4 flex-wrap gap-y-2">
+                    <h3 class="text-black lg:text-left leading-tight">
+                        {{ heading }}
+                    </h3>
+                    <a class="all-btn" href="{{ button_url }}">{{ button_label }}</a>
+                </div>
+                <div
+                    class="grid 2xl:grid-cols-5 xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-5 gap-y-5 gap-x-7">
+{{ collection:products limit="12" }}
+{{ partial:partials/product-card }}
+{{ /collection:products }}
+</div>
+            </div>
+        </section>
+        <!-- ====== Products Section ====== -->

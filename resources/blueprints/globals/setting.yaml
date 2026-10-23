@@ -1,0 +1,130 @@
+title: Setting
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: site_name
+            field: { type: text, display: 'Site name' }
+          -
+            handle: logo
+            field: { type: assets, container: assets, max_files: 1, display: Logo }
+          -
+            handle: favicon
+            field: { type: assets, container: assets, max_files: 1, display: Favicon }
+          -
+            handle: phone
+            field: { type: text, display: Phone }
+          -
+            handle: email
+            field: { type: text, display: Email }
+          -
+            handle: address
+            field: { type: textarea, display: Address }
+          -
+            handle: map_url
+            field: { type: text, display: 'Map URL' }
+          -
+            handle: copyright
+            field: { type: text, display: Copyright }
+          -
+            handle: seo_description
+            field: { type: textarea, display: 'Default SEO description' }
+          -
+            handle: facebook_url
+            field: { type: text, display: 'Facebook URL' }
+          -
+            handle: instagram_url
+            field: { type: text, display: 'Instagram URL' }
+          -
+            handle: inquiry_button
+            field: { type: text, display: 'Inquiry button' }
+          -
+            handle: inquiry_success
+            field: { type: text, display: 'Inquiry success' }
+          -
+            handle: x_url
+            field: { type: text, display: 'X URL' }
+          -
+            handle: youtube_url
+            field: { type: text, display: 'YouTube URL' }
+          -
+            handle: pinterest_url
+            field: { type: text, display: 'Pinterest URL' }
+          -
+            handle: linkedin_url
+            field: { type: text, display: 'LinkedIn URL' }
+          -
+            handle: whatsapp_url
+            field: { type: text, display: 'WhatsApp URL' }
+      -
+        display: Chrome
+        fields:
+          -
+            handle: newsletter_heading
+            field: { type: text, display: 'Newsletter heading' }
+          -
+            handle: newsletter_text
+            field: { type: textarea, display: 'Newsletter text' }
+          -
+            handle: footer_intro
+            field: { type: textarea, display: 'Footer introduction' }
+          -
+            handle: contact_heading
+            field: { type: text, display: 'Contact heading' }
+          -
+            handle: contact_text
+            field: { type: textarea, display: 'Contact text' }
+          -
+            handle: news_heading
+            field: { type: text, display: 'Journal heading' }
+          -
+            handle: instagram_heading
+            field: { type: text, display: 'Instagram heading' }
+          -
+            handle: footer_photos
+            field: { type: assets, container: assets, display: 'Footer photos' }
+          -
+            handle: company_heading
+            field: { type: text, display: 'Company menu heading' }
+          -
+            handle: services_heading
+            field: { type: text, display: 'Services menu heading' }
+          -
+            handle: provided_heading
+            field: { type: text, display: 'Provided menu heading' }
+          -
+            handle: resources_heading
+            field: { type: text, display: 'Resources menu heading' }
+          -
+            handle: support_heading
+            field: { type: text, display: 'Support menu heading' }
+          -
+            handle: general_heading
+            field: { type: text, display: 'General menu heading' }
+          -
+            handle: helpful_heading
+            field: { type: text, display: 'Helpful menu heading' }
+          -
+            handle: popup_heading
+            field: { type: text, display: 'Popup heading' }
+          -
+            handle: popup_text
+            field: { type: textarea, display: 'Popup text' }
+          -
+            handle: popup_button
+            field: { type: text, display: 'Popup button' }
+          -
+            handle: cookie_heading
+            field: { type: text, display: 'Cookie heading' }
+          -
+            handle: cookie_text
+            field: { type: textarea, display: 'Cookie text' }
+          -
+            handle: cookie_accept
+            field: { type: text, display: 'Cookie accept' }
+          -
+            handle: cookie_manage
+            field: { type: text, display: 'Cookie manage' }

@@ -1,0 +1,33 @@
+<!-- PAGE-NAME -->
+<section class="relative 1xl:py-[30px] md:py-[25px] py-[20px]">
+    <div class="bg-violet-400">
+        <div class="container">
+            <div class="flex items-center sm:gap-[4px] gap-0 md:py-[15px] py-[10px]">
+                <p class="2xl:text-lg lg:text-base text-sm"><a href="/">Home</a></p>
+                <span class="px-2" aria-hidden="true">/</span>
+                <p class="2xl:text-lg lg:text-base text-sm"><a href="/blog">Journal</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="relative 1xl:py-[30px] md:py-[25px] py-[20px]">
+    <div class="container">
+        <div class="flex lg:flex-row flex-col gap-10">
+            <aside class="lg:w-[28%] w-full">
+                <h2 class="xl:text-[20px] text-lg font-normal mb-4">Journal</h2>
+                <ul class="grid gap-3">
+                    {{ collection:blogs }}
+                    <li><a href="{{ url }}" class="hover:text-violet-900">{{ title }}</a></li>
+                    {{ /collection:blogs }}
+                </ul>
+            </aside>
+            <article class="flex-1">
+                <img src="{{ partial:partials/media-url :file="image" fallback="image/blog-news-3.webp" }}" alt="{{ title }}" class="w-full max-h-[520px] object-cover mb-6">
+                <h1 class="2xl:text-[32px] xl:text-[30px] lg:text-[23px] text-[22px] mb-4">{{ title }}</h1>
+                <div class="2xl:text-lg text-base leading-7">{{ content }}</div>
+                <p class="1xl:text-lg text-base text-gray-800 1xl:mt-[50px] mt-6">This journal does not take comments.</p>
+            </article>
+        </div>
+    </div>
+</section>

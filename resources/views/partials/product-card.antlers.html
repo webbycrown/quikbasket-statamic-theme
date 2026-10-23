@@ -1,0 +1,17 @@
+<div class="products relative product-box group transition-all items-center">
+    <div class="relative image-wrap sm:w-auto w-full">
+        <a href="{{ url }}" class="w-full m-auto h-auto group">
+            <div class="img-box relative overflow-hidden">
+                <img decoding="async" loading="lazy" alt="{{ title }}"
+                    class="group-hover:scale-105 w-full h-full block transition-all object-cover ease-in-out duration-300"
+                    src="{{ partial:partials/media-url :file="image" }}" />
+            </div>
+        </a>
+    </div>
+    <div class="product-detail">
+        <h3 class="font-normal text-black group-hover:text-violet-900 sm:mb-2 text-center capitalize">
+            <a href="{{ url }}">{{ title }}</a>
+        </h3>
+        <h6 class="text-center font-normal">$ {{ price }}</h6>
+    </div>
+</div>

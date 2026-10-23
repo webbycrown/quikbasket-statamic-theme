@@ -1,0 +1,41 @@
+{{ partial:partials/crumb label="Shop" }}
+<section class="relative 1xl:py-[30px] md:py-[25px] py-[20px]">
+    <div class="container">
+        <div class="grid lg:grid-cols-2 gap-8 items-start">
+            <div class="grid gap-3">
+                {{ if gallery }}
+                {{ gallery }}
+                <img decoding="async" loading="lazy" src="{{ url }}" alt="{{ title }}" class="w-full object-cover" />
+                {{ /gallery }}
+                {{ else }}
+                <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="{{ title }}" class="w-full object-cover" />
+                {{ /if }}
+            </div>
+            <div>
+                <h1 class="font-medium mb-3">{{ title }}</h1>
+                {{ if price }}
+                <p class="text-lg mb-4">$ {{ price }}</p>
+                {{ /if }}
+                {{ if description }}
+                <p class="mb-6 2xl:text-lg text-base">{{ description }}</p>
+                {{ /if }}
+                <p class="mb-6">Nothing is charged and no card is taken.</p>
+                <a class="all-btn" href="/checkout">Send an inquiry</a>
+            </div>
+        </div>
+        <div class="mt-12">
+            <h2 class="mb-6">You may also like</h2>
+            <div class="grid 2xl:grid-cols-5 xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-5 gap-y-5 gap-x-7">
+                {{ if related }}
+                {{ related }}
+                {{ partial:partials/product-card }}
+                {{ /related }}
+                {{ else }}
+                {{ collection:products :id:not="id" limit="4" }}
+                {{ partial:partials/product-card }}
+                {{ /collection:products }}
+                {{ /if }}
+            </div>
+        </div>
+    </div>
+</section>

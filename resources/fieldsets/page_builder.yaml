@@ -1,0 +1,286 @@
+title: 'Theme sections'
+fields:
+  -
+    handle: page_builder
+    field:
+      type: replicator
+      display: 'Theme sections'
+      collapse: true
+      sets:
+        content:
+          display: Content
+          sets:
+            home_hero:
+              display: 'Home hero'
+              fields:
+                -
+                  handle: eyebrow
+                  field: { type: text, display: Eyebrow }
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: text
+                  field: { type: textarea, display: Text }
+                -
+                  handle: image
+                  field: { type: assets, container: assets, max_files: 1, display: Image }
+                -
+                  handle: button_label
+                  field: { type: text, display: 'Button label' }
+                -
+                  handle: button_url
+                  field: { type: text, display: Link }
+            category_slider:
+              display: 'Category slider'
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+            about_intro:
+              display: 'About intro'
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: text
+                  field: { type: textarea, display: Text }
+                -
+                  handle: image
+                  field: { type: assets, container: assets, max_files: 1, display: Image }
+                -
+                  handle: image_two
+                  field: { type: assets, container: assets, max_files: 1, display: 'Second image' }
+            product_grid:
+              display: 'Product grid'
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: button_label
+                  field: { type: text, display: 'Button label' }
+                -
+                  handle: button_url
+                  field: { type: text, display: Link }
+            video_feature:
+              display: 'Video feature'
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: text
+                  field: { type: textarea, display: Text }
+                -
+                  handle: image
+                  field: { type: assets, container: assets, max_files: 1, display: 'Poster image' }
+                -
+                  handle: button_label
+                  field: { type: text, display: 'Button label' }
+                -
+                  handle: button_url
+                  field: { type: text, display: Link }
+            trending_products:
+              display: 'Trending products'
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+            testimonials:
+              display: Testimonials
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: quotes
+                  field:
+                    type: grid
+                    display: Quotes
+                    fields:
+                      -
+                        handle: title
+                        field: { type: text, display: Title }
+                      -
+                        handle: quote
+                        field: { type: textarea, display: Quote }
+                      -
+                        handle: name
+                        field: { type: text, display: Name }
+                      -
+                        handle: role
+                        field: { type: text, display: Role }
+                      -
+                        handle: photo
+                        field: { type: assets, container: assets, max_files: 1, display: Photo }
+            sale_banner:
+              display: 'Sale banner'
+              fields:
+                -
+                  handle: eyebrow
+                  field: { type: text, display: Eyebrow }
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: text
+                  field: { type: textarea, display: Text }
+                -
+                  handle: image
+                  field: { type: assets, container: assets, max_files: 1, display: Image }
+                -
+                  handle: image_mobile
+                  field: { type: assets, container: assets, max_files: 1, display: 'Mobile image' }
+                -
+                  handle: button_label
+                  field: { type: text, display: 'Button label' }
+                -
+                  handle: button_url
+                  field: { type: text, display: Link }
+            customer_logos:
+              display: 'Service notes'
+              fields:
+                -
+                  handle: items
+                  field:
+                    type: grid
+                    display: Notes
+                    fields:
+                      -
+                        handle: label
+                        field: { type: text, display: Label }
+                      -
+                        handle: image
+                        field: { type: assets, container: assets, max_files: 1, display: Image }
+            instagram_feed:
+              display: 'Instagram feed'
+              fields:
+                -
+                  handle: link
+                  field: { type: text, display: Link }
+                -
+                  handle: photos
+                  field: { type: assets, container: assets, display: Photos }
+            home_two:
+              display: 'Home two'
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+            home_three:
+              display: 'Home three'
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+            home_four:
+              display: 'Home four'
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+            home_five:
+              display: 'Home five'
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+            home_six:
+              display: 'Home six'
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+            home_seven:
+              display: 'Home seven'
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+            shop_listing:
+              display: Shop
+              fields:
+                -
+                  handle: layout
+                  field:
+                    type: select
+                    display: Layout
+                    options:
+                      grid: Grid
+                      catalog: Catalog
+                    default: grid
+            blog_listing:
+              display: Journal
+              fields:
+                -
+                  handle: layout
+                  field:
+                    type: select
+                    display: Layout
+                    options:
+                      grid: Grid
+                      list: List
+                      masonry: Masonry
+                    default: grid
+                -
+                  handle: button_label
+                  field: { type: text, display: 'Read more label' }
+            about_page:
+              display: About
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: image
+                  field: { type: assets, container: assets, max_files: 1, display: Image }
+                -
+                  handle: body
+                  field: { type: markdown, display: Body }
+            contact_page:
+              display: Contact
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: text
+                  field: { type: textarea, display: Text }
+            faq_page:
+              display: FAQ
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: faqs
+                  field:
+                    type: grid
+                    display: Questions
+                    fields:
+                      -
+                        handle: question
+                        field: { type: text, display: Question }
+                      -
+                        handle: answer
+                        field: { type: textarea, display: Answer }
+            privacy_page:
+              display: Privacy
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: body
+                  field: { type: markdown, display: Body }
+            terms_page:
+              display: Terms
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: body
+                  field: { type: markdown, display: Body }

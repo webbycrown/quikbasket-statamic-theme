@@ -1,0 +1,37 @@
+<!-- ====== Video Section ====== -->
+        <section
+            class="2xl:py-[50px] 1xl:py-[45px] xl:py-[40px] lg:py-[35px] md:py-[30px] sm:py-[27px] py-[25px] relative">
+            <div class="flex flex-wrap items-center bg-violet-400">
+                <div class="lg:w-1/2 w-full relative">
+                    <div class="flex">
+                        <button aria-label="Close" id="toggleVideo"
+                            class="1xl:w-24 sm:w-20 sm:h-20 1xl:h-24 w-14 h-14 bg-violet-400 rounded-full flex items-center justify-center outline outline-[6px] hover:outline-0 transition-all duration-500 outline-white/40 z-10 absolute -translate-y-2/4 -translate-x-2/4 left-2/4 top-2/4">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"
+                                class="text-violet-900 1xl:w-14 sm:w-10 w-7">
+                                <path fill="currentColor"
+                                    d="M10.138 3.382C8.304 2.31 6 3.632 6 5.756v16.489c0 2.123 2.304 3.445 4.138 2.374l14.697-8.59c1.552-.907 1.552-3.15 0-4.057z" />
+                            </svg>
+                        </button>
+                        <video id="videoElement" loop poster="{{ partial:partials/media-url :file="image" }}"
+                            class="w-full lg:max-h-[560px] sm:max-h-[400px] 1xl:max-h-[600px] max-h-[286px] min-h-[286px] sm:min-h-[400px] lg:min-h-[560px] 1xl:min-h-[600px] object-cover">
+                            <source src="/assets/image/necklace-video.mp4" type="video/mp4" />
+                        </video>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 w-full 2xl:pr-20">
+                    <div class="md:container-fluid container">
+                        <div
+                            class="1xl:w-[70%] lg:w-[83%] lg:max-w-full lg:p-0 md:py-10 sm:pb-10 pt-7 py-4 m-auto grid justify-items-center">
+                            <h3 class="text-black lg:mb-6 mb-4 leading-tight text-center">
+                                {{ heading }}
+                            </h3>
+                            <div class="multi-p md:mb-5 mb-4 text-center">
+                                <p>{{ text | nl2br }}</p>
+                            </div>
+                            <a href="{{ button_url }}" class="all-btn">{{ button_label }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ====== Video Section ====== -->

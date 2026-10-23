@@ -1,0 +1,48 @@
+title: Setting
+data:
+  site_name: Quikbasket
+  logo: image/main-logo.svg
+  favicon: image/favicon.svg
+  phone: '+1 555 0100'
+  email: info@quikbasket.example
+  address: '120 Market Street, Portland'
+  map_url: 'https://maps.google.com/?q=120+Market+Street+Portland'
+  copyright: '© Copyright 2024 QuickBasket All Right Reserved.'
+  seo_description: A multi-department shop for clothing, home, and everyday goods.
+  facebook_url: 'https://www.facebook.com/'
+  instagram_url: 'https://www.instagram.com/'
+  inquiry_button: Send inquiry
+  inquiry_success: 'Thanks. This inquiry was saved. Nothing was charged.'
+  x_url: 'https://x.com/'
+  youtube_url: 'https://www.youtube.com/'
+  pinterest_url: 'https://www.pinterest.com/'
+  linkedin_url: 'https://www.linkedin.com/'
+  whatsapp_url: 'https://web.whatsapp.com/'
+  newsletter_heading: Sign Up For Email
+  newsletter_text: 'Notes from the shop. This box does not start a mailing list.'
+  footer_intro: 'Browse the collection and send an inquiry. Nothing is charged.'
+  contact_heading: Get in Touch
+  contact_text: 'Send a message from the contact page. Nothing is charged.'
+  news_heading: Latest News
+  instagram_heading: Instagram
+  footer_photos:
+    - image/purse-footer.webp
+    - image/shoes-footer.webp
+    - image/dresses-footer.webp
+    - image/makeup-footer.webp
+    - image/gift-footer.webp
+    - image/coat-footer.webp
+  company_heading: Company
+  services_heading: Our Services
+  provided_heading: Provided
+  resources_heading: Resources
+  support_heading: 'Help & Support'
+  general_heading: General Links
+  helpful_heading: Helpful
+  popup_heading: Subscribe for our Newsletter
+  popup_text: 'This popup does not save an email address. Use the contact page to send an inquiry.'
+  popup_button: Contact the shop
+  cookie_heading: Cookie Policy
+  cookie_text: 'Cookies help the site remember this notice. Read the privacy page for the shop copy.'
+  cookie_accept: 'Yes, I Accept'
+  cookie_manage: Manage Settings

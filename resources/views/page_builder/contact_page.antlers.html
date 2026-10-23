@@ -1,0 +1,19 @@
+{{ partial:partials/crumb :label="heading" }}
+<section class="relative 1xl:py-[30px] md:py-[25px] py-[20px]">
+    <div class="container">
+        <div class="grid lg:grid-cols-2 gap-10">
+            <div>
+                <h1 class="font-medium sm:mb-[18px] mb-[15px]">{{ heading }}</h1>
+                {{ if text }}
+                <p class="2xl:mb-6 mb-4 2xl:text-lg text-base">{{ text }}</p>
+                {{ /if }}
+                <p class="mb-2">{{ setting:address }}</p>
+                <p class="mb-2"><a href="tel:{{ setting:phone }}">{{ setting:phone }}</a></p>
+                <p><a href="mailto:{{ setting:email }}">{{ setting:email }}</a></p>
+            </div>
+            <div>
+                {{ partial:partials/inquiry-form }}
+            </div>
+        </div>
+    </div>
+</section>

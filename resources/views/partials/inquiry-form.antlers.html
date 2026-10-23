@@ -1,0 +1,17 @@
+{{ form:inquiry class="js-theme-form grid 2xl:gap-6 1xl:gap-5 gap-4" }}
+    <div class="stay-connect-alert" role="alert"></div>
+    <p class="stay-connect-success" role="status">{{ setting:inquiry_success }}</p>
+    <div class="grid lg:gap-[10px] gap-2">
+        <label class="2xl:text-lg xl:text-base md:text-[15px] text-sm" for="inquiry-name">Name</label>
+        <input id="inquiry-name" name="name" type="text" required class="border border-lightborder-100 bg-[#D9D9D9]/10 xl:px-3 px-2 2xl:py-3 xl:py-2.5 py-1.5" />
+    </div>
+    <div class="grid lg:gap-[10px] gap-2">
+        <label class="2xl:text-lg xl:text-base md:text-[15px] text-sm" for="inquiry-email">Email</label>
+        <input id="inquiry-email" name="email" type="email" required class="border border-lightborder-100 bg-[#D9D9D9]/10 xl:px-3 px-2 2xl:py-3 xl:py-2.5 py-1.5" />
+    </div>
+    <div class="grid lg:gap-[10px] gap-2">
+        <label class="2xl:text-lg xl:text-base md:text-[15px] text-sm" for="inquiry-message">Message</label>
+        <textarea id="inquiry-message" name="message" required rows="5" class="border border-lightborder-100 bg-[#D9D9D9]/10 xl:px-3 px-2 2xl:py-3 xl:py-2.5 py-1.5"></textarea>
+    </div>
+    <button type="submit" class="all-btn flex justify-self-start">{{ setting:inquiry_button }}</button>
+{{ /form:inquiry }}

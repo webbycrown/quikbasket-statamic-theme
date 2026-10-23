@@ -1,0 +1,292 @@
+<header class="relative z-50">
+            <!-- UP-HEADER -->
+            <div class="top-bar bg-violet-900">
+                <div class="2xl:container px-4">
+                    <div class="flex justify-between items-center py-1">
+                        <ul class="flex items-center relative">
+                            <li class="flex">
+                                <div @click.away="open = false" x-data="{ open: false, activeIndex: 0, languages: [
+                                    { name: 'English', flag: '/assets/image/usa flage.webp' },
+                                    { name: 'Argentina', flag: '/assets/image/argentina.svg' },
+                                    { name: 'Brazil', flag: '/assets/image/brazil.svg' },
+                                    { name: 'Germany', flag: '/assets/image/germany.svg' },
+                                    { name: 'Spain', flag: '/assets/image/spain.svg' },
+                                    { name: 'France', flag: '/assets/image/france.svg' }
+                                ]}" class="m-auto">
+                                    <!-- Dropdown Button -->
+                                    <button type="button" @click="open = !open" class="group click-dropdown">
+                                        <img decoding="async" loading="lazy" src="/assets/image/usa flage.webp" alt="flag" />
+                                        <p class="button-name uppercase">
+                                            <span x-text="languages[activeIndex].name"></span>
+                                        </p>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="3" :class="{'rotate-180': open, 'rotate-0': !open}"
+                                            stroke="white" class="sm:size-3 size-2.5 duration-200 transform ms-2">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                        </svg>
+                                    </button>
+
+                                    <!-- Dropdown Menu -->
+                                    <div x-show="open" x-transition:enter="transition ease-out duration-200 transform"
+                                        x-transition:enter-start="opacity-0 scale-95 -translate-y-2"
+                                        x-transition:enter-end="opacity-100 scale-100 translate-y-0"
+                                        x-transition:leave="transition ease-in duration-150 transform"
+                                        x-transition:leave-start="opacity-100 scale-100 translate-y-0"
+                                        x-transition:leave-end="opacity-0 scale-95 -translate-y-2"
+                                        class="click-drodpwown-menu">
+                                        <!-- Language Items -->
+                                        <template x-for="(language, index) in languages" :key="index">
+                                            <a href="#" @click.prevent="activeIndex = index; open = false" :class="{
+                                                'bg-gray-400 text-white': activeIndex === index, 
+                                                'text-gray-700 hover:bg-gray-400 hover:text-white': activeIndex !== index
+                                            }" class="group/text">
+                                                <img decoding="async" loading="lazy" :src="language.flag" alt="flag"
+                                                    class="me-1.5 1xl:w-[20px] w-4" />
+                                                <p :class="{'text-white': activeIndex === index, 'text-gray-700 group-hover/text:text-white': activeIndex !== index}"
+                                                    class="text-sm">
+                                                    <span x-text="language.name"></span>
+                                                </p>
+                                            </a>
+                                        </template>
+                                    </div>
+                                </div>
+                            </li>
+
+                            {{ nav:utility_menu }}
+                            <li class="text-white opacity-10 lg:mx-4 md:mx-3 sm:mx-1 mx-0.5 inline-block">
+                                |
+                            </li>
+                            <li class="inline-block sm:pb-0 pb-1">
+                                <a href="{{ url }}"
+                                    class="text-white 1xl:text-[13px] sm:text-xs text-[11px] font-light hover:opacity-80 transition-all sm:leading-[26px]">{{ title }}</a>
+                            </li>
+                            {{ /nav:utility_menu }}
+                        </ul>
+
+                        <ul class="flex items-center relative">
+                            <li>
+                                <a href="tel:{{ setting:phone }}" class="flex items-center 1xl:gap-[6px] gap-[4px]">
+                                    <img src="/assets/image/call-black.svg" alt="call"
+                                        class="sm:rotate-12 rotate-[5deg] w-[14px]" />
+                                    <span
+                                        class="text-white text-[0] hover:opacity-80 1xl:text-[14px] lg:text-[13px] font-light sm:leading-[26px] lg:block hidden">{{ setting:phone }}</span>
+                                </a>
+                            </li>
+                            <li class="text-white opacity-10 lg:mx-4 sm:mx-2 mx-1 inline-block">
+                                |
+                            </li>
+                            <li>
+                                <a href="mailto:{{ setting:email }}" class="flex items-center 1xl:gap-[6px] gap-[4px]">
+                                    <img src="/assets/image/mail-black.svg" />
+                                    <span
+                                        class="text-white 1xl:text-[13px] text-xs hover:opacity-80 font-light sm:leading-[26px] lg:block hidden">{{ setting:email }}</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MIDDLE-HEADER -->
+            <div class="header-middle bg-white">
+                <div class="2xl:container px-4">
+                    <div class="flex items-center justify-between md:py-6 py-5 2xl:py-7 transition-all">
+                        <div class="sm:w-1/4 md:w-[28%] w-[6%]">
+                            <!-- SEARCH -->
+                            <form id="searchCategory" method="get" action="/shop"
+                                class="flex items-center justify-between lg:rounded-md p-0 2xl:py-2 py-1.5 lg:px-4 lg:max-w-[70%] bg-violet-400 lg:w-auto w-full lg:static absolute lg:left-auto left-0 lg:top-auto top-[60%] lg:visible invisible lg:opacity-100 opacity-0 transition-all">
+                                <div class="searchbar flex items-center grow">
+                                    <svg class="1xl:w-[20px] w-[16px] 1xl:mr-3.5 mr-2" viewBox="0 0 20 20" fill="none">
+                                        <path
+                                            d="M13.35 14.675C11.843 15.8447 9.9468 16.3962 8.04746 16.2172C6.14812 16.0382 4.3884 15.1421 3.12648 13.7113C1.86456 12.2805 1.19531 10.4226 1.25495 8.51582C1.31459 6.60899 2.09865 4.79656 3.44752 3.44746C4.79663 2.09859 6.60906 1.31453 8.51588 1.25489C10.4227 1.19525 12.2806 1.8645 13.7114 3.12642C15.1421 4.38833 16.0382 6.14806 16.2173 8.0474C16.3963 9.94674 15.8448 11.8429 14.675 13.35L18.475 17.15C18.5984 17.2645 18.6886 17.4103 18.7362 17.5719C18.7837 17.7334 18.7867 17.9048 18.745 18.068C18.7033 18.2311 18.6184 18.38 18.4991 18.4989C18.3799 18.6179 18.2308 18.7024 18.0675 18.7437C17.9045 18.7853 17.7334 18.7824 17.5719 18.7351C17.4105 18.6878 17.2648 18.5979 17.15 18.475L13.35 14.675ZM14.375 8.74996C14.3861 8.00447 14.2489 7.2642 13.9713 6.57223C13.6937 5.88026 13.2813 5.2504 12.758 4.71928C12.2348 4.18816 11.6111 3.76639 10.9234 3.47851C10.2356 3.19062 9.49747 3.04237 8.75189 3.04237C8.00632 3.04237 7.26818 3.19062 6.58043 3.47851C5.89267 3.76639 5.26903 4.18816 4.74577 4.71928C4.22251 5.2504 3.81009 5.88026 3.53249 6.57223C3.25489 7.2642 3.11765 8.00447 3.12877 8.74996C3.15079 10.2268 3.75291 11.6357 4.80506 12.6722C5.8572 13.7088 7.27491 14.2899 8.75189 14.2899C10.2289 14.2899 11.6466 13.7088 12.6987 12.6722C13.7509 11.6357 14.353 10.2268 14.375 8.74996Z"
+                                            fill="#374151" fill-opacity="0.6" />
+                                    </svg>
+                                    <input type="search" name="q" aria-label="Search the shop" placeholder="What are you looking for..."
+                                        class="lg:border-2 border-1 text-base text-lightgray-100 p-4 lg:px-0 lg:py-0 1xl:placeholder:text-[16px] placeholder:text-[14px] placeholder:text-lightgray-100 grow font-normal w-full bg-transparent border-none rounded-none" />
+                                </div>
+                            </form>
+                            <!-- SIDE MENU BUTTON -->
+                            <div class="lg:hidden flex">
+                                <button type="button" id="menuToggle" class="lg:hidden text-gray-800" aria-label="Open menu">
+                                    <svg class="sm:w-5 sm:h-5 w-4 h-4" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                                        <path stroke="black" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- MAIN LOGO -->
+                        <div class="site-logo w-2/4 md:w-1/3">
+                            <a href="/">
+                                <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="setting:logo" fallback="image/main-logo.svg" }}" alt="main-logo"
+                                    title="main-logo"
+                                    class="white-img m-auto lg:w-[229px] w-[175px] max-w-full xl:h-10 h-[1.40rem]" />
+                            </a>
+                        </div>
+                        <!-- DASHBOARD, WISHLIST & CART -->
+                        <div class="w-1/4 md:w-1/3">
+                            <ul class="flex items-center justify-end lg:mr-[10px] space-x-2 sm:space-x-4 xl:space-x-6">
+                                <li class="group">
+                                    <a href="/login">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                            class="1xl:w-[24px] xl:w-[22px] sm:w-[21px] w-[18px] stroke-black group-hover:stroke-violet-900">
+                                            <g fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="1.5">
+                                                <circle cx="12" cy="8" r="5" />
+                                                <path d="M20 21a8 8 0 1 0-16 0m16 0a8 8 0 1 0-16 0" />
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="group">
+                                    <a href="/wishlist" class="relative">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="1xl:w-[24px] xl:w-[22px] sm:w-[21px] w-[18px] header-icons fill-black group-hover:fill-violet-900"
+                                            viewBox="0 0 36 36">
+                                            <path stroke="none"
+                                                d="M18 32.43a1 1 0 0 1-.61-.21C11.83 27.9 8 24.18 5.32 20.51C1.9 15.82 1.12 11.49 3 7.64c1.34-2.75 5.19-5 9.69-3.69A9.87 9.87 0 0 1 18 7.72a9.87 9.87 0 0 1 5.31-3.77c4.49-1.29 8.35.94 9.69 3.69c1.88 3.85 1.1 8.18-2.32 12.87c-2.68 3.67-6.51 7.39-12.07 11.71a1 1 0 0 1-.61.21M10.13 5.58A5.9 5.9 0 0 0 4.8 8.51c-1.55 3.18-.85 6.72 2.14 10.81A57 57 0 0 0 18 30.16a57 57 0 0 0 11.06-10.83c3-4.1 3.69-7.64 2.14-10.81c-1-2-4-3.59-7.34-2.65a8 8 0 0 0-4.94 4.2a1 1 0 0 1-1.85 0a7.93 7.93 0 0 0-4.94-4.2a7.3 7.3 0 0 0-2-.29"
+                                                class="clr-i-outline clr-i-outline-path-1" />
+                                            <path fill="none" d="M0 0h36v36H0z" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="group">
+                                    <a href="/cart" class="relative">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="1xl:w-[24px] xl:w-[22px] sm:w-[21px] w-[18px] header-icons group-hover:stroke-violet-900 stroke-black"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-width="1.5" fill="none"
+                                                d="M2 12h20l-2 11H4zm18-4l-6-7M4 8l6-7M1 8h22v4H1zm7 7v5m8-5v5m-4-5v5" />
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DOWN-HEADER -->
+            <nav class="relative bg-white w-full border-y border-lightborder-200 flex items-center" id="nav">
+                <div class="2xl:container px-4 w-full">
+                    <div class="mx-auto flex justify-between items-center">
+                        
+
+                        <!-- Links Section -->
+                        <div id="navMenu" class="nav-menu lg:flex lg:flex-row">
+                            <div
+                                class="flex items-center justify-between w-full lg:hidden bg-violet-400 px-4 sm:py-8 py-7">
+                                <div class="site-logo lg:hidden block">
+                                    <a href="/">
+                                        <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="setting:logo" fallback="image/main-logo.svg" }}" alt="main-logo"
+                                            title="main-logo"
+                                            class="1xl:w-[229px] xl:w-[215px] sm:w-[185px] w-[135px] m-auto" />
+                                    </a>
+                                </div>
+                                <button type="button" aria-label="Close menu" id="menuClose" class="self-end lg:hidden">
+                                    <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M6 18L18 6M6 6l12 12"></path>
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <!-- 1ST -->
+                            <div class="group/product dropdown-toggle mx-0">
+                                <button type="button" aria-expanded="false" id="dropdownToggle1"
+                                    class="lg:group-hover/product:border-violet-900 lg:group-focus/product:border-violet-900 lg:group-active/product:border-violet-900">
+                                    <p
+                                        class="group-hover/product:text-violet-900 group-focus/product:text-violet-900 group-active/product:text-violet-900">
+                                        Pages
+                                    </p>
+                                    <svg class="group-hover/product:rotate-180 group-hover/product:stroke-violet-900"
+                                        fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <!-- Dropdown -->
+                                <div id="dropdownMenu1"
+                                    class="dropdown-mainmenu hidden lg:group-hover/product:block lg:w-[190px] lg:left-auto lg:right-auto lg:py-4">
+                                    <div class="lg:mb-0 sm:mb-3">
+                                        <h6 class="product-heading">Menu</h6>
+                                        {{ partial:partials/page-nav }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 2ND -->
+                            <div class="group/product dropdown-toggle">
+                                <button type="button" aria-expanded="false" id="dropdownToggle2"
+                                    class="lg:group-hover/product:border-violet-900 lg:group-focus/product:border-violet-900 lg:group-active/product:border-violet-900">
+                                    <p
+                                        class="group-hover/product:text-violet-900 group-focus/product:text-violet-900 group-active/product:text-violet-900">
+                                        New Arrivals
+                                    </p>
+                                    <svg class="group-hover/product:rotate-180 group-hover/product:stroke-violet-900"
+                                        fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <!-- Dropdown -->
+                                <div id="dropdownMenu2" class="dropdown-mainmenu hidden lg:group-hover/product:block">
+{{ partial:partials/mega-nav }}
+</div>
+                            </div>
+
+                            
+                        </div>
+
+                        <!-- SEARCH MODAL -->
+                        <div class="lg:hidden block">
+                            <div class="flex items-center gap-4 xl:border-l border-lightborder-100/25"
+                                id="extra-options">
+                                <button id="openModalButton" class="bg-transparent text-white">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"
+                                        class="lg:w-[22px] lg:h-[22px] sm:w-[20px] sm:h-[20px] w-[18px] h-[18px] fill-black hover:fill-violet-900">
+                                        <path fill-rule="evenodd"
+                                            d="M6.5 2a4.5 4.5 0 1 0 0 9a4.5 4.5 0 0 0 0-9M1 6.5a5.5 5.5 0 1 1 9.727 3.52l3.127 3.126l-.708.708l-3.126-3.127A5.5 5.5 0 0 1 1 6.5"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                                <div id="modal" class="main-modal hidden">
+                                    <div class="modal">
+                                        <!-- Close Button -->
+                                        <button id="closeModalButton" class="closeModalButton">✕</button>
+                                        <form class="modal-form" method="get" action="/shop">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"
+                                                class="1xl:w-[22px] sm:w-[19px] w-[17px] fill-black hover:fill-violet-900 sm:me-3 me-1 my-auto">
+                                                <path fill-rule="evenodd"
+                                                    d="M6.5 2a4.5 4.5 0 1 0 0 9a4.5 4.5 0 0 0 0-9M1 6.5a5.5 5.5 0 1 1 9.727 3.52l3.127 3.126l-.708.708l-3.126-3.127A5.5 5.5 0 0 1 1 6.5"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                            <label class="relative block w-full h-full">
+                                                <input placeholder="Search the shop" type="search" name="q" aria-label="Search the shop"
+                                                    class="placeholder:text-grey-400" />
+                                            </label>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- SEARCH BUTTON-INPUT -->
+                        <form id="searchCategoryMobile" method="get" action="/shop"
+                            class="lg:hidden flex items-center justify-between lg:rounded-md p-0 2xl:py-2 py-1.5 lg:px-4 lg:max-w-[85%] bg-violet-400 lg:w-auto w-full lg:static absolute lg:left-auto left-0 lg:top-auto top-[60%] lg:visible invisible lg:opacity-100 opacity-0 transition-all">
+                            <div class="searchbar flex items-center grow">
+                                <svg class="1xl:w-[20px] w-[16px] 1xl:mr-3.5 mr-2" viewBox="0 0 20 20" fill="none">
+                                    <path
+                                        d="M13.35 14.675C11.843 15.8447 9.9468 16.3962 8.04746 16.2172C6.14812 16.0382 4.3884 15.1421 3.12648 13.7113C1.86456 12.2805 1.19531 10.4226 1.25495 8.51582C1.31459 6.60899 2.09865 4.79656 3.44752 3.44746C4.79663 2.09859 6.60906 1.31453 8.51588 1.25489C10.4227 1.19525 12.2806 1.8645 13.7114 3.12642C15.1421 4.38833 16.0382 6.14806 16.2173 8.0474C16.3963 9.94674 15.8448 11.8429 14.675 13.35L18.475 17.15C18.5984 17.2645 18.6886 17.4103 18.7362 17.5719C18.7837 17.7334 18.7867 17.9048 18.745 18.068C18.7033 18.2311 18.6184 18.38 18.4991 18.4989C18.3799 18.6179 18.2308 18.7024 18.0675 18.7437C17.9045 18.7853 17.7334 18.7824 17.5719 18.7351C17.4105 18.6878 17.2648 18.5979 17.15 18.475L13.35 14.675ZM14.375 8.74996C14.3861 8.00447 14.2489 7.2642 13.9713 6.57223C13.6937 5.88026 13.2813 5.2504 12.758 4.71928C12.2348 4.18816 11.6111 3.76639 10.9234 3.47851C10.2356 3.19062 9.49747 3.04237 8.75189 3.04237C8.00632 3.04237 7.26818 3.19062 6.58043 3.47851C5.89267 3.76639 5.26903 4.18816 4.74577 4.71928C4.22251 5.2504 3.81009 5.88026 3.53249 6.57223C3.25489 7.2642 3.11765 8.00447 3.12877 8.74996C3.15079 10.2268 3.75291 11.6357 4.80506 12.6722C5.8572 13.7088 7.27491 14.2899 8.75189 14.2899C10.2289 14.2899 11.6466 13.7088 12.6987 12.6722C13.7509 11.6357 14.353 10.2268 14.375 8.74996Z"
+                                        fill="#374151" fill-opacity="0.6" />
+                                </svg>
+                                <input type="search" name="q" aria-label="Search the shop" placeholder="What are you looking for..."
+                                    class="lg:border-2 border-1 text-base text-lightgray-100 p-4 lg:px-0 lg:py-0 1xl:placeholder:text-[16px] placeholder:text-[14px] placeholder:text-lightgray-100 grow font-normal w-full bg-transparent border-none rounded-none" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </header>

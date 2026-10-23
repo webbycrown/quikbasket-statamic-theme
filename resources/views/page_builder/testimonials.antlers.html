@@ -1,0 +1,28 @@
+<section class="2xl:py-[50px] 1xl:py-[45px] xl:py-[40px] lg:py-[35px] md:py-[30px] sm:py-[27px] py-[25px] relative">
+    <div class="bg-[#EBF4F1] pt-30 sm:pt-11 lg:pt-16 xl:pt-20 pt-7 2xl:pb-[100px] xl:pb-[85px] lg:pb-[75px] md:pb-[60px] sm:pb-10 pb-5">
+        <div class="container">
+            <h3 class="text-center text-black font-normal leading-tight mb-7 sm:mb-4 lg:mb-5 xl:mb-9">{{ heading }}</h3>
+            <div class="m-auto px-2 sm:pt-4 md:pt-8 relative wp-testimonial">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        {{ quotes }}
+                        <div class="swiper-slide">
+                            <div class="relative group transition-all">
+                                <h3 class="text-center block mb-3 2xl:mb-5 lg:text-[24px] text-[20px] text-black font-normal">{{ title }}</h3>
+                                <p class="leading-normal text-gray-200 text-center block">{{ quote }}</p>
+                                <div class="flex items-center mt-7 justify-center gap-[18px]">
+                                    <img decoding="async" loading="lazy" alt="{{ name }}" class="w-[60px] rounded-full" src="{{ partial:partials/media-url :file="photo" }}" />
+                                    <div class="grid 1xl:gap-0 gap-1">
+                                        <p class="text-base text-black font-medium">{{ name }}</p>
+                                        <p class="text-base text-gray-800 font-normal text-left">{{ role }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{ /quotes }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

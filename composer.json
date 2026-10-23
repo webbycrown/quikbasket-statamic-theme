@@ -1,0 +1,13 @@
+{
+  "name": "webbycrown/quikbasket-statamic-theme",
+  "type": "statamic-starter-kit",
+  "description": "A Statamic starter kit for a multi-department shop, with catalog pages, a journal, and inquiry forms. No card checkout.",
+  "require": {
+    "statamic/cms": "^5.0"
+  },
+  "extra": {
+    "statamic": {
+      "starter-kit": true
+    }
+  }
+}

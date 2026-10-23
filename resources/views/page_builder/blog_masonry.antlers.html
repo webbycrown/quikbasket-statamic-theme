@@ -1,0 +1,628 @@
+<!-- PAGE-NAME -->
+    <section class="relative 1xl:pb-[30px] md:pb-[25px] pb-[20px]">
+        <div class="bg-violet-400">
+            <div class="container">
+                <div class="flex items-center sm:gap-[4px] gap-0 md:py-[15px] py-[10px]">
+                    <div class="flex items-center justify-between sm:gap-[7px] gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="fill-gray-800 size-4">
+                            <path
+                                d="M.625 27.824c0 1.125.89 1.805 1.992 1.805c.68 0 1.219-.328 1.688-.797L27.18 7.996c.257-.258.539-.352.843-.352c.282 0 .54.094.82.352l22.852 20.836c.492.469 1.031.797 1.688.797c1.101 0 1.992-.68 1.992-1.805c0-.703-.258-1.148-.703-1.547l-8.11-7.382V5.043c0-1.031-.656-1.687-1.687-1.687h-3.07c-1.008 0-1.711.656-1.711 1.687v7.969l-9.282-8.485C29.992 3.754 28.984 3.38 28 3.38c-.985 0-1.969.375-2.813 1.148L1.328 26.277c-.422.399-.703.844-.703 1.547m6.703 19.664c0 3.258 1.969 5.157 5.273 5.157h9.493V35.98c0-1.078.726-1.78 1.804-1.78h8.274c1.078 0 1.781.702 1.781 1.78v16.665h9.469c3.304 0 5.25-1.899 5.25-5.157V30.332l-19.899-17.93c-.258-.234-.539-.351-.82-.351c-.258 0-.516.117-.797.375L7.328 30.449Z" />
+                        </svg>
+                        <p class="fill-gray-800 2xl:text-lg lg:text-base md:text-[15px] text-sm"><a
+                                href="/">Home</a></p>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="stroke-gray-800 size-7">
+                        <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="m10 17l5-5l-5-5" />
+                    </svg>
+                    <p class="fill-gray-800 2xl:text-lg lg:text-base md:text-[15px] text-sm"><a href="#">Blog</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOGS -->
+    <section class="relative 1xl:py-[30px] md:py-[25px] py-[20px]">
+        <div class="container">
+            <div class="min-h-screen">
+                <div class="mx-auto">
+                    <div class="flex gap-[50px]">
+
+                        <!-- Sidebar -->
+                        <div id="sidebar"
+                            class="fixed lg:overflow-auto overflow-scroll lg:z-0 z-50 top-0 left-0 bg-white 2xl:w-[18%] xl:w-[22%] lg:w-[26%] w-[335px] max-w-full lg:p-0 p-8 h-full transform -translate-x-full lg:translate-x-0 lg:static lg:block transition-transform duration-300 ease-in-out">
+                            <div
+                                class="flex w-full justify-between items-center lg:hidden border-b border-gray-400/20 2xl:pb-6 xl:pb-5 pb-3">
+                                <h4 class="md:text-[24px] text-[20px]">Sidebar</h4>
+                                <!-- Close Button -->
+                                <button id="closeSidebar" class="lg:hidden text-black text-lg">✕</button>
+                            </div>
+                            <div
+                                class="flex items-center justify-between w-full 2xl:mb-7 mb-5 lg:pt-0 md:pt-[20px] pt-[23px] flex-col-reverse">
+                                <form method="get" action="/shop" class="flex justify-between w-full border-0">
+                                    <input type="search" placeholder="Search the shop" aria-label="Search the shop" name="q"
+                                        class="w-full pe-2 1xl:placeholder:text-base placeholder:text-[15px] border border-lightborder-200 ps-2 border-e-0"
+                                        required>
+                                    <div class="flex">
+                                        <button type="submit" class="all-btn xl:py-[13px] p-3 xl:px-3.5">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="2xl:w-6 2xl:h-6 w-5 h-5"
+                                                viewBox="0 0 24 24">
+                                                <rect width="24" height="24" fill="none" />
+                                                <path fill="currentColor" fill-rule="evenodd"
+                                                    d="m16.31 15.561l4.114 4.115l-.848.848l-4.123-4.123a7 7 0 1 1 .857-.84M16.8 11a5.8 5.8 0 1 0-11.6 0a5.8 5.8 0 0 0 11.6 0" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <!-- Categories -->
+                            <div class="2xl:mb-6 2xl:pt-6 mb-5 xl:pt-5 pt-3 border-t border-gray-400/20">
+                                <div class="flex items-center justify-between w-full xl:mb-5 mb-2">
+                                    <h3 class="xl:text-[20px] text-lg font-normal">Categories</h3>
+                                    <hr class="w-4 border" />
+                                </div>
+
+                                <div class="mb-2">
+                                    <ul class="1xl:space-y-2 space-y-1">
+                                        <li class="group">
+                                            <input id="1" type="checkbox" class="hidden peer"
+                                                name="preferred_activities[]" value="1" />
+                                            <label for="1"
+                                                class="cursor-pointer w-full inline-flex items-center justify-between py-1 text-gray-800 group-hover:text-violet-900 peer-checked:text-violet-900 group-hover:px-2 peer-checked:px-2 transition-all ease-in-out">
+                                                <div class="flex items-center justify-between w-full">
+                                                    <div class="1xl:text-base text-sm font-normal">
+                                                        Trending</div>
+                                                    <div class="1xl:text-base text-sm font-normal ">(344)
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </li>
+                                        <li class="group">
+                                            <input id="2" type="checkbox" class="hidden peer"
+                                                name="preferred_activities[]" value="2" />
+                                            <label for="2"
+                                                class="cursor-pointer w-full inline-flex items-center justify-between py-1 text-gray-800 group-hover:text-violet-900 peer-checked:text-violet-900 group-hover:px-2 peer-checked:px-2 transition-all ease-in-out">
+                                                <div class="flex items-center justify-between w-full">
+                                                    <div class="1xl:text-base text-sm font-normal">
+                                                        Best Sellers
+                                                    </div>
+                                                    <div class="1xl:text-base text-sm font-normal ">(56)
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </li>
+                                        <li class="group">
+                                            <input id="3" type="checkbox" class="hidden peer"
+                                                name="preferred_activities[]" value="3" />
+                                            <label for="3"
+                                                class="cursor-pointer w-full inline-flex items-center justify-between py-1 text-gray-800 group-hover:text-violet-900 peer-checked:text-violet-900 group-hover:px-2 peer-checked:px-2 transition-all ease-in-out">
+                                                <div class="flex items-center justify-between w-full">
+                                                    <div class="1xl:text-base text-sm font-normal">Shoes
+                                                    </div>
+                                                    <div class="1xl:text-base text-sm font-normal ">(66)
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </li>
+                                        <li class="group">
+                                            <input id="4" type="checkbox" class="hidden peer"
+                                                name="preferred_activities[]" value="4" />
+                                            <label for="4"
+                                                class="cursor-pointer w-full inline-flex items-center justify-between py-1 text-gray-800 group-hover:text-violet-900 peer-checked:text-violet-900 group-hover:px-2 peer-checked:px-2 transition-all ease-in-out">
+                                                <div class="flex items-center justify-between w-full">
+                                                    <div class="1xl:text-base text-sm font-normal">
+                                                        Jewellery</div>
+                                                    <div class="1xl:text-base text-sm font-normal ">(345)
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </li>
+                                        <li class="group">
+                                            <input id="5" type="checkbox" class="hidden peer"
+                                                name="preferred_activities[]" value="5" />
+                                            <label for="5"
+                                                class="cursor-pointer w-full inline-flex items-center justify-between py-1 text-gray-800 group-hover:text-violet-900 peer-checked:text-violet-900 group-hover:px-2 peer-checked:px-2 transition-all ease-in-out">
+                                                <div class="flex items-center justify-between w-full">
+                                                    <div class="1xl:text-base text-sm font-normal">Dress
+                                                    </div>
+                                                    <div class="1xl:text-base text-sm font-normal ">(256)
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </li>
+                                        <li class="group">
+                                            <input id="6" type="checkbox" class="hidden peer"
+                                                name="preferred_activities[]" value="6" />
+                                            <label for="6"
+                                                class="cursor-pointer w-full inline-flex items-center justify-between py-1 text-gray-800 group-hover:text-violet-900 peer-checked:text-violet-900 group-hover:px-2 peer-checked:px-2 transition-all ease-in-out">
+                                                <div class="flex items-center justify-between w-full">
+                                                    <div class="1xl:text-base text-sm font-normal">Coat
+                                                    </div>
+                                                    <div class="1xl:text-base text-sm font-normal ">(333)
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </li>
+                                        <li class="group">
+                                            <input id="7" type="checkbox" class="hidden peer"
+                                                name="preferred_activities[]" value="7" />
+                                            <label for="7"
+                                                class="cursor-pointer w-full inline-flex items-center justify-between py-1 text-gray-800 group-hover:text-violet-900 peer-checked:text-violet-900 group-hover:px-2 peer-checked:px-2 transition-all ease-in-out">
+                                                <div class="flex items-center justify-between w-full">
+                                                    <div class="1xl:text-base text-sm font-normal">Sweater
+                                                    </div>
+                                                    <div class="1xl:text-base text-sm font-normal ">(56)
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </li>
+                                        <li class="group">
+                                            <input id="8" type="checkbox" class="hidden peer"
+                                                name="preferred_activities[]" value="8" />
+                                            <label for="8"
+                                                class="cursor-pointer w-full inline-flex items-center justify-between py-1 text-gray-800 group-hover:text-violet-900 peer-checked:text-violet-900 group-hover:px-2 peer-checked:px-2 transition-all ease-in-out">
+                                                <div class="flex items-center justify-between w-full">
+                                                    <div class="1xl:text-base text-sm font-normal">Bags
+                                                    </div>
+                                                    <div class="1xl:text-base text-sm font-normal ">(777)
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Popular Posts -->
+                            <div class="2xl:mb-6 2xl:pt-6 mb-5 xl:pt-5 pt-3 border-t border-gray-400/20">
+                                <div class="flex items-center justify-between w-full xl:mb-5 mb-2">
+                                    <h3 class="xl:text-[20px] text-lg font-normal">Popular Posts</h3>
+                                    <hr class="w-4 border" />
+                                </div>
+                                <div class="divide-y divide-lightborder-200">
+                                    <div class="grid 1xl:pb-3.5 pb-2.5">
+                                        <div class="flex 1xlgap-[17px] gap-[14px] items-center group">
+                                            <a href="/blog/studio-note" class="">
+                                                <img decoding="async" loading="lazy" src="/assets/image/popular post 1.webp"
+                                                    alt="post" class="w-full h-full object-cover">
+                                            </a>
+                                            <div class="grid gap-1">
+                                                <p class="text-[13px] text-[#757575] font-medium">12th Dec 2022</p>
+                                                <a href="/blog/studio-note"
+                                                    class="text-gray-800 group-hover:text-violet-900 2xl:text-base text-sm capitalize">The
+                                                    best deals to shop
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid 1xl:py-3.5 py-2.5">
+                                        <div class="flex 1xlgap-[17px] gap-[14px] items-center group">
+                                            <a href="/blog/studio-note" class="">
+                                                <img decoding="async" loading="lazy" src="/assets/image/popular post 2.webp"
+                                                    alt="post" class="w-full h-full object-cover">
+                                            </a>
+                                            <div class="grid gap-1">
+                                                <p class="text-[13px] text-[#757575] font-medium">12th Dec 2022</p>
+                                                <a href="/blog/studio-note"
+                                                    class="text-gray-800 group-hover:text-violet-900 2xl:text-base text-sm capitalize">Best
+                                                    sale of bags</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid 1xl:pt-3.5 pt-2.5">
+                                        <div class="flex 1xlgap-[17px] gap-[14px] items-center group">
+                                            <a href="/blog/studio-note" class="">
+                                                <img decoding="async" loading="lazy" src="/assets/image/popular post 3.webp"
+                                                    alt="post" class="w-full h-full object-cover">
+                                            </a>
+                                            <div class="grid gap-1">
+                                                <p class="text-[13px] text-[#757575] font-medium">12th Dec 2022</p>
+                                                <a href="/blog/studio-note"
+                                                    class="text-gray-800 group-hover:text-violet-900 2xl:text-base text-sm capitalize">Shoes
+                                                    as per season</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Popular Tags -->
+                            <div class="2xl:mb-6 2xl:pt-6 mb-5 xl:pt-5 pt-3 border-t border-gray-400/20">
+                                <div class="flex items-center justify-between w-full xl:mb-5 mb-2">
+                                    <h3 class="xl:text-[20px] text-lg font-normal">Popular Tags</h3>
+                                    <hr class="w-4 border" />
+                                </div>
+
+                                <div class="mb-2">
+                                    <ul class="flex flex-wrap items-center gap-2">
+                                        <li class="group">
+                                            <input id="9" type="checkbox" class="hidden peer"
+                                                name="preferred_activities[]" value="9" />
+                                            <label for="9"
+                                                class="cursor-pointer group-hover:bg-violet-900 group-hover:text-white rounded-full bg-violet-400 text-gray-800 inline-flex items-center justify-center peer-checked:border-violet-400 peer-checked:bg-violet-900 peer-checked:text-white">
+                                                <div
+                                                    class="flex items-center justify-between w-full 2xl:px-[15px] px-[13px] py-[3px]">
+                                                    <div class="2xl:text-[15px] xl:text-sm text-[13px] font-normal">New
+                                                        Arrivals
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </li>
+                                        <li class="group">
+                                            <input id="10" type="checkbox" class="hidden peer"
+                                                name="preferred_activities[]" value="10" />
+                                            <label for="10"
+                                                class="cursor-pointer group-hover:bg-violet-900 group-hover:text-white rounded-full bg-violet-400 text-gray-800 inline-flex items-center justify-center peer-checked:border-violet-400 peer-checked:bg-violet-900 peer-checked:text-white">
+                                                <div
+                                                    class="flex items-center justify-between w-full 2xl:px-[15px] px-[13px] py-[3px]">
+                                                    <div class="2xl:text-[15px] xl:text-sm text-[13px] font-normal">
+                                                        Trending</div>
+                                                </div>
+                                            </label>
+                                        </li>
+                                        <li class="group">
+                                            <input id="11" type="checkbox" class="hidden peer"
+                                                name="preferred_activities[]" value="11" />
+                                            <label for="11"
+                                                class="cursor-pointer group-hover:bg-violet-900 group-hover:text-white rounded-full bg-violet-400 text-gray-800 inline-flex items-center justify-center peer-checked:border-violet-400 peer-checked:bg-violet-900 peer-checked:text-white">
+                                                <div
+                                                    class="flex items-center justify-between w-full 2xl:px-[15px] px-[13px] py-[3px]">
+                                                    <div class="2xl:text-[15px] xl:text-sm text-[13px] font-normal">
+                                                        Sale</div>
+                                                </div>
+                                            </label>
+                                        </li>
+                                        <li class="group">
+                                            <input id="12" type="checkbox" class="hidden peer"
+                                                name="preferred_activities[]" value="12" />
+                                            <label for="12"
+                                                class="cursor-pointer group-hover:bg-violet-900 group-hover:text-white rounded-full bg-violet-400 text-gray-800 inline-flex items-center justify-center peer-checked:border-violet-400 peer-checked:bg-violet-900 peer-checked:text-white">
+                                                <div
+                                                    class="flex items-center justify-between w-full 2xl:px-[15px] px-[13px] py-[3px]">
+                                                    <div class="2xl:text-[15px] xl:text-sm text-[13px] font-normal">
+                                                        Dress</div>
+                                                </div>
+                                            </label>
+                                        </li>
+                                        <li class="group">
+                                            <input id="13" type="checkbox" class="hidden peer"
+                                                name="preferred_activities[]" value="13" />
+                                            <label for="13"
+                                                class="cursor-pointer group-hover:bg-violet-900 group-hover:text-white rounded-full bg-violet-400 text-gray-800 inline-flex items-center justify-center peer-checked:border-violet-400 peer-checked:bg-violet-900 peer-checked:text-white">
+                                                <div
+                                                    class="flex items-center justify-between w-full 2xl:px-[15px] px-[13px] py-[3px]">
+                                                    <div class="2xl:text-[15px] xl:text-sm text-[13px] font-normal">
+                                                        Best Seller</div>
+                                                </div>
+                                            </label>
+                                        </li>
+                                        <li class="group">
+                                            <input id="14" type="checkbox" class="hidden peer"
+                                                name="preferred_activities[]" value="14" />
+                                            <label for="14"
+                                                class="cursor-pointer group-hover:bg-violet-900 group-hover:text-white rounded-full bg-violet-400 text-gray-800 inline-flex items-center justify-center peer-checked:border-violet-400 peer-checked:bg-violet-900 peer-checked:text-white">
+                                                <div
+                                                    class="flex items-center justify-between w-full 2xl:px-[15px] px-[13px] py-[3px]">
+                                                    <div class="2xl:text-[15px] xl:text-sm text-[13px] font-normal">
+                                                        Footwear</div>
+                                                </div>
+                                            </label>
+                                        </li>
+                                        <li class="group">
+                                            <input id="15" type="checkbox" class="hidden peer"
+                                                name="preferred_activities[]" value="15" />
+                                            <label for="15"
+                                                class="cursor-pointer group-hover:bg-violet-900 group-hover:text-white rounded-full bg-violet-400 text-gray-800 inline-flex items-center justify-center peer-checked:border-violet-400 peer-checked:bg-violet-900 peer-checked:text-white">
+                                                <div
+                                                    class="flex items-center justify-between w-full 2xl:px-[15px] px-[13px] py-[3px]">
+                                                    <div class="2xl:text-[15px] xl:text-sm text-[13px] font-normal">
+                                                        Casual Wear</div>
+                                                </div>
+                                            </label>
+                                        </li>
+                                        <li class="group">
+                                            <input id="16" type="checkbox" class="hidden peer"
+                                                name="preferred_activities[]" value="16" />
+                                            <label for="16"
+                                                class="cursor-pointer group-hover:bg-violet-900 group-hover:text-white rounded-full bg-violet-400 text-gray-800 inline-flex items-center justify-center peer-checked:border-violet-400 peer-checked:bg-violet-900 peer-checked:text-white">
+                                                <div
+                                                    class="flex items-center justify-between w-full 2xl:px-[15px] px-[13px] py-[3px]">
+                                                    <div class="2xl:text-[15px] xl:text-sm text-[13px] font-normal">
+                                                        Luxury</div>
+                                                </div>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Instagram -->
+                            <div class="2xl:mb-6 2xl:pt-6 mb-5 xl:pt-5 pt-3 border-t border-gray-400/20">
+                                <div class="flex items-center justify-between w-full xl:mb-5 mb-2">
+                                    <h3 class="xl:text-[20px] text-lg font-normal">Instagram</h3>
+                                    <hr class="w-4 border" />
+                                </div>
+
+                                <div class="grid 1xl:gap-[9px] gap-[7px] 2xl:grid-cols-4 grid-cols-3">
+
+                                    <!-- 1ST CARD -->
+                                    <div class="group">
+                                        <div class="relative">
+                                            <div
+                                                class="relative w-full h-full before:block before:content-[''] before:pt-full">
+                                                <img decoding="async" loading="lazy" src="/assets/image/blog detail 1.webp"
+                                                    alt="POST"
+                                                    class="z-0 absolute top-0 bottom-0 left-0 right-0 h-full w-full object-cover">
+                                            </div>
+                                            <a href="https://www.instagram.com/" class="absolute flex items-center justify-center w-full h-full top-0 opacity-0 group-hover:opacity-100 
+                                            transition-all ease-in-out duration-300 bg-black/45">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                    viewBox="0 0 24 24">
+                                                    <g fill="none" stroke="white" stroke-width="1.5">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M12 16a4 4 0 1 0 0-8a4 4 0 0 0 0 8" />
+                                                        <path
+                                                            d="M3 16V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5Z" />
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="m17.5 6.51l.01-.011" />
+                                                    </g>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- 2ND CARD -->
+                                    <div class="group">
+                                        <div class="relative">
+                                            <div
+                                                class="relative w-full h-full before:block before:content-[''] before:pt-full">
+                                                <img decoding="async" loading="lazy" src="/assets/image/blog detail 2.webp"
+                                                    alt="POST"
+                                                    class="z-0 absolute top-0 bottom-0 left-0 right-0 h-full w-full object-cover">
+                                            </div>
+                                            <a href="https://www.instagram.com/" class="absolute flex items-center justify-center w-full h-full top-0 opacity-0 group-hover:opacity-100 
+                                            transition-all ease-in-out duration-300 bg-black/45">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                    viewBox="0 0 24 24">
+                                                    <g fill="none" stroke="white" stroke-width="1.5">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M12 16a4 4 0 1 0 0-8a4 4 0 0 0 0 8" />
+                                                        <path
+                                                            d="M3 16V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5Z" />
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="m17.5 6.51l.01-.011" />
+                                                    </g>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- 3RD CARD -->
+                                    <div class="group">
+                                        <div class="relative">
+                                            <div
+                                                class="relative w-full h-full before:block before:content-[''] before:pt-full">
+                                                <img decoding="async" loading="lazy" src="/assets/image/blog detail 3.webp"
+                                                    alt="POST"
+                                                    class="z-0 absolute top-0 bottom-0 left-0 right-0 h-full w-full object-cover">
+                                            </div>
+                                            <a href="https://www.instagram.com/" class="absolute flex items-center justify-center w-full h-full top-0 opacity-0 group-hover:opacity-100 
+                                            transition-all ease-in-out duration-300 bg-black/45">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                    viewBox="0 0 24 24">
+                                                    <g fill="none" stroke="white" stroke-width="1.5">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M12 16a4 4 0 1 0 0-8a4 4 0 0 0 0 8" />
+                                                        <path
+                                                            d="M3 16V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5Z" />
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="m17.5 6.51l.01-.011" />
+                                                    </g>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- 4TH CARD -->
+                                    <div class="group">
+                                        <div class="relative">
+                                            <div
+                                                class="relative w-full h-full before:block before:content-[''] before:pt-full">
+                                                <img decoding="async" loading="lazy" src="/assets/image/blog detail 4.webp"
+                                                    alt="POST"
+                                                    class="z-0 absolute top-0 bottom-0 left-0 right-0 h-full w-full object-cover">
+                                            </div>
+                                            <a href="https://www.instagram.com/" class="absolute flex items-center justify-center w-full h-full top-0 opacity-0 group-hover:opacity-100 
+                                            transition-all ease-in-out duration-300 bg-black/45">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                    viewBox="0 0 24 24">
+                                                    <g fill="none" stroke="white" stroke-width="1.5">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M12 16a4 4 0 1 0 0-8a4 4 0 0 0 0 8" />
+                                                        <path
+                                                            d="M3 16V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5Z" />
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="m17.5 6.51l.01-.011" />
+                                                    </g>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- 5TH CARD -->
+                                    <div class="group">
+                                        <div class="relative">
+                                            <div
+                                                class="relative w-full h-full before:block before:content-[''] before:pt-full">
+                                                <img decoding="async" loading="lazy" src="/assets/image/blog detail 5.webp"
+                                                    alt="POST"
+                                                    class="z-0 absolute top-0 bottom-0 left-0 right-0 h-full w-full object-cover">
+                                            </div>
+                                            <a href="https://www.instagram.com/" class="absolute flex items-center justify-center w-full h-full top-0 opacity-0 group-hover:opacity-100 
+                                            transition-all ease-in-out duration-300 bg-black/45">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                    viewBox="0 0 24 24">
+                                                    <g fill="none" stroke="white" stroke-width="1.5">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M12 16a4 4 0 1 0 0-8a4 4 0 0 0 0 8" />
+                                                        <path
+                                                            d="M3 16V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5Z" />
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="m17.5 6.51l.01-.011" />
+                                                    </g>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- 6TH CARD -->
+                                    <div class="group">
+                                        <div class="relative">
+                                            <div
+                                                class="relative w-full h-full before:block before:content-[''] before:pt-full">
+                                                <img decoding="async" loading="lazy" src="/assets/image/blog detail 6.webp"
+                                                    alt="POST"
+                                                    class="z-0 absolute top-0 bottom-0 left-0 right-0 h-full w-full object-cover object-right">
+                                            </div>
+                                            <a href="https://www.instagram.com/" class="absolute flex items-center justify-center w-full h-full top-0 opacity-0 group-hover:opacity-100 
+                                            transition-all ease-in-out duration-300 bg-black/45">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                    viewBox="0 0 24 24">
+                                                    <g fill="none" stroke="white" stroke-width="1.5">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M12 16a4 4 0 1 0 0-8a4 4 0 0 0 0 8" />
+                                                        <path
+                                                            d="M3 16V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5Z" />
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="m17.5 6.51l.01-.011" />
+                                                    </g>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- 7TH CARD -->
+                                    <div class="group">
+                                        <div class="relative">
+                                            <div
+                                                class="relative w-full h-full before:block before:content-[''] before:pt-full">
+                                                <img decoding="async" loading="lazy" src="/assets/image/blog detail 7.webp"
+                                                    alt="POST"
+                                                    class="z-0 absolute top-0 bottom-0 left-0 right-0 h-full w-full object-cover object-right">
+                                            </div>
+                                            <a href="https://www.instagram.com/" class="absolute flex items-center justify-center w-full h-full top-0 opacity-0 group-hover:opacity-100 
+                                            transition-all ease-in-out duration-300 bg-black/45">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                    viewBox="0 0 24 24">
+                                                    <g fill="none" stroke="white" stroke-width="1.5">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M12 16a4 4 0 1 0 0-8a4 4 0 0 0 0 8" />
+                                                        <path
+                                                            d="M3 16V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5Z" />
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="m17.5 6.51l.01-.011" />
+                                                    </g>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Main Content -->
+                        <main class="flex-1 bg-white rounded-lg">
+                            <div class="flex sm:flex-row flex-col justify-between items-center md:mb-6 mb-4 gap-4 ">
+                                <h3 class="lg:w-auto w-full sm:text-start text-center">Latest Blogs</h3>
+                                <div
+                                    class="flex flex-row sm:gap-0 gap-2 items-center sm:space-x-4 space-x-2 relative group h-full my-auto lg:w-auto lg:p-0 sm:p-4 py-2 px-4 lg:bg-transparent w-full sm:justify-end justify-between sm:bg-transparent bg-violet-400 ">
+                                    <div class="relative">
+                                        <div class="flex items-center justify-center w-full">
+                                            <div x-data="{ open: false }" class="relative inline-block text-left">
+                                                <button type="button" @click="open = !open"
+                                                    class="group inline-flex justify-center items-center w-full sm:px-4 sm:py-2 1xl:text-lg sm:text-[17px] text-base text-gray-800 focus:text-violet-900">
+                                                    Default Sorting
+                                                    <svg class="h-5 w-5 ml-2 group-active:rotate-180 group-focus:rotate-180 transition-all ease-in-out duration-300"
+                                                        fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                                    </svg>
+                                                </button>
+                                                <div x-show="open" @click.away="open = false"
+                                                    class="z-50 origin-top-left absolute left-0 mt-2 w-56 shadow-lg bg-white ring-1 ring-black ring-opacity-5 px-2 py-2">
+                                                    <a href="#"
+                                                        class="block px-4 py-2 text-base text-gray-800 hover:bg-violet-900 hover:text-white">Sorting
+                                                        - 1</a>
+                                                    <a href="#"
+                                                        class="block px-4 py-2 text-base text-gray-800 hover:bg-violet-900 hover:text-white">Sorting
+                                                        - 2</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="relative">
+                                        <button id="openSidebar"
+                                            class="sm:p-2  p-1 sm:bg-violet-400 bg-white group/grid rounded-md hover/grid:bg-violet-900 lg:hidden group/filter">
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                class="stroke-black sm:w-[22px] w-[19px] group-hover/filter:stroke-white"
+                                                viewBox="0 0 24 24">
+                                                <path fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                                    stroke-width="1.5"
+                                                    d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25zm0 9.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18zM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25zm0 9.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18z" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product Container -->
+                            <div
+                                class="grid grid-cols-1 xl:grid-cols-2 divide-lightborder-100 1xl:gap-[24px] gap-[18px]">
+{{ collection:blogs }}
+{{ partial:partials/journal-card }}
+{{ /collection:blogs }}
+</div>
+
+                            <div class="pagination flex flex-wrap justify-center space-x-2 mt-[50px]">
+                                <button
+                                    class="pagination-item px-2 py-2 border border-lightborder-100 bg-white hover:bg-violet-900 group"
+                                    id="prevBtn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"
+                                        class="fill-black group-hover:fill-white group-hover:animate-slideLeft 1xl:w-[22px] xl:w-[19px] w-[16px]">
+                                        <path
+                                            d="M529.408 149.376a29.12 29.12 0 0 1 41.728 0a30.59 30.59 0 0 1 0 42.688L259.264 511.936l311.872 319.936a30.59 30.59 0 0 1-.512 43.264a29.12 29.12 0 0 1-41.216-.512L197.76 534.272a32 32 0 0 1 0-44.672zm256 0a29.12 29.12 0 0 1 41.728 0a30.59 30.59 0 0 1 0 42.688L515.264 511.936l311.872 319.936a30.59 30.59 0 0 1-.512 43.264a29.12 29.12 0 0 1-41.216-.512L453.76 534.272a32 32 0 0 1 0-44.672z" />
+                                    </svg>
+                                </button>
+
+                                <!-- Pagination Numbers -->
+                                <button
+                                    class="pagination-item px-4 py-2 bg-white border border-lightborder-100 hover:bg-violet-900 hover:text-white sm:text-[16px] text-[10px]"
+                                    data-page="1">1</button>
+                                <button
+                                    class="pagination-item px-4 py-2 bg-white border border-lightborder-100 hover:bg-violet-900 hover:text-white sm:text-[16px] text-[10px]"
+                                    data-page="2">2</button>
+                                <button
+                                    class="pagination-item px-4 py-2 bg-white border border-lightborder-100 hover:bg-violet-900 hover:text-white sm:text-[16px] text-[10px]"
+                                    data-page="3">3</button>
+                                <button
+                                    class="pagination-item px-4 py-2 bg-white border border-lightborder-100 hover:bg-violet-900 hover:text-white sm:text-[16px] text-[10px]"
+                                    data-page="4">4</button>
+
+                                <button
+                                    class="pagination-item px-2 py-2 border border-lightborder-100 bg-white hover:bg-violet-900 group"
+                                    id="nextBtn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"
+                                        class="fill-black group-hover:fill-white group-hover:animate-slideRight 1xl:w-[22px] xl:w-[19px] w-[16px]">
+                                        <path
+                                            d="M452.864 149.312a29.12 29.12 0 0 1 41.728.064L826.24 489.664a32 32 0 0 1 0 44.672L494.592 874.624a29.12 29.12 0 0 1-41.728 0a30.59 30.59 0 0 1 0-42.752L764.736 512L452.864 192a30.59 30.59 0 0 1 0-42.688m-256 0a29.12 29.12 0 0 1 41.728.064L570.24 489.664a32 32 0 0 1 0 44.672L238.592 874.624a29.12 29.12 0 0 1-41.728 0a30.59 30.59 0 0 1 0-42.752L508.736 512L196.864 192a30.59 30.59 0 0 1 0-42.688" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

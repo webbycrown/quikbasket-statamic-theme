@@ -1,0 +1,12 @@
+<section class="2xl:py-[50px] 1xl:py-[45px] xl:py-[40px] lg:py-[35px] md:py-[30px] sm:py-[27px] py-[25px] relative">
+    <div class="container">
+        <div class="grid lg:grid-cols-4 grid-cols-2 gap-3 lg:gap-6">
+            {{ items }}
+            <div class="2xl:p-8 sm:p-6 xl:py-8 p-1.5 border border-[#00000026] bg-violet-400">
+                <img decoding="async" loading="lazy" alt="{{ label }}" width="50" height="50" class="m-auto" src="{{ partial:partials/media-url :file="image" }}" />
+                <p class="mt-4 text-center text-black font-normal">{{ label }}</p>
+            </div>
+            {{ /items }}
+        </div>
+    </div>
+</section>

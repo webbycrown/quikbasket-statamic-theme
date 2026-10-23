@@ -1,0 +1,10 @@
+{{ partial:partials/crumb :label="heading" }}
+<section class="relative 1xl:py-[30px] md:py-[25px] py-[20px]">
+    <div class="container">
+        <h1 class="font-medium sm:mb-[18px] mb-[15px]">{{ heading }}</h1>
+        {{ if image }}
+        <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="{{ heading }}" class="w-full max-h-[460px] object-cover mb-6" />
+        {{ /if }}
+        <div class="prose max-w-none 2xl:text-lg text-base">{{ body }}</div>
+    </div>
+</section>

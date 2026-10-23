@@ -1,0 +1,33 @@
+<section class="pb-[20px] sm:pb-[25px] md:pb-[30px] lg:pb-[35px] xl:pb-[40px] 1xl:pb-[45px] 2xl:pb-[50px]">
+    <div class="relative bg-violet-400 lg:py-14 2xl:py-20 md:py-7 py-6 wp-top-arrows">
+        <div class="categories relative">
+            <div class="container">
+                <div class="flex md:justify-between justify-center items-center 1xl:mb-[40px] lg:mb-[35px] mb-[30px]">
+                    <h3 class="leading-8 text-[#1F2937] z-10 md:text-start text-center">{{ heading }}</h3>
+                    <div class="relative arrow md:block hidden">
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev pr-[10px]"></div>
+                    </div>
+                </div>
+                <div class="swiper wc_fashion_categories_slider">
+                    <div class="swiper-wrapper">
+                        {{ taxonomy:categories }}
+                        <div class="swiper-slide w-full m-0 group">
+                            <div class="relative group transition-all pb-2">
+                                <div class="w-full bg-white relative transition-all overflow-hidden">
+                                    <a href="{{ url }}" class="before:block before:content-[''] 2xl:before:pt-[280px] xl:before:pt-[255px] md:before:pt-[250px] sm:before:pt-[215px] before:pt-[100%]">
+                                        <img decoding="async" loading="lazy" alt="{{ title }}" src="{{ partial:partials/media-url :file="image" }}" class="absolute-img group-hover:scale-105 duration-300 transition-all m-auto" />
+                                    </a>
+                                </div>
+                                <h3 class="font-normal text-lg 2xl:text-[22px] text-gray-800 text-center mt-4 block group-hover:text-violet-900">
+                                    <a href="{{ url }}">{{ title }}</a>
+                                </h3>
+                            </div>
+                        </div>
+                        {{ /taxonomy:categories }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

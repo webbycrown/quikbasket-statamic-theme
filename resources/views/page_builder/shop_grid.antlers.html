@@ -1,0 +1,591 @@
+<!--==== PAGE-NAME ====-->
+    <section class="relative 1xl:pb-[30px] md:pb-[25px] pb-[20px]">
+        <div class="bg-violet-400">
+            <div class="container">
+                <div class="flex items-center sm:gap-[4px] gap-0 md:py-[15px] py-[10px]">
+                    <div class="flex items-center justify-between sm:gap-[7px] gap-1 group">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56"
+                            class="fill-gray-800 size-4 group-hover:fill-violet-900">
+                            <path
+                                d="M.625 27.824c0 1.125.89 1.805 1.992 1.805c.68 0 1.219-.328 1.688-.797L27.18 7.996c.257-.258.539-.352.843-.352c.282 0 .54.094.82.352l22.852 20.836c.492.469 1.031.797 1.688.797c1.101 0 1.992-.68 1.992-1.805c0-.703-.258-1.148-.703-1.547l-8.11-7.382V5.043c0-1.031-.656-1.687-1.687-1.687h-3.07c-1.008 0-1.711.656-1.711 1.687v7.969l-9.282-8.485C29.992 3.754 28.984 3.38 28 3.38c-.985 0-1.969.375-2.813 1.148L1.328 26.277c-.422.399-.703.844-.703 1.547m6.703 19.664c0 3.258 1.969 5.157 5.273 5.157h9.493V35.98c0-1.078.726-1.78 1.804-1.78h8.274c1.078 0 1.781.702 1.781 1.78v16.665h9.469c3.304 0 5.25-1.899 5.25-5.157V30.332l-19.899-17.93c-.258-.234-.539-.351-.82-.351c-.258 0-.516.117-.797.375L7.328 30.449Z" />
+                        </svg>
+                        <p
+                            class="fill-gray-800 group-hover:text-violet-900 2xl:text-lg lg:text-base md:text-[15px] text-sm">
+                            <a href="/">Home</a>
+                        </p>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="stroke-gray-800 size-7">
+                        <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="m10 17l5-5l-5-5" />
+                    </svg>
+                    <p class="fill-gray-800 2xl:text-lg lg:text-base md:text-[15px] text-sm"><a href="#">Shop</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--==== FILTER-SHOP ====-->
+    <section class="relative 1xl:py-[30px] md:py-[25px] py-[20px]">
+        <div class="container">
+            <div class="min-h-screen">
+                <div class="mx-auto">
+                    <div class="flex gap-[54px]">
+
+                        <!-- Sidebar -->
+                        <div id="sidebar"
+                            class="fixed lg:overflow-auto overflow-scroll lg:z-0 z-50 top-0 left-0 bg-white 1xl:w-[290px] xl:w-[240px] lg:w-[200px] w-[275px] lg:shadow-none shadow-2xl max-w-full lg:p-0 p-4 h-full transform -translate-x-full lg:translate-x-0 lg:static lg:block transition-transform duration-300 ease-in-out">
+                            <div class="divide-y divide-lightborder-100">
+                                <div class="flex items-center justify-between mb-4">
+                                    <h2 class="xl:text-[24px] text-[22px] font-normal">Filter</h2>
+                                    <!-- Close Button -->
+                                    <button id="closeSidebar" class="lg:hidden text-black text-lg">✕</button>
+                                </div>
+                                <!-- Filter Content -->
+                                <div class="2xl:mb-6 2xl:pt-6 mb-5 xl:pt-5 pt-3">
+                                    <div class="flex items-center justify-between w-full xl:mb-4 mb-2">
+                                        <h3 class="xl:text-[20px] text-lg font-normal">Category</h3>
+                                        <hr class="w-4 border" />
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <ul class="1xl:space-y-2 space-y-1">
+                                            <li class="group">
+                                                <input id="1" type="checkbox" class="hidden peer"
+                                                    name="preferred_activities[]" value="1" />
+                                                <label for="1"
+                                                    class="cursor-pointer text-gray-800 group-hover:text-violet-900 peer-checked:text-violet-900 w-full inline-flex items-center justify-between py-1 group-hover:px-2 peer-checked:px-2 transition-all ease-in-out">
+                                                    <div class="flex items-center justify-between w-full">
+                                                        <div class="xl:text-base text-sm font-normal">Trending</div>
+                                                        <div class="xl:text-base text-sm font-normal">(344)</div>
+                                                    </div>
+                                                </label>
+                                            </li>
+                                            <li class="group">
+                                                <input id="2" type="checkbox" class="hidden peer"
+                                                    name="preferred_activities[]" value="2" />
+                                                <label for="2"
+                                                    class="cursor-pointer text-gray-800 group-hover:text-violet-900 peer-checked:text-violet-900 w-full inline-flex items-center justify-between py-1 group-hover:px-2 peer-checked:px-2 transition-all ease-in-out">
+                                                    <div class="flex items-center justify-between w-full">
+                                                        <div class="xl:text-base text-sm font-normal">Best Sellers</div>
+                                                        <div class="xl:text-base text-sm font-normal">(56)</div>
+                                                    </div>
+                                                </label>
+                                            </li>
+                                            <li class="group">
+                                                <input id="3" type="checkbox" class="hidden peer"
+                                                    name="preferred_activities[]" value="3" />
+                                                <label for="3"
+                                                    class="cursor-pointer text-gray-800 group-hover:text-violet-900 peer-checked:text-violet-900 w-full inline-flex items-center justify-between py-1 group-hover:px-2 peer-checked:px-2 transition-all ease-in-out">
+                                                    <div class="flex items-center justify-between w-full">
+                                                        <div class="xl:text-base text-sm font-normal">Shoes</div>
+                                                        <div class="xl:text-base text-sm font-normal">(66)</div>
+                                                    </div>
+                                                </label>
+                                            </li>
+                                            <li class="group">
+                                                <input id="4" type="checkbox" class="hidden peer"
+                                                    name="preferred_activities[]" value="4" />
+                                                <label for="4"
+                                                    class="cursor-pointer text-gray-800 group-hover:text-violet-900 peer-checked:text-violet-900 w-full inline-flex items-center justify-between py-1 group-hover:px-2 peer-checked:px-2 transition-all ease-in-out">
+                                                    <div class="flex items-center justify-between w-full">
+                                                        <div class="xl:text-base text-sm font-normal">Jewellery</div>
+                                                        <div class="xl:text-base text-sm font-normal">(345)</div>
+                                                    </div>
+                                                </label>
+                                            </li>
+                                            <li class="group">
+                                                <input id="5" type="checkbox" class="hidden peer"
+                                                    name="preferred_activities[]" value="5" />
+                                                <label for="5"
+                                                    class="cursor-pointer text-gray-800 group-hover:text-violet-900 peer-checked:text-violet-900 w-full inline-flex items-center justify-between py-1 group-hover:px-2 peer-checked:px-2 transition-all ease-in-out">
+                                                    <div class="flex items-center justify-between w-full">
+                                                        <div class="xl:text-base text-sm font-normal">Dress</div>
+                                                        <div class="xl:text-base text-sm font-normal">(256)</div>
+                                                    </div>
+                                                </label>
+                                            </li>
+                                            <li class="group">
+                                                <input id="6" type="checkbox" class="hidden peer"
+                                                    name="preferred_activities[]" value="6" />
+                                                <label for="6"
+                                                    class="cursor-pointer text-gray-800 group-hover:text-violet-900 peer-checked:text-violet-900 w-full inline-flex items-center justify-between py-1 group-hover:px-2 peer-checked:px-2 transition-all ease-in-out">
+                                                    <div class="flex items-center justify-between w-full">
+                                                        <div class="xl:text-base text-sm font-normal">Coat</div>
+                                                        <div class="xl:text-base text-sm font-normal">(333)</div>
+                                                    </div>
+                                                </label>
+                                            </li>
+                                            <li class="group">
+                                                <input id="7" type="checkbox" class="hidden peer"
+                                                    name="preferred_activities[]" value="7" />
+                                                <label for="7"
+                                                    class="cursor-pointer text-gray-800 group-hover:text-violet-900 peer-checked:text-violet-900 w-full inline-flex items-center justify-between py-1 group-hover:px-2 peer-checked:px-2 transition-all ease-in-out">
+                                                    <div class="flex items-center justify-between w-full">
+                                                        <div class="xl:text-base text-sm font-normal">Sweater</div>
+                                                        <div class="xl:text-base text-sm font-normal">(56)</div>
+                                                    </div>
+                                                </label>
+                                            </li>
+                                            <li class="group">
+                                                <input id="8" type="checkbox" class="hidden peer"
+                                                    name="preferred_activities[]" value="8" />
+                                                <label for="8"
+                                                    class="cursor-pointer text-gray-800 group-hover:text-violet-900 peer-checked:text-violet-900 w-full inline-flex items-center justify-between py-1 group-hover:px-2 peer-checked:px-2 transition-all ease-in-out">
+                                                    <div class="flex items-center justify-between w-full">
+                                                        <div class="xl:text-base text-sm font-normal">Bags</div>
+                                                        <div class="xl:text-base text-sm font-normal">(777)</div>
+                                                    </div>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="2xl:mb-6 2xl:pt-6 mb-5 xl:pt-5 pt-3">
+                                    <div class="flex items-center justify-between w-full xl:mb-4 mb-2">
+                                        <h3 class="xl:text-[20px] text-lg font-normal">Colors</h3>
+                                        <hr class="w-4 border" />
+                                    </div>
+                                    <div>
+                                        <div class="flex flex-wrap 1xl:gap-3 gap-2">
+                                            <!-- Each color is wrapped in a label for radio input -->
+                                            <label class="relative cursor-pointer">
+                                                <input type="radio" name="color" class="peer hidden" />
+                                                <div
+                                                    class="xl:w-6 xl:h-6 w-5 h-5 rounded-full bg-[#F5EAD6] border-[#F5EAD6] border-2 peer-checked:border-white">
+                                                </div>
+                                            </label>
+                                            <label class="relative cursor-pointer">
+                                                <input type="radio" name="color" class="peer hidden" />
+                                                <div
+                                                    class="xl:w-6 xl:h-6 w-5 h-5 rounded-full bg-[#F6B545] border-[#F6B545] border-2 peer-checked:border-white">
+                                                </div>
+                                            </label>
+                                            <label class="relative cursor-pointer">
+                                                <input type="radio" name="color" class="peer hidden" />
+                                                <div
+                                                    class="xl:w-6 xl:h-6 w-5 h-5 rounded-full bg-[#591E1E] border-[#591E1E] border-2 peer-checked:border-white">
+                                                </div>
+                                            </label>
+                                            <label class="relative cursor-pointer">
+                                                <input type="radio" name="color" class="peer hidden" />
+                                                <div
+                                                    class="xl:w-6 xl:h-6 w-5 h-5 rounded-full bg-[#C62E27] border-[#C62E27] border-2 peer-checked:border-white">
+                                                </div>
+                                            </label>
+                                            <label class="relative cursor-pointer">
+                                                <input type="radio" name="color" class="peer hidden" />
+                                                <div
+                                                    class="xl:w-6 xl:h-6 w-5 h-5 rounded-full bg-[#49739F] border-[#49739F] border-2 peer-checked:border-white">
+                                                </div>
+                                            </label>
+                                            <label class="relative cursor-pointer">
+                                                <input type="radio" name="color" class="peer hidden" />
+                                                <div
+                                                    class="xl:w-6 xl:h-6 w-5 h-5 rounded-full bg-[#1BB4A3] border-[#1BB4A3] border-2 peer-checked:border-white">
+                                                </div>
+                                            </label>
+                                            <label class="relative cursor-pointer">
+                                                <input type="radio" name="color" class="peer hidden" />
+                                                <div
+                                                    class="xl:w-6 xl:h-6 w-5 h-5 rounded-full bg-[#8D30A5] border-[#8D30A5] border-2 peer-checked:border-white">
+                                                </div>
+                                            </label>
+                                            <label class="relative cursor-pointer">
+                                                <input type="radio" name="color" class="peer hidden" />
+                                                <div
+                                                    class="xl:w-6 xl:h-6 w-5 h-5 rounded-full bg-[#D9A3A0] border-[#D9A3A0] border-2 peer-checked:border-white">
+                                                </div>
+                                            </label>
+                                            <label class="relative cursor-pointer">
+                                                <input type="radio" name="color" class="peer hidden" />
+                                                <div
+                                                    class="xl:w-6 xl:h-6 w-5 h-5 rounded-full bg-[#FF9DA3] border-[#FF9DA3] border-2 peer-checked:border-white">
+                                                </div>
+                                            </label>
+                                            <label class="relative cursor-pointer">
+                                                <input type="radio" name="color" class="peer hidden" />
+                                                <div
+                                                    class="xl:w-6 xl:h-6 w-5 h-5 rounded-full bg-[#FF1010] border-[#FF1010] border-2 peer-checked:border-white">
+                                                </div>
+                                            </label>
+                                            <label class="relative cursor-pointer">
+                                                <input type="radio" name="color" class="peer hidden" />
+                                                <div
+                                                    class="xl:w-6 xl:h-6 w-5 h-5 rounded-full bg-[#B45353] border-[#B45353] border-2 peer-checked:border-white">
+                                                </div>
+                                            </label>
+                                            <label class="relative cursor-pointer">
+                                                <input type="radio" name="color" class="peer hidden" />
+                                                <div
+                                                    class="xl:w-6 xl:h-6 w-5 h-5 rounded-full bg-[#89EDDB] border-[#89EDDB] border-2 peer-checked:border-white">
+                                                </div>
+                                            </label>
+                                            <label class="relative cursor-pointer">
+                                                <input type="radio" name="color" class="peer hidden" />
+                                                <div
+                                                    class="xl:w-6 xl:h-6 w-5 h-5 rounded-full bg-[#700E2C] border-[#700E2C] border-2 peer-checked:border-white">
+                                                </div>
+                                            </label>
+                                            <label class="relative cursor-pointer">
+                                                <input type="radio" name="color" class="peer hidden" />
+                                                <div
+                                                    class="xl:w-6 xl:h-6 w-5 h-5 rounded-full bg-black border-2 peer-checked:border-white">
+                                                </div>
+                                            </label>
+                                            <label class="relative cursor-pointer">
+                                                <input type="radio" name="color" class="peer hidden" />
+                                                <div
+                                                    class="xl:w-6 xl:h-6 w-5 h-5 rounded-full bg-[#1F4949] border-[#1F4949] border-2 peer-checked:border-white">
+                                                </div>
+                                            </label>
+                                            <label class="relative cursor-pointer">
+                                                <input type="radio" name="color" class="peer hidden" />
+                                                <div
+                                                    class="xl:w-6 xl:h-6 w-5 h-5 rounded-full bg-[#30C651] border-[#30C651] border-2 peer-checked:border-white">
+                                                </div>
+                                            </label>
+                                            <label class="relative cursor-pointer">
+                                                <input type="radio" name="color" class="peer hidden" />
+                                                <div
+                                                    class="xl:w-6 xl:h-6 w-5 h-5 rounded-full bg-[#C2E2C4] border-[#C2E2C4] border-2 peer-checked:border-white">
+                                                </div>
+                                            </label>
+                                            <label class="relative cursor-pointer">
+                                                <input type="radio" name="color" class="peer hidden" />
+                                                <div
+                                                    class="xl:w-6 xl:h-6 w-5 h-5 rounded-full bg-[#7971D7] border-[#7971D7] border-2 peer-checked:border-white">
+                                                </div>
+                                            </label>
+                                            <label class="relative cursor-pointer">
+                                                <input type="radio" name="color" class="peer hidden" />
+                                                <div
+                                                    class="xl:w-6 xl:h-6 w-5 h-5 rounded-full bg-[#4FE0BD] border-[#4FE0BD] border-2 peer-checked:border-white">
+                                                </div>
+                                            </label>
+                                            <label class="relative cursor-pointer">
+                                                <input type="radio" name="color" class="peer hidden" />
+                                                <div
+                                                    class="xl:w-6 xl:h-6 w-5 h-5 rounded-full bg-[#A5C648] border-[#A5C648] border-2 peer-checked:border-white">
+                                                </div>
+                                            </label>
+                                            <label class="relative cursor-pointer">
+                                                <input type="radio" name="color" class="peer hidden" />
+                                                <div
+                                                    class="xl:w-6 xl:h-6 w-5 h-5 rounded-full bg-[#0085FF] border-[#0085FF] border-2 peer-checked:border-white">
+                                                </div>
+                                            </label>
+                                            <!-- Continue adding colors as needed -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="2xl:mb-6 2xl:pt-6 mb-5 xl:pt-5 pt-3">
+                                    <div>
+                                        <!-- Header -->
+                                        <div class="flex items-center justify-between w-full">
+                                            <h3 class="xl:text-[20px] text-lg font-normal">Size</h3>
+                                            <hr class="w-4 border" />
+                                        </div>
+
+                                        <!-- Size Options -->
+                                        <div class="flex flex-wrap xl:gap-2 gap-1 mt-4">
+                                            <!-- Each size option -->
+                                            <label class="relative group">
+                                                <input type="radio" name="size" value="XS" class="peer hidden" />
+                                                <div
+                                                    class="group-hover:bg-violet-900 group-hover:text-white border border-gray-300 1xl:px-4 px-3 py-2 2xl:text-base xl:text-sm text-xs text-gray-800 peer-checked:border-violet-900 peer-checked:bg-violet-900 peer-checked:text-white cursor-pointer">
+                                                    XS
+                                                </div>
+                                            </label>
+                                            <label class="relative group">
+                                                <input type="radio" name="size" value="S" class="peer hidden" />
+                                                <div
+                                                    class="group-hover:bg-violet-900 group-hover:text-white border border-gray-300 1xl:px-4 px-3 py-2 2xl:text-base xl:text-sm text-xs text-gray-800 peer-checked:border-violet-900 peer-checked:bg-violet-900 peer-checked:text-white cursor-pointer">
+                                                    S
+                                                </div>
+                                            </label>
+                                            <label class="relative group">
+                                                <input type="radio" name="size" value="M" class="peer hidden" />
+                                                <div
+                                                    class="group-hover:bg-violet-900 group-hover:text-white border border-gray-300 1xl:px-4 px-3 py-2 2xl:text-base xl:text-sm text-xs text-gray-800 peer-checked:border-violet-900 peer-checked:bg-violet-900 peer-checked:text-white cursor-pointer">
+                                                    M
+                                                </div>
+                                            </label>
+                                            <label class="relative group">
+                                                <input type="radio" name="size" value="L" class="peer hidden" />
+                                                <div
+                                                    class="group-hover:bg-violet-900 group-hover:text-white border border-gray-300 1xl:px-4 px-3 py-2 2xl:text-base xl:text-sm text-xs text-gray-800 peer-checked:border-violet-900 peer-checked:bg-violet-900 peer-checked:text-white cursor-pointer">
+                                                    L
+                                                </div>
+                                            </label>
+                                            <label class="relative group">
+                                                <input type="radio" name="size" value="XXL" class="peer hidden" />
+                                                <div
+                                                    class="group-hover:bg-violet-900 group-hover:text-white border border-gray-300 1xl:px-4 px-3 py-2 2xl:text-base xl:text-sm text-xs text-gray-800 peer-checked:border-violet-900 peer-checked:bg-violet-900 peer-checked:text-white cursor-pointer">
+                                                    XXL
+                                                </div>
+                                            </label>
+                                            <label class="relative group">
+                                                <input type="radio" name="size" value="1X" class="peer hidden" />
+                                                <div
+                                                    class="group-hover:bg-violet-900 group-hover:text-white border border-gray-300 1xl:px-4 px-3 py-2 2xl:text-base xl:text-sm text-xs text-gray-800 peer-checked:border-violet-900 peer-checked:bg-violet-900 peer-checked:text-white cursor-pointer">
+                                                    1X
+                                                </div>
+                                            </label>
+                                            <label class="relative group">
+                                                <input type="radio" name="size" value="2X" class="peer hidden" />
+                                                <div
+                                                    class="group-hover:bg-violet-900 group-hover:text-white border border-gray-300 1xl:px-4 px-3 py-2 2xl:text-base xl:text-sm text-xs text-gray-800 peer-checked:border-violet-900 peer-checked:bg-violet-900 peer-checked:text-white cursor-pointer">
+                                                    2X
+                                                </div>
+                                            </label>
+                                            <label class="relative group">
+                                                <input type="radio" name="size" value="3X" class="peer hidden" />
+                                                <div
+                                                    class="group-hover:bg-violet-900 group-hover:text-white border border-gray-300 1xl:px-4 px-3 py-2 2xl:text-base xl:text-sm text-xs text-gray-800 peer-checked:border-violet-900 peer-checked:bg-violet-900 peer-checked:text-white cursor-pointer">
+                                                    3X
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="2xl:mb-6 2xl:pt-6 mb-5 xl:pt-5 pt-3">
+                                    <div class="flex items-center justify-between w-full xl:mb-4 mb-2">
+                                        <h3 class="xl:text-[20px] text-lg font-normal">Price</h3>
+                                        <hr class="w-4 border" />
+                                    </div>
+                                    <ul class="space-y-2">
+                                        <li class="group">
+                                            <input id="9" type="checkbox" class="hidden peer"
+                                                name="preferred_activities[]" value="9" />
+                                            <label for="9"
+                                                class="cursor-pointer text-gray-800 group-hover:text-violet-900 peer-checked:text-violet-900 w-full inline-flex items-center justify-between py-1 group-hover:px-2 peer-checked:px-2 transition-all ease-in-out">
+                                                <div class="flex items-center justify-between w-full gap-2">
+                                                    <div class="xl:text-base text-sm font-normal">All</div>
+                                                    <div class="xl:text-base text-sm font-normal">(344)</div>
+                                                </div>
+                                            </label>
+                                        </li>
+                                        <li class="group">
+                                            <input id="10" type="checkbox" class="hidden peer"
+                                                name="preferred_activities[]" value="10" />
+                                            <label for="10"
+                                                class="cursor-pointer text-gray-800 group-hover:text-violet-900 peer-checked:text-violet-900 w-full inline-flex items-center justify-between py-1 group-hover:px-2 peer-checked:px-2 transition-all ease-in-out">
+                                                <div class="flex items-center justify-between w-full gap-2">
+                                                    <div class="xl:text-base text-sm font-normal">$0.00–$680.00</div>
+                                                    <div class="xl:text-base text-sm font-normal">(56)</div>
+                                                </div>
+                                            </label>
+                                        </li>
+                                        <li class="group">
+                                            <input id="11" type="checkbox" class="hidden peer"
+                                                name="preferred_activities[]" value="11" />
+                                            <label for="11"
+                                                class="cursor-pointer text-gray-800 group-hover:text-violet-900 peer-checked:text-violet-900 w-full inline-flex items-center justify-between py-1 group-hover:px-2 peer-checked:px-2 transition-all ease-in-out">
+                                                <div class="flex items-center justify-between w-full gap-2">
+                                                    <div class="xl:text-base text-sm font-normal">$680.00–$1,360.00
+                                                    </div>
+                                                    <div class="xl:text-base text-sm font-normal">(66)</div>
+                                                </div>
+                                            </label>
+                                        </li>
+                                        <li class="group">
+                                            <input id="12" type="checkbox" class="hidden peer"
+                                                name="preferred_activities[]" value="12" />
+                                            <label for="12"
+                                                class="cursor-pointer text-gray-800 group-hover:text-violet-900 peer-checked:text-violet-900 w-full inline-flex items-center justify-between py-1 group-hover:px-2 peer-checked:px-2 transition-all ease-in-out">
+                                                <div class="flex items-center justify-between w-full gap-2">
+                                                    <div class="xl:text-base text-sm font-normal">$1,360.00–$2,040.00
+                                                    </div>
+                                                    <div class="xl:text-base text-sm font-normal">(345)</div>
+                                                </div>
+                                            </label>
+                                        </li>
+                                        <li class="group">
+                                            <input id="13" type="checkbox" class="hidden peer"
+                                                name="preferred_activities[]" value="13" />
+                                            <label for="13"
+                                                class="cursor-pointer text-gray-800 group-hover:text-violet-900 peer-checked:text-violet-900 w-full inline-flex items-center justify-between py-1 group-hover:px-2 peer-checked:px-2 transition-all ease-in-out">
+                                                <div class="flex items-center justify-between w-full gap-2">
+                                                    <div class="xl:text-base text-sm font-normal">$2,040.00–$2,720.00
+                                                    </div>
+                                                    <div class="xl:text-base text-sm font-normal">(256)</div>
+                                                </div>
+                                            </label>
+                                        </li>
+                                        <li class="group">
+                                            <input id="14" type="checkbox" class="hidden peer"
+                                                name="preferred_activities[]" value="14" />
+                                            <label for="14"
+                                                class="cursor-pointer text-gray-800 group-hover:text-violet-900 peer-checked:text-violet-900 w-full inline-flex items-center justify-between py-1 group-hover:px-2 peer-checked:px-2 transition-all ease-in-out">
+                                                <div class="flex items-center justify-between w-full gap-2">
+                                                    <div class="xl:text-base text-sm font-normal">$2,720.00+</div>
+                                                    <div class="xl:text-base text-sm font-normal">(333)</div>
+                                                </div>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="2xl:mb-6 2xl:pt-6 mb-5 xl:pt-5 pt-3">
+                                    <h3 class="1xl:text-[20px] text-base font-normal mb-2">Custom Price</h3>
+                                    <div class="w-full p-4">
+                                        <!-- Slider Container -->
+                                        <div class="relative w-full h-10">
+                                            <!-- Track Background -->
+                                            <div
+                                                class="absolute top-1/2 w-full h-[0.2rem] bg-lightborder-100 rounded-full transform -translate-y-1/2">
+                                            </div>
+
+                                            <!-- Fill Track (Between Min & Max) -->
+                                            <div id="sliderFill"
+                                                class="absolute top-1/2 h-[0.2rem] bg-violet-900 rounded-full transform -translate-y-1/2">
+                                            </div>
+
+                                            <!-- Range Inputs -->
+                                            <input type="range" id="minRange" min="0" max="8000" step="50" value="0">
+                                            <input type="range" id="maxRange" min="0" max="8000" step="50" value="5800">
+                                        </div>
+                                        <!-- Min & Max Value Labels -->
+                                        <div class="flex justify-between text-gray-800 text-md mb-2">
+                                            <span id="minValue">$0.00</span>
+                                            <span id="maxValue">$5800.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Main Content -->
+                        <main class="flex-1 bg-white rounded-lg">
+                            <div class="flex flex-col justify-between items-center md:mb-6 mb-4 gap-4 ">
+                                <div
+                                    class="flex items-center sm:flex-row flex-col justify-between w-full sm:gap-0 gap-[18px]">
+                                    <h2 class="text-[30px] font-normal">Shop</h2>
+                                    <div
+                                        class="flex items-center sm:space-x-4 space-x-2 relative group h-full my-auto lg:w-auto lg:p-0 sm:p-4 py-2 px-2 lg:bg-transparent w-full sm:justify-end justify-between sm:bg-transparent bg-violet-400 ">
+                                        <!-- dropdown -->
+                                        <div class="relative inline-block text-left xl:w-48 sm:w-44 w-36"
+                                            x-data="{ open: false }">
+                                            <button type="button" @click="open = !open"
+                                                class="w-full text-gray-800 xl:text-lg text-base py-2 sm:px-4 px-1 flex justify-between items-center">
+                                                <span>Default Sorting</span>
+                                                <svg class="sm:ml-2 h-4 w-4" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                                </svg>
+                                            </button>
+
+                                            <div x-show="open" x-transition:enter="transition ease-out duration-300"
+                                                x-transition:enter-start="opacity-0 scale-95"
+                                                x-transition:enter-end="opacity-100 scale-100"
+                                                x-transition:leave="transition ease-in duration-150"
+                                                x-transition:leave-start="opacity-100 scale-100"
+                                                x-transition:leave-end="opacity-0 scale-95"
+                                                class="absolute z-30 mt-2 w-full rounded-md shadow-lg bg-white border border-gray-200 dark:bg-[#20293A] dark:border-slate-700">
+                                                <div class="py-1 text-gray-700 dark:text-gray-400 text-sm" role="menu"
+                                                    aria-orientation="vertical" aria-labelledby="options-menu">
+                                                    <a href="#"
+                                                        class="block px-4 py-2  hover:bg-gray-100 dark:hover:bg-[#161d2a]"
+                                                        role="menuitem">Option 1</a>
+                                                    <a href="#"
+                                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-[#161d2a]"
+                                                        role="menuitem">Option 2</a>
+                                                    <a href="#"
+                                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-[#161d2a]"
+                                                        role="menuitem">Option 3</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="relative flex sm:gap-4 gap-2 items-center justify-center">
+                                            <button id="openSidebar"
+                                                class="p-2 sm:bg-violet-400 bg-white group/grid rounded-md hover/grid:bg-violet-900 lg:hidden group/filter">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                    class="stroke-black sm:w-[22px] w-5 group-hover/filter:stroke-white ">
+                                                    <path fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="1.15"
+                                                        d="M20 5.6c0-.56 0-.84-.11-1.054a1 1 0 0 0-.436-.437C19.24 4 18.96 4 18.4 4H5.6c-.56 0-.84 0-1.054.109a1 1 0 0 0-.437.437C4 4.76 4 5.04 4 5.6v.737c0 .245 0 .367.028.482a1 1 0 0 0 .12.29c.061.1.148.187.32.36l5.063 5.062c.173.173.26.26.321.36q.083.136.12.29c.028.114.028.235.028.474v4.756c0 .857 0 1.286.18 1.544a1 1 0 0 0 .674.416c.311.046.695-.145 1.461-.529l.8-.4c.322-.16.482-.24.599-.36a1 1 0 0 0 .231-.374c.055-.158.055-.338.055-.697v-4.348c0-.245 0-.367.028-.482a1 1 0 0 1 .12-.29c.06-.1.147-.186.317-.356l.004-.004l5.063-5.062c.172-.173.258-.26.32-.36q.083-.136.12-.29C20 6.706 20 6.584 20 6.345z" />
+                                                </svg>
+                                            </button>
+                                            <button id="gridView"
+                                                class="p-2 bg-violet-400 group/grid rounded-md hover/grid:bg-violet-900">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                    class="rotate-90 group-hover/grid:fill-white fill-black sm:w-[22px] w-4">
+                                                    <g>
+                                                        <path
+                                                            d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+                                                        <path
+                                                            d="M20 18a1 1 0 0 1 .117 1.993L20 20H4a1 1 0 0 1-.117-1.993L4 18zm0-7a1 1 0 1 1 0 2H4a1 1 0 1 1 0-2zm0-7a1 1 0 1 1 0 2H4a1 1 0 0 1 0-2z" />
+                                                    </g>
+                                                </svg>
+                                            </button>
+                                            <button id="listView"
+                                                class="p-2 sm:bg-violet-400 bg-white group/list rounded-md hover/list:bg-violet-900">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                    class="group-hover/list:fill-white fill-black sm:w-[22px] w-4">
+                                                    <g>
+                                                        <path
+                                                            d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+                                                        <path
+                                                            d="M20 18a1 1 0 0 1 .117 1.993L20 20H4a1 1 0 0 1-.117-1.993L4 18zm0-7a1 1 0 1 1 0 2H4a1 1 0 1 1 0-2zm0-7a1 1 0 1 1 0 2H4a1 1 0 0 1 0-2z" />
+                                                    </g>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product Container -->
+                            <div id="productContainer"
+                                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 1xl:grid-cols-4 gap-6 divide-lightborder-100">
+{{ collection:products limit="12" }}
+{{ partial:partials/product-card }}
+{{ /collection:products }}
+</div>
+
+                            <div class="pagination flex flex-wrap justify-center space-x-2 mt-[50px]">
+                                <button
+                                    class="pagination-item px-2 py-2 border border-lightborder-100 bg-white hover:bg-violet-900 group"
+                                    id="prevBtn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"
+                                        class="fill-black group-hover:fill-white group-hover:animate-slideLeft 1xl:w-[22px] xl:w-[19px] w-[16px]">
+                                        <path
+                                            d="M529.408 149.376a29.12 29.12 0 0 1 41.728 0a30.59 30.59 0 0 1 0 42.688L259.264 511.936l311.872 319.936a30.59 30.59 0 0 1-.512 43.264a29.12 29.12 0 0 1-41.216-.512L197.76 534.272a32 32 0 0 1 0-44.672zm256 0a29.12 29.12 0 0 1 41.728 0a30.59 30.59 0 0 1 0 42.688L515.264 511.936l311.872 319.936a30.59 30.59 0 0 1-.512 43.264a29.12 29.12 0 0 1-41.216-.512L453.76 534.272a32 32 0 0 1 0-44.672z" />
+                                    </svg>
+                                </button>
+
+                                <!-- Pagination Numbers -->
+                                <button
+                                    class="pagination-item px-4 py-2 bg-white border border-lightborder-100 hover:bg-violet-900 hover:text-white sm:text-[16px] text-[10px]"
+                                    data-page="1">1</button>
+                                <button
+                                    class="pagination-item px-4 py-2 bg-white border border-lightborder-100 hover:bg-violet-900 hover:text-white sm:text-[16px] text-[10px]"
+                                    data-page="2">2</button>
+                                <button
+                                    class="pagination-item px-4 py-2 bg-white border border-lightborder-100 hover:bg-violet-900 hover:text-white sm:text-[16px] text-[10px]"
+                                    data-page="3">3</button>
+                                <button
+                                    class="pagination-item px-4 py-2 bg-white border border-lightborder-100 hover:bg-violet-900 hover:text-white sm:text-[16px] text-[10px]"
+                                    data-page="4">4</button>
+
+                                <button
+                                    class="pagination-item px-2 py-2 border border-lightborder-100 bg-white hover:bg-violet-900 group"
+                                    id="nextBtn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"
+                                        class="fill-black group-hover:fill-white group-hover:animate-slideRight 1xl:w-[22px] xl:w-[19px] w-[16px]">
+                                        <path
+                                            d="M452.864 149.312a29.12 29.12 0 0 1 41.728.064L826.24 489.664a32 32 0 0 1 0 44.672L494.592 874.624a29.12 29.12 0 0 1-41.728 0a30.59 30.59 0 0 1 0-42.752L764.736 512L452.864 192a30.59 30.59 0 0 1 0-42.688m-256 0a29.12 29.12 0 0 1 41.728.064L570.24 489.664a32 32 0 0 1 0 44.672L238.592 874.624a29.12 29.12 0 0 1-41.728 0a30.59 30.59 0 0 1 0-42.752L508.736 512L196.864 192a30.59 30.59 0 0 1 0-42.688" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

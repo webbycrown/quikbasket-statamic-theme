@@ -1,0 +1,11 @@
+{{ partial:partials/crumb :label="title" }}
+<section class="relative 1xl:py-[30px] md:py-[25px] py-[20px]">
+    <div class="container">
+        <h1 class="font-medium mb-6">{{ title }}</h1>
+        <div class="grid 2xl:grid-cols-5 xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-5 gap-y-5 gap-x-7">
+            {{ entries }}
+            {{ partial:partials/product-card }}
+            {{ /entries }}
+        </div>
+    </div>
+</section>

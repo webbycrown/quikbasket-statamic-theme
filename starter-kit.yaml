@@ -1,0 +1,13 @@
+title: Quikbasket
+user: webbycrown
+repo: webbycrown/quikbasket-statamic-theme
+export_paths:
+  - content
+  - app/Providers/QuikbasketServiceProvider.php
+  - resources/blueprints
+  - resources/fieldsets
+  - resources/forms
+  - resources/views
+  - public/assets
+  - README.md
+  - THIRD_PARTY.md

@@ -1,0 +1,17 @@
+<section class="2xl:pt-[50px] 1xl:pt-[45px] xl:pt-[40px] lg:pt-[35px] md:pt-[30px] sm:pt-[25px] pt-[20px] relative">
+    <div class="swiper insta-post-slider !p-0 !m-0">
+        <div class="swiper-wrapper">
+            {{ photos }}
+            <div class="swiper-slide">
+                <div class="insta-post-slide">
+                    <a class="relative group/insta overflow-hidden" href="{{ link }}">
+                        <div class="relative w-full h-full before:block before:content-[''] before:pt-[75%]">
+                            <img decoding="async" loading="lazy" alt="" src="{{ url }}" class="absolute-img group-hover:scale-105 transition-all object-top" />
+                        </div>
+                    </a>
+                </div>
+            </div>
+            {{ /photos }}
+        </div>
+    </div>
+</section>

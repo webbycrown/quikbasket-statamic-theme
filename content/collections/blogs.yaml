@@ -1,0 +1,5 @@
+title: Journal
+template: blogs/show
+route: '/blog/{slug}'
+date: true
+sort_dir: desc
