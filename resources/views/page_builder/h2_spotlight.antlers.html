@@ -1,0 +1,14 @@
+<section class="relative 2xl:py-[50px] 1xl:py-[45px] xl:py-[40px] lg:py-[35px] md:py-[30px] sm:py-[25px] py-[20px]">
+    <div class="container">
+        <div class="flex lg:flex-row flex-col lg:gap-[26px] sm:gap-7 gap-4">
+            <div class="lg:w-[45%] grid lg:gap-[26px] md:gap-3 gap-7">
+                {{ products }}
+                {{ partial:partials/product-card }}
+                {{ /products }}
+            </div>
+            <div class="lg:w-[55%]">
+                <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="" class="h-full w-full object-cover" />
+            </div>
+        </div>
+    </div>
+</section>

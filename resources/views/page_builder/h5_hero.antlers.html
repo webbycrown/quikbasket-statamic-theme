@@ -1,0 +1,38 @@
+<div class="bg-violet-400 relative 2xl:mb-[50px] 1xl:mb-[45px] xl:mb-[40px] lg:mb-[35px] md:mb-[30px] sm:mb-[25px] mb-[20px]">
+    <section class="2xl:pt-[50px] 1xl:pt-[45px] xl:pt-[40px] lg:pt-[35px] md:pt-[30px] sm:pt-[25px] pt-[20px]">
+        <div class="container z-0">
+            <div class="flex md:flex-row md:gap-10 gap-5 flex-col w-full items-center">
+                <div class="swiper mySale1 md:w-1/2 w-full h-full py-0.5 px-0">
+                    <div class="swiper-wrapper">
+                        {{ slides }}
+                        <div class="swiper-slide">
+                            <div class="flex flex-col xl:gap-[25px] sm:gap-[18px] gap-[14px] h-full justify-center md:items-start items-center">
+                                <p class="1xl:text-xl xl:text-[26px] lg:text-[22px] sm:text-lg text-[17px] text-violet-900 sm:text-start text-center">{{ eyebrow }}{{ if eyebrow_em }} - <span class="italic">{{ eyebrow_em }}</span>{{ /if }}</p>
+                                <h1 class="2xl:text-[55px] 1xl:text-[44px] xl:text-[40px] lg:text-[35px] sm:text-[25px] text-[23px] font-medium 1xl:leading-snug leading-tight sm:text-start text-center">{{ heading }}</h1>
+                                <p class="1xl:w-[70%] xl:w-10/12 w-full md:text-start text-center 2xl:text-lg lg:text-base text-[15px] 1xl:leading-[1.8rem]">{{ text }}</p>
+                                <div class="mt-[7px] sm:mx-0 mx-auto">
+                                    <a href="{{ button_url }}" class="all-btn">{{ button_label }}</a>
+                                </div>
+                            </div>
+                        </div>
+                        {{ /slides }}
+                    </div>
+                </div>
+                <div class="swiper mySale2 md:w-1/2 w-full h-full md:ml-auto mx-auto p-0">
+                    <div class="swiper-wrapper">
+                        {{ slides }}
+                        <div class="swiper-slide">
+                            <div class="2xl:w-[665px] 2xl:h-[630px] 1xl:w-[571px] 1xl:h-[541px] xl:w-[517px] xl:h-[482px] lg:w-[445px] lg:h-[410px] md:w-[340px] md:h-[340px] w-4/5 h-4/5 sm:float-right mx-auto">
+                                <a href="{{ button_url }}">
+                                    <img decoding="async" loading="eager" src="{{ partial:partials/media-url :file="image" }}" alt="{{ heading }}" class="w-full h-full" />
+                                </a>
+                            </div>
+                        </div>
+                        {{ /slides }}
+                    </div>
+                </div>
+                <div class="swiper-pagination home-5-hero-btn"></div>
+            </div>
+        </div>
+    </section>
+</div>

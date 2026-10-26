@@ -136,7 +136,7 @@
                         <img decoding="async" loading="lazy" src="/assets/image/basket.svg" alt="Cart"
                             class="sm:block hidden">
                     </a>
-                    <a href="/login" class="flex items-center justify-center gap-2 hover:scale-110">
+                    <a href="{{ if logged_in }}/account{{ else }}/login{{ /if }}" class="flex items-center justify-center gap-2 hover:scale-110">
                         <img decoding="async" loading="lazy" src="/assets/image/login.svg" alt="Login"
                             class="sm:block hidden">
                         <p class="text-base font-normal text-white lg:block hidden">Login</p>

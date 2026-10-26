@@ -11,6 +11,8 @@ data:
   seo_description: A multi-department shop for clothing, home, and everyday goods.
   facebook_url: 'https://www.facebook.com/'
   instagram_url: 'https://www.instagram.com/'
+  instagram_token: ''
+  instagram_user_id: ''
   inquiry_button: Send inquiry
   inquiry_success: 'Thanks. This inquiry was saved. Nothing was charged.'
   x_url: 'https://x.com/'
@@ -40,9 +42,22 @@ data:
   general_heading: General Links
   helpful_heading: Helpful
   popup_heading: Subscribe for our Newsletter
-  popup_text: 'This popup does not save an email address. Use the contact page to send an inquiry.'
-  popup_button: Contact the shop
+  popup_text: 'Leave your email and the shop will keep it with your inquiry. Nothing is sent as a mailing list.'
+  popup_button: Subscribe
   cookie_heading: Cookie Policy
   cookie_text: 'Cookies help the site remember this notice. Read the privacy page for the shop copy.'
   cookie_accept: 'Yes, I Accept'
   cookie_manage: Manage Settings
+  shipping_options:
+    -
+      type: option
+      label: Free Shipping
+      price: 0
+    -
+      type: option
+      label: Standard
+      price: 10
+    -
+      type: option
+      label: Express
+      price: 19

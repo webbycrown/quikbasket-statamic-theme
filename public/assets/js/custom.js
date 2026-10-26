@@ -86,17 +86,24 @@ document.addEventListener("DOMContentLoaded", function () {
     return;
   }
 
-  // Show both popups on page load
-  popupModal.style.display = "flex";
-  cookiePopup.style.display = "flex";
+  if (localStorage.getItem("quikbasket_newsletter") === "yes") {
+    popupModal.style.display = "none";
+  } else {
+    popupModal.style.display = "flex";
+  }
+  if (localStorage.getItem("quikbasket_cookie") === "yes") {
+    cookiePopup.style.display = "none";
+  } else {
+    cookiePopup.style.display = "flex";
+  }
 
-  // Close Main Popup when clicking close button
   closeModalBtn.addEventListener("click", function () {
+    localStorage.setItem("quikbasket_newsletter", "yes");
     popupModal.style.display = "none";
   });
 
-  // Accept Cookies - Hide only Cookie Popup
   acceptCookiesBtn.addEventListener("click", function () {
+    localStorage.setItem("quikbasket_cookie", "yes");
     cookiePopup.style.display = "none";
   });
 });

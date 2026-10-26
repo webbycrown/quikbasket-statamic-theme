@@ -1,0 +1,19 @@
+<section class="2xl:mb-20 1xl:mb-[75px] lg:mb-14 lg:mt-0 mb-12">
+    <div class="container">
+        <div class="lg:grid lg:grid-cols-2 flex flex-col-reverse 2xl:gap-10 lg:gap-7 md:gap-5 gap-2">
+            <div class="bg-violet-400 2xl:py-[130px] 1xl:py-[110px] xl:py-[90px] lg:py-[80px] md:py-[60px] sm:py-[40px] py-7 sm:px-0 px-4">
+                <div class="flex flex-col h-full justify-center items-center m-auto 2xl:w-[68%] lg:w-[82%] sm:w-[68%] max-w-full">
+                    <h6 class="2xl:mb-[25px] xl:mb-[20px] sm:mb-[22px] mb-[15px] 2xl:text-xl 1xl:text-[26px] xl:text-[24px] lg:text-[22px] md:text-[24px] sm:text-[20px] text-lg italic text-violet-900 text-center">{{ eyebrow }}</h6>
+                    <h1 class="2xl:text-[55px] 1xl:text-[45px] xl:text-[40px] lg:text-[36px] md:text-[30px] sm:text-[30px] text-[26px] font-normal leading-snug text-center 2xl:mb-[25px] sm:mb-[20px] mb-[15px]">{{ heading }}</h1>
+                    <p class="text-center 1xl:text-lg xl:text-base lg:text-sm sm:text-[15px] text-sm xl:!leading-7 !leading-6">{{ text }}</p>
+                    <div class="xl:mt-[32px] sm:mt-7 mt-[25px]">
+                        <a href="{{ button_url }}" class="all-btn">{{ button_label }}</a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <img decoding="async" loading="eager" src="{{ partial:partials/media-url :file="image" }}" alt="{{ heading }}" class="w-full h-full object-cover" />
+            </div>
+        </div>
+    </div>
+</section>

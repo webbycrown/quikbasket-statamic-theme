@@ -268,7 +268,7 @@
                                 class="sm:w-5 sm:h-5 w-[17px] h-[17px]" />
                         </a>
 
-                        <a href="/login" class="lg:hover:border-violet-900 lg:border border-violet-400 rounded-full lg:bg-[#EFECE7] flex items-center justify-center
+                        <a href="{{ if logged_in }}/account{{ else }}/login{{ /if }}" class="lg:hover:border-violet-900 lg:border border-violet-400 rounded-full lg:bg-[#EFECE7] flex items-center justify-center
                             lg:w-[37px] lg:h-[37px] p-1">
                             <img decoding="async" loading="lazy" src="/assets/image/account.svg" alt="account"
                                 class="sm:w-5 sm:h-5 w-[17px] h-[17px]" />

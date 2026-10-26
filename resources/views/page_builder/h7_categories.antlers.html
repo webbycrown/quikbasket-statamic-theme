@@ -1,0 +1,23 @@
+<section class="relative 2xl:py-[50px] 1xl:py-[45px] xl:py-[40px] lg:py-[35px] md:py-[30px] sm:py-[25px] py-[20px]">
+    <div class="container">
+        <div class="bg-violet-400 flex flex-col border border-gray-400/20 border-collapse">
+            <div class="flex items-center sm:justify-between justify-center lg:py-[25px] sm:px-[35px] py-[20px] border border-gray-400/20 border-collapse">
+                <h2>{{ heading }}</h2>
+                <a href="{{ button_url }}" class="all-btn lg:py-2.5 py-2 lg:px-9 px-6 sm:block hidden">{{ button_label }}</a>
+            </div>
+            <div class="grid xl:grid-cols-6 sm:grid-cols-4 grid-cols-2 border-collapse">
+                {{ items }}
+                <a href="{{ link }}" class="flex flex-col items-center justify-center md:gap-4 gap-2 xl:py-[30px] lg:py-[25px] py-[20px] border border-gray-400/20 group border-collapse">
+                    <div>
+                        <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="{{ label }}" class="w-full 2xl:h-full md:h-[95%] h-[85%] object-cover rounded-full group-hover:rotate-12 transition-all ease-in-out duration-500" />
+                    </div>
+                    <h4 class="2xl:text-[20px] lg:text-lg text-base group-hover:text-violet-900">{{ label }}</h4>
+                </a>
+                {{ /items }}
+            </div>
+            <div class="all-btn lg:py-2.5 sm:py-2 py-2.5 lg:px-9 px-6 flex items-center justify-center w-[70%] mx-auto my-8 sm:hidden">
+                <a href="{{ button_url }}">{{ button_label }}</a>
+            </div>
+        </div>
+    </div>
+</section>

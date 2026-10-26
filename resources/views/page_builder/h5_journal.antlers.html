@@ -1,0 +1,13 @@
+<section class="xl:pt-20 md:pt-16 pt-12 pb-10">
+    <div class="container z-0">
+        <h3 class="text-center">{{ heading }}</h3>
+        <div class="grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 2xl:gap-10 xl:gap-8 sm:gap-5 gap-4 1xl:my-10 sm:my-7 my-[25px]">
+            {{ posts }}
+            {{ partial:partials/journal-card }}
+            {{ /posts }}
+        </div>
+        <div class="flex justify-center">
+            <a href="{{ button_url }}" class="all-btn">{{ button_label }}</a>
+        </div>
+    </div>
+</section>

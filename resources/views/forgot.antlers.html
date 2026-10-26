@@ -38,8 +38,19 @@
                         class="hover:text-violet-900 focus:text-violet-900 active:text-violet-900 border-b border-black hover:border-violet-900 active:border-violet-900 focus:border-violet-900">Sign
                         in</a>
                 </p>
-                <p class="2xl:mb-6 mb-4 text-center 2xl:text-lg text-base">This shop has no customer accounts. This screen does not sign anyone in and does not store a password.</p>
-<p class="text-center 2xl:text-lg text-base"><a class="border-b border-black hover:text-violet-900" href="/checkout">Send a cart inquiry</a> or <a class="border-b border-black hover:text-violet-900" href="/contact">contact the shop</a>.</p>
+                {{ user:forgot_password_form reset_url="/reset-password" }}
+                    {{ if success }}
+                    <p class="mb-4" role="status">Check that email for a reset link.</p>
+                    {{ /if }}
+                    {{ if errors }}
+                    <p class="mb-4 text-red-600" role="alert">{{ errors }}{{ value }} {{ /errors }}</p>
+                    {{ /if }}
+                    <div class="mb-5">
+                        <label for="email" class="block 2xl:text-lg text-base text-gray-800 sm:mb-[10px] mb-[6px]">Email*</label>
+                        <input type="email" id="email" name="email" value="{{ old:email }}" autocomplete="email" class="block w-full border border-lightborder-200 bg-[#FBFBFB] outline-none xl:p-[12px] sm:p-[10px] p-2" required />
+                    </div>
+                    <button type="submit" class="all-btn">Submit</button>
+                {{ /user:forgot_password_form }}
             </div>
         </div>
     </section>

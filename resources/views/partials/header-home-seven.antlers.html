@@ -233,7 +233,7 @@
                             </div>
                         </li>
                         <li class="group">
-                            <a href="/login">
+                            <a href="{{ if logged_in }}/account{{ else }}/login{{ /if }}">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                     class="2xl:w-[28px] 1xl:w-[24px] xl:w-[22px] sm:w-[21px] w-[18px] stroke-black group-hover:stroke-violet-900">
                                     <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">

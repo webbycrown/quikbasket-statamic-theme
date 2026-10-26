@@ -306,7 +306,7 @@ textarea:focus,
 summary:focus,
 .dropdown-toggle button:focus,
 .dropdown-toggle2 button:focus {
-  outline: 2px solid #5b21b6 !important;
+  outline: 2px solid rgb(36 122 77 / var(--tw-bg-opacity, 1)) !important;
   outline-offset: 2px !important;
 }
 
@@ -323,4 +323,69 @@ summary:focus,
 .stay-connect-success.is-visible {
   display: block;
   margin-bottom: 1rem;
+}
+
+.qb-card-title {
+  height: 1.3em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.qb-trend-detail {
+  max-width: calc(100% - 50px);
+}
+
+.qb-trend-title {
+  height: 1.3em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.js-shop-toggle.is-saved {
+  --tw-bg-opacity: 1;
+  background-color: rgb(36 122 77 / var(--tw-bg-opacity, 1));
+  color: #fff;
+}
+
+.js-shop-toggle.is-saved svg {
+  stroke: #fff;
+  fill: #fff;
+}
+
+.qb-shop-note {
+  display: none;
+  position: fixed;
+  left: 50%;
+  bottom: 1.5rem;
+  z-index: 80;
+  transform: translateX(-50%);
+  max-width: calc(100% - 2rem);
+  padding: 0.75rem 1rem;
+  background: #111;
+  color: #fff;
+}
+
+.qb-shop-note.is-visible {
+  display: block;
+}
+
+.qb-policy p {
+  font-size: 15px;
+  line-height: 1.5;
+  color: inherit;
+}
+
+@media (min-width: 1024px) {
+  .qb-policy p {
+    font-size: 1rem;
+    line-height: 1.75rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .qb-policy p {
+    font-size: 1.125rem;
+  }
 }

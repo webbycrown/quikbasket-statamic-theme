@@ -1,0 +1,31 @@
+<section class="relative 2xl:py-[50px] 1xl:py-[45px] xl:py-[40px] lg:py-[35px] md:py-[30px] sm:py-[25px] py-[20px]">
+    <div class="container">
+        <div class="lg:flex grid 2xl:gap-[68px] xl:gap-14 lg:gap-12 gap-6 relative w-full h-full bg-violet-400 1xl:p-10 sm:p-8 p-[15px] 2xl:items-center items-normal">
+            <div class="swiper myBlog 2xl:w-[55%] 1xl:w-[53%] lg:w-1/2 lg:h-auto h-full">
+                <div class="swiper-wrapper">
+                    {{ quotes }}
+                    <div class="swiper-slide w-full h-full">
+                        <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="{{ name }}" class="w-full h-full object-cover" />
+                    </div>
+                    {{ /quotes }}
+                </div>
+            </div>
+            <div class="swiper myBlog2 2xl:w-3/5 1xl:w-[48%] lg:w-[48%] lg:h-auto h-full">
+                <div class="swiper-wrapper">
+                    {{ quotes }}
+                    <div class="swiper-slide 1xl:p-0 xl:pb-10 lg:pb-4 p-0">
+                        <h3 class="2xl:text-[42px] xl:text-1xl sm:text-xl text-[25px] font-normal 2xl:leading-[50px] xl:leading-10 lg:leading-8 sm:leading-6 leading-8 1xl:mb-5 lg:mb-3 mb-4">{{ title }}</h3>
+                        <p class="text-gray-800 2xl:text-[19px] lg:text-base md:text-[17px] text-[15px] 2xl:leading-8 leading-6 2xl:pe-1.5 mb-2">{{ quote }}</p>
+                        <div class="flex flex-col 2xl:mt-20 1xl:mt-16 xl:mt-11 gap-0 xl:mb-0 1xl:mb-10 mt-5 lg:mb-5 md:mb-14 mb-8">
+                            <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="photo" }}" alt="{{ name }}" class="2xl:w-[75px] w-[70px]" />
+                            <h4 class="2xl:text-[20px] 1xl:text-lg text-[17px] 1xl:mt-4 mt-3 1xl:mb-1">{{ name }}</h4>
+                            <p class="text-gray-800">{{ role }}</p>
+                        </div>
+                    </div>
+                    {{ /quotes }}
+                </div>
+                <div class="absolute myBlog-pagination z-50 !left-4"></div>
+            </div>
+        </div>
+    </div>
+</section>

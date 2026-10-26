@@ -1,0 +1,18 @@
+<section class="relative 2xl:py-[50px] 1xl:py-[45px] xl:py-[40px] lg:py-[35px] md:py-[30px] sm:py-[25px] py-[20px]">
+    <div class="container">
+        <div class="sm:px-4 md:grid md:grid-cols-2 flex sm:flex-row flex-col relative sm:justify-between justify-center gap-3 2xl:mb-[40px] 1xl:mb-[30px] mb-[15px] items-center">
+            <div class="flex items-center justify-between">
+                <h2>{{ heading }}</h2>
+            </div>
+            <a href="{{ button_url }}" class="all-btn sm:ml-auto text-center sm:block hidden">{{ button_label }}</a>
+        </div>
+        <div class="grid 1xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 border-lightborder-100 border border-collapse">
+            {{ products }}
+            {{ partial:partials/product-card }}
+            {{ /products }}
+        </div>
+        <div class="mx-auto flex justify-center items-center sm:mt-0 mt-[30px]">
+            <a href="{{ button_url }}" class="all-btn text-center block sm:hidden">{{ button_label }}</a>
+        </div>
+    </div>
+</section>

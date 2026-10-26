@@ -1,6 +1,25 @@
 <section class="2xl:pt-[50px] 1xl:pt-[45px] xl:pt-[40px] lg:pt-[35px] md:pt-[30px] sm:pt-[25px] pt-[20px] relative">
     <div class="swiper insta-post-slider !p-0 !m-0">
         <div class="swiper-wrapper">
+            {{ if {instagram_reels} }}
+            {{ instagram_reels }}
+            <div class="swiper-slide">
+                <div class="insta-post-slide js-reel">
+                    <a class="relative group/insta overflow-hidden" href="{{ permalink }}" target="_blank" rel="noopener noreferrer">
+                        <div class="relative w-full h-full before:block before:content-[''] before:pt-[75%]">
+                            {{ if video }}
+                            <video class="absolute-img object-cover object-top" poster="{{ poster | entities }}" muted playsinline loop preload="none" aria-label="{{ caption | entities }}">
+                                <source src="{{ video | entities }}" />
+                            </video>
+                            {{ else }}
+                            <img decoding="async" loading="lazy" alt="" src="{{ poster | entities }}" class="absolute-img object-top" />
+                            {{ /if }}
+                        </div>
+                    </a>
+                </div>
+            </div>
+            {{ /instagram_reels }}
+            {{ else }}
             {{ photos }}
             <div class="swiper-slide">
                 <div class="insta-post-slide">
@@ -12,6 +31,7 @@
                 </div>
             </div>
             {{ /photos }}
+            {{ /if }}
         </div>
     </div>
 </section>

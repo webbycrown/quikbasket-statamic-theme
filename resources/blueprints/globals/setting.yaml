@@ -60,6 +60,21 @@ tabs:
             handle: whatsapp_url
             field: { type: text, display: 'WhatsApp URL' }
       -
+        display: Instagram
+        fields:
+          -
+            handle: instagram_token
+            field:
+              type: text
+              display: 'Access token'
+              instructions: 'Professional account token. Home, Home three, and Home six then play that account reels. Leave blank to keep the section photos.'
+          -
+            handle: instagram_user_id
+            field:
+              type: text
+              display: 'User id'
+              instructions: 'Only when the account is connected through a Facebook Page. Leave blank for an Instagram login token.'
+      -
         display: Chrome
         fields:
           -
@@ -128,3 +143,19 @@ tabs:
           -
             handle: cookie_manage
             field: { type: text, display: 'Cookie manage' }
+          -
+            handle: shipping_options
+            field:
+              type: replicator
+              display: 'Shipping options'
+              instructions: 'Cart shipping choices. The selected price is added to the displayed total. Nothing is charged.'
+              sets:
+                option:
+                  display: Option
+                  fields:
+                    -
+                      handle: label
+                      field: { type: text, display: Label, required: true }
+                    -
+                      handle: price
+                      field: { type: float, display: Price }

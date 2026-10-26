@@ -9,3 +9,9 @@ fields:
   -
     handle: message
     field: { type: textarea, display: Message, validate: required }
+  -
+    handle: clear_cart
+    field:
+      type: text
+      display: Clear cart
+      visibility: hidden

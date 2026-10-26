@@ -1,0 +1,19 @@
+<section class="2xl:py-[50px] 1xl:py-[45px] xl:py-[40px] lg:py-[35px] md:py-[30px] sm:py-[27px] py-[25px] relative">
+    <div class="container">
+        <div class="grid justify-center">
+            <h3 class="text-center">{{ heading }}</h3>
+            <div class="tabs w-full flex items-center justify-center flex-wrap lg:mt-10 xl:mb-16 md:mb-12 md:mt-8 mt-6 mb-8 gap-y-3">
+                {{ filters }}
+                <button type="button" class="filter-btn after:block after:content-['|'] after:lg:mx-8 after:mx-4 flex items-center justify-center {{ if last }}after:content-none{{ /if }}">
+                    <p class="w-full 2xl:text-[20px] md:text-lg text-base hover:text-violet-900 text-[#374151]">{{ label }}</p>
+                </button>
+                {{ /filters }}
+            </div>
+        </div>
+        <div class="grid 2xl:grid-cols-4 xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
+            {{ products }}
+            {{ partial:partials/product-card }}
+            {{ /products }}
+        </div>
+    </div>
+</section>

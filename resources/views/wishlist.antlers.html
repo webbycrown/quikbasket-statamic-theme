@@ -1,1 +1,45 @@
+{{ if saved_products }}
+{{ partial:partials/crumb }}
+<section class="relative 1xl:pb-[30px] md:pb-[25px] pb-[20px]">
+    <div class="container">
+        <div class="divide-y divide-lightborder-100 grid gap-[25px]">
+            <div>
+                <h3 class="subPage-header">Wishlist</h3>
+                <p class="mt-3">Saved for this visit. Nothing is charged.</p>
+            </div>
+            {{ saved_products }}
+            <div class="js-wish-row flex sm:flex-row flex-col items-center pt-[25px] xl:gap-[60px] lg:gap-[45px] md:gap-[35px] gap-[25px]" data-id="{{ id }}">
+                <div class="relative overflow-hidden h-full sm:w-[427px] w-full max-w-full">
+                    <a href="{{ url }}" class="relative before:block before:content-[''] before:pt-full overflow-hidden">
+                        <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="{{ title }}" class="absolute-img" />
+                    </a>
+                </div>
+                <div class="flex flex-col 2xl:pr-28 pr-0 w-full">
+                    <a href="{{ url }}" class="1xl:text-[27px] lg:text-[24px] text-[20px] 1xl:mb-[20px] lg:mb-[15px] sm:mb-[12px] mb-2">{{ title }}</a>
+                    <p class="sm:mb-[15px] mb-3 1xl:text-lg text-base">${{ price }}</p>
+                    {{ if description }}
+                    <p class="2xl:text-lg xl:text-base text-[15px] 2xl:leading-8 xl:leading-[1.7rem] sm:leading-6">{{ description }}</p>
+                    {{ /if }}
+                    <div class="flex items-center md:mt-8 mt-[22px] md:gap-[30px] gap-[20px]">
+                        <button type="button" class="js-wish-cart all-btn" data-id="{{ id }}">Add to Cart</button>
+                        <div class="flex gap-4">
+                            <a href="{{ url }}" class="sm:w-[40px] sm:h-[40px] w-[37px] h-[37px] bg-white z-20 group rounded-full flex items-center justify-center shadow-round hover:bg-violet-900" aria-label="View {{ title }}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" class="2xl:w-[22px] w-[17px] stroke-[1.5] stroke-black group-hover:stroke-white fill-none">
+                                    <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+                                        <path d="M12 5c-6.307 0-9.367 5.683-9.91 6.808a.44.44 0 0 0 0 .384C2.632 13.317 5.692 19 12 19s9.367-5.683 9.91-6.808a.44.44 0 0 0 0-.384C21.368 10.683 18.308 5 12 5" />
+                                        <circle cx="12" cy="12" r="3" />
+                                    </g>
+                                </svg>
+                            </a>
+                            <button type="button" class="js-wish-remove sm:w-[40px] sm:h-[40px] w-[37px] h-[37px] bg-white hover:bg-violet-900 hover:text-white rounded-full flex items-center justify-center shadow-round" aria-label="Remove {{ title }}">✕</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{ /saved_products }}
+        </div>
+    </div>
+</section>
+{{ else }}
 {{ partial:partials/design-example }}
+{{ /if }}

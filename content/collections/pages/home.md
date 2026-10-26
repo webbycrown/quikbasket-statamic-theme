@@ -32,6 +32,12 @@ page_builder:
     heading: Best Selling Products
     button_label: View Products
     button_url: /shop
+    products:
+      - branded-sky-jeans
+      - casual-cotton-t-shirt
+      - casual-jackets-for-womens
+      - coastal-linen-s-s-shirt
+      - colour-cotton-t-shirt
   -
     id: home-video
     type: video_feature
@@ -44,6 +50,12 @@ page_builder:
     id: home-trending
     type: trending_products
     heading: Trending Products
+    products:
+      - crop-tops-for-daily-wear
+      - floral-designed-dress
+      - heart-printed-top-t-shirt
+      - checked-shirt
+      - single-breasted-blazer
   -
     id: home-testimonials
     type: testimonials

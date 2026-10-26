@@ -1,0 +1,22 @@
+<section class="relative 2xl:py-[50px] 1xl:py-[45px] xl:py-[40px] lg:py-[35px] md:py-[30px] sm:py-[25px] py-[20px] z-0">
+    <div class="trending-product relative overflow-x-clip overflow-y-visible">
+        <div class="container">
+            <div class="2xl:mt-[20px] flex relative justify-between 2xl:mb-[55px] lg:mb-[40px] lg:pb-[40px] mb-[35px] md:pb-[30px] sm:pb-[20px] pb-6 items-center border-b border-lightborder-100 gap-2">
+                <h3 class="leading-8 text-[#1F2937] z-10">{{ heading }}</h3>
+                <div class="relative arrow max-[350px]:w-[110px]">
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev pr-[10px]"></div>
+                </div>
+            </div>
+            <div class="swiper wc_trending_products_slider overflow-visible">
+                <div class="swiper-wrapper">
+                    {{ products }}
+                    <div class="swiper-slide">
+                        {{ partial:partials/product-card }}
+                    </div>
+                    {{ /products }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

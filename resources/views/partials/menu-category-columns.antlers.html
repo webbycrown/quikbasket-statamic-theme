@@ -1,0 +1,23 @@
+{{ if only }}
+{{ taxonomy:categories slug:is="{only}" }}
+<div class="lg:mb-0 sm:mb-3">
+    <h6 class="product-heading"><a href="{{ url }}">{{ title }}</a></h6>
+    <ul class="product">
+        {{ entries }}
+        <li><a href="{{ url }}">{{ title }}</a></li>
+        {{ /entries }}
+    </ul>
+</div>
+{{ /taxonomy:categories }}
+{{ else }}
+{{ taxonomy:categories }}
+<div class="lg:mb-0 sm:mb-3">
+    <h6 class="product-heading"><a href="{{ url }}">{{ title }}</a></h6>
+    <ul class="product">
+        {{ entries }}
+        <li><a href="{{ url }}">{{ title }}</a></li>
+        {{ /entries }}
+    </ul>
+</div>
+{{ /taxonomy:categories }}
+{{ /if }}

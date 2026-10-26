@@ -1,0 +1,38 @@
+<section class="2xl:mb-20 1xl:mb-[75px] lg:mb-14 my-12">
+    <div class="relative">
+        <div class="container">
+            <div class="flex items-center justify-between flex-wrap border-b border-lightborder-100 lg:pb-[30px] lg:mb-[30px] pb-[25px] mb-[25px]">
+                <div class="grid sm:justify-items-start justify-items-center sm:w-auto w-full sm:mb-0 mb-4">
+                    <h3 class="mb-2">{{ heading }}</h3>
+                    <p class="xl:text-lg lg:text-base text-[15px] sm:text-start text-center">{{ text }}</p>
+                </div>
+                <div class="flex 1xl:gap-[21px] xl:gap-[18px] lg:gap-4 sm:gap-3 gap-3 items-center justify-center sm:m-0 m-auto">
+                    <div class="grid justify-items-center">
+                        <h5 class="1xl:text-[28px] xl:text-[25px] lg:text-[22px] sm:text-[20px] text-[25px]">{{ days }}</h5>
+                        <p class="1xl:text-base xl:text-sm sm:text-xs text-sm">Days</p>
+                    </div>
+                    <div class="text-[20px] xl:h-[55px] h-[50px] mt-0">:</div>
+                    <div class="grid justify-items-center">
+                        <h5 class="1xl:text-[28px] xl:text-[25px] lg:text-[22px] sm:text-[20px] text-[25px]">{{ hours }}</h5>
+                        <p class="1xl:text-base xl:text-sm sm:text-xs text-sm">Hours</p>
+                    </div>
+                    <div class="text-[20px] xl:h-[55px] h-[50px] mt-0">:</div>
+                    <div class="grid justify-items-center">
+                        <h5 class="1xl:text-[28px] xl:text-[25px] lg:text-[22px] sm:text-[20px] text-[25px]">{{ minutes }}</h5>
+                        <p class="1xl:text-base xl:text-sm sm:text-xs text-sm">Minutes</p>
+                    </div>
+                    <div class="text-[20px] xl:h-[55px] h-[50px] mt-0">:</div>
+                    <div class="grid justify-items-center">
+                        <h5 class="1xl:text-[28px] xl:text-[25px] lg:text-[22px] sm:text-[20px] text-[25px]">{{ seconds }}</h5>
+                        <p class="1xl:text-base xl:text-sm sm:text-xs text-sm">Seconds</p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
+                {{ products }}
+                {{ partial:partials/product-card }}
+                {{ /products }}
+            </div>
+        </div>
+    </div>
+</section>

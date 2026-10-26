@@ -1,0 +1,17 @@
+<section class="2xl:pt-[42px] 2xl:pb-[50px] 1xl:py-10 py-7">
+    <div class="container z-0">
+        <div class="flex sm:items-center items-baseline flex-wrap lg:gap-0 sm:justify-between justify-center gap-y-12 sm:gap-x-0 gap-x-4">
+            {{ items }}
+            <div class="flex sm:flex-row flex-col 2xl:gap-6 xl:gap-3 lg:gap-1 gap-4 items-center lg:w-1/4 md:w-[38%] w-[47%] max-[430px]:w-full">
+                <div>
+                    <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="icon" }}" alt="" class="1xl:w-full xl:w-[95%] lg:w-[85%] w-full" />
+                </div>
+                <div class="grid 2xl:gap-px xl:gap-[6px] gap-[2px]">
+                    <h5 class="2xl:text-[20px] xl:text-lg lg:text-base sm:text-lg text-base font-medium">{{ title }}</h5>
+                    <p class="2xl:text-base xl:text-[15px] lg:text-sm sm:text-base text-[15px] sm:text-start text-center text-gray-400">{{ line }}</p>
+                </div>
+            </div>
+            {{ /items }}
+        </div>
+    </div>
+</section>

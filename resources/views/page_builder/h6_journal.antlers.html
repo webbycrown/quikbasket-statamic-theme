@@ -1,0 +1,33 @@
+<section class="2xl:mb-20 1xl:mb-[75px] lg:mb-14 my-12">
+    <div class="relative">
+        <div class="container">
+            <div class="flex relative justify-between 2xl:mb-[55px] lg:mb-[40px] lg:pb-[40px] mb-[35px] md:pb-[30px] sm:pb-[20px] pb-6 items-center border-b border-lightborder-100 gap-2">
+                <div class="grid sm:justify-items-start justify-items-center sm:w-auto w-full">
+                    <h3 class="mb-2">{{ heading }}</h3>
+                    <p class="xl:text-lg lg:text-base text-[15px] sm:text-start text-center">{{ text }}</p>
+                </div>
+                <a href="{{ button_url }}" class="all-btn sm:block hidden">{{ button_label }}</a>
+            </div>
+            <div class="flex items-center lg:flex-row flex-col 2xl:gap-10 xl:gap-7 gap-5">
+                {{ posts }}
+                <div class="relative w-full h-full group">
+                    <div class="overflow-hidden">
+                        <a href="{{ url }}" class="relative before:block before:content-[''] 2xl:before:pt-[580px] before:pt-[450px] overflow-hidden">
+                            <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="{{ title }}" class="absolute top-0 bottom-0 left-0 right-0 w-full h-full object-cover group-hover:scale-105 transition-all ease-in-out duration-500" />
+                        </a>
+                        <div class="flex bg-white/30 backdrop-blur-sm absolute top-0 right-0 rounded-full py-[6px] px-[17px] mt-[26px] mr-8">
+                            <p>{{ date format="j F Y" }}</p>
+                        </div>
+                        <div class="absolute bottom-0 bg-black/20 group-hover:bg-black/50 lg:pt-[31px] pt-[25px] lg:pb-[34px] pb-[30px] lg:px-[30px] px-[15px] w-full">
+                            <h5 class="text-white 2xl:text-[26px] xl:text-[22px] lg:text-[20px] sm:text-[23px] text-[20px] font-medium leading-7">
+                                <a href="{{ url }}">{{ title }}</a>
+                            </h5>
+                            <p class="text-white 1xl:line-clamp-2 sm:line-clamp-3 line-clamp-2 1xl:mt-[20px] mt-3 2xl:text-lg 1xl:text-base lg:text-[15px] text-base 2xl:leading-[1.8rem]">{{ excerpt }}</p>
+                        </div>
+                    </div>
+                </div>
+                {{ /posts }}
+            </div>
+        </div>
+    </div>
+</section>

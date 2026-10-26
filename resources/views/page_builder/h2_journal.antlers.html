@@ -1,0 +1,46 @@
+<section class="relative 2xl:py-[50px] 1xl:py-[45px] xl:py-[40px] lg:py-[35px] md:py-[30px] sm:py-[25px] py-[20px]">
+    <div class="latest-blog container">
+        <div class="flex relative md:justify-between justify-center xl:mb-[40px] mb-[30px] items-center">
+            <h3 class="md:text-start text-center">{{ heading }}</h3>
+            <div class="relative arrow md:block hidden">
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev pr-[10px]"></div>
+            </div>
+        </div>
+        <div class="swiper myBlogs">
+            <div class="swiper-wrapper">
+                {{ posts }}
+                <div class="swiper-slide group">
+                    <div class="grid 1xl:gap-7 gap-5">
+                        <div class="relative grid">
+                            <div class="relative overflow-hidden before:block before:content-[''] before:pt-[77%]">
+                                <a href="{{ url }}"><img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="{{ title }}" class="absolute-img group-hover:scale-105 trabsition-all duration-300" /></a>
+                            </div>
+                            <div class="blog-date">
+                                <p class="2xl:text-base text-sm bg-white font-medium border border-white sm:px-3 px-2 sm:py-1 py-0">{{ date format="j, M" }}</p>
+                            </div>
+                        </div>
+                        <div class="blog grid 1xl:gap-4 gap-3">
+                            <h4><a href="{{ url }}" class="group-hover:text-violet-900">{{ title }}</a></h4>
+                            <p class="text-gray-800">{{ excerpt }}</p>
+                            <div class="flex xl:gap-3 gap-1 items-center 1xl:mt-[15px] md:mt-[10px] group">
+                                <a href="{{ url }}" class="group-hover:text-violet-900 group-hover:decoration-violet-900 underline underline-offset-4 font-normal text-decoration-underline">{{ read_label }}</a>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mt-1 xl:size-4 size-3 group-hover:animate-slide transition duration-300 ease-in-out group-hover:stroke-violet-900" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{ /posts }}
+            </div>
+        </div>
+        <div class="relative arrow pt-16 mx-auto block md:hidden sm:mt-4">
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        <div class="grid mx-auto md:mt-10 mt-4 justify-center">
+            <a href="{{ button_url }}" class="all-btn">{{ button_label }}</a>
+        </div>
+    </div>
+</section>

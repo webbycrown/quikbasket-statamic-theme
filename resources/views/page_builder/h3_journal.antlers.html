@@ -1,0 +1,26 @@
+<section class="2xl:py-[50px] 1xl:py-[45px] xl:py-[40px] lg:py-[35px] md:py-[30px] sm:py-[27px] py-[25px] relative">
+    <div class="container relative blogs">
+        <div class="sm:flex grid sm:justify-between justify-items-center items-center md:px-[26px] 1xl:mb-10 lg:mb-8 mb-6 gap-4">
+            <h3>{{ heading }}</h3>
+            <a class="all-btn" href="{{ button_url }}">{{ button_label }}</a>
+        </div>
+        <div class="swiper blog-article">
+            <div class="swiper-wrapper">
+                {{ posts }}
+                <div class="swiper-slide group">
+                    <div class="lg:grid lg:grid-cols-2 flex flex-col-reverse">
+                        <div class="bg-violet-400 article flex flex-col justify-center gap-4 2xl:py-16 2xl:px-10 xl:p-10 sm:p-8 p-6">
+                            <h4><a href="{{ url }}" class="group-hover:text-violet-900">{{ title }}</a></h4>
+                            <p class="text-[#374151]">{{ excerpt }}</p>
+                            <a href="{{ url }}" class="group-hover:text-violet-900 2xl:text-base md:text-sm text-sm font-normal">{{ read_label }}</a>
+                        </div>
+                        <a href="{{ url }}" class="block">
+                            <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="{{ title }}" class="w-full h-full object-cover" />
+                        </a>
+                    </div>
+                </div>
+                {{ /posts }}
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,41 @@
+<section class="2xl:my-[100px] 1xl:my-20 lg:my-14 my-12">
+    <div class="bg-violet-400 py-[30px]">
+        <div class="container">
+            <div class="grid lg:gap-5 gap-4 xl:grid-cols-6 md:grid-cols-4 sm:grid-cols-3 grid-cols-2">
+                {{ if {instagram_reels} }}
+                {{ instagram_reels }}
+                <div class="group js-reel">
+                    <div class="relative">
+                        <a href="{{ permalink }}" target="_blank" rel="noopener noreferrer" class="relative w-full h-full before:block before:content-[''] before:pt-full">
+                            {{ if video }}
+                            <video class="z-0 absolute top-0 bottom-0 left-0 right-0 h-full w-full object-cover" poster="{{ poster | entities }}" muted playsinline loop preload="none" aria-label="{{ caption | entities }}">
+                                <source src="{{ video | entities }}" />
+                            </video>
+                            {{ else }}
+                            <img decoding="async" loading="lazy" src="{{ poster | entities }}" alt="" class="z-0 absolute top-0 bottom-0 left-0 right-0 h-full w-full object-cover" />
+                            {{ /if }}
+                        </a>
+                        <a href="{{ permalink }}" target="_blank" rel="noopener noreferrer" class="absolute flex items-center justify-center w-full h-full top-0 opacity-0 group-hover:opacity-100 transition-all ease-in-out bg-black/45" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-white" aria-hidden="true"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3"/></svg>
+                        </a>
+                    </div>
+                </div>
+                {{ /instagram_reels }}
+                {{ else }}
+                {{ photos }}
+                <div class="group">
+                    <div class="relative">
+                        <a href="{{ link }}" class="relative w-full h-full before:block before:content-[''] before:pt-full">
+                            <img decoding="async" loading="lazy" src="{{ url }}" alt="" class="z-0 absolute top-0 bottom-0 left-0 right-0 h-full w-full object-cover" />
+                        </a>
+                        <a href="{{ link }}" class="absolute flex items-center justify-center w-full h-full top-0 opacity-0 group-hover:opacity-100 transition-all ease-in-out bg-black/45" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-white" aria-hidden="true"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3"/></svg>
+                        </a>
+                    </div>
+                </div>
+                {{ /photos }}
+                {{ /if }}
+            </div>
+        </div>
+    </div>
+</section>

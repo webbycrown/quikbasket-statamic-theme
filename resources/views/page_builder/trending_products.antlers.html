@@ -16,11 +16,11 @@
                     </div>
                     <div class="swiper wc_trending_products_slider overflow-visible">
                         <div class="swiper-wrapper">
-{{ collection:products limit="8" }}
-<div class="swiper-slide">
-{{ partial:partials/product-card }}
+{{ products }}
+<div class="swiper-slide w-full m-0">
+{{ partial:partials/trending-card }}
 </div>
-{{ /collection:products }}
+{{ /products }}
 </div>
                     </div>
                     <div class="relative arrow pt-10 mx-auto block md:hidden">

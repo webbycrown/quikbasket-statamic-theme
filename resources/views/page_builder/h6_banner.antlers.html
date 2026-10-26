@@ -1,0 +1,23 @@
+<section class="2xl:my-[100px] 1xl:my-20 lg:my-14 my-12">
+    <div class="container">
+        <div class="bg-violet-400 flex md:flex-row flex-col justify-center mx-auto 2xl:gap-16 lg:px-0 px-4">
+            <div class="2xl:w-[357px] 2xl:h-[450px] 1xl:w-[320px] 1xl:h-[400px] xl:w-[277px] xl:h-[350px] lg:w-[240px] lg:h-[300px] w-[230px] h-[245px] mt-[50px] md:block hidden">
+                <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="{{ heading }}" class="w-full h-full object-cover object-top" />
+            </div>
+            <div class="flex flex-col items-center justify-center 2xl:w-[38%] 1xl:w-[44%] lg:w-2/5 md:w-[55%] sm:w-[70%] md:mx-0 mx-auto text-center md:my-0 sm:mt-[50px] mt-[35px] mb-4">
+                <h5 class="xl:text-base md:text-[13px] sm:text-base text-sm font-medium xl:mb-[25px] lg:mb-[15px] md:mb-[10px] mb-[15px] text-center tracking-wide">{{ eyebrow }}</h5>
+                <h3 class="xl:mb-[25px] md:mb-[20px] mb-[15px] text-center 2xl:text-[42px] 1xl:text-1xl xl:text-xl lg:text-[25px] md:text-[22px] sm:text-[25px] text-[19px] 2xl:leading-[50px] xl:leading-tight sm:leading-8 leading-[26px] font-medium">{{ heading }}</h3>
+                <p class="xl:mb-[30px] lg:mb-[26px] md:mb-[20px] mb-[25px] text-center 1xl:text-lg lg:text-base md:text-[13px] text-[15px]">{{ text }}</p>
+                <div class="all-btn">
+                    <a href="{{ button_url }}">{{ button_label }}</a>
+                </div>
+            </div>
+            <div class="mx-auto md:hidden block">
+                <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image_mobile" }}" alt="{{ heading }}" />
+            </div>
+            <div class="2xl:w-[357px] 2xl:h-[450px] 1xl:w-[320px] 1xl:h-[400px] xl:w-[277px] xl:h-[350px] lg:w-[240px] lg:h-[300px] w-[230px] h-[245px] mt-[50px] md:block hidden">
+                <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image_two" }}" alt="{{ heading }}" class="w-full h-full object-cover object-top" />
+            </div>
+        </div>
+    </div>
+</section>

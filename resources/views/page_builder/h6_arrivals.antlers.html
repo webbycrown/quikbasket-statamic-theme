@@ -1,0 +1,21 @@
+<section class="2xl:mb-20 1xl:mb-[75px] lg:mb-14 my-12">
+    <div class="relative">
+        <div class="container">
+            <div class="flex relative justify-between 2xl:mb-[55px] lg:mb-[40px] lg:pb-[40px] mb-[35px] md:pb-[30px] sm:pb-[20px] pb-6 items-center border-b border-lightborder-100 gap-2">
+                <div class="grid sm:justify-items-start justify-items-center sm:w-auto w-full">
+                    <h3 class="mb-2">{{ heading }}</h3>
+                    <p class="xl:text-lg lg:text-base text-[15px] sm:text-start text-center">{{ text }}</p>
+                </div>
+                <a href="{{ button_url }}" class="all-btn sm:block hidden">{{ button_label }}</a>
+            </div>
+            <div class="grid 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
+                {{ products }}
+                {{ partial:partials/product-card }}
+                {{ /products }}
+            </div>
+            <div class="flex justify-center sm:hidden pt-5">
+                <a href="{{ button_url }}" class="all-btn">{{ button_label }}</a>
+            </div>
+        </div>
+    </div>
+</section>

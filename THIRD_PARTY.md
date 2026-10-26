@@ -10,8 +10,12 @@ Libraries and fonts are bundled under `public/assets` and loaded locally.
 | Font Awesome Free | `js/all.min.js`, `css/all.min.css`, `webfonts/*` | 6.7.2 | Font Awesome Free |
 | Sora Regular | `font/Sora-Regular.eot`, `font/Sora-Regular.ttf`, `font/Sora-Regular.woff`, `font/Sora-Regular.woff2` | — | SIL Open Font License 1.1 |
 
-Sora is the UI face. Euclid Circular A is a commercial Swiss Typefaces family. Those files are not in this kit, because a resale licence was not included with the HTML.
+Sora is the UI face. Euclid Circular A is a commercial Swiss Typefaces family. Those files are not in this kit.
 
-## Photographs
+## Pictures
 
-Product and lifestyle photographs under `public/assets/image` came with the Quikbasket HTML template. The files do not name a photographer, a stock site, or a licence that allows resale. A resale licence is not included. Replace these photographs with pictures you can redistribute before a paid marketplace release or a client site. This file does not invent a licence for them.
+The `.svg` files under `public/assets/image` are simple interface icons (search, cart, shipping, and the other small marks). No brand logo is in them. `main-white-logo.webp` is the Quikbasket wordmark, `parcel pack.webp` is a line icon, `usa flage.webp` is a flag, and `offer-bg.webp` is a plain background. The kit shows no payment-card logos.
+
+The other `.webp` photographs are original product stills made for Quikbasket: shirts, knitwear, denim, dresses, coats, shoes, bags, scarves, hats, and a chain. No person is in them. No brand name is printed on them. WebbyCrown holds the copyright and may redistribute them with this kit.
+
+The kit does not include a video file.

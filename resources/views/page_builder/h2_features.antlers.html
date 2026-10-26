@@ -1,0 +1,21 @@
+<section class="relative 2xl:py-[50px] 1xl:py-[45px] xl:py-[40px] lg:py-[35px] md:py-[30px] sm:py-[25px] py-[20px]">
+    <div class="container">
+        <div class="mx-auto grid gap-[15px]">
+            <h3 class="text-center">{{ heading }}</h3>
+            <p class="text-center 2xl:w-1/2 lg:w-[56%] md:w-[72%] w-full mx-auto 1xl:text-lg xl:text-base text-[15px] xl:!leading-7 !leading-6">{{ text }}</p>
+        </div>
+        <div class="grid md:grid-cols-2 grid-cols-1 2xl:gap-12 xl:gap-11 lg:gap-8 md:gap-3 gap-6 2xl:mt-[60px] 1xl:mt-16 mt-10">
+            {{ items }}
+            <div class="border-[5px] border-violet-400 sm:flex grid items-center justify-items-center 2xl:gap-10 lg:gap-8 md:gap-4 sm:gap-7 gap-6 2xl:p-11 xl:p-8 lg:p-5 md:p-5 py-3 sm:py-7 sm:px-9 px-3">
+                <div class="rounded-full bg-violet-400 flex-shrink-0 2xl:w-[130px] 2xl:h-[130px] xl:w-[115px] xl:h-[115px] lg:w-[100px] lg:h-[100px] md:w-[85px] md:h-[85px] w-[100px] h-[100px] lg:p-0 p-5 flex items-center justify-center">
+                    <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="icon" }}" alt="" class="lg:w-[60%] w-full" />
+                </div>
+                <div class="grid 2xl:gap-[15px] gap-2">
+                    <h4 class="font-medium 2xl:text-xl 1xl:text-[28px] xl:text-[26px] lg:text-[23px] md:text-[20px] sm:text-[22px] text-[20px] sm:text-start text-center lg:!leading-10 leading-7">{{ title }}</h4>
+                    <p class="sm:text-start text-center 2xl:text-lg xl:text-[15px] md:text-sm text-[15px] 1xl:leading-7 leading-6">{{ line }}</p>
+                </div>
+            </div>
+            {{ /items }}
+        </div>
+    </div>
+</section>

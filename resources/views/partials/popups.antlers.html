@@ -2,7 +2,7 @@
         <section>
             <!-- Main Popup (Center) -->
             <!-- Main Popup -->
-            <div id="popupModal"
+            <div id="popupModal" style="display:none"
                 class="bg-black bg-opacity-50 z-50 fixed inset-0 flex items-center justify-center animate-fadeIn">
                 <div
                     class="bg-white shadow-lg max-w-[95%] lg:w-[800px] lg:h-[500px] sm:h-[400px] h-full w-[700px] max-h-[95%] flex sm:flex-row flex-col overflow-y-auto popup-content">
@@ -24,14 +24,22 @@
                             <p class="lg:mb-[32px] sm:mb-[25px] mb-[16px] 2xl:text-lg text-base text-gray-400">
                                 {{ setting:popup_text }}
                             </p>
-                            <a href="/contact" class="all-btn">{{ setting:popup_button }}</a>
+                            {{ form:inquiry class="js-theme-form js-popup-news w-full" }}
+                            <div class="stay-connect-alert" role="alert"></div>
+                            <input type="hidden" name="name" value="Newsletter">
+                            <input type="hidden" name="message" value="Newsletter signup">
+                            <label class="sr-only" for="popup-email">Email</label>
+                            <input type="email" id="popup-email" name="email" required placeholder="Enter email address"
+                                class="bg-violet-400 w-full lg:py-[12px] py-[10px] text-center text-base lg:mb-[27px] sm:mb-[22px] mb-[16px]" />
+                            <button type="submit" class="all-btn">{{ setting:popup_button }}</button>
+                            {{ /form:inquiry }}
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Cookie Consent Popup -->
-            <div id="cookiePopup"
+            <div id="cookiePopup" style="display:none"
                 class="fixed inset-0 flex items-end p-4 justify-end shadow-lg rounded-lg h-screen z-[60] animate-fadeIn bg-black bg-opacity-50 ">
                 <div
                     class="bg-white 1xl:w-[800px] w-[630px] max-w-full h-fit 1xl:py-[35px] opacity-100 1xl:px-10 sm:px-7 sm:py-[30px] p-4 relative sm:m-0 mx-auto mb-0">

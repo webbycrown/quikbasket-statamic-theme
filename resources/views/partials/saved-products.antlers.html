@@ -1,0 +1,16 @@
+{{ if saved_products }}
+{{ partial:partials/crumb }}
+<section class="relative 1xl:py-[30px] md:py-[25px] py-[20px]">
+    <div class="container">
+        <h1 class="font-medium text-center sm:mb-[18px] mb-[15px]">{{ title }}</h1>
+        <p class="text-center 2xl:mb-6 mb-4">Saved for this visit. Nothing is charged.</p>
+        <div class="grid grid-cols-2 md:grid-cols-3 1xl:grid-cols-4 gap-6">
+            {{ saved_products }}
+            {{ partial:partials/product-card }}
+            {{ /saved_products }}
+        </div>
+    </div>
+</section>
+{{ else }}
+{{ partial:partials/design-example }}
+{{ /if }}

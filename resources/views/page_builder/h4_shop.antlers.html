@@ -1,0 +1,15 @@
+<section class="relative 2xl:py-[50px] 1xl:py-[45px] xl:py-[40px] lg:py-[35px] md:py-[30px] sm:py-[25px] py-[20px]">
+    <div class="container">
+        <h3 class="mb-6">{{ heading }}</h3>
+        <div class="flex flex-wrap gap-4 mb-8">
+            {{ filters }}
+            <button type="button" class="2xl:text-[20px] lg:text-lg text-base">{{ label }}</button>
+            {{ /filters }}
+        </div>
+        <div class="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
+            {{ products }}
+            {{ partial:partials/product-card }}
+            {{ /products }}
+        </div>
+    </div>
+</section>

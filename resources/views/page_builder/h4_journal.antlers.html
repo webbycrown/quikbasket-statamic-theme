@@ -1,0 +1,17 @@
+<section class="relative 2xl:py-[50px] 1xl:py-[45px] xl:py-[40px] lg:py-[35px] md:py-[30px] sm:py-[25px] py-[20px]">
+    <div class="latest-blog container">
+        <h3 class="mb-8">{{ heading }}</h3>
+        <div class="swiper myBlogs">
+            <div class="swiper-wrapper">
+                {{ posts }}
+                <div class="swiper-slide">
+                    {{ partial:partials/journal-card }}
+                </div>
+                {{ /posts }}
+            </div>
+        </div>
+        <div class="grid mx-auto md:mt-10 mt-4 justify-center">
+            <a href="{{ button_url }}" class="all-btn">{{ button_label }}</a>
+        </div>
+    </div>
+</section>

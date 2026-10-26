@@ -1,0 +1,45 @@
+<section class="2xl:pb-[50px] 1xl:pb-[45px] xl:pb-[40px] lg:pb-[35px] md:pb-[30px] sm:pb-[27px] pb-[25px]">
+    <div class="carousel z-0">
+        <div class="list">
+            {{ slides }}
+            <div class="item">
+                <img decoding="async" loading="eager" alt="" src="{{ url }}" />
+            </div>
+            {{ /slides }}
+        </div>
+        <div class="thumbnail">
+            {{ slides }}
+            <div class="item">
+                <img decoding="async" loading="eager" alt="" src="{{ url }}" />
+            </div>
+            {{ /slides }}
+        </div>
+        <div class="flex items-center justify-center bottom-0 z-30 absolute sm:left-1/2 left-[37%] w-full">
+            <div class="arrows flex z-50">
+                <button type="button" id="prev" aria-label="Previous slide">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="m14 7l-5 5l5 5" /></svg>
+                </button>
+                <button type="button" id="next" aria-label="Next slide">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="m10 17l5-5l-5-5" /></svg>
+                </button>
+            </div>
+            <div class="absolute 1xl:bottom-16 bottom-[3.75rem] 2xl:left-[3%] lg:left-[13%] left-[15%] 2xl:w-[39%] lg:w-[29%] w-[26%] h-1 bg-gray-500 rounded-full overflow-hidden max-[900px]:hidden block">
+                <div id="progressBar" class="h-1 bg-[#FFB21D] w-[20%]"></div>
+            </div>
+            <div class="absolute 2xl:bottom-6 lg:bottom-8 bottom-10 left-[45%] text-white 2xl:text-[55px] 1xl:text-[45px] lg:text-[40px] text-[35px] flex items-center gap-2 max-[900px]:hidden">
+                <span id="currentSlide">01</span>
+            </div>
+        </div>
+        <div class="absolute 1xl:w-[545px] xl:w-[500px] lg:w-[450px] w-[400px] max-w-full md:top-[35%] bottom-[10%] 1xl:left-36 lg:left-20 sm:left-14 sm:px-0 px-4 z-40">
+            <div class="grid 1xl:gap-6 md:gap-5 gap-3">
+                <hr class="border border-white w-[12%]" />
+                <p class="1xl:text-[22px] text-[20px] font-normal italic text-white">{{ eyebrow }}</p>
+                <h2 class="2xl:text-[55px] 1xl:text-[45px] xl:text-[43px] lg:text-[40px] md:text-[32px] sm:text-[28px] text-[20px] font-medium 1xl:leading-snug leading-tight text-white">{{ heading }}</h2>
+                <p class="text-white lg:text-lg text-base leading-7">{{ text }}</p>
+                <div class="flex">
+                    <a href="{{ button_url }}" class="bg-transparent border py-2 px-4 border-white text-white hover:bg-violet-900 hover:border-violet-900 flex items-center transition ease-in-out duration-200">{{ button_label }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

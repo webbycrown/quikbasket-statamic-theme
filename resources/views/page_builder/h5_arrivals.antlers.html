@@ -1,0 +1,25 @@
+<section class="relative 2xl:py-[50px] 1xl:py-[45px] xl:py-[40px] lg:py-[35px] md:py-[30px] sm:py-[25px] py-[20px]">
+    <div class="container z-0">
+        <div class="flex md:flex-row flex-col md:gap-0 gap-5 sm:justify-between justify-center items-center w-full md:mb-10 mb-7">
+            <h3 class="text-center">{{ heading }}</h3>
+            <div class="flex items-center justify-center flex-wrap gap-y-3">
+                {{ filters }}
+                <button type="button" class="filter-button1 mx-3 2xl:text-[20px] lg:text-lg text-base">{{ label }}</button>
+                {{ /filters }}
+            </div>
+        </div>
+        <div class="swiper new-arrival container px-4 z-0">
+            <div class="swiper-wrapper md:mb-[50px] mb-[20px]">
+                {{ products }}
+                <div class="swiper-slide">
+                    {{ partial:partials/product-card }}
+                </div>
+                {{ /products }}
+            </div>
+        </div>
+        <div class="relative arrow pt-12 mx-auto z-0">
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,26 @@
+<section class="relative 2xl:py-[50px] 1xl:py-[45px] xl:py-[40px] lg:py-[35px] md:py-[30px] sm:py-[25px] py-[20px] 2xl:mb-[88px] xl:mb-[45px]">
+    <div class="container">
+        <div class="flex xl:flex-row flex-col-reverse gap-0 justify-between items-center">
+            <div class="2xl:w-[39%] xl:w-[40%] flex flex-col 2xl:gap-7 sm:gap-6 gap-4 items-start">
+                <div>
+                    <h2 class="1xl:mb-[18px] lg:mb-[14px] mb-[13px] text-start leading-tight 2xl:text-[48px] 1xl:text-[37px] sm:text-1xl text-[28px] font-normal">{{ heading }}</h2>
+                    <p class="2xl:text-lg sm:text-base text-[15px] 2xl:leading-[1.9rem]">{{ text }}</p>
+                </div>
+                {{ notes }}
+                <div class="grid 1xl:gap-[15px] gap-[10px]">
+                    <h4 class="font-normal 2xl:text-[32px] md:text-[28px] text-[25px] leading-[35px]">{{ title }}</h4>
+                    <p class="2xl:text-lg sm:text-base text-[15px] 2xl:leading-[1.9rem]">{{ line }}</p>
+                </div>
+                {{ /notes }}
+                <a class="all-btn md:mt-3 mt-2" href="{{ button_url }}">{{ button_label }}</a>
+            </div>
+            <div class="2xl:w-[61%] xl:w-[47%] w-full relative flex sm:flex-row flex-col-reverse justify-end">
+                <div class="z-10 grid sm:justify-items-center justify-items-start absolute 2xl:gap-[126px] xl:gap-[100px] lg:gap-[300px] gap-[120px] 2xl:left-[4.4rem] 1xl:-left-[6.1rem] xl:-left-[7.8rem] left-[0.2rem] 2xl:top-[5.7rem] xl:top-16 xl:bottom-0 bottom-4 m-0">
+                    <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="logo" }}" alt="" class="2xl:w-2/3 xl:w-[60%] lg:w-3/4 w-[70%] sm:relative absolute sm:left-auto sm:top-auto left-[47%] top-[69%] md:block hidden animate-spin" />
+                    <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image_two" }}" alt="{{ heading }}" class="2xl:w-[357px] 2xl:h-[394px] 1xl:w-[270px] xl:w-[250px] sm:w-[250px] sm:h-[280px] w-[50%] sm:mx-auto border bg-white sm:p-2 p-1 border-white" />
+                </div>
+                <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="{{ heading }}" class="z-0 2xl:w-[752px] 2xl:h-[754px] xl:w-[540px] xl:h-[540px] md:w-screen w-full h-full sm:object-cover ml-auto xl:p-0 sm:pl-[128px] md:pb-24 pb-20" />
+            </div>
+        </div>
+    </div>
+</section>

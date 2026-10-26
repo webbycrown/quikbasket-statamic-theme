@@ -35,8 +35,44 @@
                         class="hover:text-violet-900 focus:text-violet-900 active:text-violet-900 border-b border-black hover:border-violet-900 active:border-violet-900 focus:border-violet-900">Sign
                         in</a>
                 </p>
-                <p class="2xl:mb-6 mb-4 text-center 2xl:text-lg text-base">This shop has no customer accounts. This screen does not sign anyone in and does not store a password.</p>
-<p class="text-center 2xl:text-lg text-base"><a class="border-b border-black hover:text-violet-900" href="/checkout">Send a cart inquiry</a> or <a class="border-b border-black hover:text-violet-900" href="/contact">contact the shop</a>.</p>
+                {{ user:register_form redirect="/account" }}
+                    {{ if errors }}
+                    <p class="mb-4 text-red-600" role="alert">{{ errors }}{{ value }} {{ /errors }}</p>
+                    {{ /if }}
+                    <div class="mb-5">
+                        <label for="name" class="block 2xl:text-lg text-base text-gray-800 sm:mb-[10px] mb-[6px]">Full Name*</label>
+                        <input type="text" id="name" name="name" value="{{ old:name }}" autocomplete="name" class="block w-full border border-lightborder-200 bg-[#FBFBFB] outline-none xl:p-[12px] sm:p-[10px] p-2" required />
+                    </div>
+                    <div class="mb-5">
+                        <label for="email" class="block 2xl:text-lg text-base text-gray-800 sm:mb-[10px] mb-[6px]">Email*</label>
+                        <input type="email" id="email" name="email" value="{{ old:email }}" autocomplete="email" class="block w-full border border-lightborder-200 bg-[#FBFBFB] outline-none xl:p-[12px] sm:p-[10px] p-2" required />
+                    </div>
+                    <div class="mb-5 relative">
+                        <label for="password" class="block 2xl:text-lg text-base text-gray-800 sm:mb-[10px] mb-[6px]">Password*</label>
+                        <div class="flex items-center">
+                            <input type="password" id="password" name="password" autocomplete="new-password" class="w-full border border-lightborder-200 bg-[#FBFBFB] outline-none xl:p-[12px] sm:p-[10px] p-2" required />
+                            <button type="button" class="absolute inline-block xl:bottom-4 bottom-3 right-5" onclick="togglePassword('password')" aria-label="Show password">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" class="2xl:w-[22px] w-[20px] stroke-[2] stroke-gray-800 fill-none">
+                                    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 5c-6.307 0-9.367 5.683-9.91 6.808a.44.44 0 0 0 0 .384C2.632 13.317 5.692 19 12 19s9.367-5.683 9.91-6.808a.44.44 0 0 0 0-.384C21.368 10.683 18.308 5 12 5" />
+                                        <circle cx="12" cy="12" r="3" />
+                                    </g>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="mb-0">
+                        <label for="password_confirmation" class="block 2xl:text-lg text-base text-gray-800 sm:mb-[10px] mb-[6px]">Confirm password*</label>
+                        <input type="password" id="password_confirmation" name="password_confirmation" autocomplete="new-password" class="block w-full border border-lightborder-200 bg-[#FBFBFB] outline-none xl:p-[12px] sm:p-[10px] p-2" required />
+                    </div>
+                    <div class="flex items-center xl:my-[30px] sm:my-6 my-5">
+                        <label class="flex items-center text-gray-800">
+                            <input type="checkbox" name="terms" class="1xl:h-5 1xl:w-5 h-4 w-4 accent-violet-900" required />
+                            <p class="ml-2 xl:text-lg text-base">I agree to the <a href="/terms" class="border-b hover:text-violet-900">Terms</a> and <a href="/privacy" class="border-b hover:text-violet-900">Privacy Policy</a></p>
+                        </label>
+                    </div>
+                    <button type="submit" class="all-btn">Submit</button>
+                {{ /user:register_form }}
             </div>
         </div>
     </section>

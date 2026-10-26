@@ -1,0 +1,26 @@
+<section class="relative 2xl:py-[50px] 1xl:py-[45px] xl:py-[40px] lg:py-[35px] md:py-[30px] sm:py-[25px] py-[20px]">
+    <div class="premium-collection relative">
+        <div class="container">
+            <div class="flex relative md:justify-between justify-center xl:mb-[40px] mb-[30px] items-center">
+                <h3 class="md:text-start text-center">{{ heading }}</h3>
+                <div class="relative arrow md:block hidden">
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev pr-[10px]"></div>
+                </div>
+            </div>
+            <div class="swiper myCollection">
+                <div class="swiper-wrapper">
+                    {{ products }}
+                    <div class="swiper-slide">
+                        {{ partial:partials/product-card }}
+                    </div>
+                    {{ /products }}
+                </div>
+            </div>
+        </div>
+        <div class="relative arrow pt-16 mx-auto block md:hidden mt-4">
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+</section>

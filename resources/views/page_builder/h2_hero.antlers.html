@@ -1,0 +1,14 @@
+<section class="relative 2xl:pb-[50px] 1xl:pb-[45px] xl:pb-[40px] lg:pb-[35px] md:pb-[30px] sm:pb-[25px] pb-[20px]">
+    <div class="flex items-center justify-center pt-[110px] h-auto min-h-screen z-10">
+        <img decoding="async" loading="eager" src="{{ partial:partials/media-url :file="image" }}" alt="{{ heading }}" class="absolute top-0 left-0 brightness-50 w-full h-full object-cover" />
+        <div class="relative top-auto bottom-0 text-white text-center w-full">
+            <div class="grid grid-cols-1 justify-items-center sm:px-0 px-5">
+                <h1 class="font-medium 1xl:text-4xl md:text-3xl sm:text-[35px] text-[26px] lg:mb-5 sm:mb-3 mb-1">{{ heading }}</h1>
+                <p class="text-white font-normal xl:text-lg text-base lg:mb-[30px] md:mb-7 sm:mb-5 mb-2 w-[609px] max-w-full">{{ text }}</p>
+                <div class="xl:py-[11px] xl:px-[35px] py-[7px] px-[30px]">
+                    <a class="all-btn" href="{{ button_url }}">{{ button_label }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

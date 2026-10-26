@@ -1,0 +1,19 @@
+<section class="relative 2xl:py-[50px] 1xl:py-[45px] xl:py-[40px] lg:py-[35px] md:py-[30px] sm:py-[25px] py-[20px]">
+    <div class="container">
+        <div class="relative">
+            <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="{{ heading }}" class="w-full 2xl:h-full xl:h-[440px] lg:h-[370px] h-[330px] object-cover md:block hidden" />
+            <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image_mobile" }}" alt="{{ heading }}" class="w-full sm:h-[55rem] h-[46rem] object-cover md:hidden block" />
+            <div class="absolute flex flex-col sm:items-start items-center justify-center xl:gap-[27px] md:gap-[20px] sm:gap-[15px] gap-[15px] top-0 xl:w-[45%] md:w-[55%] 1xl:ms-[120px] xl:ms-[100px] lg:ms-20 sm:mx-12 mx-3 md:h-full sm:h-[35%] h-[40%]">
+                <h2 class="sm:text-start text-center 2xl:leading-[55px] sm:leading-snug leading-normal 2xl:text-3xl 1xl:text-[35px] lg:text-[32px] md:text-[26px] sm:text-xl text-[23px] hover:text-violet-900">
+                    <a href="{{ button_url }}">{{ heading }}</a>
+                </h2>
+                <p class="sm:text-start text-center 2xl:text-[20px] lg:text-lg text-base">{{ text }}</p>
+                <div class="flex gap-[20px] items-center justify-between xl:mb-2">
+                    <h4 class="1xl:text-[25px] sm:text-[22px] text-[20px] leading-9">{{ price }}</h4>
+                    <h4 class="line-through text-gray-800/50 decoration-gray-800/40 1xl:text-[25px] sm:text-[22px] text-[20px] leading-9">{{ compare_price }}</h4>
+                </div>
+                <a href="{{ button_url }}" class="all-btn">{{ button_label }}</a>
+            </div>
+        </div>
+    </div>
+</section>

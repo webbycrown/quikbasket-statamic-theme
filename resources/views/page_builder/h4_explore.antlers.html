@@ -1,0 +1,19 @@
+<section class="relative 2xl:py-[50px] 1xl:py-[45px] xl:py-[40px] lg:py-[35px] md:py-[30px] sm:py-[25px] py-[20px]">
+    <div class="shop-collection relative bg-violet-400 2xl:py-[90px] xl:py-[70px] lg:py-16 py-10">
+        <div class="container">
+            <h3 class="leading-8 text-[#1F2937] z-10 mb-8">{{ heading }}</h3>
+            <div class="swiper collection">
+                <div class="swiper-wrapper">
+                    {{ items }}
+                    <div class="swiper-slide group block">
+                        <div class="rounded-card">
+                            <a href="{{ link }}"><img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="{{ label }}" /></a>
+                            <a href="{{ link }}" class="collection-name group-hover:text-violet-900">{{ label }}</a>
+                        </div>
+                    </div>
+                    {{ /items }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,23 @@
+<section class="relative 2xl:py-[50px] 1xl:py-[45px] xl:py-[40px] lg:py-[35px] md:py-[30px] sm:py-[25px] py-[20px]">
+    <div class="sm:container">
+        <div class="bg-[url('/layouts/image/offer-bg.webp')] xl:pt-10 pt-8">
+            <div class="flex xl:gap-12 gap-0 justify-items-center 1xl:px-20 lg:px-10 px-4 relative">
+                <div class="flex flex-col 2xl:gap-7 lg:gap-5 gap-4 items-start justify-center md:pb-5 sm:pb-10 pb-24 xl:w-[45%] lg:w-[51%] md:w-[54%] sm:w-[76%] w-full">
+                    <h3><a href="{{ button_url }}">{{ heading }}</a></h3>
+                    <p>{{ text }}</p>
+                    <div class="flex gap-5 my-1">
+                        <h6 class="1xl:text-[25px] lg:text-[22px] sm:text-[20px] text-lg font-normal text-black">{{ price }}</h6>
+                        <h6 class="1xl:text-[25px] lg:text-[22px] sm:text-[20px] text-lg font-normal line-through text-black/50">{{ compare_price }}</h6>
+                    </div>
+                    <div class="all-btn lg:mt-[5px]">
+                        <a href="{{ button_url }}">{{ button_label }}</a>
+                    </div>
+                </div>
+                <div class="flex md:relative absolute right-0 justify-center bottom-0 items-center xl:w-[45%] lg:w-3/5 md:w-[46%] sm:w-[35%] w-3/5">
+                    <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="{{ heading }}" class="xl:w-auto lg:w-[70%] w-[90%] lg:ml-auto mt-auto mr-auto" />
+                    <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image_two" }}" alt="{{ heading }}" class="absolute 2xl:right-2 right-0 bottom-0 xl:w-auto lg:w-[45%] w-[56%]" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

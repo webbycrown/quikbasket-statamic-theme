@@ -1,0 +1,40 @@
+<section class="2xl:py-[50px] 1xl:py-[45px] xl:py-[40px] lg:py-[35px] md:py-[30px] sm:py-[27px] py-[25px] relative">
+    <div class="container">
+        <div class="2xl:mb-[50px] xl:mb-[40px] lg:mb-[35px] sm:mb-8 mb-4">
+            <h3 class="text-center">{{ heading }}</h3>
+        </div>
+        <div class="swiper follow-heaven">
+            <div class="swiper-wrapper">
+                {{ if {instagram_reels} }}
+                {{ instagram_reels }}
+                <div class="swiper-slide">
+                    <div class="js-reel relative w-full h-full before:block before:content-[''] before:pt-full">
+                        {{ if video }}
+                        <video class="absolute-img object-cover" poster="{{ poster | entities }}" muted playsinline loop preload="none" aria-label="{{ caption | entities }}">
+                            <source src="{{ video | entities }}" />
+                        </video>
+                        {{ else }}
+                        <img decoding="async" loading="lazy" src="{{ poster | entities }}" alt="" class="absolute-img" />
+                        {{ /if }}
+                        <a href="{{ permalink }}" target="_blank" rel="noopener noreferrer" class="absolute top-0 w-full h-full flex items-center justify-center bg-[#247A4D80]/50 backdrop-blur-sm opacity-0 hover:opacity-100" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="white" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 16a4 4 0 1 0 0-8a4 4 0 0 0 0 8" /><path d="M3 16V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5Z" /><path stroke-linecap="round" stroke-linejoin="round" d="m17.5 6.51l.01-.011" /></g></svg>
+                        </a>
+                    </div>
+                </div>
+                {{ /instagram_reels }}
+                {{ else }}
+                {{ photos }}
+                <div class="swiper-slide">
+                    <div class="relative w-full h-full before:block before:content-[''] before:pt-full">
+                        <img decoding="async" loading="lazy" src="{{ url }}" alt="" class="absolute-img" />
+                        <a href="{{ link }}" class="absolute top-0 w-full h-full flex items-center justify-center bg-[#247A4D80]/50 backdrop-blur-sm opacity-0 hover:opacity-100" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="white" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 16a4 4 0 1 0 0-8a4 4 0 0 0 0 8" /><path d="M3 16V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5Z" /><path stroke-linecap="round" stroke-linejoin="round" d="m17.5 6.51l.01-.011" /></g></svg>
+                        </a>
+                    </div>
+                </div>
+                {{ /photos }}
+                {{ /if }}
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,21 @@
+<section class="2xl:my-[100px] 1xl:my-20 lg:my-14 my-12">
+    <div class="container">
+        <div class="flex sm:flex-row flex-col md:gap-0 gap-3 sm:justify-between justify-center items-center w-full 1xl:mb-[30px] mb-[20px] sm:pt-0 pt-[15px]">
+            <h3 class="xl:mb-2 sm:mb-1 mb-[11px] sm:text-start text-center">{{ heading }}</h3>
+        </div>
+        <div class="flex lg:flex-row flex-col w-full sm:gap-[30px] gap-[20px]">
+            <div class="md:w-[46%] w-full relative overflow-hidden">
+                <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="{{ banner_heading }}" class="w-full h-full md:absolute relative left-0 top-0 bottom-0 right-0 object-cover" />
+                <div class="absolute top-0 flex flex-col 2xl:mt-[45px] 1xl:mt-[40px] sm:mt-[25px] mt-[18px] 1xl:ms-[45px] sm:ms-[30px] ms-[20px] 2xl:w-2/5 1xl:w-1/2 sm:w-3/5 w-[51%] 1xl:gap-[30px] sm:gap-[27px] gap-[22px]">
+                    <h5 class="xl:text-[30px] sm:text-[25px] text-[20px] xl:leading-10 sm:leading-8 leading-6 font-medium">{{ banner_heading }}</h5>
+                    <div><a href="{{ button_url }}" class="all-btn">{{ button_label }}</a></div>
+                </div>
+            </div>
+            <div class="grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 2xl:gap-6 xl:gap-3 sm:gap-6 gap-5 xl:w-[70%] lg:w-[60%]">
+                {{ products }}
+                {{ partial:partials/product-card }}
+                {{ /products }}
+            </div>
+        </div>
+    </div>
+</section>

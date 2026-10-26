@@ -1,0 +1,15 @@
+<section class="relative 2xl:py-[50px] 1xl:py-[45px] xl:py-[40px] lg:py-[35px] md:py-[30px] sm:py-[25px] py-[20px]">
+    <div class="container">
+        <div class="flex sm:flex-row flex-col sm:justify-between justify-center items-center gap-4 mb-8">
+            <h3>{{ heading }}</h3>
+            {{ if timer }}<p class="bg-yellow-400 lg:py-[11px] lg:px-7 py-[10px] px-6">{{ timer }}</p>{{ /if }}
+        </div>
+        <div class="swiper myCollection">
+            <div class="swiper-wrapper">
+                {{ products }}
+                <div class="swiper-slide">{{ partial:partials/product-card }}</div>
+                {{ /products }}
+            </div>
+        </div>
+    </div>
+</section>

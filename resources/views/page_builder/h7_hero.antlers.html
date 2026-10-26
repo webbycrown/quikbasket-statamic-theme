@@ -1,0 +1,18 @@
+<section class="relative 2xl:pb-[50px] 1xl:pb-[45px] xl:pb-[40px] lg:pb-[35px] md:pb-[30px] sm:pb-[25px] pb-[20px]">
+    <div class="bg-violet-400">
+        <div class="container">
+            <div class="flex sm:flex-row flex-col justify-between w-full 2xl:gap-[118px] xl:gap-[50px] md:gap-[75px] sm:gap-[20px] gap-[30px] sm:pt-0 pt-10 lg:pr-7">
+                <div class="flex items-center justify-center flex-col w-[612px] sm:text-start text-center max-w-full">
+                    <div>
+                        <h1 class="2xl:text-[50px] xl:text-[45px] lg:text-[37px] md:text-[32px] sm:ext-[28px] text-[26px] font-medium 2xl:leading-[65px] xl:leading-[55px] lg:leading-[46px] md:leading-[43px] leading-[35px] lg:mb-[25px] mb-[12px] sm:text-start text-center">{{ heading }}</h1>
+                        <p class="lg:mb-[30px] mb-[18px] xl:text-lg lg:text-base text-[15px] xl:leading-7 leading-6 sm:text-start text-center">{{ text }}</p>
+                        <a href="{{ button_url }}" class="xl:text-base text-sm border-b-2 hover:border-violet-900 mr-auto hover:text-violet-900 sm:text-start text-center">{{ button_label }}</a>
+                    </div>
+                </div>
+                <div class="1xl:w-[516px] lg:w-[450px] w-[550px] max-w-full sm:pt-10">
+                    <img decoding="async" loading="eager" src="{{ partial:partials/media-url :file="image" }}" alt="{{ heading }}" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

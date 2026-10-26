@@ -1,0 +1,18 @@
+<section class="2xl:py-[50px] 1xl:py-[45px] xl:py-[40px] lg:py-[35px] md:py-[30px] sm:py-[27px] py-[25px] relative overflow-hidden">
+    <div class="swiper state">
+        <div class="swiper-wrapper">
+            {{ places }}
+            <div class="swiper-slide">
+                <div class="relative group">
+                    <div class="relative overflow-hidden before:block before:content-[''] lg:before:pt-[860px] before:pt-[500px]">
+                        <a href="{{ link }}">
+                            <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="{{ label }}" class="absolute-img group-hover:scale-105 transition ease-in-out duration-300" style="cursor: url('/assets/image/drag.svg'), pointer;" />
+                        </a>
+                    </div>
+                    <a href="{{ link }}" class="w-full h-1/3 bg-gradient-to-t from-black via-black/50 to-black/2 absolute flex items-end 1xl:p-[60px] xl:p-[50px] lg:p-[40px] p-[30px] bottom-0 left-0 xl:text-xl md:text-[25px] text-[22px] font-semibold text-white">{{ label }}</a>
+                </div>
+            </div>
+            {{ /places }}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,34 @@
+<section class="relative 2xl:py-[50px] 1xl:py-[45px] xl:py-[40px] lg:py-[35px] md:py-[30px] sm:py-[25px] py-[20px]">
+    <div class="shop-collection relative">
+        <div class="container">
+            <div class="flex relative justify-between 2xl:mb-[55px] lg:mb-[40px] lg:pb-[40px] mb-[35px] md:pb-[30px] sm:pb-[20px] pb-6 items-center border-b border-lightborder-100 gap-2">
+                <div class="grid sm:justify-items-start justify-items-center sm:w-auto w-full">
+                    <h3 class="mb-2">{{ heading }}</h3>
+                    <p class="xl:text-lg lg:text-base text-[15px] sm:text-start text-center">{{ text }}</p>
+                </div>
+                <div class="relative arrow sm:block hidden">
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev pr-[10px]"></div>
+                </div>
+            </div>
+            <div class="swiper collection">
+                <div class="swiper-wrapper">
+                    {{ items }}
+                    <div class="swiper-slide group block">
+                        <div class="rounded-card">
+                            <a href="{{ link }}">
+                                <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="{{ label }}" />
+                            </a>
+                            <a href="{{ link }}" class="collection-name group-hover:text-violet-900">{{ label }}</a>
+                        </div>
+                    </div>
+                    {{ /items }}
+                </div>
+            </div>
+        </div>
+        <div class="relative arrow pt-12 mx-auto block sm:hidden mt-4">
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,27 @@
+<section class="relative 2xl:pt-[50px] 1xl:pt-[45px] xl:pt-[40px] lg:pt-[35px] md:pt-[30px] sm:pt-[25px] pt-[20px]">
+    <div class="relative w-full bg-gradient-to-r from-darkyellow-100/60 via-darkyellow-200/60 to-darkyellow-100/60">
+        <div class="container">
+            <div class="h-full items-center flex md:flex-row flex-col w-full justify-between lg:gap-0 md:gap-[10px] gap-[18px]">
+                <div class="2xl:w-[275px] 2xl:h-[250px] xl:w-[255px] xl:h-[230px] lg:w-[235px] lg:h-[210px] w-[200px] h-[180px] md:block hidden">
+                    <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="" class="w-full h-full" />
+                </div>
+                <div class="flex flex-col h-full lg:gap-[35px] sm:gap-[20px] gap-[15px] md:mt-0 mt-[35px]">
+                    <h2 class="text-center 2xl:text-3xl 1xl:text-1xl xl:text-xl lg:text-[28px] md:text-[26px] sm:text-[27px] text-[25px] sm:leading-auto leading-8">{{ heading }}</h2>
+                    <p class="1xl:text-[20px] lg:text-lg text-base font-light mb-[10px] text-center">{{ text }}</p>
+                    {{ if code }}
+                    <p class="text-center 1xl:text-[20px] lg:text-lg text-base font-medium">{{ code }}</p>
+                    {{ /if }}
+                    <a href="{{ button_url }}" class="all-btn inline-block text-center 2xl:py-[15px] xl:py-3 lg:py-2.5 py-2 1xl:px-8 xl:px-6 sm:px-4 px-3.5 2xl:text-lg lg:text-base text-sm">{{ button_label }}</a>
+                </div>
+                <div class="flex items-center justify-center md:pt-3.5 sm:gap-[50px] gap-0">
+                    <div class="sm:w-[200px] sm:h-[180px] block md:hidden w-full h-full">
+                        <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="" class="w-full h-full" />
+                    </div>
+                    <div class="xl:w-[285px] xl:h-[350px] lg:w-[265px] lg:h-[330px] sm:w-[235px] sm:h-[290px] w-full h-full">
+                        <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image_two" }}" alt="" class="w-full h-full" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

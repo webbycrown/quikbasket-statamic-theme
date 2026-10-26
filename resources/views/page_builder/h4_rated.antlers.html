@@ -1,0 +1,19 @@
+<section class="relative 2xl:py-[50px] 1xl:py-[45px] xl:py-[40px] lg:py-[35px] md:py-[30px] sm:py-[25px] py-[20px]">
+    <div class="container">
+        <h3 class="mb-8">{{ heading }}</h3>
+        <div class="grid lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-2 grid sm:grid-cols-2 gap-4">
+                {{ products }}
+                {{ partial:partials/product-card }}
+                {{ /products }}
+            </div>
+            <div class="relative min-h-[280px]">
+                <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="{{ offer_heading }}" class="w-full h-full object-cover" />
+                <div class="absolute inset-0 flex flex-col justify-end p-6 text-white bg-gradient-to-t from-black/50">
+                    <h5 class="text-xl font-medium mb-3">{{ offer_heading }}</h5>
+                    <h5 class="text-xl">{{ price }}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

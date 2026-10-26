@@ -1,17 +1,29 @@
-<div class="products relative product-box group transition-all items-center">
-    <div class="relative image-wrap sm:w-auto w-full">
-        <a href="{{ url }}" class="w-full m-auto h-auto group">
-            <div class="img-box relative overflow-hidden">
+<div class="relative block group overflow-hidden h-full">
+    <div class="w-full m-auto h-auto">
+        <div class="relative before:block before:content-[''] 1xl:before:pt-[380px] lg:before:pt-[340px] md:before:pt-[288px] sm:before:pt-[315px] before:pt-full overflow-hidden">
+            <a href="{{ url }}">
                 <img decoding="async" loading="lazy" alt="{{ title }}"
-                    class="group-hover:scale-105 w-full h-full block transition-all object-cover ease-in-out duration-300"
+                    class="absolute-img group-hover:scale-105 block transition-all duration-300"
                     src="{{ partial:partials/media-url :file="image" }}" />
-            </div>
-        </a>
+            </a>
+        </div>
     </div>
-    <div class="product-detail">
-        <h3 class="font-normal text-black group-hover:text-violet-900 sm:mb-2 text-center capitalize">
+    <div class="absolute lg:right-5 right-3 lg:top-4 top-3 z-20 grid lg:gap-4 gap-2.5">
+        <button type="button" class="js-shop-toggle lg:w-[38px] lg:h-[38px] w-[35px] h-[35px] bg-white rounded-full flex items-center justify-center" data-list="wish" data-id="{{ id }}" aria-pressed="false" aria-label="Wishlist">
+            <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" class="stroke-[1.2] lg:w-[22px] w-[18px] stroke-black fill-none">
+                <path d="M10.4697 5.59405C10.6103 5.7347 10.8011 5.81372 11 5.81372C11.1989 5.81372 11.3897 5.7347 11.5303 5.59405L11.9085 5.21592C12.8465 4.2779 14.118 3.75122 15.4447 3.75122H15.5616C18.3236 3.75122 20.5625 5.99012 20.5625 8.75216C20.5625 10.1386 19.9874 11.4622 18.9741 12.4079L11 19.8503L3.02592 12.4079C2.01262 11.4622 1.4375 10.1386 1.4375 8.75216C1.4375 5.99012 3.6764 3.75122 6.43844 3.75122H6.55531C7.88197 3.75122 9.15352 4.2779 10.0915 5.21593L10.4697 5.59405Z"></path>
+            </svg>
+        </button>
+        <button type="button" class="js-shop-toggle lg:w-[38px] lg:h-[38px] w-[35px] h-[35px] bg-white rounded-full flex items-center justify-center text-black" data-list="cart" data-id="{{ id }}" aria-pressed="false" aria-label="Add to cart">
+            <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" class="lg:w-[22px] w-[18px]">
+                <path fill="currentColor" d="M21.36 7.78h-2.27L14.13 1.57a.75.75 0 0 0-1.01-.1.75.75 0 0 0-.1 1.01l4.32 5.4H4.56l4.32-5.4a.75.75 0 0 0-.1-1.01.75.75 0 0 0-1.01.1L2.91 7.78H.64A.64.64 0 0 0 0 8.42v2.58c0 .36.29.64.64.64h.8l2.45 8.56c.08.28.33.47.62.47h12.98c.29 0 .54-.19.62-.47l2.45-8.56h.8c.35 0 .64-.28.64-.64V8.42a.64.64 0 0 0-.64-.64ZM17 19.38H5L2.79 11.65h16.42L17 19.38ZM20.71 10.36H1.29V9.07h19.42v1.29Z"></path>
+            </svg>
+        </button>
+    </div>
+    <div class="2xl:p-5 1xl:p-4 p-3 w-full">
+        <h3 class="qb-card-title 2xl:text-[20px] 1xl:text-lg md:text-base sm:text-[15px] text-[17px] capitalize font-normal text-black group-hover:text-violet-900 1xl:mb-2 mb-1 text-center leading-tight">
             <a href="{{ url }}">{{ title }}</a>
         </h3>
-        <h6 class="text-center font-normal">$ {{ price }}</h6>
+        <p class="capitalize 2xl:text-[20px] 1xl:text-lg lg:text-base text-[15px] font-normal text-gray-800 text-center">$ {{ price }}</p>
     </div>
 </div>

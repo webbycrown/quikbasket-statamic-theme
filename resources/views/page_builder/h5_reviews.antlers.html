@@ -1,0 +1,35 @@
+<section class="relative 2xl:py-[50px] 1xl:py-[45px] xl:py-[40px] lg:py-[35px] md:py-[30px] sm:py-[25px] py-[20px]">
+    <div class="lg:bg-gradient-to-r from-violet-400 via-violet-400 to-white z-0">
+        <div class="container sm:px-4 px-0">
+            <div class="z-0 lg:flex flex-row-reverse grid 1xl:gap-20 lg:gap-8 relative sm:w-full w-auto sm:h-full h-auto left-0 lg:bg-transparent bg-violet-400 items-stretch sm:justify-between justify-items-center">
+                <div class="swiper myBlog 2xl:w-1/2 lg:w-1/2 w-full h-auto sm:p-auto p-0">
+                    <div class="swiper-wrapper">
+                        {{ quotes }}
+                        <div class="swiper-slide w-full h-auto">
+                            <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="{{ name }}" class="w-full h-full object-cover" />
+                        </div>
+                        {{ /quotes }}
+                    </div>
+                </div>
+                <div class="swiper myBlog2 2xl:w-[45%] lg:w-1/2 w-full lg:px-0 sm:px-8 px-4 2xl:py-24 xl:py-14 lg:pt-10 sm:pt-10 pt-7 pb-14">
+                    <div class="swiper-wrapper">
+                        {{ quotes }}
+                        <div class="swiper-slide z-30">
+                            <h3 class="1xl:mb-7 mb-5 text-start 1xl:text-[42px] xl:text-[34px] text-[30px]">{{ title }}</h3>
+                            <p class="text-gray-800 1xl:leading-7 xl:leading-6 lg:leading-5 leading-6 2xl:pe-1.5 2xl:text-lg 1xl:text-base xl:text-[15px] lg:text-sm md:text-base text-sm">{{ quote }}</p>
+                            <div class="flex 2xl:mt-[60px] 1xl:mt-10 sm:mt-[30px] mt-[25px] gap-4">
+                                <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="photo" }}" alt="{{ name }}" class="xl:w-[68px] w-[60px]" />
+                                <div class="flex flex-col items-start justify-center gap-1">
+                                    <h4 class="hover:text-violet-900 xl:text-[20px] lg:text-lg text-[17px]">{{ name }}</h4>
+                                    <p class="xl:text-[17px] lg:text-sm text-[15px] text-gray-400">{{ role }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {{ /quotes }}
+                    </div>
+                    <div class="myBlog-pagination relative 2xl:-mt-8 xl:mt-1 z-50"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

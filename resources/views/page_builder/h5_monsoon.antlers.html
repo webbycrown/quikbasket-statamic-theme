@@ -1,0 +1,17 @@
+<section class="relative 2xl:py-[50px] 1xl:py-[45px] xl:py-[40px] lg:py-[35px] md:py-[30px] sm:py-[25px] py-[20px]">
+    <div class="md:container z-0">
+        <div class="flex lg:flex-row flex-col bg-violet-400">
+            <div class="lg:w-1/2 w-full">
+                <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="{{ heading }}" class="w-full h-full object-cover" />
+            </div>
+            <div class="lg:w-1/2 w-full">
+                <div class="h-full flex flex-col justify-center items-center 2xl:w-[535px] xl:w-[425px] lg:w-[400px] max-w-full mx-auto sm:gap-[15px] gap-2 md:py-[50px] sm:py-10 py-6 md:p-0 px-4">
+                    <h6 class="sm:text-[17px] text-[15px] tracking-wider text-center">{{ eyebrow }}</h6>
+                    <h2 class="text-center lg:mb-[5px] mb-[7px] leading-snug font-medium 2xl:text-[42px] xl:text-[33px] sm:text-[30px] text-[25px]">{{ heading }}</h2>
+                    <p class="text-center lg:mb-[15px] mb-[11px] text-gray-800 2xl:text-lg sm:text-base text-[15px]">{{ text }}</p>
+                    <a href="{{ button_url }}" class="all-btn">{{ button_label }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

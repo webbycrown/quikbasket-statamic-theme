@@ -1,0 +1,20 @@
+<section class="2xl:py-[50px] 1xl:py-[45px] xl:py-[40px] lg:py-[35px] md:py-[30px] sm:py-[27px] py-[25px] relative">
+    <div class="container">
+        <div class="flex relative justify-between items-center mb-8">
+            <h3 class="sm:text-start text-center">{{ heading }}</h3>
+            <div class="relative arrow md:block hidden">
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev pr-[10px]"></div>
+            </div>
+        </div>
+        <div class="swiper wc_trending_products_slider">
+            <div class="swiper-wrapper">
+                {{ products }}
+                <div class="swiper-slide">
+                    {{ partial:partials/product-card }}
+                </div>
+                {{ /products }}
+            </div>
+        </div>
+    </div>
+</section>

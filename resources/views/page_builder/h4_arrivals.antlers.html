@@ -1,0 +1,18 @@
+<section class="relative 2xl:py-[50px] 1xl:py-[45px] xl:py-[40px] lg:py-[35px] md:py-[30px] sm:py-[25px] py-[20px]">
+    <div class="container">
+        <div class="grid lg:grid-cols-2 gap-8 items-center mb-10">
+            <div>
+                <p class="mb-3">{{ eyebrow }}</p>
+                <h3 class="mb-4">{{ heading }}</h3>
+                <p class="text-lg mb-4">{{ price }} <span class="line-through ms-5 text-gray-400">{{ compare_price }}</span></p>
+                <a class="all-btn" href="{{ button_url }}">{{ button_label }}</a>
+            </div>
+            <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="{{ heading }}" class="w-full h-full object-cover" />
+        </div>
+        <div class="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-5">
+            {{ products }}
+            {{ partial:partials/product-card }}
+            {{ /products }}
+        </div>
+    </div>
+</section>

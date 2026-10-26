@@ -1,7 +1,20 @@
 {{ partial:partials/crumb :label="heading" }}
 <section class="relative 1xl:py-[30px] md:py-[25px] py-[20px]">
     <div class="container">
-        <h1 class="font-medium sm:mb-[18px] mb-[15px]">{{ heading }}</h1>
-        <div class="prose max-w-none 2xl:text-lg text-base">{{ body }}</div>
+        <h1 class="2xl:text-[55px] 1xl:text-[50px] xl:text-[45px] lg:text-[40px] md:text-[35px] sm:text-[40px] text-xl 2xl:mb-[35px] 1xl:mb-[30px] xl:mb-6 md:mb-5 mb-[18px]">{{ heading }}</h1>
+        {{ if effective_date }}
+        <p class="2xl:text-lg lg:text-base text-[15px] md:!leading-7 leading-6 2xl:mb-[30px] 1xl:mb-6 sm:mb-5 mb-4">Effective Date: [{{ effective_date }}]</p>
+        {{ /if }}
+        {{ if intro }}
+        <p class="2xl:text-lg lg:text-base text-[15px] md:!leading-7 leading-6">{{ intro }}</p>
+        {{ /if }}
+        <div class="grid 2xl:mt-[40px] 1xl:mt-[35px] lg:mt-[30px] sm:mt-[25px] mt-[22px] 2xl:gap-[45px] xl:gap-[40px] sm:gap-[28px] gap-[22px]">
+            {{ sections }}
+            <div class="grid 2xl:gap-[20px] 1xl:gap-[17px] xl:gap-[13px] gap-[10px] qb-policy">
+                <h5 class="md:text-[26px] text-[22px] text-black">{{ title }}</h5>
+                {{ copy }}
+            </div>
+            {{ /sections }}
+        </div>
     </div>
 </section>

@@ -129,7 +129,7 @@
                         <div class="w-1/4 md:w-1/3">
                             <ul class="flex items-center justify-end lg:mr-[10px] space-x-2 sm:space-x-4 xl:space-x-6">
                                 <li class="group">
-                                    <a href="/login">
+                                    <a href="{{ if logged_in }}/account{{ else }}/login{{ /if }}">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                             class="1xl:w-[24px] xl:w-[22px] sm:w-[21px] w-[18px] stroke-black group-hover:stroke-violet-900">
                                             <g fill="none" stroke-linecap="round" stroke-linejoin="round"
@@ -175,6 +175,8 @@
                         
 
                         <!-- Links Section -->
+                        {{ partial:partials/all-categories }}
+
                         <div id="navMenu" class="nav-menu lg:flex lg:flex-row">
                             <div
                                 class="flex items-center justify-between w-full lg:hidden bg-violet-400 px-4 sm:py-8 py-7">
@@ -194,51 +196,7 @@
                                 </button>
                             </div>
 
-                            <!-- 1ST -->
-                            <div class="group/product dropdown-toggle mx-0">
-                                <button type="button" aria-expanded="false" id="dropdownToggle1"
-                                    class="lg:group-hover/product:border-violet-900 lg:group-focus/product:border-violet-900 lg:group-active/product:border-violet-900">
-                                    <p
-                                        class="group-hover/product:text-violet-900 group-focus/product:text-violet-900 group-active/product:text-violet-900">
-                                        Pages
-                                    </p>
-                                    <svg class="group-hover/product:rotate-180 group-hover/product:stroke-violet-900"
-                                        fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M19 9l-7 7-7-7"></path>
-                                    </svg>
-                                </button>
-                                <!-- Dropdown -->
-                                <div id="dropdownMenu1"
-                                    class="dropdown-mainmenu hidden lg:group-hover/product:block lg:w-[190px] lg:left-auto lg:right-auto lg:py-4">
-                                    <div class="lg:mb-0 sm:mb-3">
-                                        <h6 class="product-heading">Menu</h6>
-                                        {{ partial:partials/page-nav }}
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- 2ND -->
-                            <div class="group/product dropdown-toggle">
-                                <button type="button" aria-expanded="false" id="dropdownToggle2"
-                                    class="lg:group-hover/product:border-violet-900 lg:group-focus/product:border-violet-900 lg:group-active/product:border-violet-900">
-                                    <p
-                                        class="group-hover/product:text-violet-900 group-focus/product:text-violet-900 group-active/product:text-violet-900">
-                                        New Arrivals
-                                    </p>
-                                    <svg class="group-hover/product:rotate-180 group-hover/product:stroke-violet-900"
-                                        fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M19 9l-7 7-7-7"></path>
-                                    </svg>
-                                </button>
-                                <!-- Dropdown -->
-                                <div id="dropdownMenu2" class="dropdown-mainmenu hidden lg:group-hover/product:block">
-{{ partial:partials/mega-nav }}
-</div>
-                            </div>
-
-                            
+                            {{ partial:partials/html-menu }}
                         </div>
 
                         <!-- SEARCH MODAL -->
