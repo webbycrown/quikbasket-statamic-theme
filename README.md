@@ -6,6 +6,10 @@ Shoppers send one inquiry from the contact page or checkout. Nothing is charged 
 
 Sign in and sign up use Statamic users. The password is hashed. A new account does not get Control Panel access. Forgot password emails a reset link when the site mail is configured.
 
+## Live demo
+
+[https://quikbasket.webbydemo.in](https://quikbasket.webbydemo.in)
+
 ## Design examples
 
 The account page shows the signed-in name and email. Orders, the empty cart, and compare are layout samples. Nothing is saved there.
@@ -91,6 +95,10 @@ Third-party scripts, the font licence, and the photograph note are listed in THI
 Questions and issues: [github.com/webbycrown/quikbasket-statamic-theme/issues](https://github.com/webbycrown/quikbasket-statamic-theme/issues) or [WebbyCrown](https://www.webbycrown.com/custom-statamic-development-services-company/).
 
 ## Changelog
+
+### Unreleased
+
+- README lists the live demo URL.
 
 ### v1.0.0
 
