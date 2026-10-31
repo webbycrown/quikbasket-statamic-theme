@@ -1,17 +1,41 @@
 <section class="relative 2xl:py-[50px] 1xl:py-[45px] xl:py-[40px] lg:py-[35px] md:py-[30px] sm:py-[25px] py-[20px]">
     <div class="container">
-        <h3 class="mb-8">{{ heading }}</h3>
-        <div class="grid lg:grid-cols-3 gap-6">
-            <div class="lg:col-span-2 grid sm:grid-cols-2 gap-4">
-                {{ products }}
-                {{ partial:partials/product-card }}
+        <div class="flex sm:flex-row sm:gap-0 gap-[15px] flex-col sm:items-center justify-between border-b border-lightborder-100 lg:pb-[39px] md:pb-[25px] pb-[20px] 1xl:mb-[30px] mb-[20px]">
+            <div class="flex lg:flex-row flex-col lg:items-center sm:items-start items-center lg:gap-[35px] sm:gap-[18px] gap-2 sm:w-auto w-full">
+                <h3 class="sm:text-start text-center">{{ heading }}</h3>
+                {{ if timer }}
+                <div class="bg-yellow-400 lg:py-[11px] lg:px-7 sm:py-[8px] py-[10px] sm:w-auto w-full sm:px-6 px-3 flex items-center justify-center text-center">
+                    <p class="2xl:text-[20px] xl:text-lg text-base">{{ timer }}</p>
+                </div>
+                {{ /if }}
+            </div>
+            {{ if button_label }}
+            <a class="all-btn sm:w-auto w-full text-center" href="{{ if product }}{{ product:url }}{{ else }}{{ button_url or '/shop' }}{{ /if }}">{{ button_label }}</a>
+            {{ /if }}
+        </div>
+
+        <div class="flex xl:flex-row flex-col-reverse gap-[24px] xl:items-stretch">
+            <div class="md:flex md:flex-row md:items-stretch grid sm:grid-cols-2 grid-cols-1 1xl:gap-[24px] gap-[22px] xl:w-[60%]">
+                {{ products limit="3" }}
+                    {{ partial:partials/rated-product-card }}
                 {{ /products }}
             </div>
-            <div class="relative min-h-[280px]">
-                <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="{{ offer_heading }}" class="w-full h-full object-cover" />
-                <div class="absolute inset-0 flex flex-col justify-end p-6 text-white bg-gradient-to-t from-black/50">
-                    <h5 class="text-xl font-medium mb-3">{{ offer_heading }}</h5>
-                    <h5 class="text-xl">{{ price }}</h5>
+
+            <div class="xl:w-[40%] w-full group min-h-[320px]">
+                <div class="relative w-full h-full min-h-[320px]">
+                    <a href="{{ if product }}{{ product:url }}{{ else }}{{ button_url or '/shop' }}{{ /if }}" class="absolute inset-0 w-full h-full">
+                        <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="{{ offer_heading }}" class="w-full h-full object-cover" />
+                    </a>
+                    <div class="absolute z-10 -top-[19px] 1xl:w-1/2 xl:w-[60%] md:w-[355px] sm:w-[280px] w-[75%] 1xl:ml-[42px] xl:ml-[18px] lg:ml-[100px] sm:ml-[50px] m-4 flex justify-center flex-col h-full sm:text-center text-start sm:items-center items-start pointer-events-none">
+                        {{ if eyebrow }}
+                        <p class="text-sm font-medium md:mb-[10px] mb-[5px] leading-7">{{ eyebrow }}</p>
+                        {{ /if }}
+                        <h5 class="big-offer 2xl:text-xl xl:text-[23px] lg:text-[26px] sm:text-xl text-[22px] font-medium 1xl:mb-[116px] xl:mb-[94px] md:mb-[40px] mb-[65px] 2xl:leading-10 xl:leading-8 sm:leading-10">{{ offer_heading }}</h5>
+                        <div class="flex flex-row sm:items-center items-start sm:gap-[46px] gap-[35px]">
+                            <h5 class="xl:text-[22px] lg:text-[20px] sm:text-[22px] text-base">{{ price }}</h5>
+                            <a href="{{ if product }}{{ product:url }}{{ else }}{{ button_url or '/shop' }}{{ /if }}" class="pointer-events-auto underline underline-offset-4 xl:text-base sm:text-lg text-base font-normal hover:text-violet-900">Shop now</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

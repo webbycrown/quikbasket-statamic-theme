@@ -1,1 +1,6 @@
-{{ partial:partials/design-example }}
+{{# Orders tab lives on the account dashboard #}}
+{{ if logged_in }}
+{{ redirect to="/account?tab=orders" }}
+{{ else }}
+{{ redirect to="/login" }}
+{{ /if }}

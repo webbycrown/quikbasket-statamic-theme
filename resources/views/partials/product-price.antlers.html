@@ -1,0 +1,14 @@
+{{#
+  Sale price = price (used in cart).
+  Regular price = compare_price (struck through when present and different).
+#}}
+{{ if price }}
+<span class="inline-flex flex-wrap items-center justify-center gap-x-2 gap-y-0.5 {{ class }}">
+    <span class="{{ sale_class }}">$ {{ price }}</span>
+    {{ if compare_price }}
+        {{ if compare_price != price }}
+        <span class="line-through text-gray-800/50 {{ regular_class }}">$ {{ compare_price }}</span>
+        {{ /if }}
+    {{ /if }}
+</span>
+{{ /if }}

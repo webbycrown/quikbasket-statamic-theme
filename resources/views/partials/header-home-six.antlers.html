@@ -11,116 +11,10 @@
                     </svg>
                     <p class="text-sm text-black group-hover:text-violet-900 transition-all">399k Followers</p>
                 </a>
-                <p class="text-sm lg:block hidden text-black">Inquiries only. Nothing is charged. |
+                <p class="text-sm lg:block hidden text-black">{{ setting:header_promo_text }} |
                     <a href="{{ partial:partials/shop-href }}"
-                        class="underline underline-offset-4 hover:text-violet-900 hover:decoration-violet-900">Click and
-                        Shop Now.</a>
+                        class="underline underline-offset-4 hover:text-violet-900 hover:decoration-violet-900">{{ setting:header_promo_button }}</a>
                 </p>
-                <ul class="flex items-center relative 1xl:pl-4 pl-3 sm:gap-4 gap-[14px]">
-                    <li class="flex relative m-auto  lg:!border-0">
-                        <div @click.away="open = false" x-data="{ open: false, activeIndex: 0, languages: [
-                        { name: 'English', flag: '/assets/image/usa flage.webp' },
-                        { name: 'Argentina', flag: '/assets/image/argentina.svg' },
-                        { name: 'Brazil', flag: '/assets/image/brazil.svg' },
-                        { name: 'Germany', flag: '/assets/image/germany.svg' },
-                        { name: 'Spain', flag: '/assets/image/spain.svg' },
-                        { name: 'France', flag: '/assets/image/france.svg' }
-                    ]}" class="lg:m-auto ml-auto">
-                            <!-- Dropdown Button -->
-                            <button type="button" @click="open = !open" class="group click-dropdown">
-                                <img decoding="async" loading="lazy" src="/assets/image/usa flage.webp" alt="flag" />
-                                <p class="button-name text-[#282828] text-sm font-normal">
-                                    <span x-text="languages[activeIndex].name"></span>
-                                </p>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3"
-                                    :class="{'rotate-180': open, 'rotate-0': !open}" stroke="#282828"
-                                    class="sm:size-3 size-2.5 duration-200 transform sm:ms-2 ms-1">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                                </svg>
-                            </button>
-
-                            <!-- Dropdown Menu -->
-                            <div x-show="open" x-transition:enter="transition ease-out duration-200 transform"
-                                x-transition:enter-start="opacity-0 scale-95 -translate-y-2"
-                                x-transition:enter-end="opacity-100 scale-100 translate-y-0"
-                                x-transition:leave="transition ease-in duration-150 transform"
-                                x-transition:leave-start="opacity-100 scale-100 translate-y-0"
-                                x-transition:leave-end="opacity-0 scale-95 -translate-y-2"
-                                class="right-0 click-drodpwown-menu w-[150%] left-auto z-50">
-                                <!-- Language Items -->
-                                <template x-for="(language, index) in languages" :key="index">
-                                    <a href="#" @click.prevent="activeIndex = index; open = false" :class="{
-                                    'bg-gray-400 text-white': activeIndex === index, 
-                                    'text-gray-700 hover:bg-gray-400 hover:text-white': activeIndex !== index
-                                            }" class="group/text">
-                                        <img decoding="async" loading="lazy" :src="language.flag" alt="flag"
-                                            class="me-1.5 1xl:w-[20px] w-4" />
-                                        <p :class="{'text-white': activeIndex === index, 'text-gray-700 group-hover/text:text-white': activeIndex !== index}"
-                                            class="text-sm tracking-wide">
-                                            <span x-text="language.name"></span>
-                                        </p>
-                                    </a>
-                                </template>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li @click.away="open = false" x-data="{ open: false, activeIndex: 0, countries: [
-                    { name: 'USD' },
-                    { name: 'CAD' },
-                    { name: 'ERN' },
-                    { name: 'GMD' },
-                    { name: 'INR' },
-                    { name: 'MVR' }
-                            ]}" class="lg:m-auto ml-0 relative">
-                        <!-- Dropdown Button -->
-                        <button type="button" @click="open = !open" class="group click-dropdown">
-                            <p class="button-name !text-sm text-[#282828] font-normal">
-                                <span x-text="countries[activeIndex].name"></span>
-                            </p>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3"
-                                :class="{'rotate-180': open, 'rotate-0': !open}" stroke="#282828"
-                                class="sm:size-3 size-2.5 duration-200 transform sm:ms-3 ms-1">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                            </svg>
-                        </button>
-
-                        <!-- Dropdown Menu -->
-                        <div x-show="open" x-transition:enter="transition ease-out duration-200 transform"
-                            x-transition:enter-start="opacity-0 scale-95 -translate-y-2"
-                            x-transition:enter-end="opacity-100 scale-100 translate-y-0"
-                            x-transition:leave="transition ease-in duration-150 transform"
-                            x-transition:leave-start="opacity-100 scale-100 translate-y-0"
-                            x-transition:leave-end="opacity-0 scale-95 -translate-y-2"
-                            class="click-drodpwown-menu !w-20 top-[1.8rem] right-0 left-auto z-50 tracking-wide">
-                            <!-- Language Items -->
-                            <template x-for="(country, index) in countries" :key="index">
-                                <a href="#" @click.prevent="activeIndex = index; open = false" :class="{
-                            ' text-violet-900': activeIndex === index,
-                                'text-gray-700 hover:text-violet-900': activeIndex !== index
-                            }" class="group/text justify-between">
-                                    <p :class="{'text-violet-900': activeIndex === index, 'text-gray-700 group-hover/text:text-violet-900': activeIndex !== index}"
-                                        class="sm:text-sm text-[13px] text-start px-1">
-                                        <span x-text="country.name"></span>
-                                    </p>
-                                    <span
-                                        :class="{'opacity-100': activeIndex === index, 'opacity-0': activeIndex !== index}"
-                                        aria-hidden="true" class="text-inherit w-3 h-3 flex-shrink-0">
-                                        <svg aria-hidden="true" data-selected="true" role="presentation"
-                                            class="w-[18px] h-[18px] fill-black group-hover:fill-violet-900"
-                                            viewBox="0 0 17 18">
-                                            <polyline fill="none" points="1 9 7 14 15 4" stroke="currentColor"
-                                                stroke-dasharray="22" stroke-dashoffset="44" stroke-linecap="round"
-                                                stroke-linejoin="round" stroke-width="1.5"
-                                                style="transition: stroke-dashoffset 200ms;">
-                                            </polyline>
-                                        </svg>
-                                    </span>
-                            </template>
-                        </div>
-                    </li>
-                </ul>
             </div>
         </div>
 
@@ -128,7 +22,7 @@
         <nav class="lg:relative w-full z-40" id="nav">
             <div class="container mx-auto px-4 flex justify-between items-center relative lg:h-full h-20">
                 <div class="site-logo">
-                    <a href="{{ partial:partials/page-href id='home-five' }}">
+                    <a href="{{ partial:partials/page-href id='home-six' }}">
                         <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="setting:logo" fallback="image/main-logo.svg" }}" alt="company logo"
                             class="lg:w-[350px] sm:w-11/12 w-full pe-6" />
                     </a>
@@ -139,7 +33,7 @@
                     class="overflow-auto lg:overflow-visible lg:h-20 h-full fixed inset-0 w-full bg-white z-50 flex flex-col items-center lg:justify-center lg:static 
                     lg:flex lg:flex-row space-y-0 2xl:space-x-10 1xl:space-x-8 lg:space-x-[1.3rem] lg:bg-transparent lg:divide-y-0 divide-y divide-lightborder-100">
                     <div class="flex items-center justify-between w-full lg:hidden bg-violet-400 sm:py-6 py-5 px-6">
-                        <a href="{{ partial:partials/page-href id='home-five' }}">
+                        <a href="{{ partial:partials/page-href id='home-six' }}">
                             <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="setting:logo" fallback="image/main-logo.svg" }}" alt="company logo"
                                 class="w-11/12" />
                         </a>
@@ -221,6 +115,7 @@
                                             class="clr-i-outline clr-i-outline-path-1" />
                                         <path fill="none" d="M0 0h36v36H0z" />
                                     </svg>
+                                    <span class="hidden absolute top-[-5px] right-[-5px] 1xl:w-[17px] 1xl:h-[17px] w-[16px] h-[16px] 1xl:text-[11px] text-[10px] lg:inline-flex items-center justify-center font-normal leading-none text-white bg-violet-900 rounded-full pt-[0.2px]">5</span>
                                 </a>
                             </li>
 
@@ -272,7 +167,7 @@
                                                         <!-- Sidebar Content -->
 <div class="mt-4">
     <p class="text-sm">This screen is a design example. Nothing is saved.</p>
-    <p class="text-sm mt-3"><a class="border-b border-black" href="{{ partial:partials/contact-href }}">Send an inquiry</a></p>
+    <p class="text-sm mt-3"><a class="border-b border-black" href="{{ partial:partials/contact-href }}">{{ setting:inquiry_button }}</a></p>
 </div>
 
                                                     </div>
@@ -280,12 +175,13 @@
                                             </section>
                                         </div>
                                         <!-- Open sidebar button -->
-                                        <button x-on:click="open = true" class="relative text-white rounded-md">
+                                        <button x-on:click="open = true" class="relative text-white rounded-md" aria-label="Cart">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                                 class="1xl:w-[22px] 1xl:h-[22px] sm:w-[20px] sm:h-[20px] w-[18px] h-[18px] hover:stroke-violet-900 stroke-black">
                                                 <path stroke-width="1.5" fill="none"
                                                     d="M2 12h20l-2 11H4zm18-4l-6-7M4 8l6-7M1 8h22v4H1zm7 7v5m8-5v5m-4-5v5" />
                                             </svg>
+                                            <span class="hidden absolute top-[-5px] right-[-5px] 1xl:w-[17px] 1xl:h-[17px] w-[16px] h-[16px] 1xl:text-[11px] text-[10px] lg:inline-flex items-center justify-center font-normal leading-none text-white bg-violet-900 rounded-full pt-[0.2px]">3</span>
                                         </button>
                                     </div>
                                 </div>

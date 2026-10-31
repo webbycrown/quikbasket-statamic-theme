@@ -108,11 +108,20 @@ page_builder:
     id: h2-spotlight
     type: h2_spotlight
     image: image/red-cloth-model.webp
-    products:
-      - branded-sky-jeans
-      - casual-cotton-t-shirt
-      - casual-jackets-for-womens
-      - coastal-linen-s-s-shirt
+    features:
+      -
+        id: h2-spot-1
+        product: colour-cotton-t-shirt
+        text: 'Classic Red T-Shirt – Bold, Stylish & Comfortable.'
+      -
+        id: h2-spot-2
+        product: cotton-sweater
+        text: 'Iconic Fashion Handbag – Luxury Meets Functionality.'
+        image_right: true
+      -
+        id: h2-spot-3
+        product: casual-jackets-for-womens
+        text: "Stylish and Warm Boys' Jackets for Every Season."
   -
     id: h2-offer
     type: h2_offer
@@ -129,14 +138,11 @@ page_builder:
     type: h2_premium
     heading: 'Premium Collection'
     products:
-      - colour-cotton-t-shirt
       - trendy-alansca-dress
+      - winter-wear-outertops
       - crop-tops-for-daily-wear
-      - cotton-sweater
-      - heart-printed-top-t-shirt
       - single-breasted-blazer
-      - floral-designed-dress
-      - checked-shirt
+      - branded-sky-jeans
   -
     id: h2-features
     type: h2_features

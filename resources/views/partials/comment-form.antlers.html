@@ -1,0 +1,24 @@
+{{ form:comment class="js-theme-form grid 2xl:gap-6 1xl:gap-5 gap-4" }}
+    <div class="stay-connect-alert" role="alert"></div>
+    <p class="stay-connect-success" role="status">{{ setting:comment_success }}</p>
+    <input type="hidden" name="post" value="{{ id }}">
+    <div class="md:grid grid-cols-2 flex flex-col 2xl:gap-6 1xl:gap-5 lg:gap-4 md:gap-2 gap-4">
+        <div class="grid lg:gap-[10px] gap-2">
+            <label for="comment-name" class="1xl:text-lg xl:text-base text-[15px] text-gray-800">Full Name*</label>
+            <input id="comment-name" type="text" name="name" required autocomplete="name"
+                class="border border-lightborder-100 bg-[#D9D9D9]/10 xl:px-3 px-2 2xl:py-3 md:py-2.5 sm:py-2 py-1.5 outline-lightborder-200 2xl:placeholder:text-base placeholder:text-sm">
+        </div>
+        <div class="grid lg:gap-[10px] gap-2">
+            <label for="comment-email" class="1xl:text-lg xl:text-base text-[15px] text-gray-800">Email*</label>
+            <input id="comment-email" type="email" name="email" required autocomplete="email"
+                class="border border-lightborder-100 bg-[#D9D9D9]/10 xl:px-3 px-2 2xl:py-3 md:py-2.5 sm:py-2 py-1.5 outline-lightborder-200 2xl:placeholder:text-base placeholder:text-sm">
+        </div>
+    </div>
+    <div class="grid lg:gap-[10px] gap-2">
+        <label for="comment-message" class="1xl:text-lg xl:text-base text-[15px] text-gray-800">Message*</label>
+        <textarea id="comment-message" name="message" required rows="4"
+            class="border border-lightborder-100 bg-[#D9D9D9]/10 xl:px-3 px-2 2xl:py-3 xl:py-2.5 md:py-2 h-[100px] py-1 w-full outline-lightborder-200 2xl:placeholder:text-base placeholder:text-sm"></textarea>
+    </div>
+    <input type="text" name="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" class="absolute opacity-0 pointer-events-none h-0 w-0 overflow-hidden" value="">
+    <button type="submit" class="all-btn flex justify-self-start">{{ setting:comment_button }}</button>
+{{ /form:comment }}

@@ -1,0 +1,17 @@
+{{ setting:footer_photos }}
+<div class="relative w-full h-full before:block before:content-[''] 2xl:before:pt-[116px] 1xl:before:pt-[98px] xl:before:pt-[94px] lg:before:pt-[82px] before:pt-full overflow-hidden">
+    <img decoding="async" loading="lazy" src="{{ url }}" alt=""
+        class="absolute top-0 bottom-0 left-0 right-0 h-full w-full object-cover" />
+    <a href="{{ setting:instagram_url }}"
+        class="absolute top-0 w-full h-full flex items-center justify-center bg-black/50 opacity-0 hover:opacity-100 duration-0"
+        aria-label="{{ setting:instagram_heading }}">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+            <g fill="none" stroke="white" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 16a4 4 0 1 0 0-8a4 4 0 0 0 0 8" />
+                <path d="M3 16V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5Z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="m17.5 6.51l.01-.011" />
+            </g>
+        </svg>
+    </a>
+</div>
+{{ /setting:footer_photos }}

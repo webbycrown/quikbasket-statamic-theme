@@ -1,18 +1,20 @@
 <section class="relative 2xl:py-[50px] 1xl:py-[45px] xl:py-[40px] lg:py-[35px] md:py-[30px] sm:py-[25px] py-[20px]">
     <div class="container">
-        <div class="grid lg:grid-cols-2 gap-8 items-center mb-10">
-            <div>
-                <p class="mb-3">{{ eyebrow }}</p>
-                <h3 class="mb-4">{{ heading }}</h3>
-                <p class="text-lg mb-4">{{ price }} <span class="line-through ms-5 text-gray-400">{{ compare_price }}</span></p>
-                <a class="all-btn" href="{{ button_url }}">{{ button_label }}</a>
+        <div class="sm:relative flex flex-col-reverse">
+            <div class="2xl:h-[27rem] 1xl:h-96 lg:h-[21rem] md:h-[18rem] h-64 sm:block hidden">
+                <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="{{ heading }}" class="w-full h-full object-cover sm:block hidden" />
             </div>
-            <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="{{ heading }}" class="w-full h-full object-cover" />
-        </div>
-        <div class="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-5">
-            {{ products }}
-            {{ partial:partials/product-card }}
-            {{ /products }}
+            <img decoding="async" loading="lazy" src="/assets/image/new-arrival banner-half.webp" alt="{{ heading }}" class="w-full h-full object-cover sm:hidden block" />
+            <div class="sm:absolute sm:from-transparent sm:to-transparent bg-gradient-to-b from-[#E3D1BB] via-[#ECDAC4] to-[#E2D0BA]/85 h-full flex flex-col sm:items-start sm:justify-center 2xl:w-[43%] lg:w-[48%] sm:w-[54%] w-full sm:text-start sm:pt-0 text-center ml-auto top-0 right-0 xl:lg:pr-36 lg:pr-24 md:pr-20 sm:pr-8 px-4 pt-10">
+                {{ if eyebrow }}
+                <p class="1xl:text-base lg:text-[15px] text-sm sm:text-gray-400 text-black lg:mb-[15px] sm:mb-[10px] mb-3">{{ eyebrow }}</p>
+                {{ /if }}
+                <h3 class="1xl:mb-7 lg:mb-6 md:mb-5 mb-[14px] leading-tight font-medium">{{ heading }}</h3>
+                <h5 class="1xl:text-[25px] lg:text-[20px] md:text-lg sm:text-base text-lg font-normal 1xl:mb-[30px] lg:mb-[27px] md:mb-[25px] mb-[20px] text-gray-700/95">
+                    {{ price }}{{ if compare_price }}<span class="text-gray-100 line-through ms-5">{{ compare_price }}</span>{{ /if }}
+                </h5>
+                <a class="all-btn" href="{{ if product }}{{ product:url }}{{ else }}{{ button_url }}{{ /if }}">{{ button_label }}</a>
+            </div>
         </div>
     </div>
 </section>

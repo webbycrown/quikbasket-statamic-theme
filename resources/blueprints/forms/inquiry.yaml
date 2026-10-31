@@ -4,11 +4,59 @@ fields:
     handle: name
     field: { type: text, display: Name, validate: required }
   -
+    handle: first_name
+    field: { type: text, display: 'First name' }
+  -
+    handle: last_name
+    field: { type: text, display: 'Last name' }
+  -
     handle: email
     field: { type: text, display: Email, validate: 'required|email' }
   -
+    handle: phone_dial
+    field: { type: text, display: 'Phone dial' }
+  -
+    handle: phone
+    field: { type: text, display: Phone }
+  -
+    handle: address
+    field: { type: text, display: Address }
+  -
+    handle: city
+    field: { type: text, display: City }
+  -
+    handle: state
+    field: { type: text, display: State }
+  -
+    handle: pincode
+    field: { type: text, display: 'Pin code' }
+  -
+    handle: country
+    field: { type: text, display: Country }
+  -
+    handle: ship_different
+    field: { type: text, display: 'Ship different', visibility: hidden }
+  -
+    handle: ship_address
+    field: { type: text, display: 'Shipping address' }
+  -
+    handle: ship_city
+    field: { type: text, display: 'Shipping city' }
+  -
+    handle: ship_state
+    field: { type: text, display: 'Shipping state' }
+  -
+    handle: ship_pincode
+    field: { type: text, display: 'Shipping pin code' }
+  -
+    handle: ship_country
+    field: { type: text, display: 'Shipping country' }
+  -
     handle: message
     field: { type: textarea, display: Message, validate: required }
+  -
+    handle: terms_agree
+    field: { type: text, display: 'Terms agree', visibility: hidden }
   -
     handle: clear_cart
     field:

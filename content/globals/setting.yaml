@@ -2,12 +2,14 @@ title: Setting
 data:
   site_name: Quikbasket
   logo: image/main-logo.svg
+  logo_white: image/main-white-logo.webp
+  footer_logo: image/main-white-logo.webp
   favicon: image/favicon.svg
   phone: '+1 555 0100'
   email: info@quikbasket.example
   address: '120 Market Street, Portland'
   map_url: 'https://maps.google.com/?q=120+Market+Street+Portland'
-  copyright: '© Copyright 2024 QuickBasket All Right Reserved.'
+  copyright: '© Copyright 2024 Quikbasket. All rights reserved.'
   seo_description: A multi-department shop for clothing, home, and everyday goods.
   facebook_url: 'https://www.facebook.com/'
   instagram_url: 'https://www.instagram.com/'
@@ -15,6 +17,8 @@ data:
   instagram_user_id: ''
   inquiry_button: Send inquiry
   inquiry_success: 'Thanks. This inquiry was saved. Nothing was charged.'
+  comment_button: Submit
+  comment_success: 'Thanks — your comment was sent. An editor will review it before it appears on the page.'
   x_url: 'https://x.com/'
   youtube_url: 'https://www.youtube.com/'
   pinterest_url: 'https://www.pinterest.com/'
@@ -41,6 +45,11 @@ data:
   support_heading: 'Help & Support'
   general_heading: General Links
   helpful_heading: Helpful
+  following_heading: Following
+  about_heading: About
+  header_promo_text: 'Free Express Shipping on orders $200!'
+  header_promo_button: 'Click and Shop Now.'
+  pages_menu_label: Pages
   popup_heading: Subscribe for our Newsletter
   popup_text: 'Leave your email and the shop will keep it with your inquiry. Nothing is sent as a mailing list.'
   popup_button: Subscribe
@@ -48,6 +57,20 @@ data:
   cookie_text: 'Cookies help the site remember this notice. Read the privacy page for the shop copy.'
   cookie_accept: 'Yes, I Accept'
   cookie_manage: Manage Settings
+  invoice_color: '#247A4D'
+  coupons:
+    -
+      type: coupon
+      code: SAVE10
+      discount_type: percent
+      amount: 10
+      label: '10% off (demo)'
+    -
+      type: coupon
+      code: SAVE20
+      discount_type: fixed
+      amount: 20
+      label: '$20 off (demo)'
   shipping_options:
     -
       type: option

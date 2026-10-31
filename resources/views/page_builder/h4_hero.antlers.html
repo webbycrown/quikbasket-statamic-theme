@@ -12,26 +12,51 @@
                                 <p class="2xl:mb-2.5 md:mb-[17px] mb-4 1xl:text-lg text-base 1xl:leading-7 leading-6">{{ text }}</p>
                                 <div class="sm:grid flex md:gap-7 gap-5">
                                     <p class="flex flex-col md:gap-2 gap-1 text-sm text-black font-medium">{{ price_label }}<br /><span class="xl:text-xl lg:text-[28px] text-[20px]">{{ price }}</span></p>
-                                    <a class="all-btn" href="{{ button_url }}">{{ button_label }}</a>
+                                    <a class="all-btn" href="{{ if product }}{{ product:url }}{{ else }}{{ button_url }}{{ /if }}">{{ button_label }}</a>
                                 </div>
                             </div>
                         </div>
+                        <div class="flex sm:justify-end items-center max-w-full overflow-auto flex-nowrap w-full">
+                            {{ quick_categories }}
+                            <div class="bg-white lg:w-[180px] group border-r-0 border border-gray-400/20 xl:h-[162px] sm:h-[142px] h-full sm:w-2/3 w-1/2">
+                                <div class="flex flex-col items-center justify-center h-full 2xl:gap-[11px] sm:gap-[20px] gap-[7px] sm:p-0 py-[10px] px-[15px]">
+                                    <a href="{{ link }}" class="rounded-full">
+                                        <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="{{ label }}" class="hover:rotate-[10deg] transition-all object-cover min-w-[80px] max-w-full h-[80px] rounded-full" />
+                                    </a>
+                                    <p class="font-medium text-black 1xl:text-[17px] xl:text-base text-[15px] group-hover:text-violet-900 transition duration-300 ease-in-out">
+                                        <a href="{{ link }}">{{ label }}</a>
+                                    </p>
+                                </div>
+                            </div>
+                            {{ /quick_categories }}
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="grid lg:grid-cols-2 grid-cols-1">
-                {{ cards }}
-                <div class="border border-gray-400/20 border-t-0 p-3.5 md:gap-[15px] gap-[9px] flex items-center bg-white lg:w-full w-full group">
-                    <div class="overflow-hidden xl:w-[143px] xl:h-[132px] lg:w-[141px] lg:h-[112px] md:w-[146px] md:h-[131px] w-[109px] h-[106px]">
-                        <a href="{{ link }}"><img decoding="async" loading="lazy" alt="{{ heading }}" class="group-hover:scale-105 transition-all w-full h-full object-top object-cover" src="{{ partial:partials/media-url :file="image" }}" /></a>
+                <div class="2xl:w-[23%] lg:w-[30%] w-full flex lg:flex-col flex-wrap">
+                    {{ cards }}
+                    {{ if product }}
+                    {{ card_image = product:image }}
+                    <div class="border border-gray-400/20 border-t-0 p-3.5 md:gap-[15px] gap-[9px] flex items-center bg-white lg:w-full sm:w-1/2 w-full group">
+                        <div class="overflow-hidden xl:w-[143px] xl:h-[132px] lg:w-[141px] lg:h-[112px] md:w-[146px] md:h-[131px] w-[109px] h-[106px]">
+                            <a href="{{ product:url }}">
+                                <img decoding="async" loading="lazy" alt="{{ title ?? product:title }}" class="group-hover:scale-105 transition-all w-full h-full object-top object-cover" src="{{ partial:partials/media-url :file="card_image" }}" />
+                            </a>
+                        </div>
+                        <div class="xl:pl-3 pl-1.5 w-3/5">
+                            <a href="{{ product:url }}">
+                                <h3 class="2xl:text-[20px] 1xl:text-[19px] lg:text-base md:text-lg sm:text-[17px] text-[15px] lg:mb-2 mb-3 leading-tight font-medium group-hover:text-violet-900">{{ title ?? product:title }}</h3>
+                            </a>
+                            <p class="text-sm sm:mb-2 mb-1.5 text-black font-normal">$ {{ product:price }}</p>
+                            <a class="text-sm text-black font-medium underline flex items-center group gap-1 underline-offset-4" href="{{ product:url }}">{{ button_label ?? 'Shop now' }}
+                                <svg width="19" height="19" viewBox="0 0 19 19" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="fill-black group-hover:translate-x-2 transition-all w-4 h-4">
+                                    <path d="M11.4997 3.16675L10.3834 4.283L14.8009 8.70842H1V10.2917H14.8009L10.3834 14.7172L11.4997 15.8334L17.833 9.50008L11.4997 3.16675Z"></path>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
-                    <div class="xl:pl-3 pl-1.5 w-3/5">
-                        <a href="{{ link }}"><h3 class="2xl:text-[20px] 1xl:text-[19px] lg:text-base md:text-lg sm:text-[17px] text-[15px] lg:mb-2 mb-3 leading-tight font-medium group-hover:text-violet-900">{{ heading }}</h3></a>
-                        <p class="text-sm sm:mb-2 mb-1.5 text-black font-normal">{{ price }}</p>
-                        <a class="text-sm text-black font-medium underline flex items-center group gap-1 underline-offset-4" href="{{ link }}">{{ button_label }}</a>
-                    </div>
+                    {{ /if }}
+                    {{ /cards }}
                 </div>
-                {{ /cards }}
             </div>
         </div>
     </div>

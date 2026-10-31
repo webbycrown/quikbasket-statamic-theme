@@ -1,0 +1,23 @@
+<div class="flex flex-col border border-lightborder-100 bg-violet-400 md:p-4 p-3 group w-full">
+    <div class="flex justify-between items-center mb-2">
+        <p class="1xl:text-[13px] text-xs font-medium text-[#a5009e]">IN STOCK</p>
+        <button type="button" class="js-shop-toggle group/wishlist wishlist-pro rounded-full flex items-center justify-center" data-list="wish" data-id="{{ id }}" aria-pressed="false" aria-label="Wishlist">
+            <svg viewBox="0 0 22 22" aria-hidden="true" class="2xl:w-[22px] sm:w-[18px] w-[20px] stroke-black group-hover/wishlist:stroke-violet-900 fill-none">
+                <path d="M10.4697 5.59405C10.6103 5.7347 10.8011 5.81372 11 5.81372C11.1989 5.81372 11.3897 5.7347 11.5303 5.59405L11.9085 5.21592C12.8465 4.2779 14.118 3.75122 15.4447 3.75122H15.5616C18.3236 3.75122 20.5625 5.99012 20.5625 8.75216C20.5625 10.1386 19.9874 11.4622 18.9741 12.4079L11 19.8503L3.02592 12.4079C2.01262 11.4622 1.4375 10.1386 1.4375 8.75216C1.4375 5.99012 3.6764 3.75122 6.43844 3.75122H6.55531C7.88197 3.75122 9.15352 4.2779 10.0915 5.21593L10.4697 5.59405Z"></path>
+            </svg>
+        </button>
+    </div>
+    <div class="1xl:w-[188px] 1xl:h-[188px] xl:w-[150px] xl:h-[150px] w-[130px] h-[130px] mx-auto shrink-0">
+        <a href="{{ url }}" class="block w-full h-full overflow-hidden">
+            <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="{{ title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300 ease-in-out" />
+        </a>
+    </div>
+    <div class="grid text-center 1xl:mt-5 md:mt-3 mt-2">
+        <div class="md:mb-[10px] mb-[6px] mx-auto">
+            <h5 class="2xl:leading-[25px] lg:leading-[23px] 2xl:text-lg 1xl:text-base md:text-[15px] text-base font-medium capitalize group-hover:text-violet-900 text-black line-clamp-2">
+                <a href="{{ url }}">{{ title }}</a>
+            </h5>
+        </div>
+        <p class="font-normal text-black text-center 2xl:text-lg text-base">{{ partial:partials/product-price }}</p>
+    </div>
+</div>

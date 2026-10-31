@@ -2,25 +2,133 @@
 <section class="relative 1xl:py-[30px] md:py-[25px] py-[20px]">
     <div class="container">
         <div class="grid lg:grid-cols-2 gap-8 items-start">
-            <div class="grid gap-3">
+            <div>
+                <div class="mb-3 overflow-hidden">
+                    <img decoding="async" loading="lazy" id="product-main-image" src="{{ partial:partials/media-url :file="image" }}" alt="{{ title }}" class="w-full object-cover" />
+                </div>
                 {{ if gallery }}
-                {{ gallery }}
-                <img decoding="async" loading="lazy" src="{{ url }}" alt="{{ title }}" class="w-full object-cover" />
-                {{ /gallery }}
-                {{ else }}
-                <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="{{ title }}" class="w-full object-cover" />
+                <div class="grid grid-cols-4 gap-2">
+                    <button type="button" class="js-product-thumb border border-violet-900 overflow-hidden" data-src="{{ partial:partials/media-url :file="image" }}">
+                        <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="" class="w-full aspect-square object-cover" />
+                    </button>
+                    {{ gallery }}
+                    <button type="button" class="js-product-thumb border border-lightborder-100 overflow-hidden" data-src="{{ url }}">
+                        <img decoding="async" loading="lazy" src="{{ url }}" alt="" class="w-full aspect-square object-cover" />
+                    </button>
+                    {{ /gallery }}
+                </div>
                 {{ /if }}
             </div>
-            <div>
+            <div class="js-product-buy" data-id="{{ id }}" data-max-qty="{{ max_qty ?? 99 }}">
                 <h1 class="font-medium mb-3">{{ title }}</h1>
-                {{ if price }}
-                <p class="text-lg mb-4">$ {{ price }}</p>
+                {{ if categories }}
+                <p class="mb-3 text-sm">
+                    {{ categories }}
+                    <a class="underline hover:text-violet-900 me-2" href="{{ url }}">{{ title }}</a>
+                    {{ /categories }}
+                </p>
                 {{ /if }}
+                <div class="w-full flex items-center justify-between gap-3 mb-4">
+                    {{ if price }}
+                    <p class="text-lg js-product-price">{{ partial:partials/product-price sale_class="font-medium" regular_class="text-base" }}</p>
+                    {{ /if }}
+                    {{ if sku }}
+                    <p class="rounded-full bg-violet-400 py-1.5 px-[18px] xl:text-base text-sm font-medium js-product-sku">SKU: {{ sku }}</p>
+                    {{ /if }}
+                </div>
                 {{ if description }}
                 <p class="mb-6 2xl:text-lg text-base">{{ description }}</p>
                 {{ /if }}
-                <p class="mb-6">Nothing is charged and no card is taken.</p>
-                <a class="all-btn" href="/checkout">Send an inquiry</a>
+                <p class="mb-6 text-sm text-gray-800">Nothing is charged and no card is taken.</p>
+
+                {{ if variants }}
+                <div class="mb-5">
+                    <p class="mb-2 text-sm font-medium">Options</p>
+                    <div class="grid gap-2" role="radiogroup" aria-label="Product options">
+                        {{ variants }}
+                        <label class="flex flex-wrap items-center justify-between gap-2 px-3 py-2.5 border border-lightborder-200 cursor-pointer">
+                            <span class="inline-flex items-center gap-2 min-w-0">
+                                <input type="radio" name="qb_variant" class="js-product-variant accent-black"
+                                    data-size="{{ size }}"
+                                    data-color="{{ color }}"
+                                    data-qty="{{ qty ?? 99 }}"
+                                    data-sku="{{ sku }}"
+                                    value="{{ index }}"
+                                    {{ if first }}checked{{ /if }}>
+                                {{ if color }}
+                                <span class="inline-block w-5 h-5 rounded-full border border-lightborder-100 shrink-0" style="background-color: {{ color }};" aria-hidden="true"></span>
+                                {{ /if }}
+                                <span class="text-sm">
+                                    {{ if size }}Size {{ size }}{{ /if }}
+                                    {{ if size }}{{ if color }} · {{ /if }}{{ /if }}
+                                    {{ if color }}{{ color }}{{ /if }}
+                                    {{ unless size }}{{ unless color }}Option{{ /unless }}{{ /unless }}
+                                </span>
+                            </span>
+                            <span class="text-xs text-gray-800 js-variant-stock">{{ qty ?? 99 }} available</span>
+                        </label>
+                        {{ /variants }}
+                    </div>
+                </div>
+                {{ else }}
+                    {{ if sizes }}
+                    <div class="mb-5">
+                        <p class="mb-2 text-sm font-medium">Size</p>
+                        <div class="flex flex-wrap gap-2" role="radiogroup" aria-label="Size">
+                            {{ sizes }}
+                            <label class="inline-flex items-center gap-2 min-w-[2.75rem] px-3 py-2 border border-lightborder-200 cursor-pointer">
+                                <input type="radio" name="qb_size" value="{{ value }}" class="js-product-size accent-black" {{ if first }}checked{{ /if }}>
+                                <span class="text-sm">{{ value }}</span>
+                            </label>
+                            {{ /sizes }}
+                        </div>
+                    </div>
+                    {{ /if }}
+                    {{ if colors }}
+                    <div class="mb-5">
+                        <p class="mb-2 text-sm font-medium">Color</p>
+                        <div class="flex flex-wrap gap-2" role="radiogroup" aria-label="Color">
+                            {{ colors }}
+                            <label class="inline-flex items-center gap-2 px-3 py-2 border border-lightborder-200 cursor-pointer" title="{{ value }}">
+                                <input type="radio" name="qb_color" value="{{ value }}" class="js-product-color accent-black" {{ if first }}checked{{ /if }}>
+                                <span class="inline-block w-5 h-5 rounded-full border border-lightborder-100 shrink-0" style="background-color: {{ value }};" aria-hidden="true"></span>
+                                <span class="text-sm">{{ value }}</span>
+                            </label>
+                            {{ /colors }}
+                        </div>
+                    </div>
+                    {{ /if }}
+                {{ /if }}
+
+                <div class="flex items-center sm:gap-[15px] gap-[5px] mb-8 sm:flex-nowrap flex-wrap">
+                    <div class="custom-number-input sm:w-64 w-36 sm:me-[5px]">
+                        <div class="flex flex-row 1xl:h-[3.2rem] sm:h-11 h-10 w-full relative bg-transparent items-center sm:p-[6px] p-[3px] border border-lightborder-200">
+                            <button type="button" data-action="decrement" class="flex items-center justify-center bg-violet-900 text-white h-full cursor-pointer outline-none" aria-label="Decrease quantity">
+                                <span class="text-lg font-thin xl:p-[15px] lg:p-[10px] sm:p-[15px] p-[10px]">−</span>
+                            </button>
+                            <input type="number" name="qty" min="1" max="{{ max_qty ?? 99 }}" value="1" class="js-product-qty 2xl:ml-[10px] h-full outline-none text-center w-full font-semibold text-md text-gray-700" aria-label="Quantity">
+                            <button type="button" data-action="increment" class="flex items-center justify-center bg-violet-900 text-white h-full cursor-pointer outline-none" aria-label="Increase quantity">
+                                <span class="text-lg font-thin xl:p-[15px] lg:p-[10px] sm:p-[15px] p-[10px]">+</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="sm:w-full text-center">
+                        <button type="button" class="js-product-add all-btn w-full 1xl:py-3 py-2 sm:px-6 px-3 sm:text-base text-sm">Add to cart</button>
+                    </div>
+                    <button type="button" class="js-shop-toggle 1xl:p-[13px] lg:p-[8px] p-[10px] border border-gray-200 hover:bg-violet-900 hover:border-violet-900 group" data-list="wish" data-id="{{ id }}" aria-pressed="false" aria-label="Add to wishlist">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" class="xl:w-[22px] sm:w-[19px] w-[17px] stroke-black group-hover:stroke-white fill-none" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M7.004 12.383L1.53 7.424c-2.975-2.975 1.398-8.688 5.474-4.066c4.076-4.622 8.43 1.11 5.475 4.066z" />
+                        </svg>
+                    </button>
+                </div>
+                <p class="text-sm text-gray-800 mb-6 js-product-qty-hint" hidden></p>
+                <div class="flex flex-wrap gap-3 mb-8">
+                    <a class="all-btn" href="/checkout">{{ setting:inquiry_button }}</a>
+                </div>
+                <div class="border-t border-lightborder-100 pt-6">
+                    <h2 class="text-lg font-medium mb-2">Description</h2>
+                    <p class="2xl:text-base text-sm">{{ description ?? 'Details for this demo product.' }}</p>
+                </div>
             </div>
         </div>
         <div class="mt-12">

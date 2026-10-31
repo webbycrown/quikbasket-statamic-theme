@@ -1,10 +1,196 @@
 {{ partial:partials/crumb label="Checkout" }}
 <section class="relative 1xl:py-[30px] md:py-[25px] py-[20px]">
     <div class="container">
-        <div class="mx-auto w-[720px] max-w-full">
-            <h1 class="font-medium sm:mb-[18px] mb-[15px]">Checkout</h1>
-            <p class="2xl:mb-6 mb-4 2xl:text-lg text-base">Nothing is charged and no card is taken. This form saves an inquiry for the shop to read.</p>
-            {{ partial:partials/inquiry-form clear_cart="1" }}
+        <h1 class="2xl:mb-[50px] mb-[40px] font-medium">Checkout</h1>
+        {{ if cart_lines }}
+        <div class="flex lg:flex-row flex-col lg:gap-[50px] sm:gap-[45px] gap-[40px]">
+            <div class="xl:w-[70%] lg:w-[62%] w-full">
+                <p class="text-[20px] border-b border-lightborder-100 pb-4 md:mb-8 mb-6">Billing details</p>
+                <p class="mb-6 2xl:text-lg text-base text-gray-800">Nothing is charged and no card is taken. This form saves an inquiry for the shop to read. Address fields fill from your account when available.</p>
+                {{ form:inquiry novalidate class="js-theme-form js-checkout-form sm:grid grid-cols-2 flex flex-col 1xl:gap-x-7 1xl:gap-y-6 sm:gap-x-5 lg:gap-y-5 sm:gap-y-3 gap-y-4" data-user-name="{{ checkout_name }}" data-user-email="{{ checkout_email }}" data-user-first="{{ checkout_first }}" data-user-last="{{ checkout_last }}" }}
+                    <div class="stay-connect-alert sm:col-span-2" role="alert"></div>
+                    <p class="stay-connect-success sm:col-span-2" role="status">{{ setting:inquiry_success }}</p>
+                    <input type="hidden" name="clear_cart" value="1">
+                    <input type="hidden" name="name" id="checkout-name" value="{{ checkout_name }}">
+                    <input type="hidden" name="ship_different" id="checkout-ship-different" value="0">
+
+                    <div class="grid gap-3">
+                        <label for="checkout-first" class="xl:text-base md:text-[15px] text-sm text-gray-800">First Name*</label>
+                        <input type="text" name="first_name" id="checkout-first" required autocomplete="given-name" placeholder="Enter first name" value="{{ checkout_first }}"
+                            class="js-req-field border border-lightborder-100 bg-[#D9D9D9]/10 xl:px-3 px-2 2xl:py-3 xl:py-2.5 py-2 outline-lightborder-200" data-error-label="First name">
+                        <p class="js-field-error" hidden></p>
+                    </div>
+                    <div class="grid gap-3">
+                        <label for="checkout-last" class="xl:text-base md:text-[15px] text-sm text-gray-800">Last Name*</label>
+                        <input type="text" name="last_name" id="checkout-last" required autocomplete="family-name" placeholder="Enter last name" value="{{ checkout_last }}"
+                            class="js-req-field border border-lightborder-100 bg-[#D9D9D9]/10 xl:px-3 px-2 2xl:py-3 xl:py-2.5 py-2 outline-lightborder-200" data-error-label="Last name">
+                        <p class="js-field-error" hidden></p>
+                    </div>
+                    <div class="grid gap-3">
+                        <label for="checkout-email" class="xl:text-base md:text-[15px] text-sm text-gray-800">Email*</label>
+                        <input type="email" name="email" id="checkout-email" required autocomplete="email" placeholder="Enter your email" value="{{ checkout_email }}"
+                            class="js-req-field border border-lightborder-100 bg-[#D9D9D9]/10 xl:px-3 px-2 2xl:py-3 xl:py-2.5 py-2 outline-lightborder-200" data-error-label="Email">
+                        <p class="js-field-error" hidden></p>
+                    </div>
+                    <div class="grid gap-3">
+                        <label for="checkout-phone" class="xl:text-base md:text-[15px] text-sm text-gray-800">Phone Number*</label>
+                        <div class="flex items-center">
+                            <input type="text" name="phone_dial" id="checkout-dial" value="{{ checkout_dial or '+1' }}" inputmode="tel" autocomplete="tel-country-code" placeholder="+1"
+                                class="border border-lightborder-100 bg-gray-100/10 ps-3 2xl:py-3 xl:py-2.5 md:py-2 py-1 w-[70px] outline-lightborder-200">
+                            <input type="tel" name="phone" id="checkout-phone" required autocomplete="tel-national" placeholder="Phone Number" value="{{ checkout_phone }}"
+                                class="js-req-field border border-lightborder-100 bg-[#D9D9D9]/10 xl:px-3 px-2 2xl:py-3 xl:py-2.5 py-2 outline-lightborder-200 w-full" data-error-label="Phone number">
+                        </div>
+                        <p class="js-field-error" hidden></p>
+                    </div>
+                    <div class="grid gap-3">
+                        <label for="checkout-address" class="xl:text-base md:text-[15px] text-sm text-gray-800">Street address*</label>
+                        <input type="text" name="address" id="checkout-address" required autocomplete="street-address" placeholder="Enter street address" value="{{ checkout_address }}"
+                            class="js-req-field border border-lightborder-100 bg-[#D9D9D9]/10 xl:px-3 px-2 2xl:py-3 xl:py-2.5 py-2 outline-lightborder-200" data-error-label="Street address">
+                        <p class="js-field-error" hidden></p>
+                    </div>
+                    <div class="grid gap-3">
+                        <label for="checkout-city" class="xl:text-base md:text-[15px] text-sm text-gray-800">Town/city*</label>
+                        <input type="text" name="city" id="checkout-city" required autocomplete="address-level2" placeholder="Enter town/city" value="{{ checkout_city }}"
+                            class="js-req-field border border-lightborder-100 bg-[#D9D9D9]/10 xl:px-3 px-2 2xl:py-3 xl:py-2.5 py-2 outline-lightborder-200" data-error-label="Town/city">
+                        <p class="js-field-error" hidden></p>
+                    </div>
+                    <div class="grid gap-3">
+                        <label for="checkout-state" class="xl:text-base md:text-[15px] text-sm text-gray-800">State*</label>
+                        <input type="text" name="state" id="checkout-state" required autocomplete="address-level1" placeholder="State name" value="{{ checkout_state }}"
+                            class="js-req-field border border-lightborder-100 bg-[#D9D9D9]/10 xl:px-3 px-2 2xl:py-3 xl:py-2.5 py-2 outline-lightborder-200" data-error-label="State">
+                        <p class="js-field-error" hidden></p>
+                    </div>
+                    <div class="grid gap-3">
+                        <label for="checkout-pincode" class="xl:text-base md:text-[15px] text-sm text-gray-800">Pin code*</label>
+                        <input type="text" name="pincode" id="checkout-pincode" required autocomplete="postal-code" placeholder="Enter pin code" value="{{ checkout_pincode }}"
+                            class="js-req-field border border-lightborder-100 bg-[#D9D9D9]/10 xl:px-3 px-2 2xl:py-3 xl:py-2.5 py-2 outline-lightborder-200" data-error-label="Pin code">
+                        <p class="js-field-error" hidden></p>
+                    </div>
+                    <div class="grid gap-3 col-span-2">
+                        <label for="checkout-country" class="xl:text-base md:text-[15px] text-sm text-gray-800">Country*</label>
+                        <input type="text" name="country" id="checkout-country" required autocomplete="country-name" placeholder="Country name" value="{{ checkout_country }}"
+                            class="js-req-field border border-lightborder-100 bg-[#D9D9D9]/10 xl:px-3 px-2 2xl:py-3 xl:py-2.5 py-2 outline-lightborder-200" data-error-label="Country">
+                        <p class="js-field-error" hidden></p>
+                    </div>
+
+                    <div class="flex items-center mt-2 md:gap-3 gap-2 relative col-span-2">
+                        <input id="ship-different-address" type="checkbox" class="js-ship-different 1xl:w-5 1xl:h-5 md:w-4 w-3.5 h-4 checked:accent-violet-900">
+                        <label for="ship-different-address" class="2xl:text-lg text-base text-gray-800">Ship to different address?</label>
+                    </div>
+
+                    <div id="shipping-details" class="js-shipping-details hidden col-span-2 mt-4">
+                        <p class="text-[20px] border-b border-lightborder-100 pb-4 md:mb-8 mb-6">Shipping details</p>
+                        <div class="sm:grid grid-cols-2 flex flex-col 1xl:gap-x-7 1xl:gap-y-6 sm:gap-x-5 lg:gap-y-5 sm:gap-y-3 gap-y-4">
+                            <div class="grid gap-3">
+                                <label for="ship-address" class="xl:text-base md:text-[15px] text-sm text-gray-800">Street address*</label>
+                                <input type="text" name="ship_address" id="ship-address" autocomplete="shipping street-address" placeholder="Enter street address"
+                                    class="js-ship-req border border-lightborder-100 bg-[#D9D9D9]/10 xl:px-3 px-2 2xl:py-3 xl:py-2.5 py-2 outline-lightborder-200" data-error-label="Shipping street address">
+                                <p class="js-field-error" hidden></p>
+                            </div>
+                            <div class="grid gap-3">
+                                <label for="ship-city" class="xl:text-base md:text-[15px] text-sm text-gray-800">Town/city*</label>
+                                <input type="text" name="ship_city" id="ship-city" autocomplete="shipping address-level2" placeholder="Enter town/city"
+                                    class="js-ship-req border border-lightborder-100 bg-[#D9D9D9]/10 xl:px-3 px-2 2xl:py-3 xl:py-2.5 py-2 outline-lightborder-200" data-error-label="Shipping town/city">
+                                <p class="js-field-error" hidden></p>
+                            </div>
+                            <div class="grid gap-3">
+                                <label for="ship-state" class="xl:text-base md:text-[15px] text-sm text-gray-800">State*</label>
+                                <input type="text" name="ship_state" id="ship-state" autocomplete="shipping address-level1" placeholder="State name"
+                                    class="js-ship-req border border-lightborder-100 bg-[#D9D9D9]/10 xl:px-3 px-2 2xl:py-3 xl:py-2.5 py-2 outline-lightborder-200" data-error-label="Shipping state">
+                                <p class="js-field-error" hidden></p>
+                            </div>
+                            <div class="grid gap-3">
+                                <label for="ship-pincode" class="xl:text-base md:text-[15px] text-sm text-gray-800">Pin code*</label>
+                                <input type="text" name="ship_pincode" id="ship-pincode" autocomplete="shipping postal-code" placeholder="Enter pin code"
+                                    class="js-ship-req border border-lightborder-100 bg-[#D9D9D9]/10 xl:px-3 px-2 2xl:py-3 xl:py-2.5 py-2 outline-lightborder-200" data-error-label="Shipping pin code">
+                                <p class="js-field-error" hidden></p>
+                            </div>
+                            <div class="grid gap-3 col-span-2">
+                                <label for="ship-country" class="xl:text-base md:text-[15px] text-sm text-gray-800">Country*</label>
+                                <input type="text" name="ship_country" id="ship-country" autocomplete="shipping country-name" placeholder="Country name"
+                                    class="js-ship-req border border-lightborder-100 bg-[#D9D9D9]/10 xl:px-3 px-2 2xl:py-3 xl:py-2.5 py-2 outline-lightborder-200" data-error-label="Shipping country">
+                                <p class="js-field-error" hidden></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid gap-3 col-span-2">
+                        <label for="checkout-message" class="xl:text-base md:text-[15px] text-sm text-gray-800">Notes about your inquiry*</label>
+                        <textarea name="message" id="checkout-message" required rows="4" placeholder="Notes about your inquiry."
+                            class="js-req-field w-full 1xl:h-[150px] sm:h-[100px] h-[75px] border border-lightborder-100 bg-[#D9D9D9]/10 xl:px-3 px-2 2xl:py-3 xl:py-2.5 py-2 outline-lightborder-200" data-error-label="Inquiry notes"></textarea>
+                        <p class="js-field-error" hidden></p>
+                    </div>
+
+                    <div class="grid gap-2 col-span-2 js-checkout-terms-wrap">
+                        <label class="flex items-start gap-2 2xl:text-base text-sm font-light text-gray-800">
+                            <input type="checkbox" name="terms_agree" value="1" class="js-checkout-terms xl:w-5 w-4 xl:h-5 h-4 accent-violet-900 mt-1" required>
+                            <span>I agree to the
+                                {{ collection:pages id:is="terms" limit="1" }}<a href="{{ url }}" class="underline hover:text-violet-900">{{ title }}</a>{{ /collection:pages }}
+                                and
+                                {{ collection:pages id:is="privacy" limit="1" }}<a href="{{ url }}" class="underline hover:text-violet-900">{{ title }}</a>{{ /collection:pages }}.
+                            </span>
+                        </label>
+                        <p class="js-field-error js-terms-error" hidden></p>
+                    </div>
+
+                    <div class="col-span-2">
+                        <button type="submit" class="all-btn">{{ setting:inquiry_button }}</button>
+                    </div>
+                {{ /form:inquiry }}
+            </div>
+
+            <div class="xl:w-[30%] lg:w-[36%] w-full flex lg:flex-col sm:flex-row flex-col md:gap-10 gap-4">
+                <div class="bg-violet-400 md:p-[22px] p-[15px] lg:w-auto sm:w-1/2 w-full">
+                    <p class="lg:text-[20px] text-lg border-b border-lightborder-200 xl:pb-[17px] pb-[15px] xl:mb-[25px] mb-[16px]">Order summary</p>
+                    <div class="grid 2xl:gap-[20px] gap-[16px]">
+                        {{ cart_lines }}
+                        <div class="flex items-center w-full xl:gap-4 gap-3 group">
+                            <a href="{{ url }}" class="2xl:w-[20%] xl:w-1/4 sm:w-[33%] w-[70px] sm:h-[75px] h-auto shrink-0">
+                                <img src="{{ partial:partials/media-url :file="image" }}" alt="{{ title }}" class="w-full h-full object-cover">
+                            </a>
+                            <div class="grid w-[80%] xl:gap-1 gap-2 min-w-0">
+                                <a href="{{ url }}" class="2xl:text-base text-sm text-black capitalize group-hover:text-violet-900">{{ title }}</a>
+                                <div class="flex items-center justify-between w-full">
+                                    <p class="2xl:text-base xl:text-sm text-sm">Qty: {{ qty }}</p>
+                                    <p class="2xl:text-base xl:text-sm text-sm">${{ line_total }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {{ /cart_lines }}
+                    </div>
+                    <div class="grid 2xl:gap-4 gap-3 mt-5 border-b border-lightborder-200 pb-4 mb-4">
+                        <div class="flex items-center justify-between w-full">
+                            <p class="2xl:text-lg lg:text-sm text-[15px]">Sub Total</p>
+                            <p class="2xl:text-lg lg:text-sm text-[15px]">${{ cart_subtotal }}</p>
+                        </div>
+                        {{ if coupon_code }}
+                        <div class="flex items-center justify-between w-full">
+                            <p class="2xl:text-lg lg:text-sm text-[15px]">Discount ({{ coupon_label }})</p>
+                            <p class="2xl:text-lg lg:text-sm text-[15px]">-${{ cart_discount }}</p>
+                        </div>
+                        {{ /if }}
+                        <div class="flex items-center justify-between w-full">
+                            <p class="2xl:text-lg lg:text-sm text-[15px]">Shipping</p>
+                            <p class="2xl:text-lg lg:text-sm text-[15px]">Inquiry / arrange later</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between w-full xl:mb-[17px] md:mb-[14px] mb-[18px]">
+                        <p class="2xl:text-lg lg:text-sm text-base">Total</p>
+                        <p class="2xl:text-base xl:text-sm lg:text-[13px] text-base">${{ cart_total }}</p>
+                    </div>
+                    <p class="text-sm text-gray-800">Inquiry only — nothing is charged.</p>
+                    <a href="{{ partial:partials/shop-href }}" class="mt-4 inline-block mx-auto px-0 all-btn lg:text-base text-sm border-b border-t-0 border-l-0 border-r-0 border-black bg-transparent text-black hover:text-violet-900 hover:border-violet-900 hover:bg-transparent">Continue to shopping</a>
+                </div>
+
+                <div class="bg-violet-400 md:p-[22px] p-[15px] lg:w-auto sm:w-1/2 w-full">
+                    <p class="xl:text-[19px] text-lg border-b border-lightborder-200 xl:pb-[17px] pb-[15px] 2xl:mb-[25px] xl:mb-[20px] mb-[16px]">Payment</p>
+                    <p class="2xl:text-lg lg:text-sm text-[15px] text-gray-800 mb-4">This kit does not take cards or bank transfers. Submitting checkout only saves an inquiry for the shop. Agree to the terms next to the submit button — nothing is charged.</p>
+                </div>
+            </div>
         </div>
+        {{ else }}
+        <p class="2xl:text-lg text-base mb-6">Your cart is empty. Add pieces from the shop, then send an inquiry.</p>
+        <a href="{{ partial:partials/shop-href }}" class="all-btn">Return to Shop</a>
+        {{ /if }}
     </div>
 </section>

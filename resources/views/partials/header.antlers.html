@@ -4,59 +4,12 @@
                 <div class="2xl:container px-4">
                     <div class="flex justify-between items-center py-1">
                         <ul class="flex items-center relative">
-                            <li class="flex">
-                                <div @click.away="open = false" x-data="{ open: false, activeIndex: 0, languages: [
-                                    { name: 'English', flag: '/assets/image/usa flage.webp' },
-                                    { name: 'Argentina', flag: '/assets/image/argentina.svg' },
-                                    { name: 'Brazil', flag: '/assets/image/brazil.svg' },
-                                    { name: 'Germany', flag: '/assets/image/germany.svg' },
-                                    { name: 'Spain', flag: '/assets/image/spain.svg' },
-                                    { name: 'France', flag: '/assets/image/france.svg' }
-                                ]}" class="m-auto">
-                                    <!-- Dropdown Button -->
-                                    <button type="button" @click="open = !open" class="group click-dropdown">
-                                        <img decoding="async" loading="lazy" src="/assets/image/usa flage.webp" alt="flag" />
-                                        <p class="button-name uppercase">
-                                            <span x-text="languages[activeIndex].name"></span>
-                                        </p>
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="3" :class="{'rotate-180': open, 'rotate-0': !open}"
-                                            stroke="white" class="sm:size-3 size-2.5 duration-200 transform ms-2">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                                        </svg>
-                                    </button>
-
-                                    <!-- Dropdown Menu -->
-                                    <div x-show="open" x-transition:enter="transition ease-out duration-200 transform"
-                                        x-transition:enter-start="opacity-0 scale-95 -translate-y-2"
-                                        x-transition:enter-end="opacity-100 scale-100 translate-y-0"
-                                        x-transition:leave="transition ease-in duration-150 transform"
-                                        x-transition:leave-start="opacity-100 scale-100 translate-y-0"
-                                        x-transition:leave-end="opacity-0 scale-95 -translate-y-2"
-                                        class="click-drodpwown-menu">
-                                        <!-- Language Items -->
-                                        <template x-for="(language, index) in languages" :key="index">
-                                            <a href="#" @click.prevent="activeIndex = index; open = false" :class="{
-                                                'bg-gray-400 text-white': activeIndex === index, 
-                                                'text-gray-700 hover:bg-gray-400 hover:text-white': activeIndex !== index
-                                            }" class="group/text">
-                                                <img decoding="async" loading="lazy" :src="language.flag" alt="flag"
-                                                    class="me-1.5 1xl:w-[20px] w-4" />
-                                                <p :class="{'text-white': activeIndex === index, 'text-gray-700 group-hover/text:text-white': activeIndex !== index}"
-                                                    class="text-sm">
-                                                    <span x-text="language.name"></span>
-                                                </p>
-                                            </a>
-                                        </template>
-                                    </div>
-                                </div>
-                            </li>
-
                             {{ nav:utility_menu }}
-                            <li class="text-white opacity-10 lg:mx-4 md:mx-3 sm:mx-1 mx-0.5 inline-block">
+                            {{ unless first }}
+                            <li class="text-white opacity-10 lg:mx-4 md:mx-3 sm:mx-1 mx-0.5 inline-block" aria-hidden="true">
                                 |
                             </li>
+                            {{ /unless }}
                             <li class="inline-block sm:pb-0 pb-1">
                                 <a href="{{ url }}"
                                     class="text-white 1xl:text-[13px] sm:text-xs text-[11px] font-light hover:opacity-80 transition-all sm:leading-[26px]">{{ title }}</a>

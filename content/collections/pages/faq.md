@@ -18,7 +18,7 @@ page_builder:
         answer: 'This shop does not store orders. Send an inquiry if you need help.'
       -
         question: 'What is your return policy?'
-        answer: 'Ask the shop about a return in your inquiry. Nothing is saved from the public site until an editor replies.'
+        answer: 'Ask the shop about a return in your inquiry. The shop replies by email. Nothing is charged.'
       -
         question: 'How long does shipping take?'
         answer: 'Shipping is arranged by the shop after an inquiry. This site does not calculate a delivery date.'

@@ -1,7 +1,7 @@
 tree:
   -
-    title: ORDER TRACKING
-    url: /account
+    title: Order Tracking
+    url: /account?tab=orders
   -
-    title: HELP
+    title: Help
     entry: contact

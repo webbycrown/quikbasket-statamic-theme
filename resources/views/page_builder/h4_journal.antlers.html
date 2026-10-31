@@ -1,17 +1,25 @@
 <section class="relative 2xl:py-[50px] 1xl:py-[45px] xl:py-[40px] lg:py-[35px] md:py-[30px] sm:py-[25px] py-[20px]">
-    <div class="latest-blog container">
-        <h3 class="mb-8">{{ heading }}</h3>
-        <div class="swiper myBlogs">
+    <div class="latest-news container">
+        <div class="flex relative justify-between gap-2 2xl:mb-[40px] md:mb-[30px] mb-[15px] items-center border-b border-lightborder-100 lg:pb-[40px] md:pb-[30px] sm:pb-[20px] pb-6">
+            <h3>{{ heading }}</h3>
+            <div class="relative arrow max-[350px]:w-[110px]">
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev pr-[10px]"></div>
+            </div>
+        </div>
+        <div class="swiper myBlogs-news">
             <div class="swiper-wrapper">
                 {{ posts }}
                 <div class="swiper-slide">
-                    {{ partial:partials/journal-card }}
+                    {{ partial:partials/h4-blog-card }}
                 </div>
                 {{ /posts }}
             </div>
         </div>
+        {{ if button_label }}
         <div class="grid mx-auto md:mt-10 mt-4 justify-center">
             <a href="{{ button_url }}" class="all-btn">{{ button_label }}</a>
         </div>
+        {{ /if }}
     </div>
 </section>

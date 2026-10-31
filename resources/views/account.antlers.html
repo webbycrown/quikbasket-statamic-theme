@@ -1,21 +1,390 @@
-{{ if logged_in }}
-{{ partial:partials/crumb }}
+{{ unless logged_in }}
+<!--==== PAGE-NAME ====-->
+<section class="relative 1xl:pb-[30px] md:pb-[25px] pb-[20px]">
+    <div class="bg-violet-400">
+        <div class="container">
+            <div class="flex items-center sm:gap-[4px] gap-0 md:py-[15px] py-[10px]">
+                <p class="2xl:text-lg lg:text-base text-sm"><a href="/">Home</a></p>
+                <span class="px-2" aria-hidden="true">/</span>
+                <p class="2xl:text-lg lg:text-base text-sm">My Account</p>
+            </div>
+        </div>
+    </div>
+</section>
 <section class="relative 1xl:py-[30px] md:py-[25px] py-[20px]">
     <div class="container">
-        <div class="mx-auto flex flex-col w-[640px] max-w-full text-center">
-            {{ user }}
-            <h1 class="font-medium sm:mb-[18px] mb-[15px]">{{ name ?? email }}</h1>
-            <p class="2xl:mb-6 mb-4 2xl:text-lg text-base">{{ email }}</p>
-            {{ /user }}
+        <div class="mx-auto flex flex-col w-[475px] max-w-full justify-center text-center">
+            <h1 class="font-medium sm:mb-[18px] mb-[15px]">My Account</h1>
+            <p class="2xl:mb-6 mb-4 2xl:text-lg text-base">Sign in to open your account dashboard.</p>
             <p class="2xl:text-lg text-base">
-                <a class="border-b border-black hover:text-violet-900" href="/cart">Cart</a>
+                <a class="border-b border-black hover:text-violet-900" href="/login">Sign in</a>
                 or
-                <a class="border-b border-black hover:text-violet-900" href="{{ user:logout_url redirect='/' }}">Sign out</a>
+                <a class="border-b border-black hover:text-violet-900" href="/register">Create an account</a>
             </p>
         </div>
     </div>
 </section>
 {{ else }}
-{{ partial:partials/design-example }}
-<p class="text-center pb-10"><a class="border-b border-black hover:text-violet-900" href="/login">Sign in</a></p>
-{{ /if }}
+{{ user }}
+<!--==== PAGE-NAME ====-->
+<section class="relative 1xl:pb-[30px] md:pb-[25px] pb-[20px]">
+    <div class="bg-violet-400">
+        <div class="container">
+            <div class="flex items-center sm:gap-[4px] gap-0 md:py-[15px] py-[10px]">
+                <div class="flex items-center justify-between sm:gap-[7px] gap-1 group">
+                    <p class="fill-gray-800 group-hover:text-violet-900 2xl:text-lg lg:text-base md:text-[15px] text-sm">
+                        <a href="/">Home</a>
+                    </p>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="stroke-gray-800 sm:size-7 size-5" aria-hidden="true">
+                    <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m10 17l5-5l-5-5" />
+                </svg>
+                <p class="fill-gray-800 2xl:text-lg lg:text-base md:text-[15px] text-sm">My Account</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--==== DASHBOARD ====-->
+<section class="relative 1xl:py-[30px] md:py-[25px] py-[20px]"
+    data-qb-name="{{ name | entities }}"
+    data-qb-email="{{ email | entities }}"
+    x-data="qbAccount()"
+    x-init="boot($el)">
+    <div class="container">
+        <h1 class="sm:mb-[30px] mb-[25px] sm:text-start text-center 2xl:text-[32px] xl:text-[28px] text-[24px] font-medium">My Account</h1>
+        <div class="w-full flex items-center justify-center">
+            <div class="w-full">
+                <div class="flex p-2 bg-violet-400 items-center justify-between flex-wrap gap-2">
+                    <div class="flex flex-wrap">
+                        <button type="button" @click="openTab = 1; showDetails = false; editDetails = false"
+                            :class="{ 'bg-violet-900 text-white': openTab === 1 }"
+                            :aria-pressed="(openTab === 1).toString()"
+                            class="flex-1 py-2 sm:px-4 px-2 focus:outline-none transition-all duration-300 1xl:text-lg sm:text-base text-sm">
+                            Profile
+                        </button>
+                        <button type="button" @click="openTab = 2; showDetails = false; editDetails = false"
+                            :class="{ 'bg-violet-900 text-white': openTab === 2 }"
+                            :aria-pressed="(openTab === 2).toString()"
+                            class="flex-1 py-2 sm:px-4 px-2 focus:outline-none transition-all duration-300 1xl:text-lg sm:text-base text-sm">
+                            Orders
+                        </button>
+                        <button type="button" @click="openTab = 3; showDetails = false; editDetails = false"
+                            :class="{ 'bg-violet-900 text-white': openTab === 3 }"
+                            :aria-pressed="(openTab === 3).toString()"
+                            class="flex-1 py-2 sm:px-4 px-2 focus:outline-none transition-all duration-300 1xl:text-lg sm:text-base text-sm">
+                            Addresses
+                        </button>
+                    </div>
+                    <div>
+                        <button type="button" @click="openTab = 4; showDetails = false; editDetails = false"
+                            :class="{ 'bg-violet-900 text-white': openTab === 4 }"
+                            :aria-pressed="(openTab === 4).toString()"
+                            class="all-btn flex items-center gap-2 lg:py-2.5 py-2 lg:px-9 md:px-6 px-3.5">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="xl:w-[24px] xl:h-[24px] sm:w-[20px] sm:h-[20px] w-[18px]" aria-hidden="true">
+                                <path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h7v2H5v14h7v2zm11-4l-1.375-1.45l2.55-2.55H9v-2h8.175l-2.55-2.55L16 7l5 5z" />
+                            </svg>
+                            <span class="1xl:text-lg sm:text-base text-sm sm:block hidden">Logout</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Profile -->
+                <div x-show="openTab === 1" x-cloak class="transition-all duration-300 p-4 pt-0 sm:border border-lightborder-100">
+                    <div class="flex md:gap-[30px] sm:gap-5 gap-[10px] items-center lg:mb-[50px] md:mb-[40px] mb-[30px] 2xl:mt-[45px] xl:mt-[40px] lg:mt-[35px] mt-[30px] min-[400px]:flex-nowrap flex-wrap">
+                        <div class="rounded-full lg:w-24 lg:h-24 w-20 h-20 overflow-hidden shrink-0">
+                            <img id="profileImage" src="/assets/image/my account.webp" alt="" class="w-full h-full object-cover rounded-full" aria-hidden="true">
+                        </div>
+                        <div class="flex flex-col gap-3 items-start">
+                            <label class="all-btn before:content-['Upload_Profile_Picture'] before:block lg:before:text-md before:text-sm text-[0] file:p-0 file:border-0 lg:py-2.5 py-2 lg:px-4 px-2.5 lg:w-[200px] w-[160px] before:text-center rounded-none min-w-max cursor-pointer">
+                                <input type="file" id="fileInput" accept="image/*" class="sr-only" @change="previewPhoto($event)">
+                            </label>
+                            <p class="md:text-base text-sm text-gray-800">Preview only in this browser. Account name and email save with the form below.</p>
+                        </div>
+                    </div>
+
+                    {{ user:profile_form }}
+                        {{ if success }}
+                        <p class="mb-4 text-[#4CC39A]" role="status">Profile saved.</p>
+                        {{ /if }}
+                        {{ if errors }}
+                        <p class="mb-4 text-red-600" role="alert">{{ errors }}{{ value }} {{ /errors }}</p>
+                        {{ /if }}
+                        <div class="md:grid grid-cols-2 flex flex-col gap-x-6 lg:gap-y-5 gap-y-4">
+                            <div class="grid lg:gap-[10px] md:gap-2 gap-1 md:col-span-2">
+                                <label for="account-name" class="1xl:text-lg xl:text-[17px] lg:text-base text-[15px] text-gray-800">Display name*</label>
+                                <input type="text" name="name" id="account-name" value="{{ old:name ?? name }}" required autocomplete="name"
+                                    class="border border-lightborder-100 bg-[#D9D9D9]/10 xl:px-3 px-2 2xl:py-3 lg:py-2.5 py-3 outline-lightborder-200 lg:text-base sm:text-[15px] text-sm">
+                            </div>
+                            <div class="grid lg:gap-[10px] md:gap-2 gap-1 md:col-span-2">
+                                <label for="account-email" class="1xl:text-lg xl:text-[17px] lg:text-base text-[15px] text-gray-800">Email*</label>
+                                <input type="email" name="email" id="account-email" value="{{ old:email ?? email }}" required autocomplete="email"
+                                    class="border border-lightborder-100 bg-[#D9D9D9]/10 xl:px-3 px-2 2xl:py-3 lg:py-2.5 py-3 outline-lightborder-200 lg:text-base sm:text-[15px] text-sm">
+                            </div>
+                        </div>
+                        <button type="submit" class="all-btn mt-6">Save Change</button>
+                    {{ /user:profile_form }}
+
+                    <div class="col-span-2 mt-10 mb-[30px]">
+                        <h2 class="border-b border-lightborder-200 lg:pb-4 pb-2 lg:mb-8 mb-5 text-[23px]">New Password</h2>
+                        {{ user:password_form }}
+                            {{ if success }}
+                            <p class="mb-4 text-[#4CC39A]" role="status">Password updated.</p>
+                            {{ /if }}
+                            {{ if errors }}
+                            <p class="mb-4 text-red-600" role="alert">{{ errors }}{{ value }} {{ /errors }}</p>
+                            {{ /if }}
+                            <div class="grid xl:gap-6 gap-4">
+                                <div class="grid lg:gap-[10px] md:gap-2 gap-1">
+                                    <label for="current_password" class="1xl:text-lg xl:text-[17px] lg:text-base text-[15px] text-gray-800">Current Password*</label>
+                                    <input type="password" name="current_password" id="current_password" required autocomplete="current-password"
+                                        class="border border-lightborder-100 bg-[#D9D9D9]/10 xl:px-3 px-2 2xl:py-3 lg:py-2.5 py-3 outline-lightborder-200 lg:text-base sm:text-[15px] text-sm">
+                                </div>
+                                <div class="grid lg:gap-[10px] md:gap-2 gap-1">
+                                    <label for="password" class="1xl:text-lg xl:text-[17px] lg:text-base text-[15px] text-gray-800">New Password*</label>
+                                    <input type="password" name="password" id="password" required autocomplete="new-password"
+                                        class="border border-lightborder-100 bg-[#D9D9D9]/10 xl:px-3 px-2 2xl:py-3 lg:py-2.5 py-3 outline-lightborder-200 lg:text-base sm:text-[15px] text-sm">
+                                </div>
+                                <div class="grid lg:gap-[10px] md:gap-2 gap-1">
+                                    <label for="password_confirmation" class="1xl:text-lg xl:text-[17px] lg:text-base text-[15px] text-gray-800">Confirm Password*</label>
+                                    <input type="password" name="password_confirmation" id="password_confirmation" required autocomplete="new-password"
+                                        class="border border-lightborder-100 bg-[#D9D9D9]/10 xl:px-3 px-2 2xl:py-3 lg:py-2.5 py-3 outline-lightborder-200 lg:text-base sm:text-[15px] text-sm">
+                                </div>
+                            </div>
+                            <button type="submit" class="all-btn mt-6">Update password</button>
+                        {{ /user:password_form }}
+                    </div>
+                </div>
+
+                <!-- Orders list -->
+                <div x-show="openTab === 2" x-cloak
+                    class="transition-all duration-300 bg-white 1xl:px-[30px] xl:px-5 sm:px-3 1xl:py-[34px] xl:py-6 sm:py-3 py-5 sm:border border-lightborder-100">
+                    <p class="mb-4 1xl:text-base text-sm text-gray-800">Inquiries from checkout in this browser. Nothing is charged.</p>
+                    <p x-show="!orders.length" class="mb-4 1xl:text-base text-sm text-gray-800">No inquiries yet. Add pieces to the cart and send a checkout inquiry.</p>
+                    <table class="w-full border-collapse block md:table" x-show="orders.length">
+                        <thead class="block md:table-header-group">
+                            <tr class="border border-lightborder-100 border-collapse md:border-none block md:table-row absolute -top-full md:top-auto -left-full md:left-auto md:relative">
+                                <th class="xl:text-base lg:text-sm md:text-xs sm:text-base text-sm bg-violet-400 1xl:w-[20%] lg:w-[19%] w-[15%] 2xl:ps-[25px] md:ps-[10px] px-[15px] py-2 text-gray-800 border border-lightborder-100 font-normal text-left block md:table-cell">Order</th>
+                                <th class="xl:text-base lg:text-sm md:text-xs sm:text-base text-sm bg-violet-400 1xl:w-[20%] w-[19%] 2xl:ps-[25px] md:ps-[10px] px-[15px] py-2 text-gray-800 border border-lightborder-100 font-normal text-left block md:table-cell">Date</th>
+                                <th class="xl:text-base lg:text-sm md:text-xs sm:text-base text-sm bg-violet-400 1xl:w-[20%] w-[19%] 2xl:ps-[25px] md:ps-[10px] px-[15px] py-2 text-gray-800 border border-lightborder-100 font-normal text-left block md:table-cell">Status</th>
+                                <th class="xl:text-base lg:text-sm md:text-xs sm:text-base text-sm bg-violet-400 1xl:w-[20%] w-[19%] 2xl:ps-[25px] md:ps-[10px] px-[15px] py-2 text-gray-800 border border-lightborder-100 font-normal text-left block md:table-cell">Total</th>
+                                <th class="xl:text-base lg:text-sm md:text-xs sm:text-base text-sm bg-violet-400 1xl:w-[20%] lg:w-[24%] w-[28%] 2xl:ps-[25px] md:ps-[10px] px-[15px] py-2 text-gray-800 border border-lightborder-100 font-normal text-left block md:table-cell">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="block md:table-row-group">
+                            <template x-for="order in orders" :key="order.id">
+                                <tr class="border border-lightborder-100 border-collapse md:border-none block md:table-row md:divide-y-reverse divide-y divide-lightborder-200">
+                                    <td class="xl:text-base text-sm md:py-2 2xl:ps-[25px] border-collapse md:ps-[10px] px-[15px] py-[12px] md:border border-lightborder-100 text-left flex items-center justify-between md:table-cell text-gray-800">
+                                        <span class="inline-block w-1/3 md:hidden sm:text-base text-sm">Order</span>
+                                        <span x-text="'#' + order.id"></span>
+                                    </td>
+                                    <td class="xl:text-base text-sm md:py-2 2xl:ps-[25px] border-collapse md:ps-[10px] px-[15px] py-[12px] md:border border-lightborder-100 text-left flex items-center justify-between md:table-cell text-gray-800">
+                                        <span class="inline-block w-1/3 md:hidden sm:text-base text-sm">Date</span>
+                                        <span x-text="order.date"></span>
+                                    </td>
+                                    <td class="xl:text-base text-sm md:py-2 2xl:ps-[25px] border-collapse md:ps-[10px] px-[15px] py-[12px] md:border border-lightborder-100 text-left flex items-center justify-between md:table-cell text-gray-800">
+                                        <span class="inline-block w-1/3 md:hidden sm:text-base text-sm">Status</span>
+                                        <div class="all-btn border cursor-text rounded-md py-[1px] px-3 lg:text-sm md:text-xs sm:text-sm text-xs border-[#4CC39A] bg-[#E9F8F4]">
+                                            <span class="text-[#4CC39A]" x-text="order.status"></span>
+                                        </div>
+                                    </td>
+                                    <td class="xl:text-base text-sm md:py-2 2xl:ps-[25px] border-collapse md:ps-[10px] px-[15px] py-[12px] md:border border-lightborder-100 text-left flex items-center justify-between md:table-cell text-gray-800">
+                                        <span class="inline-block w-1/3 md:hidden sm:text-base text-sm">Total</span>
+                                        <span x-text="order.total"></span>
+                                    </td>
+                                    <td class="md:py-2 flex items-center justify-between 2xl:ps-[25px] lg:ps-[10px] md:ps-2 px-[15px] py-[12px] md:border border-lightborder-100 text-left md:table-cell text-gray-800">
+                                        <span class="inline-block w-1/3 md:hidden sm:text-base text-sm">Action</span>
+                                        <div class="flex 1xl:gap-3 xl:gap-2 gap-1 items-center flex-wrap">
+                                            <a :href="'/order/' + order.id" class="all-btn lg:px-[15px] md:px-[10px] lg:py-[4px] md:py-[3px] sm:px-[15px] px-[10px] sm:py-1 py-[2px] text-sm">View</a>
+                                            <a :href="'/order/' + order.id + '/invoice'" class="all-btn lg:px-[15px] md:px-[10px] lg:py-[4px] md:py-[3px] sm:px-[15px] px-[10px] sm:py-1 py-[2px] text-sm">Invoice</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                    <p class="mt-4 flex flex-wrap gap-4">
+                        <a href="/cart" class="border-b border-black hover:text-violet-900">Open cart</a>
+                        <a href="/checkout" class="border-b border-black hover:text-violet-900">Checkout inquiry</a>
+                    </p>
+                </div>
+
+                <!-- Addresses -->
+                <div x-show="openTab === 3 && !editDetails" x-cloak
+                    class="transition-all duration-300 bg-white 1xl:px-[30px] xl:px-5 sm:px-3 1xl:py-[34px] xl:py-6 sm:py-3 py-5 sm:border border-lightborder-100">
+                    <div class="flex md:flex-row flex-col w-full gap-[34px]">
+                        <div class="flex w-full flex-col border border-lightborder-100">
+                            <div class="bg-violet-400 px-5 py-[11px]"><p class="2xl:text-lg text-base">Billing Address</p></div>
+                            <div class="flex justify-between items-start lg:p-[20px] p-[15px]">
+                                <div class="grid gap-2 italic 2xl:text-lg lg:text-base text-sm">
+                                    <p x-text="billing.line1 || 'No billing address yet'"></p>
+                                    <p x-show="billing.line2" x-text="billing.line2"></p>
+                                    <p x-show="billing.city || billing.state || billing.pincode" x-text="[billing.city, billing.state, billing.pincode].filter(Boolean).join(', ')"></p>
+                                    <p x-show="billing.country" x-text="billing.country"></p>
+                                    <p x-show="billing.phone" x-text="(billing.dial || '') + ' ' + (billing.phone || '')"></p>
+                                </div>
+                                <button type="button" @click="startEdit('billing')" aria-label="Edit billing address">
+                                    <img src="/assets/image/edit.svg" alt="" class="cursor-pointer xl:w-full lg:w-11/12 md:w-5/6 w-9/12" aria-hidden="true">
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex w-full flex-col border border-lightborder-100">
+                            <div class="bg-violet-400 px-5 py-[11px]"><p class="2xl:text-lg text-base">Shipping address</p></div>
+                            <div class="flex justify-between items-start lg:p-[20px] p-[15px]">
+                                <div class="grid gap-2 italic 2xl:text-lg lg:text-base text-sm">
+                                    <p x-text="shipping.line1 || 'No shipping address yet'"></p>
+                                    <p x-show="shipping.line2" x-text="shipping.line2"></p>
+                                    <p x-show="shipping.city || shipping.state || shipping.pincode" x-text="[shipping.city, shipping.state, shipping.pincode].filter(Boolean).join(', ')"></p>
+                                    <p x-show="shipping.country" x-text="shipping.country"></p>
+                                    <p x-show="shipping.phone" x-text="(shipping.dial || '') + ' ' + (shipping.phone || '')"></p>
+                                </div>
+                                <button type="button" @click="startEdit('shipping')" aria-label="Edit shipping address">
+                                    <img src="/assets/image/edit.svg" alt="" class="cursor-pointer xl:w-full lg:w-11/12 md:w-5/6 w-9/12" aria-hidden="true">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Edit address -->
+                <div x-show="openTab === 3 && editDetails" x-cloak class="transition-all duration-300 p-4 sm:border border-lightborder-100">
+                    <h2 class="text-[23px] mb-5" x-text="editWhich === 'billing' ? 'Edit billing address' : 'Edit shipping address'"></h2>
+                    <form @submit.prevent="saveAddress()" class="grid md:grid-cols-2 gap-4">
+                        <div class="grid gap-1 md:col-span-2">
+                            <label class="text-gray-800" for="addr-line1">Name / line 1*</label>
+                            <input id="addr-line1" type="text" x-model="draft.line1" required class="border border-lightborder-100 bg-[#D9D9D9]/10 xl:px-3 px-2 py-3 outline-lightborder-200">
+                        </div>
+                        <div class="grid gap-1 md:col-span-2">
+                            <label class="text-gray-800" for="addr-line2">Street</label>
+                            <input id="addr-line2" type="text" x-model="draft.line2" class="border border-lightborder-100 bg-[#D9D9D9]/10 xl:px-3 px-2 py-3 outline-lightborder-200">
+                        </div>
+                        <div class="grid gap-1">
+                            <label class="text-gray-800" for="addr-city">Town / city</label>
+                            <input id="addr-city" type="text" x-model="draft.city" class="border border-lightborder-100 bg-[#D9D9D9]/10 xl:px-3 px-2 py-3 outline-lightborder-200">
+                        </div>
+                        <div class="grid gap-1">
+                            <label class="text-gray-800" for="addr-state">State</label>
+                            <input id="addr-state" type="text" x-model="draft.state" class="border border-lightborder-100 bg-[#D9D9D9]/10 xl:px-3 px-2 py-3 outline-lightborder-200">
+                        </div>
+                        <div class="grid gap-1">
+                            <label class="text-gray-800" for="addr-pincode">Pin code</label>
+                            <input id="addr-pincode" type="text" x-model="draft.pincode" class="border border-lightborder-100 bg-[#D9D9D9]/10 xl:px-3 px-2 py-3 outline-lightborder-200">
+                        </div>
+                        <div class="grid gap-1">
+                            <label class="text-gray-800" for="addr-country">Country</label>
+                            <input id="addr-country" type="text" x-model="draft.country" class="border border-lightborder-100 bg-[#D9D9D9]/10 xl:px-3 px-2 py-3 outline-lightborder-200">
+                        </div>
+                        <div class="grid gap-1 md:col-span-2">
+                            <label class="text-gray-800" for="addr-phone">Phone Number*</label>
+                            <div class="flex items-center">
+                                <input id="addr-dial" type="text" x-model="draft.dial" placeholder="+1" inputmode="tel" required
+                                    class="border border-lightborder-100 bg-gray-100/10 2xl:px-2 px-3 py-3 w-[70px] outline-lightborder-200 lg:text-base sm:text-[15px] text-sm">
+                                <input id="addr-phone" type="tel" x-model="draft.phone" placeholder="Phone Number*" required autocomplete="tel"
+                                    class="border border-lightborder-100 bg-[#D9D9D9]/10 xl:px-3 px-2 py-3 w-full outline-lightborder-200 lg:text-base sm:text-[15px] text-sm">
+                            </div>
+                        </div>
+                        <div class="md:col-span-2 flex gap-3 flex-wrap">
+                            <button type="submit" class="all-btn">Save address</button>
+                            <button type="button" class="all-btn !bg-transparent !text-gray-800 border border-lightborder-100" @click="editDetails = false">Cancel</button>
+                        </div>
+                        <p class="md:col-span-2 text-sm text-gray-800">Saved in this browser for your signed-in email. Nothing is charged.</p>
+                    </form>
+                </div>
+
+                <!-- Logout confirm -->
+                <div x-show="openTab === 4" x-cloak class="transition-all duration-300 sm:border border-lightborder-100">
+                    <div class="xl:w-[989px] max-w-full grid gap-[20px] lg:my-[34px] sm:my-[20px] lg:mx-[30px] sm:mx-[15px] mt-[20px] pb-[40px] sm:border-0 border border-lightborder-100">
+                        <div class="bg-violet-400 py-[9px] px-[22px]">
+                            <h2 class="text-base font-normal">Are you sure you want to log out? Confirm and log out.</h2>
+                        </div>
+                        <p class="lg:text-base text-sm sm:p-0 px-[15px]">
+                            Hello <span x-text="name || email"></span>
+                            (not you?
+                            <a href="{{ user:logout_url redirect='/' }}" class="underline underline-offset-8 hover:text-violet-900">Log out</a>)
+                        </p>
+                        <p class="lg:text-base text-sm sm:leading-[26px] leading-[31px] sm:p-0 px-[15px]">
+                            From your account dashboard you can view sample
+                            <button type="button" class="underline underline-offset-8 hover:text-violet-900" @click="openTab = 2">recent orders</button>,
+                            manage
+                            <button type="button" class="underline underline-offset-8 hover:text-violet-900" @click="openTab = 3">shipping and billing addresses</button>,
+                            and
+                            <button type="button" class="underline underline-offset-8 hover:text-violet-900" @click="openTab = 1">edit your password and account details</button>.
+                        </p>
+                        <p class="sm:p-0 px-[15px]">
+                            <a href="{{ user:logout_url redirect='/' }}" class="all-btn inline-flex">Confirm log out</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+function qbAccount() {
+    return {
+        openTab: 1,
+        showDetails: false,
+        editDetails: false,
+        editWhich: 'billing',
+        selectedOrder: null,
+        name: '',
+        email: '',
+        billing: { line1: '', line2: '', city: '', state: '', pincode: '', country: '', dial: '', phone: '' },
+        shipping: { line1: '', line2: '', city: '', state: '', pincode: '', country: '', dial: '', phone: '' },
+        draft: { line1: '', line2: '', city: '', state: '', pincode: '', country: '', dial: '+1', phone: '' },
+        orders: [],
+        boot(el) {
+            this.name = el.getAttribute('data-qb-name') || '';
+            this.email = el.getAttribute('data-qb-email') || '';
+            this.loadAddresses();
+            this.loadOrders();
+            var params = new URLSearchParams(window.location.search);
+            var tab = params.get('tab');
+            if (tab === 'orders') this.openTab = 2;
+            if (tab === 'addresses') this.openTab = 3;
+            if (tab === 'logout') this.openTab = 4;
+        },
+        loadOrders() {
+            var self = this;
+            fetch('/shop/orders', { headers: { Accept: 'application/json' }, credentials: 'same-origin' })
+                .then(function (r) { return r.json(); })
+                .then(function (data) { self.orders = data.orders || []; })
+                .catch(function () { self.orders = []; });
+        },
+        storageKey() {
+            return 'qb_account_addr_' + (this.email || 'guest');
+        },
+        loadAddresses() {
+            try {
+                var raw = localStorage.getItem(this.storageKey());
+                if (!raw) return;
+                var data = JSON.parse(raw);
+                if (data.billing) this.billing = Object.assign({}, this.billing, data.billing);
+                if (data.shipping) this.shipping = Object.assign({}, this.shipping, data.shipping);
+            } catch (e) {}
+        },
+        startEdit(which) {
+            this.editWhich = which;
+            var src = which === 'billing' ? this.billing : this.shipping;
+            this.draft = Object.assign({ line1: '', line2: '', city: '', country: '', dial: '+1', phone: '' }, src);
+            if (!this.draft.dial) this.draft.dial = '+1';
+            this.editDetails = true;
+        },
+        saveAddress() {
+            if (this.editWhich === 'billing') this.billing = Object.assign({}, this.draft);
+            else this.shipping = Object.assign({}, this.draft);
+            localStorage.setItem(this.storageKey(), JSON.stringify({ billing: this.billing, shipping: this.shipping }));
+            this.editDetails = false;
+        },
+        previewPhoto(e) {
+            var file = e.target.files && e.target.files[0];
+            if (!file) return;
+            var img = document.getElementById('profileImage');
+            if (!img) return;
+            img.src = URL.createObjectURL(file);
+        }
+    };
+}
+</script>
+{{ /user }}
+{{ /unless }}

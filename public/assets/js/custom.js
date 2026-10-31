@@ -681,9 +681,65 @@ var swiper = new Swiper(".follow-heaven", {
 });
 
 //=====CLIENT'S TESTIMONIAL====//
+var clientswiper1 = new Swiper(".myClient", {
+  effect: "coverflow",
+  spaceBetween: 0,
+  grabCursor: true,
+  initialSlide: 2,
+  centeredSlides: true,
+  slidesPerView: "1",
+  breakpoints: {
+    376: {
+      slidesPerView: 1.9,
+    },
+    426: {
+      slidesPerView: 2,
+    },
+    538: {
+      slidesPerView: 2.5,
+    },
+    769: {
+      slidesPerView: 4,
+    },
+    992: {
+      slidesPerView: 4,
+    },
+    1260: {
+      slidesPerView: 5,
+    },
+    1640: {
+      slidesPerView: 5,
+    },
+  },
+  coverflowEffect: {
+    rotate: 0,
+    stretch: 100,
+    depth: 400,
+    modifier: 1,
+    slideShadows: false,
+  },
+});
 
+var clientswiper2 = new Swiper(".myClient2", {
+  spaceBetween: 10,
+  initialSlide: 2,
+  navigation: {
+    nextEl: ".testimonial .swiper-button-next",
+    prevEl: ".testimonial .swiper-button-prev",
+  },
+  thumbs: {
+    swiper: clientswiper1,
+  },
+});
 
-
+if (typeof clientswiper1 !== "undefined" && typeof clientswiper2 !== "undefined") {
+  clientswiper1.on("slideChange", function () {
+    clientswiper2.slideTo(clientswiper1.activeIndex);
+  });
+  clientswiper2.on("slideChange", function () {
+    clientswiper1.slideTo(clientswiper2.activeIndex);
+  });
+}
 
 //===== TRENDING-FASHION
 var swiper = new Swiper(".trending .myTrending", {
@@ -1659,9 +1715,12 @@ document.addEventListener("DOMContentLoaded", () => {
       );
       const target = btn.nextElementSibling;
       let value = Number(target.value);
-      if (value > 0) {
+      const min = Number(target.min || 1);
+      if (value > min) {
         value--;
         target.value = value;
+      } else {
+        target.value = min;
       }
     }
 
@@ -1671,8 +1730,11 @@ document.addEventListener("DOMContentLoaded", () => {
       );
       const target = btn.nextElementSibling;
       let value = Number(target.value);
-      value++;
-      target.value = value;
+      const max = Number(target.max || 99);
+      if (value < max) {
+        value++;
+      }
+      target.value = Math.min(value, max);
     }
 
     function attachEventListeners() {
@@ -1968,4 +2030,56 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+});
+
+/* Shop browse: price filter + product gallery thumbs */
+document.addEventListener("DOMContentLoaded", function () {
+  const root = document.querySelector("[data-shop-browse]");
+  if (root) {
+    const items = () => root.querySelectorAll(".js-shop-item");
+    const applyPrice = () => {
+      const minEl = root.querySelector("#price-min");
+      const maxEl = root.querySelector("#price-max");
+      const min = minEl && minEl.value !== "" ? parseFloat(minEl.value) : null;
+      const max = maxEl && maxEl.value !== "" ? parseFloat(maxEl.value) : null;
+      items().forEach((el) => {
+        const price = parseFloat(el.getAttribute("data-price") || "0");
+        let show = true;
+        if (min !== null && !Number.isNaN(min) && price < min) show = false;
+        if (max !== null && !Number.isNaN(max) && price > max) show = false;
+        el.style.display = show ? "" : "none";
+      });
+    };
+    const applyBtn = root.querySelector("[data-price-apply]");
+    const clearBtn = root.querySelector("[data-price-clear]");
+    if (applyBtn) applyBtn.addEventListener("click", applyPrice);
+    if (clearBtn) {
+      clearBtn.addEventListener("click", () => {
+        const minEl = root.querySelector("#price-min");
+        const maxEl = root.querySelector("#price-max");
+        if (minEl) minEl.value = "";
+        if (maxEl) maxEl.value = "";
+        items().forEach((el) => {
+          el.style.display = "";
+        });
+      });
+    }
+    if (root.querySelector("#price-min")?.value || root.querySelector("#price-max")?.value) {
+      applyPrice();
+    }
+  }
+
+  const main = document.getElementById("product-main-image");
+  document.querySelectorAll(".js-product-thumb").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const src = btn.getAttribute("data-src");
+      if (main && src) main.src = src;
+      document.querySelectorAll(".js-product-thumb").forEach((b) => {
+        b.classList.remove("border-violet-900");
+        b.classList.add("border-lightborder-100");
+      });
+      btn.classList.add("border-violet-900");
+      btn.classList.remove("border-lightborder-100");
+    });
+  });
 });

@@ -325,6 +325,39 @@ summary:focus,
   margin-bottom: 1rem;
 }
 
+.stay-connect-alert.is-visible {
+  padding: 0.75rem 1rem;
+  border: 1px solid #fca5a5;
+  background: #fef2f2;
+  color: #b91c1c;
+  font-size: 0.875rem;
+}
+
+.js-field-error {
+  display: none;
+  margin: 0;
+  color: #b91c1c;
+  font-size: 0.8125rem;
+  line-height: 1.35;
+}
+
+.js-field-error.is-visible {
+  display: block;
+}
+
+.js-req-field.is-invalid,
+.js-ship-req.is-invalid,
+.js-checkout-terms.is-invalid {
+  border-color: #ef4444 !important;
+  outline-color: #ef4444;
+}
+
+.js-checkout-terms-wrap.is-invalid {
+  outline: 1px solid #fca5a5;
+  outline-offset: 4px;
+  padding: 0.5rem;
+}
+
 .qb-card-title {
   height: 1.3em;
   overflow: hidden;
@@ -389,3 +422,27 @@ summary:focus,
     font-size: 1.125rem;
   }
 }
+
+/* Home-1 client testimonial avatars — force circle crop */
+.wp-testimonial img {
+  width: 60px;
+  height: 60px;
+  border-radius: 9999px;
+  object-fit: cover;
+  object-position: top;
+  flex-shrink: 0;
+}
+
+/* Home-4 product grids: 4 cols × 2 rows on lg+, 3 cols × 2 rows below lg */
+.h4-product-grid > *:nth-child(n + 9) {
+  display: none;
+}
+
+
+@media (max-width: 991px) {
+  .h4-product-grid > *:nth-child(n + 7) {
+    display: none;
+  }
+}
+
+

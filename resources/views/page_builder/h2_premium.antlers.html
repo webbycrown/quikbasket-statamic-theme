@@ -10,11 +10,19 @@
             </div>
             <div class="swiper myCollection">
                 <div class="swiper-wrapper">
-                    {{ products }}
-                    <div class="swiper-slide">
-                        {{ partial:partials/product-card }}
-                    </div>
-                    {{ /products }}
+                    {{ if items }}
+                        {{ items }}
+                        <div class="swiper-slide">
+                            {{ partial:partials/premium-product-card }}
+                        </div>
+                        {{ /items }}
+                    {{ else }}
+                        {{ products }}
+                        <div class="swiper-slide">
+                            {{ partial:partials/premium-product-card }}
+                        </div>
+                        {{ /products }}
+                    {{ /if }}
                 </div>
             </div>
         </div>

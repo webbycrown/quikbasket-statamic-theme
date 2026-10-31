@@ -1,3 +1,7 @@
+{{#
+    Blog single — layout matches html/tailwind/quikbasket/layouts/blog-detail.html
+#}}
+
 <!-- PAGE-NAME -->
 <section class="relative 1xl:py-[30px] md:py-[25px] py-[20px]">
     <div class="bg-violet-400">
@@ -6,28 +10,305 @@
                 <p class="2xl:text-lg lg:text-base text-sm"><a href="/">Home</a></p>
                 <span class="px-2" aria-hidden="true">/</span>
                 <p class="2xl:text-lg lg:text-base text-sm"><a href="{{ partial:partials/blog-href }}">Journal</a></p>
+                <span class="px-2" aria-hidden="true">/</span>
+                <p class="2xl:text-lg lg:text-base text-sm text-gray-800">{{ title }}</p>
             </div>
         </div>
     </div>
 </section>
 
+<!-- BLOG DETAILS -->
 <section class="relative 1xl:py-[30px] md:py-[25px] py-[20px]">
+    <div class="sm:hidden block">
+        <img decoding="async" loading="eager"
+            src="{{ partial:partials/media-url :file="image" fallback="image/blog-news-3.webp" }}"
+            alt="{{ title }}" class="w-full h-full object-cover">
+    </div>
     <div class="container">
-        <div class="flex lg:flex-row flex-col gap-10">
-            <aside class="lg:w-[28%] w-full">
-                <h2 class="xl:text-[20px] text-lg font-normal mb-4">Journal</h2>
-                <ul class="grid gap-3">
-                    {{ collection:blogs }}
-                    <li><a href="{{ url }}" class="hover:text-violet-900">{{ title }}</a></li>
-                    {{ /collection:blogs }}
-                </ul>
-            </aside>
-            <article class="flex-1">
-                <img src="{{ partial:partials/media-url :file="image" fallback="image/blog-news-3.webp" }}" alt="{{ title }}" class="w-full max-h-[520px] object-cover mb-6">
-                <h1 class="2xl:text-[32px] xl:text-[30px] lg:text-[23px] text-[22px] mb-4">{{ title }}</h1>
-                <div class="2xl:text-lg text-base leading-7">{{ content }}</div>
-                <p class="1xl:text-lg text-base text-gray-800 1xl:mt-[50px] mt-6">This journal does not take comments.</p>
-            </article>
+        <div class="min-h-screen">
+            <div class="mx-auto">
+                <div class="flex lg:flex-row flex-col gap-[50px]">
+
+                    <!-- Mobile sidebar toggle -->
+                    <div class="lg:hidden flex justify-start -mb-6">
+                        <button type="button" id="openSidebar" class="all-btn !px-3 !py-2 text-sm" aria-controls="sidebar" aria-expanded="false">Sidebar</button>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <div id="sidebar"
+                        class="fixed lg:overflow-auto overflow-scroll lg:z-0 z-50 top-0 left-0 bg-white 2xl:w-[18%] xl:w-[22%] lg:w-[24%] w-[335px] max-w-full lg:p-0 p-8 h-full transform -translate-x-full lg:translate-x-0 lg:static lg:block transition-transform duration-300 ease-in-out">
+                        <div class="flex w-full justify-between items-center lg:hidden border-b border-gray-400/20 2xl:pb-6 xl:pb-5 pb-3">
+                            <h4 class="md:text-[24px] text-[20px]">Sidebar</h4>
+                            <button type="button" id="closeSidebar" class="lg:hidden text-black text-lg" aria-label="Close sidebar">✕</button>
+                        </div>
+
+                        <div class="flex items-center justify-between w-full 2xl:mb-7 mb-5 lg:pt-0 md:pt-[20px] pt-[23px] flex-col-reverse">
+                            <form method="get" action="{{ partial:partials/blog-href }}" class="flex justify-between w-full border-0" role="search">
+                                <label for="blog-sidebar-search" class="sr-only">Search journal</label>
+                                <input type="search" name="q" id="blog-sidebar-search" placeholder="Search here..."
+                                    class="w-full pe-2 outline-none 1xl:placeholder:text-base placeholder:text-[15px] border border-lightborder-200 ps-2 border-e-0">
+                                <div class="flex">
+                                    <button type="submit" class="all-btn xl:py-[13px] p-3 xl:px-3.5" aria-label="Search">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="2xl:w-6 2xl:h-6 w-5 h-5" viewBox="0 0 24 24" aria-hidden="true">
+                                            <rect width="24" height="24" fill="none" />
+                                            <path fill="currentColor" fill-rule="evenodd"
+                                                d="m16.31 15.561l4.114 4.115l-.848.848l-4.123-4.123a7 7 0 1 1 .857-.84M16.8 11a5.8 5.8 0 1 0-11.6 0a5.8 5.8 0 0 0 11.6 0" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Categories -->
+                        <div class="2xl:mb-6 2xl:pt-6 mb-5 xl:pt-5 pt-3 border-t border-gray-400/20">
+                            <div class="flex items-center justify-between w-full xl:mb-5 mb-2">
+                                <h3 class="xl:text-[20px] text-lg font-normal">Categories</h3>
+                                <hr class="w-4 border" />
+                            </div>
+                            <div class="mb-2">
+                                <ul class="1xl:space-y-2 space-y-1">
+                                    {{ taxonomy:categories }}
+                                    <li>
+                                        <a href="{{ url }}"
+                                            class="cursor-pointer hover:bg-violet-900 hover:text-white w-full inline-flex items-center justify-between pe-2 py-1 text-gray-800">
+                                            <span class="1xl:text-base text-sm font-normal">{{ title }}</span>
+                                            <span class="1xl:text-base text-sm font-normal">({{ entries | count }})</span>
+                                        </a>
+                                    </li>
+                                    {{ /taxonomy:categories }}
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Popular Posts -->
+                        <div class="2xl:mb-6 2xl:pt-6 mb-5 xl:pt-5 pt-3 border-t border-gray-400/20">
+                            <div class="flex items-center justify-between w-full xl:mb-5 mb-2">
+                                <h3 class="xl:text-[20px] text-lg font-normal">Popular Posts</h3>
+                                <hr class="w-4 border" />
+                            </div>
+                            <div class="divide-y divide-lightborder-200">
+                                {{ collection:blogs id:isnt="{id}" limit="3" sort="date:desc" }}
+                                <div class="grid 1xl:py-3.5 py-2.5">
+                                    <div class="flex gap-[14px] items-center group">
+                                        <a href="{{ url }}" class="shrink-0 w-20 h-20 overflow-hidden">
+                                            <img decoding="async" loading="lazy"
+                                                src="{{ partial:partials/media-url :file="image" fallback="image/popular post 1.webp" }}"
+                                                alt="{{ title }}" class="w-full h-full object-cover">
+                                        </a>
+                                        <div class="grid gap-1 min-w-0">
+                                            <p class="text-[13px] text-[#757575] font-medium">{{ date format="jS M Y" }}</p>
+                                            <a href="{{ url }}"
+                                                class="text-gray-800 group-hover:text-violet-900 2xl:text-base text-sm capitalize line-clamp-2">{{ title }}</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{ /collection:blogs }}
+                            </div>
+                        </div>
+
+                        <!-- Popular Tags -->
+                        <div class="2xl:mb-6 2xl:pt-6 mb-5 xl:pt-5 pt-3 border-t border-gray-400/20">
+                            <div class="flex items-center justify-between w-full xl:mb-5 mb-2">
+                                <h3 class="xl:text-[20px] text-lg font-normal">Popular Tags</h3>
+                                <hr class="w-4 border" />
+                            </div>
+                            <div class="mb-2">
+                                <ul class="flex flex-wrap items-center gap-2">
+                                    {{ taxonomy:categories }}
+                                    <li>
+                                        <a href="{{ url }}"
+                                            class="rounded-full bg-violet-400 text-gray-800 hover:bg-violet-900 hover:text-white inline-flex items-center justify-center 2xl:px-[15px] px-[13px] py-[3px] 2xl:text-[15px] xl:text-sm text-[13px] font-normal">{{ title }}</a>
+                                    </li>
+                                    {{ /taxonomy:categories }}
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Instagram -->
+                        <div class="2xl:mb-6 2xl:pt-6 mb-5 xl:pt-5 pt-3 border-t border-gray-400/20">
+                            <div class="flex items-center justify-between w-full xl:mb-5 mb-2">
+                                <h3 class="xl:text-[20px] text-lg font-normal">{{ setting:instagram_heading or "Instagram" }}</h3>
+                                <hr class="w-4 border" />
+                            </div>
+                            <div class="grid 1xl:gap-[9px] gap-[7px] 2xl:grid-cols-4 grid-cols-3">
+                                {{ partial:partials/blog-ig-tile file="blog detail 1.webp" }}
+                                {{ partial:partials/blog-ig-tile file="blog detail 2.webp" }}
+                                {{ partial:partials/blog-ig-tile file="blog detail 3.webp" }}
+                                {{ partial:partials/blog-ig-tile file="blog detail 4.webp" }}
+                                {{ partial:partials/blog-ig-tile file="blog detail 5.webp" }}
+                                {{ partial:partials/blog-ig-tile file="blog detail 6.webp" }}
+                                {{ partial:partials/blog-ig-tile file="blog detail 7.webp" }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main Content -->
+                    <main class="flex-1 min-w-0">
+                        <!-- MAIN BANNER -->
+                        <div class="1xl:h-[600px] xl:h-[530px] lg:h-[473px] md:h-[490px] h-[405px] sm:block hidden">
+                            <img decoding="async" loading="eager"
+                                src="{{ partial:partials/media-url :file="image" fallback="image/blog-news-3.webp" }}"
+                                alt="{{ title }}" class="w-full h-full object-cover">
+                        </div>
+
+                        <!-- NAME, DATE -->
+                        <div class="grid 2xl:gap-[25px] xl:gap-[17px] lg:gap-[15px] gap-[18px] 1xl:my-10 xl:my-7 my-6">
+                            <p class="1xl:text-base sm:text-[15px] text-[13px] flex-wrap flex 1xl:gap-5 gap-4 items-center">
+                                {{ if author }}by {{ author }} <span aria-hidden="true">|</span>{{ /if }}
+                                {{ date format="M j, Y" }}
+                            </p>
+                            <h1 class="2xl:text-[32px] xl:text-[30px] lg:text-[23px] md:text-[27px] sm:text-[25px] text-[22px]">
+                                {{ title }}
+                            </h1>
+                            {{ if excerpt }}
+                            <div class="multi-p">
+                                <p>{{ excerpt }}</p>
+                            </div>
+                            {{ /if }}
+                            <div class="multi-p 2xl:text-lg text-base leading-7 prose-blog">
+                                {{ content }}
+                            </div>
+                        </div>
+
+                        <!-- IMAGE WITH TEXT (layout chrome from HTML) -->
+                        <div class="flex md:flex-row flex-col items-center 1xl:gap-[50px] xl:gap-[40px] gap-6 w-full">
+                            <div class="1xl:h-[545px] lg:h-[560px] md:h-[470px] sm:h-[500px] h-[410px] xl:w-[45%] md:w-1/2 w-full">
+                                <img decoding="async" loading="lazy" src="/assets/image/blog-detail-1.webp"
+                                    alt="" class="w-full h-full object-cover" aria-hidden="true">
+                            </div>
+                            <div class="flex flex-col 2xl:gap-[25px] 1xl:gap-[22px] xl:gap-[18px] lg:gap-[10px] sm:gap-[15px] gap-[10px] md:w-[55%] w-full 1xl:pb-[58px] 1xl:pt-[46px]">
+                                <h2 class="1xl:text-[25px] lg:text-[22px] md:text-[20px] sm:text-[22px] text-[20px]">
+                                    Streetwear Meets Luxury: The Ultimate Style Statement
+                                </h2>
+                                <div class="multi-p">
+                                    <p>When a leading luxury house teamed up with a renowned streetwear label, the fashion world took notice. This collaboration combined the best of both worlds, with luxury craftsmanship meeting urban style.</p>
+                                    <p>Artistic collaborations have always been a significant trend in fashion. A famous designer joined forces with a contemporary artist to create a line that blurs the lines between fashion and art.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- QUOTE + PAIR IMAGES -->
+                        <div class="grid 2xl:gap-[50px] 1xl:gap-10 xl:gap-8 gap-6 1xl:mt-[70px] xl:mt-[55px] lg:mt-[45px] sm:mt-[35px] mt-[25px] xl:mb-[42px] lg:mb-[35px] sm:mb-[30px] mb-[25px]">
+                            <div class="flex sm:flex-row flex-col sm:items-center items-start 2xl:gap-10 1xl:gap-8 md:gap-6 gap-4 bg-violet-400 border-l-2 border-violet-900
+                                    2xl:py-[30px] 1xl:py-7 xl:py-6 md:py-5 py-3.5 2xl:px-[50px] 1xl:px-11 xl:px-9 px-6">
+                                <img src="/assets/image/comment.svg" alt="" class="sm:w-auto w-[30px]" aria-hidden="true">
+                                <p class="1xl:leading-9 lg:leading-7 leading-6 2xl:text-[22px] 1xl:text-[19px] xl:text-[17px] md:text-base text-[15px]">
+                                    "When two creative forces come together, the result is magic. This year's collaborations have shown that the future of fashion lies in innovation and partnership."
+                                </p>
+                            </div>
+                            <p>This year's fashion landscape has been defined by groundbreaking designer collaborations that blend diverse aesthetics and push creative boundaries. From luxury brands teaming up with streetwear icons to eco-conscious partnerships, these collections bring fresh designs to the forefront.</p>
+                            <div class="flex sm:flex-row flex-col 1xl:gap-[26px] sm:gap-4 gap-[15px] w-full xl:h-[317px] md:h-[250px] sm:h-[235px]">
+                                <div class="1xl:w-[70%] sm:w-[60%]">
+                                    <img decoding="async" loading="lazy" src="/assets/image/blog-detail-shirt.webp" alt=""
+                                        class="w-full h-full object-cover" aria-hidden="true">
+                                </div>
+                                <div class="1xl:w-[30%] sm:w-[40%]">
+                                    <img decoding="async" loading="lazy" src="/assets/image/blog-detail-belt.webp" alt=""
+                                        class="w-full h-full object-cover" aria-hidden="true">
+                                </div>
+                            </div>
+                            <p>One of the standout collaborations this year was between a luxury heritage brand and a cutting-edge streetwear designer. This partnership redefined luxury, blending classic craftsmanship with bold urban influences.</p>
+                        </div>
+
+                        <!-- TAGS + SHARE -->
+                        <div class="grid 2xl:gap-[50px] xl:gap-10 gap-6 border-y border-lightborder-200 1xl:pt-[30px] md:pt-[22px] sm:pt-[18px] pt-[20px] 1xl:pb-[30px] md:pb-[22px] pb-[20px]">
+                            <div class="flex sm:flex-row flex-col sm:items-center items-start justify-between w-full sm:gap-0 gap-5">
+                                <ul class="flex flex-wrap items-center gap-2">
+                                    {{ taxonomy:categories limit="3" }}
+                                    <li>
+                                        <a href="{{ url }}"
+                                            class="rounded-full text-gray-800 bg-violet-400 hover:bg-violet-900 hover:text-white inline-flex items-center justify-center 2xl:px-[15px] px-[13px] lg:py-[6px] md:py-[5px] py-[3px] 1xl:text-[15px] lg:text-sm text-[13px] font-normal">{{ title }}</a>
+                                    </li>
+                                    {{ /taxonomy:categories }}
+                                </ul>
+
+                                <div class="flex items-center 1xl:gap-[25px] md:gap-[23px] sm:gap-[16px] gap-[10px]">
+                                    <p class="2xl:text-lg sm:text-base text-sm">Share:</p>
+                                    <ul class="flex xl:gap-4 sm:gap-3 gap-2">
+                                        {{ if setting:facebook_url }}
+                                        <li>
+                                            <a href="{{ setting:facebook_url }}"
+                                                class="rounded-full 2xl:p-[14px] 1xl:p-[12px] md:p-[10px] p-[9px] border border-lightborder-200 hover:border-icons_bg bg-white hover:bg-icons_bg text-black/90 hover:text-white flex items-center justify-center transition ease-in-out duration-200"
+                                                aria-label="Facebook">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="xl:w-6 sm:w-5 w-[19px]" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95"/></svg>
+                                            </a>
+                                        </li>
+                                        {{ /if }}
+                                        {{ if setting:instagram_url }}
+                                        <li>
+                                            <a href="{{ setting:instagram_url }}"
+                                                class="rounded-full 2xl:p-[14px] 1xl:p-[12px] md:p-[10px] p-[9px] border border-lightborder-200 hover:border-icons_bg bg-white hover:bg-icons_bg text-black/90 hover:text-white flex items-center justify-center transition ease-in-out duration-200"
+                                                aria-label="Instagram">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="xl:w-6 sm:w-5 w-[19px]" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 16a4 4 0 1 0 0-8a4 4 0 0 0 0 8"/><path d="M3 16V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m17.5 6.51l.01-.011"/></g></svg>
+                                            </a>
+                                        </li>
+                                        {{ /if }}
+                                        {{ if setting:youtube_url }}
+                                        <li>
+                                            <a href="{{ setting:youtube_url }}"
+                                                class="rounded-full 2xl:p-[14px] 1xl:p-[12px] md:p-[10px] p-[9px] border border-lightborder-200 hover:border-icons_bg bg-white hover:bg-icons_bg text-black/90 hover:text-white flex items-center justify-center transition ease-in-out duration-200"
+                                                aria-label="YouTube">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="xl:w-6 sm:w-5 w-[19px]" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m10 15l5.19-3L10 9zm11.56-7.83c.13.47.22 1.1.28 1.9c.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83c-.25.9-.83 1.48-1.73 1.73c-.47.13-1.33.22-2.65.28c-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44c-.9-.25-1.48-.83-1.73-1.73c-.13-.47-.22-1.1-.28-1.9c-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83c.25-.9.83-1.48 1.73-1.73c.47-.13 1.33-.22 2.65-.28c1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44c.9.25 1.48.83 1.73 1.73"/></svg>
+                                            </a>
+                                        </li>
+                                        {{ /if }}
+                                        {{ if setting:whatsapp_url }}
+                                        <li>
+                                            <a href="{{ setting:whatsapp_url }}"
+                                                class="rounded-full 2xl:p-[14px] 1xl:p-[12px] md:p-[10px] p-[9px] border border-lightborder-200 hover:border-icons_bg bg-white hover:bg-icons_bg text-black/90 hover:text-white flex items-center justify-center transition ease-in-out duration-200"
+                                                aria-label="WhatsApp">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="xl:w-6 sm:w-5 w-[19px]" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28"/></svg>
+                                            </a>
+                                        </li>
+                                        {{ /if }}
+                                        {{ if setting:pinterest_url }}
+                                        <li>
+                                            <a href="{{ setting:pinterest_url }}"
+                                                class="rounded-full 2xl:p-[14px] 1xl:p-[12px] md:p-[10px] p-[9px] border border-lightborder-200 hover:border-icons_bg bg-white hover:bg-icons_bg text-black/90 hover:text-white flex items-center justify-center transition ease-in-out duration-200"
+                                                aria-label="Pinterest">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="xl:w-6 sm:w-5 w-[19px]" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9.04 21.54c.96.29 1.93.46 2.96.46a10 10 0 0 0 10-10A10 10 0 0 0 12 2A10 10 0 0 0 2 12c0 4.25 2.67 7.9 6.44 9.34c-.09-.78-.18-2.07 0-2.96l1.15-4.94s-.29-.58-.29-1.5c0-1.38.86-2.41 1.84-2.41c.86 0 1.26.63 1.26 1.44c0 .86-.57 2.09-.86 3.27c-.17.98.52 1.84 1.52 1.84c1.78 0 3.16-1.9 3.16-4.58c0-2.4-1.72-4.04-4.19-4.04c-2.82 0-4.48 2.1-4.48 4.31c0 .86.28 1.73.74 2.3c.09.06.09.14.06.29l-.29 1.09c0 .17-.11.23-.28.11c-1.28-.56-2.02-2.38-2.02-3.85c0-3.16 2.24-6.03 6.56-6.03c3.44 0 6.12 2.47 6.12 5.75c0 3.44-2.13 6.2-5.18 6.2c-.97 0-1.92-.52-2.26-1.13l-.67 2.37c-.23.86-.86 2.01-1.29 2.7z"/></svg>
+                                            </a>
+                                        </li>
+                                        {{ /if }}
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Published comments only -->
+                            <div class="grid sm:mt-0 mt-[5px]">
+                                <h2 class="1xl:text-xl xl:text-[27px] sm:text-[25px] text-[20px]">Comments</h2>
+                                <div class="grid divide-y divide-lightborder-200">
+                                    {{ collection from="comments" post:is="{id}" sort="date:desc" }}
+                                    {{ if name && message }}
+                                    <div class="flex md:flex-row flex-col 1xl:gap-[75px] xl:gap-[50px] gap-4 2xl:py-[30px] lg:py-[27px] py-[20px] items-start">
+                                        <div class="flex xl:gap-[18px] gap-[13px] 2xl:w-[27%] xl:w-[38%] lg:w-[58%] sm:w-1/2 w-full items-center">
+                                            <span class="rounded-full w-[70px] h-[70px] overflow-hidden shrink-0 bg-violet-400 text-violet-900 flex items-center justify-center 2xl:text-[20px] text-lg font-medium" aria-hidden="true">{{ name | substr:0:1 | upper }}</span>
+                                            <div class="flex flex-col gap-[1px]">
+                                                <p class="leading-[30px] 2xl:text-[20px] xl:text-lg text-base">{{ name | entities }}</p>
+                                                {{ if date }}
+                                                <p class="xl:text-base text-sm text-gray-800">{{ date format="M j, Y" }}</p>
+                                                {{ /if }}
+                                            </div>
+                                        </div>
+                                        <div class="grid gap-[22px]">
+                                            <p>{{ message | entities }}</p>
+                                        </div>
+                                    </div>
+                                    {{ /if }}
+                                    {{ /collection }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Leave a Comments -->
+                        <div class="grid 1xl:gap-[35px] md:gap-[25px] gap-[18px] 1xl:mt-[50px] xl:mt-10 md:mt-7 sm:mt-5 mt-6">
+                            <h2 class="xl:text-xl md:text-[25px] sm:text-[23px] text-[20px]">Leave a Comments</h2>
+                            <p class="1xl:text-base text-sm text-gray-800">New comments stay unpublished until an editor publishes them under Collections → Comments.</p>
+                            {{ partial:partials/comment-form }}
+                        </div>
+                    </main>
+                </div>
+            </div>
         </div>
     </div>
 </section>

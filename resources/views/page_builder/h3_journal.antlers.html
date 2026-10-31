@@ -12,7 +12,7 @@
                         <div class="bg-violet-400 article flex flex-col justify-center gap-4 2xl:py-16 2xl:px-10 xl:p-10 sm:p-8 p-6">
                             <h4><a href="{{ url }}" class="group-hover:text-violet-900">{{ title }}</a></h4>
                             <p class="text-[#374151]">{{ excerpt }}</p>
-                            <a href="{{ url }}" class="group-hover:text-violet-900 2xl:text-base md:text-sm text-sm font-normal">{{ read_label }}</a>
+                            <a href="{{ url }}" class="group-hover:text-violet-900 2xl:text-base md:text-sm text-sm font-normal">{{ read_label ?? 'Read more' }}</a>
                         </div>
                         <a href="{{ url }}" class="block">
                             <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="{{ title }}" class="w-full h-full object-cover" />
@@ -21,6 +21,14 @@
                 </div>
                 {{ /posts }}
             </div>
+            <div class="absolute top-1/2 arrow md:p-0 md:m-0 pt-11 sm:mt-10 mt-7 mx-auto md:block hidden">
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+        <div class="relative arrow pt-12 mx-auto block md:hidden mt-4">
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
         </div>
     </div>
 </section>

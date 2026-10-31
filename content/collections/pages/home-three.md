@@ -100,8 +100,6 @@ page_builder:
       - coastal-linen-s-s-shirt
       - colour-cotton-t-shirt
       - trendy-alansca-dress
-      - crop-tops-for-daily-wear
-      - cotton-sweater
   -
     id: h3-choose
     type: h3_choose
@@ -138,18 +136,23 @@ page_builder:
       -
         id: h3f-all
         label: All
+        key: all
       -
         id: h3f-men
         label: 'Mens Wear'
+        key: mens-wear
       -
         id: h3f-women
         label: 'Womens Wear'
+        key: womens-wear
       -
         id: h3f-child
         label: 'Childrens Wear'
+        key: children-wear
       -
         id: h3f-classic
         label: 'Classics Wear'
+        key: classics-ware
     products:
       - branded-sky-jeans
       - casual-cotton-t-shirt

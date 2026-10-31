@@ -2,12 +2,49 @@
     <div class="container">
         <div class="flex lg:flex-row flex-col lg:gap-[26px] sm:gap-7 gap-4">
             <div class="lg:w-[45%] grid lg:gap-[26px] md:gap-3 gap-7">
-                {{ products }}
-                {{ partial:partials/product-card }}
-                {{ /products }}
+                {{ features }}
+                {{ if product }}
+                {{ product_image = product:image }}
+                {{ if image_right }}
+                <div class="sm:grid sm:grid-cols-2 flex flex-col-reverse bg-violet-400 2xl:gap-5 lg:gap-3 sm:gap-5 gap-0 group">
+                    <div class="grid content-between 1xl:gap-10 gap-7 2xl:py-[35px] 1xl:py-8 lg:py-3 py-5 1xl:ps-7 sm:ps-5 px-4">
+                        <div class="grid gap-1">
+                            <h3 class="font-normal 2xl:text-[25px] xl:text-[23px] lg:text-[20px] md:text-[22px] text-[23px] leading-[35px] 1xl:mb-[15px] xl:mb-2 lg:mb-0 sm:mb-4 mb-1 group-hover:text-violet-900">
+                                <a href="{{ product:url }}">{{ product:title }}</a>
+                            </h3>
+                            <p class="2xl:text-lg xl:text-base lg:text-[15px] md:text-lg text-[17px] 1xl:leading-[26px] lg:leading-[22px] leading-[26px]">{{ text ?? product:excerpt }}</p>
+                        </div>
+                        <p class="2xl:text-[20px] xl:text-lg lg:text-base sm:text-lg text-[17px] 1xl:pb-1 pb-3">$ {{ product:price }}</p>
+                    </div>
+                    <div class="relative overflow-hidden before:block before:content-[''] lg:before:pt-[68%] before:pt-[92%]">
+                        <a href="{{ product:url }}">
+                            <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="product_image" }}" alt="{{ product:title }}" class="absolute-img sm:w-full group-hover:scale-105 transition-all duration-300">
+                        </a>
+                    </div>
+                </div>
+                {{ else }}
+                <div class="grid sm:grid-cols-2 grid-cols-1 bg-violet-400 1xl:gap-10 lg:gap-5 md:gap-3 sm:gap-5 gap-0 lg:pe-5 sm:pe-3 pe-0 group">
+                    <div class="relative overflow-hidden before:block before:content-[''] lg:before:pt-[68%] before:pt-[92%]">
+                        <a href="{{ product:url }}">
+                            <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="product_image" }}" alt="{{ product:title }}" class="absolute-img sm:w-full group-hover:scale-105 transition-all duration-300 object-right">
+                        </a>
+                    </div>
+                    <div class="grid content-between 1xl:gap-10 gap-7 2xl:py-[35px] 1xl:py-8 lg:py-3 py-5 lg:px-0 px-4">
+                        <div class="grid gap-1">
+                            <h3 class="font-normal 2xl:text-[25px] xl:text-[23px] lg:text-[20px] md:text-[22px] text-[23px] leading-[35px] 1xl:mb-[15px] xl:mb-2 lg:mb-0 sm:mb-4 mb-1 group-hover:text-violet-900">
+                                <a href="{{ product:url }}">{{ product:title }}</a>
+                            </h3>
+                            <p class="2xl:text-lg xl:text-base lg:text-[15px] md:text-lg text-[17px] 1xl:leading-[26px] lg:leading-[22px] leading-[26px]">{{ text ?? product:excerpt }}</p>
+                        </div>
+                        <p class="2xl:text-[20px] xl:text-lg lg:text-base sm:text-lg text-[17px] 1xl:pb-1 pb-3">$ {{ product:price }}</p>
+                    </div>
+                </div>
+                {{ /if }}
+                {{ /if }}
+                {{ /features }}
             </div>
             <div class="lg:w-[55%]">
-                <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="" class="h-full w-full object-cover" />
+                <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="" class="h-full w-full object-cover">
             </div>
         </div>
     </div>

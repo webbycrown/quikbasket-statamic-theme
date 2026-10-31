@@ -1,14 +1,22 @@
 <section class="relative 2xl:py-[50px] 1xl:py-[45px] xl:py-[40px] lg:py-[35px] md:py-[30px] sm:py-[25px] py-[20px]">
     <div class="container">
-        <h3 class="mb-6">{{ heading }}</h3>
-        <div class="flex flex-wrap gap-4 mb-8">
-            {{ filters }}
-            <button type="button" class="2xl:text-[20px] lg:text-lg text-base">{{ label }}</button>
-            {{ /filters }}
+        <div class="flex lg:flex-row flex-col lg:gap-0 gap-3 sm:justify-between justify-center items-center w-full border-b border-lightborder-100 lg:pb-[39px] md:pb-[25px] pb-[20px] 1xl:mb-[30px] mb-[20px]">
+            <h3>{{ heading }}</h3>
+            <div class="tabs flex justify-center flex-wrap sm:gap-0 gap-y-3 sm:w-auto w-full">
+                <div class="flex items-center flex-wrap gap-y-3">
+                    {{ filters }}
+                    <button type="button" class="filter-btn sm:px-4 px-2 {{ unless last }}border-r border-black{{ /unless }}" data-filter="{{ key ?? (label | slugify) }}">
+                        <p class="w-full 2xl:text-[20px] 1xl:text-lg sm:text-base text-[15px] hover:text-violet-900 text-[#374151] !leading-5">{{ label }}</p>
+                    </button>
+                    {{ /filters }}
+                </div>
+            </div>
         </div>
-        <div class="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {{ products }}
-            {{ partial:partials/product-card }}
+            <div class="filter-item shadow-sm{{ categories }} {{ slug }}{{ /categories }}">
+                {{ partial:partials/product-card }}
+            </div>
             {{ /products }}
         </div>
     </div>

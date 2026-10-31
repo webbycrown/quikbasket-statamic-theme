@@ -4,6 +4,7 @@ blueprint: product
 title: 'Smart Tech T-Shirt'
 image: 'image/season-collection-6.webp'
 price: 719.00
+compare_price: 1299.00
 description: 'Designed with innovative fabric, this Smart Tech T-shirt offers moisture-wicking, comfort, and breathability for a modern, active lifestyle.'
 categories:
   - tops

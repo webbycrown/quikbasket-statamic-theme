@@ -1,0 +1,180 @@
+{{# Shared shop + category listing with working category / search / price filters #}}
+{{ active_cat = active_category ?? get:category ?? '' }}
+{{ search_q = get:q ?? '' }}
+{{ sort_by = get:sort ?? 'title' }}
+
+<section class="relative 1xl:pb-[30px] md:pb-[25px] pb-[20px]">
+    <div class="bg-violet-400">
+        <div class="container">
+            <div class="flex items-center sm:gap-[4px] gap-0 md:py-[15px] py-[10px] flex-wrap">
+                <div class="flex items-center justify-between sm:gap-[7px] gap-1 group">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" class="fill-gray-800 size-4 group-hover:fill-violet-900" aria-hidden="true"><path d="M.625 27.824c0 1.125.89 1.805 1.992 1.805c.68 0 1.219-.328 1.688-.797L27.18 7.996c.257-.258.539-.352.843-.352c.282 0 .54.094.82.352l22.852 20.836c.492.469 1.031.797 1.688.797c1.101 0 1.992-.68 1.992-1.805c0-.703-.258-1.148-.703-1.547l-8.11-7.382V5.043c0-1.031-.656-1.687-1.687-1.687h-3.07c-1.008 0-1.711.656-1.711 1.687v7.969l-9.282-8.485C29.992 3.754 28.984 3.38 28 3.38c-.985 0-1.969.375-2.813 1.148L1.328 26.277c-.422.399-.703.844-.703 1.547m6.703 19.664c0 3.258 1.969 5.157 5.273 5.157h9.493V35.98c0-1.078.726-1.78 1.804-1.78h8.274c1.078 0 1.781.702 1.781 1.78v16.665h9.469c3.304 0 5.25-1.899 5.25-5.157V30.332l-19.899-17.93c-.258-.234-.539-.351-.82-.351c-.258 0-.516.117-.797.375L7.328 30.449Z" /></svg>
+                    <p class="fill-gray-800 group-hover:text-violet-900 2xl:text-lg lg:text-base md:text-[15px] text-sm"><a href="/">Home</a></p>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="stroke-gray-800 size-7" aria-hidden="true"><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m10 17l5-5l-5-5" /></svg>
+                <p class="fill-gray-800 2xl:text-lg lg:text-base md:text-[15px] text-sm"><a href="/shop">Shop</a></p>
+                {{ if page_label }}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="stroke-gray-800 size-7" aria-hidden="true"><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m10 17l5-5l-5-5" /></svg>
+                <p class="fill-gray-800 2xl:text-lg lg:text-base md:text-[15px] text-sm">{{ page_label }}</p>
+                {{ /if }}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="relative 1xl:py-[30px] md:py-[25px] py-[20px]" id="shopBrowse" data-shop-browse>
+    <div class="container">
+        <div class="flex gap-[54px]">
+            <aside id="sidebar" class="fixed lg:overflow-auto overflow-scroll lg:z-0 z-50 top-0 left-0 bg-white 2xl:w-[290px] 1xl:w-[270px] xl:w-[233px] lg:w-[200px] w-[275px] lg:shadow-none shadow-2xl max-w-full lg:p-0 p-4 h-full transform -translate-x-full lg:translate-x-0 lg:static lg:block transition-transform duration-300 ease-in-out">
+                <div class="divide-y divide-lightborder-100">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="xl:text-[24px] text-[22px] font-normal">Filter</h2>
+                        <button type="button" id="closeSidebar" class="lg:hidden text-black text-lg" aria-label="Close filters">✕</button>
+                    </div>
+
+                    <div class="2xl:mb-6 2xl:pt-6 mb-5 xl:pt-5 pt-3">
+                        <h3 class="xl:text-[20px] text-lg font-normal xl:mb-4 mb-2">Search</h3>
+                        <form method="get" action="{{ form_action ?? '/shop' }}" class="flex gap-2">
+                            {{ if active_cat }}
+                            <input type="hidden" name="category" value="{{ active_cat }}" />
+                            {{ /if }}
+                            <label class="sr-only" for="shop-q">Search products</label>
+                            <input id="shop-q" name="q" type="search" value="{{ search_q }}" placeholder="Search…" class="w-full border border-lightborder-100 px-2 py-2 text-sm" />
+                            <button type="submit" class="all-btn !px-3 !py-2 text-sm">Go</button>
+                        </form>
+                    </div>
+
+                    <div class="2xl:mb-6 2xl:pt-6 mb-5 xl:pt-5 pt-3">
+                        <div class="flex items-center justify-between w-full xl:mb-4 mb-2">
+                            <h3 class="xl:text-[20px] text-lg font-normal">Category</h3>
+                            <hr class="w-4 border" />
+                        </div>
+                        <ul class="1xl:space-y-2 space-y-1">
+                            <li>
+                                <a href="/shop{{ if search_q }}?q={{ search_q }}{{ /if }}" class="w-full inline-flex items-center justify-between py-1 px-2 transition-all {{ if !active_cat }}text-violet-900{{ else }}text-gray-800 hover:text-violet-900{{ /if }}">
+                                    <span class="xl:text-base text-sm font-normal">All products</span>
+                                </a>
+                            </li>
+                            {{ taxonomy:categories }}
+                            <li>
+                                <a href="{{ url }}{{ if search_q }}?q={{ search_q }}{{ /if }}" class="w-full inline-flex items-center justify-between py-1 px-2 transition-all {{ if active_cat == slug }}text-violet-900{{ else }}text-gray-800 hover:text-violet-900{{ /if }}">
+                                    <span class="xl:text-base text-sm font-normal">{{ title }}</span>
+                                    <span class="xl:text-base text-sm font-normal">({{ entries | count }})</span>
+                                </a>
+                            </li>
+                            {{ /taxonomy:categories }}
+                        </ul>
+                    </div>
+
+                    <div class="2xl:mb-6 2xl:pt-6 mb-5 xl:pt-5 pt-3">
+                        <div class="flex items-center justify-between w-full xl:mb-4 mb-2">
+                            <h3 class="xl:text-[20px] text-lg font-normal">Price</h3>
+                            <hr class="w-4 border" />
+                        </div>
+                        <div class="space-y-3 text-sm" data-price-filter>
+                            <div class="flex gap-2 items-center">
+                                <label class="sr-only" for="price-min">Min price</label>
+                                <input id="price-min" type="number" min="0" step="1" placeholder="Min" class="w-1/2 border border-lightborder-100 px-2 py-2" value="{{ get:min }}" />
+                                <label class="sr-only" for="price-max">Max price</label>
+                                <input id="price-max" type="number" min="0" step="1" placeholder="Max" class="w-1/2 border border-lightborder-100 px-2 py-2" value="{{ get:max }}" />
+                            </div>
+                            <button type="button" class="all-btn !px-3 !py-2 text-sm w-full" data-price-apply>Apply price</button>
+                            <button type="button" class="underline text-sm" data-price-clear>Clear price</button>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <div class="flex-1 min-w-0">
+                <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
+                    <div class="flex items-center gap-3">
+                        <button type="button" id="openSidebar" class="lg:hidden all-btn !px-3 !py-2 text-sm">Filter</button>
+                        <h1 class="text-xl font-medium">{{ page_label ?? 'Shop' }}</h1>
+                    </div>
+                    <form method="get" action="{{ form_action ?? '/shop' }}" class="flex items-center gap-2">
+                        {{ if active_cat }}
+                        <input type="hidden" name="category" value="{{ active_cat }}" />
+                        {{ /if }}
+                        {{ if search_q }}
+                        <input type="hidden" name="q" value="{{ search_q }}" />
+                        {{ /if }}
+                        <label for="shop-sort" class="text-sm">Sort</label>
+                        <select id="shop-sort" name="sort" class="border border-lightborder-100 px-2 py-2 text-sm" onchange="this.form.submit()">
+                            <option value="title" {{ if sort_by == 'title' }}selected{{ /if }}>Name A–Z</option>
+                            <option value="-title" {{ if sort_by == '-title' }}selected{{ /if }}>Name Z–A</option>
+                            <option value="price" {{ if sort_by == 'price' }}selected{{ /if }}>Price low–high</option>
+                            <option value="-price" {{ if sort_by == '-price' }}selected{{ /if }}>Price high–low</option>
+                        </select>
+                    </form>
+                </div>
+
+                {{ if active_cat }}
+                    {{ if search_q }}
+                    {{ collection:products taxonomy:categories="{active_cat}" :title:contains="search_q" :sort="sort_by" paginate="12" as="products" }}
+                        <div class="grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-5 gap-y-5 gap-x-7" data-product-grid>
+                            {{ products }}
+                            <div class="js-shop-item" data-price="{{ price }}" data-category="{{ active_cat }}">
+                                {{ partial:partials/product-card }}
+                            </div>
+                            {{ /products }}
+                            {{ if no_results }}
+                            <p class="col-span-full">No products match this filter.</p>
+                            {{ /if }}
+                        </div>
+                        {{ paginate }}
+                        {{ partial:partials/shop-pagination }}
+                        {{ /paginate }}
+                    {{ /collection:products }}
+                    {{ else }}
+                    {{ collection:products taxonomy:categories="{active_cat}" :sort="sort_by" paginate="12" as="products" }}
+                        <div class="grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-5 gap-y-5 gap-x-7" data-product-grid>
+                            {{ products }}
+                            <div class="js-shop-item" data-price="{{ price }}" data-category="{{ active_cat }}">
+                                {{ partial:partials/product-card }}
+                            </div>
+                            {{ /products }}
+                            {{ if no_results }}
+                            <p class="col-span-full">No products in this category.</p>
+                            {{ /if }}
+                        </div>
+                        {{ paginate }}
+                        {{ partial:partials/shop-pagination }}
+                        {{ /paginate }}
+                    {{ /collection:products }}
+                    {{ /if }}
+                {{ else }}
+                    {{ if search_q }}
+                    {{ collection:products :title:contains="search_q" :sort="sort_by" paginate="12" as="products" }}
+                        <div class="grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-5 gap-y-5 gap-x-7" data-product-grid>
+                            {{ products }}
+                            <div class="js-shop-item" data-price="{{ price }}">
+                                {{ partial:partials/product-card }}
+                            </div>
+                            {{ /products }}
+                            {{ if no_results }}
+                            <p class="col-span-full">No products match “{{ search_q }}”.</p>
+                            {{ /if }}
+                        </div>
+                        {{ paginate }}
+                        {{ partial:partials/shop-pagination }}
+                        {{ /paginate }}
+                    {{ /collection:products }}
+                    {{ else }}
+                    {{ collection:products :sort="sort_by" paginate="12" as="products" }}
+                        <div class="grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-5 gap-y-5 gap-x-7" data-product-grid>
+                            {{ products }}
+                            <div class="js-shop-item" data-price="{{ price }}">
+                                {{ partial:partials/product-card }}
+                            </div>
+                            {{ /products }}
+                        </div>
+                        {{ paginate }}
+                        {{ partial:partials/shop-pagination }}
+                        {{ /paginate }}
+                    {{ /collection:products }}
+                    {{ /if }}
+                {{ /if }}
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,8 @@
+title: Comment
+honeypot: honeypot
+email:
+  -
+    to: info@quikbasket.example
+    reply_to: '{{ email }}'
+    subject: 'New Quikbasket comment from {{ name }}'
+    html: emails/comment

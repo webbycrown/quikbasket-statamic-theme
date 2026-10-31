@@ -1,48 +1,165 @@
 <!-- PAGE-NAME -->
-    <section class="relative 2xl:pb-[50px] 1xl:pb-[45px] xl:pb-[40px] lg:pb-[35px] md:pb-[30px] sm:pb-[25px] pb-[20px]">
-        <div class="bg-violet-400">
-            <div class="container">
-                <div class="flex items-center sm:gap-[4px] gap-0 md:py-[15px] py-[10px]">
-                    <div class="flex items-center justify-between sm:gap-[7px] gap-1 group">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56"
-                            class="fill-gray-800 size-4 group-hover:fill-violet-900">
-                            <path
-                                d="M.625 27.824c0 1.125.89 1.805 1.992 1.805c.68 0 1.219-.328 1.688-.797L27.18 7.996c.257-.258.539-.352.843-.352c.282 0 .54.094.82.352l22.852 20.836c.492.469 1.031.797 1.688.797c1.101 0 1.992-.68 1.992-1.805c0-.703-.258-1.148-.703-1.547l-8.11-7.382V5.043c0-1.031-.656-1.687-1.687-1.687h-3.07c-1.008 0-1.711.656-1.711 1.687v7.969l-9.282-8.485C29.992 3.754 28.984 3.38 28 3.38c-.985 0-1.969.375-2.813 1.148L1.328 26.277c-.422.399-.703.844-.703 1.547m6.703 19.664c0 3.258 1.969 5.157 5.273 5.157h9.493V35.98c0-1.078.726-1.78 1.804-1.78h8.274c1.078 0 1.781.702 1.781 1.78v16.665h9.469c3.304 0 5.25-1.899 5.25-5.157V30.332l-19.899-17.93c-.258-.234-.539-.351-.82-.351c-.258 0-.516.117-.797.375L7.328 30.449Z" />
-                        </svg>
-                        <p class="fill-gray-800 group-hover:text-violet-900"><a href="/">Home</a></p>
-                    </div>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                        class="stroke-gray-800 sm:size-7 size-5">
-                        <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                            d="m10 17l5-5l-5-5" />
-                    </svg>
-                    <p class="fill-gray-800 2xl:text-lg lg:text-sm md:text-xs sm:text-sm text-xs"><a href="#">Orders</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- THANK YOU -->
-    <section class="relative 2xl:py-[50px] 1xl:py-[45px] xl:py-[40px] lg:py-[35px] md:py-[30px] sm:py-[25px] py-[20px]">
+<section class="relative 2xl:pb-[50px] 1xl:pb-[45px] xl:pb-[40px] lg:pb-[35px] md:pb-[30px] sm:pb-[25px] pb-[20px]">
+    <div class="bg-violet-400">
         <div class="container">
-            <div class="flex flex-col items-center  justify-center w-full h-full">
-                <img src="/assets/image/parcel pack.webp" alt=""
-                    class="1xl:mb-[50px] xl:mb-[35px] lg:mb-[20px] mb-[20px] lg:w-auto sm:w-[19%] w-[17%]">
-                <h1
-                    class="1xl:text-[55px] xl:text-[50px] lg:text-[45px] md:text-[40px] text-[27px] font-medium sm:mb-[20px] mb-[15px] text-center">
-                    Inquiry received</h1>
-                <p
-                    class="md:mb-[35px] sm:mb-7 mb-[20px] sm:text-lg text-base text-center sm:!leading-7 leading-[26px] w-[618px] max-w-full ">
-                    Your inquiry has been sent. Nothing was charged. We will reply about the pieces you asked for.</p>
-                <div class="flex flex-wrap sm:gap-[25px] gap-[15px]">
-                    <a href="{{ partial:partials/shop-href }}" class="all-btn">Return to Shop</a>
+            <div class="flex items-center sm:gap-[4px] gap-0 md:py-[15px] py-[10px]">
+                <p class="fill-gray-800"><a href="/">Home</a></p>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="stroke-gray-800 sm:size-7 size-5" aria-hidden="true">
+                    <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m10 17l5-5l-5-5" />
+                </svg>
+                <p class="fill-gray-800 2xl:text-lg lg:text-sm md:text-xs sm:text-sm text-xs">
+                    {{ if order_id }}Inquiry #{{ order_id }}{{ else }}Inquiry{{ /if }}
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
 
-                    <a href="/account"
-                        class="all-btn bg-transparent text-black border border-black hover:bg-violet-900 hover:text-white hover:border-violet-900">View
-                        Account</a>
+<!-- THANK YOU -->
+<section class="relative 2xl:pt-[50px] 1xl:pt-[45px] xl:pt-[40px] lg:pt-[35px] md:pt-[30px] sm:pt-[25px] pt-[20px]">
+    <div class="container">
+        <div class="flex flex-col items-center justify-center w-full h-full">
+            <img src="/assets/image/parcel pack.webp" alt="" width="150" height="188" class="1xl:mb-[50px] xl:mb-[35px] lg:mb-[20px] mb-[20px] w-36 h-auto" aria-hidden="true">
+            <h1 class="1xl:text-[55px] xl:text-[50px] lg:text-[45px] md:text-[40px] text-[27px] font-medium sm:mb-[20px] mb-[15px] text-center">
+                Inquiry received
+            </h1>
+            <p class="md:mb-[35px] sm:mb-7 mb-[20px] sm:text-lg text-base text-center sm:!leading-7 leading-[26px] w-[618px] max-w-full">
+                Your inquiry has been sent. Nothing was charged.
+                {{ if order_id }}Reference <strong>#{{ order_id }}</strong>.{{ /if }}
+                Full details are below.
+            </p>
+            <div class="flex flex-wrap sm:gap-[25px] gap-[15px] justify-center mb-10">
+                <a href="{{ partial:partials/shop-href }}" class="all-btn">Return to Shop</a>
+                {{ if order_id }}
+                <a href="/order/{{ order_id }}/invoice"
+                    class="all-btn bg-transparent text-black border border-black hover:bg-violet-900 hover:text-white hover:border-violet-900">Download invoice</a>
+                <a href="/account?tab=orders"
+                    class="all-btn bg-transparent text-black border border-black hover:bg-violet-900 hover:text-white hover:border-violet-900">Account orders</a>
+                {{ /if }}
+            </div>
+        </div>
+    </div>
+</section>
 
+{{ if order }}
+<section class="relative 1xl:pb-[50px] md:pb-[35px] pb-[25px]">
+    <div class="container">
+        <div class="flex flex-col border border-lightborder-100 mb-8">
+            <div class="bg-violet-400 sm:px-5 px-3 py-[11px] flex flex-wrap items-center justify-between gap-3">
+                <p class="2xl:text-lg lg:text-base text-sm">Thank you — your inquiry has been received. Nothing was charged.</p>
+                <a href="/order/{{ order:id }}" class="all-btn !px-3 !py-1.5 text-sm bg-transparent text-black border border-black hover:bg-violet-900 hover:text-white hover:border-violet-900">Open inquiry page</a>
+            </div>
+            <div class="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 lg:divide-y-0 divide-y lg:divide-x divide-lightborder-100">
+                <div class="grid lg:py-6 py-4 xl:ps-[50px] lg:ps-[30px] sm:ps-10 ps-3 1xl:gap-[15px] gap-[5px]">
+                    <p class="text-gray-800 2xl:text-lg lg:text-base text-sm">Order Number:</p>
+                    <p class="text-black 2xl:text-lg lg:text-base text-sm">#{{ order:id }}</p>
+                </div>
+                <div class="grid lg:py-6 py-4 xl:ps-[50px] lg:ps-[30px] sm:ps-10 ps-3 1xl:gap-[15px] gap-[5px]">
+                    <p class="text-gray-800 2xl:text-lg lg:text-base text-sm">Date:</p>
+                    <p class="text-black 2xl:text-lg lg:text-base text-sm">{{ order:date }}</p>
+                </div>
+                <div class="grid lg:py-6 py-4 xl:ps-[50px] lg:ps-[30px] sm:ps-10 ps-3 1xl:gap-[15px] gap-[5px]">
+                    <p class="text-gray-800 2xl:text-lg lg:text-base text-sm">Total:</p>
+                    <p class="text-black 2xl:text-lg lg:text-base text-sm">{{ order:total }}</p>
+                </div>
+                <div class="grid lg:py-6 py-4 xl:ps-[50px] lg:ps-[30px] sm:ps-10 ps-3 1xl:gap-[15px] gap-[5px]">
+                    <p class="text-gray-800 2xl:text-lg lg:text-base text-sm">Email:</p>
+                    <p class="text-black 2xl:text-lg lg:text-base text-sm">{{ order:email }}</p>
                 </div>
             </div>
         </div>
-    </section>
+
+        <div class="mt-[35px] flex lg:flex-row flex-col lg:gap-9 gap-4 w-full">
+            <div class="flex flex-col lg:w-1/2 w-full border border-lightborder-100 divide-y divide-lightborder-100">
+                <div class="bg-violet-400 sm:px-5 px-3 py-[11px]">
+                    <p class="2xl:text-lg text-base">Order Detail</p>
+                </div>
+                <div class="w-full p-4">
+                    {{ order:lines }}
+                    <div class="flex items-center gap-3 mb-4 group">
+                        <a href="{{ url }}" class="shrink-0">
+                            <img src="{{ partial:partials/media-url :file="image" }}" alt="{{ title }}" width="80" height="80" class="w-20 h-20 object-cover shrink-0">
+                        </a>
+                        <div class="grow min-w-0">
+                            <p class="1xl:text-lg text-base"><a href="{{ url }}" class="hover:text-violet-900">{{ title }}</a></p>
+                            <p class="text-sm text-gray-800">Qty: {{ qty }}</p>
+                        </div>
+                        <p class="text-gray-800 shrink-0">${{ line_total }}</p>
+                    </div>
+                    {{ /order:lines }}
+                    {{ unless order:lines }}
+                    <p class="text-gray-800 mb-4">No line items were on this inquiry.</p>
+                    {{ /unless }}
+
+                    {{ if order:subtotal }}
+                    <div class="border-t border-lightborder-100 pt-3 flex justify-between mb-2">
+                        <p class="xl:text-lg text-base">Subtotal:</p>
+                        <p>${{ order:subtotal }}</p>
+                    </div>
+                    {{ /if }}
+                    {{ if order:discount and order:discount != "0.00" }}
+                    <div class="flex justify-between mb-2">
+                        <p class="xl:text-lg text-base">Discount{{ if order:coupon }} ({{ order:coupon }}){{ /if }}:</p>
+                        <p>-${{ order:discount }}</p>
+                    </div>
+                    {{ /if }}
+                    <div class="{{ unless order:subtotal }}border-t border-lightborder-100 pt-3{{ /unless }} flex justify-between">
+                        <p class="xl:text-lg text-base font-medium">Total:</p>
+                        <p class="font-medium">{{ order:total }}</p>
+                    </div>
+                    <p class="text-sm text-gray-800 mt-3">Status: {{ order:status }}</p>
+                </div>
+            </div>
+
+            <div class="grid lg:w-1/2 w-full gap-[34px]">
+                <div class="flex flex-col border border-lightborder-100">
+                    <div class="bg-violet-400 px-5 py-[11px]"><p class="2xl:text-lg text-base">Billing Address</p></div>
+                    <div class="grid gap-2 lg:p-[20px] p-[15px] italic 2xl:text-lg lg:text-base text-sm">
+                        <p>{{ order:name }}</p>
+                        <p>{{ order:email }}</p>
+                        {{ if order:phone }}<p>{{ order:phone }}</p>{{ /if }}
+                        {{ if order:address }}<p>{{ order:address }}</p>{{ /if }}
+                        {{ if order:city }}<p>{{ order:city }}{{ if order:state }}, {{ order:state }}{{ /if }} {{ order:pincode }}</p>{{ /if }}
+                        {{ if order:country }}<p>{{ order:country }}</p>{{ /if }}
+                    </div>
+                </div>
+
+                {{ if order:ship_different }}
+                <div class="flex flex-col border border-lightborder-100">
+                    <div class="bg-violet-400 px-5 py-[11px]"><p class="2xl:text-lg text-base">Shipping Address</p></div>
+                    <div class="grid gap-2 lg:p-[20px] p-[15px] italic 2xl:text-lg lg:text-base text-sm">
+                        {{ if order:ship_address }}<p>{{ order:ship_address }}</p>{{ /if }}
+                        {{ if order:ship_city }}<p>{{ order:ship_city }}{{ if order:ship_state }}, {{ order:ship_state }}{{ /if }} {{ order:ship_pincode }}</p>{{ /if }}
+                        {{ if order:ship_country }}<p>{{ order:ship_country }}</p>{{ /if }}
+                    </div>
+                </div>
+                {{ else }}
+                <div class="flex flex-col border border-lightborder-100">
+                    <div class="bg-violet-400 px-5 py-[11px]"><p class="2xl:text-lg text-base">Shipping Address</p></div>
+                    <div class="grid gap-2 lg:p-[20px] p-[15px] italic 2xl:text-lg lg:text-base text-sm">
+                        <p>Same as billing</p>
+                        {{ if order:address }}<p>{{ order:address }}</p>{{ /if }}
+                        {{ if order:city }}<p>{{ order:city }}{{ if order:state }}, {{ order:state }}{{ /if }} {{ order:pincode }}</p>{{ /if }}
+                        {{ if order:country }}<p>{{ order:country }}</p>{{ /if }}
+                    </div>
+                </div>
+                {{ /if }}
+
+                {{ if order:message }}
+                <div class="flex flex-col border border-lightborder-100">
+                    <div class="bg-violet-400 px-5 py-[11px]"><p class="2xl:text-lg text-base">Notes</p></div>
+                    <div class="lg:p-[20px] p-[15px] 2xl:text-lg lg:text-base text-sm">{{ order:message | entities }}</div>
+                </div>
+                {{ /if }}
+            </div>
+        </div>
+    </div>
+</section>
+{{ else }}
+<section class="relative pb-10">
+    <div class="container text-center">
+        <p class="2xl:text-lg text-base text-gray-800 mb-4">No inquiry details were found in this browser session.</p>
+        <a href="/account?tab=orders" class="all-btn inline-flex">Account orders</a>
+    </div>
+</section>
+{{ /if }}

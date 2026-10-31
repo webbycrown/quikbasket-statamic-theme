@@ -644,13 +644,23 @@ fields:
               fields:
                 -
                   handle: image
-                  field: { type: assets, container: assets, max_files: 1, display: Image }
+                  field: { type: assets, container: assets, max_files: 1, display: 'Side image' }
                 -
-                  handle: products
+                  handle: features
                   field:
-                    type: entries
-                    collections: [products]
-                    display: Products
+                    type: grid
+                    display: Features
+                    fields:
+                      -
+                        handle: product
+                        field: { type: entries, collections: [products], max_items: 1, display: Product }
+                      -
+                        handle: text
+                        field: { type: textarea, display: 'Short text (optional)' }
+                      -
+                        handle: image_right
+                        field: { type: toggle, display: 'Image on right' }
+
             h2_offer:
               display: 'Home 2 offer'
               fields:
@@ -685,11 +695,30 @@ fields:
                   handle: heading
                   field: { type: text, display: Heading }
                 -
+                  handle: items
+                  field:
+                    type: grid
+                    display: Items
+                    fields:
+                      -
+                        handle: title
+                        field: { type: text, display: Title }
+                      -
+                        handle: price
+                        field: { type: text, display: Price }
+                      -
+                        handle: image
+                        field: { type: assets, container: assets, max_files: 1, display: Image }
+                      -
+                        handle: link
+                        field: { type: text, display: Link }
+                -
                   handle: products
                   field:
                     type: entries
                     collections: [products]
                     display: Products
+
             h2_features:
               display: 'Home 2 features'
               fields:
@@ -858,6 +887,9 @@ fields:
                       -
                         handle: label
                         field: { type: text, display: Label }
+                      -
+                        handle: key
+                        field: { type: text, display: 'Filter key' }
                 -
                   handle: products
                   field:
@@ -958,29 +990,41 @@ fields:
                   handle: image
                   field: { type: assets, container: assets, max_files: 1, display: Image }
                 -
+                  handle: product
+                  field: { type: entries, collections: [products], max_items: 1, display: 'Featured product (Shop Now)' }
+                -
                   handle: button_label
                   field: { type: text, display: 'Button label' }
                 -
                   handle: button_url
-                  field: { type: text, display: Link }
+                  field: { type: text, display: 'Fallback link' }
                 -
-                  handle: cards
+                  handle: quick_categories
                   field:
                     type: grid
-                    display: Cards
+                    display: 'Quick categories'
                     fields:
                       -
                         handle: image
                         field: { type: assets, container: assets, max_files: 1, display: Image }
                       -
-                        handle: heading
-                        field: { type: text, display: Heading }
-                      -
-                        handle: price
-                        field: { type: text, display: Price }
+                        handle: label
+                        field: { type: text, display: Label }
                       -
                         handle: link
                         field: { type: text, display: Link }
+                -
+                  handle: cards
+                  field:
+                    type: grid
+                    display: 'Deal cards'
+                    fields:
+                      -
+                        handle: product
+                        field: { type: entries, collections: [products], max_items: 1, display: Product }
+                      -
+                        handle: title
+                        field: { type: text, display: 'Title override (optional)' }
                       -
                         handle: button_label
                         field: { type: text, display: 'Button label' }
@@ -1039,11 +1083,14 @@ fields:
                   handle: image
                   field: { type: assets, container: assets, max_files: 1, display: Image }
                 -
+                  handle: product
+                  field: { type: entries, collections: [products], max_items: 1, display: 'Banner product' }
+                -
                   handle: button_label
                   field: { type: text, display: 'Button label' }
                 -
                   handle: button_url
-                  field: { type: text, display: Link }
+                  field: { type: text, display: 'Fallback link' }
                 -
                   handle: products
                   field:
@@ -1064,7 +1111,7 @@ fields:
                   field: { type: text, display: 'Button label' }
                 -
                   handle: button_url
-                  field: { type: text, display: Link }
+                  field: { type: text, display: 'Fallback link' }
                 -
                   handle: eyebrow
                   field: { type: text, display: Eyebrow }
@@ -1080,6 +1127,9 @@ fields:
                 -
                   handle: image
                   field: { type: assets, container: assets, max_files: 1, display: Image }
+                -
+                  handle: product
+                  field: { type: entries, collections: [products], max_items: 1, display: 'Banner product' }
                 -
                   handle: products
                   field:
@@ -1101,6 +1151,9 @@ fields:
                       -
                         handle: label
                         field: { type: text, display: Label }
+                      -
+                        handle: key
+                        field: { type: text, display: 'Filter key' }
                 -
                   handle: products
                   field:
@@ -1114,6 +1167,18 @@ fields:
                   handle: heading
                   field: { type: text, display: Heading }
                 -
+                  handle: timer
+                  field: { type: text, display: Timer }
+                -
+                  handle: button_label
+                  field: { type: text, display: 'Button label' }
+                -
+                  handle: button_url
+                  field: { type: text, display: 'Fallback link' }
+                -
+                  handle: eyebrow
+                  field: { type: text, display: Eyebrow }
+                -
                   handle: offer_heading
                   field: { type: text, display: 'Offer heading' }
                 -
@@ -1123,11 +1188,16 @@ fields:
                   handle: image
                   field: { type: assets, container: assets, max_files: 1, display: Image }
                 -
+                  handle: product
+                  field: { type: entries, collections: [products], max_items: 1, display: 'Banner product' }
+                -
                   handle: products
                   field:
                     type: entries
                     collections: [products]
                     display: Products
+                    max_items: 3
+
             h4_journal:
               display: 'Home 4 journal'
               fields:
@@ -1360,6 +1430,75 @@ fields:
                 -
                   handle: body
                   field: { type: markdown, display: Body }
+            about_story:
+              display: 'About story'
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: quote
+                  field: { type: text, display: Quote }
+                -
+                  handle: body
+                  field: { type: textarea, display: Body }
+                -
+                  handle: image
+                  field: { type: assets, container: assets, max_files: 1, display: Image }
+                -
+                  handle: image_two
+                  field: { type: assets, container: assets, max_files: 1, display: 'Second image' }
+                -
+                  handle: image_three
+                  field: { type: assets, container: assets, max_files: 1, display: 'Third image' }
+            about_why:
+              display: 'About why'
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: text
+                  field: { type: textarea, display: Text }
+                -
+                  handle: image
+                  field: { type: assets, container: assets, max_files: 1, display: Image }
+                -
+                  handle: items
+                  field:
+                    type: grid
+                    display: Items
+                    fields:
+                      -
+                        handle: icon
+                        field: { type: assets, container: assets, max_files: 1, display: Icon }
+                      -
+                        handle: title
+                        field: { type: text, display: Title }
+                      -
+                        handle: line
+                        field: { type: text, display: Line }
+            about_team:
+              display: 'About team'
+              fields:
+                -
+                  handle: heading
+                  field: { type: text, display: Heading }
+                -
+                  handle: members
+                  field:
+                    type: grid
+                    display: Members
+                    fields:
+                      -
+                        handle: photo
+                        field: { type: assets, container: assets, max_files: 1, display: Photo }
+                      -
+                        handle: name
+                        field: { type: text, display: Name }
+                      -
+                        handle: role
+                        field: { type: text, display: Role }
             contact_page:
               display: Contact
               fields:
@@ -1369,6 +1508,9 @@ fields:
                 -
                   handle: text
                   field: { type: textarea, display: Text }
+                -
+                  handle: map_embed
+                  field: { type: text, display: 'Map embed URL' }
             faq_page:
               display: FAQ
               fields:

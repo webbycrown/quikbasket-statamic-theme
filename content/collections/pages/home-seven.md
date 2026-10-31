@@ -134,14 +134,15 @@ page_builder:
     type: h7_trending
     heading: 'Trending Collection'
     products:
-      - branded-sky-jeans
-      - casual-cotton-t-shirt
-      - casual-jackets-for-womens
-      - coastal-linen-s-s-shirt
-      - colour-cotton-t-shirt
-      - trendy-alansca-dress
+      - pure-cotton-sweater
+      - stylish-checks-shirt-female
+      - black-color-sandal
+      - stylish-red-full-blazer
+      - mens-green-color-sweater
+      - floral-designed-dress
       - crop-tops-for-daily-wear
-      - cotton-sweater
+      - home7-coastal-linen
+      - casual-cotton-t-shirt
   -
     id: h7-sale
     type: h7_sale
@@ -160,16 +161,16 @@ page_builder:
     button_label: 'Shop All'
     button_url: /shop
     products:
-      - branded-sky-jeans
-      - casual-cotton-t-shirt
-      - casual-jackets-for-womens
-      - coastal-linen-s-s-shirt
-      - colour-cotton-t-shirt
-      - trendy-alansca-dress
-      - crop-tops-for-daily-wear
-      - cotton-sweater
-      - heart-printed-top-t-shirt
-      - single-breasted-blazer
+      - orange-color-top-jeans
+      - female-western-party-dress
+      - red-blue-checks-shirt
+      - double-breasted-trench-coat
+      - checks-blue-shirt-boys
+      - mens-style-blue-jeans
+      - gray-full-top-plazo
+      - young-boys-casual-shirt
+      - stylish-girls-top-shorts
+      - girls-full-sleeve-tshirt-pants
   -
     id: h7-weekly
     type: h7_weekly
@@ -177,17 +178,17 @@ page_builder:
     button_label: 'Shop All'
     button_url: /shop
     products:
-      - floral-designed-dress
-      - checked-shirt
-      - womens-regular-fit-tops
-      - sleeves-pockets-t-shirt
-      - winter-wear-outertops
-      - smart-tech-t-shirt
+      - black-strappy-heels
+      - green-color-salwar-suit
+      - brown-frame-sunglasses
+      - yellow-crop-top-outfit
+      - red-black-sport-shoes
+      - orange-boho-tie-top
   -
     id: h7-coupon
     type: h7_coupon
-    heading: 'Sign Up For Email'
-    text: 'Notes from the shop. This box does not start a mailing list.'
+    heading: 'Get 40% Off Discount Coupon'
+    text: 'by Subscribe our Newsletter. This box does not start a mailing list.'
     code: ''
     image: 'image/discount coupen shoes.webp'
     image_two: 'image/discount coupen girl.webp'

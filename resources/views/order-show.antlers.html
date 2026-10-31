@@ -1,0 +1,93 @@
+{{ partial:partials/crumb label="Inquiry" }}
+<section class="relative 1xl:py-[30px] md:py-[25px] py-[20px]">
+    <div class="container">
+        {{ if order }}
+        <div class="flex flex-col border border-lightborder-100 mb-8">
+            <div class="bg-violet-400 sm:px-5 px-3 py-[11px] flex flex-wrap items-center justify-between gap-3">
+                <p class="2xl:text-lg lg:text-base text-sm">Inquiry #{{ order:id }} — nothing was charged.</p>
+                <div class="flex flex-wrap gap-2">
+                    <a href="/order/{{ order:id }}/invoice" class="all-btn !px-3 !py-1.5 text-sm">Download invoice</a>
+                    <a href="/account?tab=orders" class="all-btn !px-3 !py-1.5 text-sm bg-transparent text-black border border-black hover:bg-violet-900 hover:text-white hover:border-violet-900">Back to orders</a>
+                </div>
+            </div>
+            <div class="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 lg:divide-y-0 divide-y lg:divide-x divide-lightborder-100">
+                <div class="grid lg:py-6 py-4 xl:ps-[50px] lg:ps-[30px] sm:ps-10 ps-3 1xl:gap-[15px] gap-[5px]">
+                    <p class="text-gray-800 2xl:text-lg lg:text-base text-sm">Order Number:</p>
+                    <p class="text-black 2xl:text-lg lg:text-base text-sm">#{{ order:id }}</p>
+                </div>
+                <div class="grid lg:py-6 py-4 xl:ps-[50px] lg:ps-[30px] sm:ps-10 ps-3 1xl:gap-[15px] gap-[5px]">
+                    <p class="text-gray-800 2xl:text-lg lg:text-base text-sm">Date:</p>
+                    <p class="text-black 2xl:text-lg lg:text-base text-sm">{{ order:date }}</p>
+                </div>
+                <div class="grid lg:py-6 py-4 xl:ps-[50px] lg:ps-[30px] sm:ps-10 ps-3 1xl:gap-[15px] gap-[5px]">
+                    <p class="text-gray-800 2xl:text-lg lg:text-base text-sm">Total:</p>
+                    <p class="text-black 2xl:text-lg lg:text-base text-sm">{{ order:total }}</p>
+                </div>
+                <div class="grid lg:py-6 py-4 xl:ps-[50px] lg:ps-[30px] sm:ps-10 ps-3 1xl:gap-[15px] gap-[5px]">
+                    <p class="text-gray-800 2xl:text-lg lg:text-base text-sm">Email:</p>
+                    <p class="text-black 2xl:text-lg lg:text-base text-sm">{{ order:email }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-[35px] flex lg:flex-row flex-col lg:gap-9 gap-4 w-full">
+            <div class="flex flex-col lg:w-1/2 w-full border border-lightborder-100 divide-y divide-lightborder-100">
+                <div class="bg-violet-400 sm:px-5 px-3 py-[11px]">
+                    <p class="2xl:text-lg text-base">Order Detail</p>
+                </div>
+                <div class="w-full p-4">
+                    {{ order:lines }}
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="{{ partial:partials/media-url :file="image" }}" alt="{{ title }}" width="80" height="80" class="w-20 h-20 object-cover shrink-0">
+                        <div class="grow">
+                            <p class="1xl:text-lg text-base"><a href="{{ url }}" class="hover:text-violet-900">{{ title }}</a></p>
+                            <p class="text-sm text-gray-800">Qty: {{ qty }}</p>
+                        </div>
+                        <p class="text-gray-800">${{ line_total }}</p>
+                    </div>
+                    {{ /order:lines }}
+                    {{ unless order:lines }}
+                    <p class="text-gray-800">No line items were on this inquiry.</p>
+                    {{ /unless }}
+                    <div class="border-t border-lightborder-100 pt-3 flex justify-between">
+                        <p class="xl:text-lg text-base">Total:</p>
+                        <p>{{ order:total }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid lg:w-1/2 w-full gap-[34px]">
+                <div class="flex flex-col border border-lightborder-100">
+                    <div class="bg-violet-400 px-5 py-[11px]"><p class="2xl:text-lg text-base">Billing / contact</p></div>
+                    <div class="grid gap-2 lg:p-[20px] p-[15px] italic 2xl:text-lg lg:text-base text-sm">
+                        <p>{{ order:name }}</p>
+                        <p>{{ order:email }}</p>
+                        {{ if order:phone }}<p>{{ order:phone }}</p>{{ /if }}
+                        {{ if order:address }}<p>{{ order:address }}</p>{{ /if }}
+                        {{ if order:city }}<p>{{ order:city }}{{ if order:state }}, {{ order:state }}{{ /if }} {{ order:pincode }}</p>{{ /if }}
+                        {{ if order:country }}<p>{{ order:country }}</p>{{ /if }}
+                    </div>
+                </div>
+                {{ if order:ship_different }}
+                <div class="flex flex-col border border-lightborder-100">
+                    <div class="bg-violet-400 px-5 py-[11px]"><p class="2xl:text-lg text-base">Shipping address</p></div>
+                    <div class="grid gap-2 lg:p-[20px] p-[15px] italic 2xl:text-lg lg:text-base text-sm">
+                        {{ if order:ship_address }}<p>{{ order:ship_address }}</p>{{ /if }}
+                        {{ if order:ship_city }}<p>{{ order:ship_city }}{{ if order:ship_state }}, {{ order:ship_state }}{{ /if }} {{ order:ship_pincode }}</p>{{ /if }}
+                        {{ if order:ship_country }}<p>{{ order:ship_country }}</p>{{ /if }}
+                    </div>
+                </div>
+                {{ /if }}
+                {{ if order:message }}
+                <div class="flex flex-col border border-lightborder-100">
+                    <div class="bg-violet-400 px-5 py-[11px]"><p class="2xl:text-lg text-base">Notes</p></div>
+                    <div class="lg:p-[20px] p-[15px] 2xl:text-lg lg:text-base text-sm">{{ order:message | entities }}</div>
+                </div>
+                {{ /if }}
+            </div>
+        </div>
+        {{ else }}
+        <p class="2xl:text-lg text-base">That inquiry was not found in this browser session.</p>
+        <a href="/account?tab=orders" class="all-btn mt-4 inline-flex">Account orders</a>
+        {{ /if }}
+    </div>
+</section>

@@ -12,6 +12,12 @@ tabs:
             handle: logo
             field: { type: assets, container: assets, max_files: 1, display: Logo }
           -
+            handle: logo_white
+            field: { type: assets, container: assets, max_files: 1, display: 'Logo (light / white)' }
+          -
+            handle: footer_logo
+            field: { type: assets, container: assets, max_files: 1, display: 'Footer logo' }
+          -
             handle: favicon
             field: { type: assets, container: assets, max_files: 1, display: Favicon }
           -
@@ -44,6 +50,12 @@ tabs:
           -
             handle: inquiry_success
             field: { type: text, display: 'Inquiry success' }
+          -
+            handle: comment_button
+            field: { type: text, display: 'Comment button' }
+          -
+            handle: comment_success
+            field: { type: text, display: 'Comment success' }
           -
             handle: x_url
             field: { type: text, display: 'X URL' }
@@ -123,6 +135,21 @@ tabs:
             handle: helpful_heading
             field: { type: text, display: 'Helpful menu heading' }
           -
+            handle: following_heading
+            field: { type: text, display: 'Following / social heading' }
+          -
+            handle: about_heading
+            field: { type: text, display: 'About column heading' }
+          -
+            handle: header_promo_text
+            field: { type: text, display: 'Header promo text' }
+          -
+            handle: header_promo_button
+            field: { type: text, display: 'Header promo link text' }
+          -
+            handle: pages_menu_label
+            field: { type: text, display: 'Pages mega-menu label' }
+          -
             handle: popup_heading
             field: { type: text, display: 'Popup heading' }
           -
@@ -143,6 +170,41 @@ tabs:
           -
             handle: cookie_manage
             field: { type: text, display: 'Cookie manage' }
+          -
+            handle: invoice_color
+            field:
+              type: text
+              display: 'Invoice PDF color'
+              instructions: 'Hex color for the inquiry invoice PDF header and accents. Default is theme green #247A4D.'
+          -
+            handle: coupons
+            field:
+              type: replicator
+              display: Coupons
+              instructions: 'Demo cart coupons. They only change the on-screen total. Nothing is charged.'
+              sets:
+                coupon:
+                  display: Coupon
+                  fields:
+                    -
+                      handle: code
+                      field: { type: text, display: Code, required: true, instructions: 'Case-insensitive code shoppers type (example SAVE10).' }
+                    -
+                      handle: discount_type
+                      field:
+                        type: select
+                        display: 'Discount type'
+                        options:
+                          percent: Percent off
+                          fixed: Fixed amount off
+                        default: percent
+                        required: true
+                    -
+                      handle: amount
+                      field: { type: float, display: Amount, required: true, instructions: 'Percent (10 = 10%) or fixed dollars.' }
+                    -
+                      handle: label
+                      field: { type: text, display: Label, instructions: 'Shown next to the discount on the cart.' }
           -
             handle: shipping_options
             field:

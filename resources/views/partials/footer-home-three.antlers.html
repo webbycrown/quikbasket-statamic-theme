@@ -7,11 +7,7 @@
                                 class="w-auto md:m-0 mx-auto" />
                         </a>
                         <p class="md:mt-7 md:mb-2 my-5 1xl:text-lg lg:text-[17px] md:text-base text-[15px] text-center">
-                            © Copyright
-                            2024
-                            QuickBasket
-                            All Right
-                            Reserved.
+                            {{ setting:copyright }}
                         </p>
                     </div>
                     <ul class="flex md:gap-4 gap-3">
@@ -180,12 +176,12 @@
                     </div>
 
                     <div class="footer-list xl:w-auto lg:w-1/4 w-1/2">
-                        <h6 class="list-heading">Following</h6>
+                        <h6 class="list-heading">{{ setting:following_heading }}</h6>
                         <ul class="list">
-                            <li><a href="{{ setting:facebook_url }}">Facebook</a></li>
-                            <li><a href="{{ setting:instagram_url }}">Instagram</a></li>
-                            <li><a href="{{ setting:x_url }}">Twitter</a></li>
-                            <li><a href="{{ setting:linkedin_url }}">Linkedin</a></li>
+                            {{ if setting:facebook_url }}<li><a href="{{ setting:facebook_url }}">Facebook</a></li>{{ /if }}
+                            {{ if setting:instagram_url }}<li><a href="{{ setting:instagram_url }}">Instagram</a></li>{{ /if }}
+                            {{ if setting:x_url }}<li><a href="{{ setting:x_url }}">X</a></li>{{ /if }}
+                            {{ if setting:linkedin_url }}<li><a href="{{ setting:linkedin_url }}">LinkedIn</a></li>{{ /if }}
                         </ul>
                     </div>
                 </div>

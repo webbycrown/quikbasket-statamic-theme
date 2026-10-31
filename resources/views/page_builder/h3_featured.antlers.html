@@ -4,15 +4,17 @@
             <h3 class="text-center">{{ heading }}</h3>
             <div class="tabs w-full flex items-center justify-center flex-wrap lg:mt-10 xl:mb-16 md:mb-12 md:mt-8 mt-6 mb-8 gap-y-3">
                 {{ filters }}
-                <button type="button" class="filter-btn after:block after:content-['|'] after:lg:mx-8 after:mx-4 flex items-center justify-center {{ if last }}after:content-none{{ /if }}">
+                <button type="button" class="filter-btn after:block after:content-['|'] after:lg:mx-8 after:mx-4 flex items-center justify-center {{ if last }}after:content-none{{ /if }}" data-filter="{{ key ?? (label | slugify) }}">
                     <p class="w-full 2xl:text-[20px] md:text-lg text-base hover:text-violet-900 text-[#374151]">{{ label }}</p>
                 </button>
                 {{ /filters }}
             </div>
         </div>
-        <div class="grid 2xl:grid-cols-4 xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {{ products }}
-            {{ partial:partials/product-card }}
+            <div class="filter-item shadow-sm {{ if count == 1 }}mens-wear{{ elseif count == 2 }}womens-wear{{ elseif count == 3 }}children-wear{{ elseif count == 4 }}classics-ware{{ elseif count == 5 }}mens-wear{{ elseif count == 6 }}womens-wear{{ elseif count == 7 }}children-wear{{ else }}classics-ware{{ /if }}">
+                {{ partial:partials/h3-featured-card }}
+            </div>
             {{ /products }}
         </div>
     </div>

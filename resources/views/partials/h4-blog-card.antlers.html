@@ -1,0 +1,21 @@
+<div class="relative my-2 group">
+    <div class="relative overflow-hidden before:block before:content-[''] before:pt-[74%]">
+        <a href="{{ url }}">
+            <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="{{ title }}" class="absolute top-0 left-0 w-full h-full object-cover group-hover:scale-110 transition duration-300 ease-in-out" />
+        </a>
+    </div>
+    <div class="2xl:p-5 p-4 shadow-tabbox bg-white 2xl:w-[88%] lg:w-11/12 w-[88%] mx-auto 2xl:-mt-[6.5rem] xl:-mt-20 -mt-16 relative z-10 lg:group-hover:-mt-28 group-hover:-mt-16 transition-all duration-300 ease-in-out group-hover:shadow-xl">
+        <p class="font-medium text-gray-400/95 2xl:text-base 1xl:text-sm xl:text-xs lg:text-sm md:text-[13px] text-xs 1xl:mb-[10px] 2xl:mb-[7px] xl:mb-[3px] mb-[7px]">
+            {{ date format="d M, Y" }}
+        </p>
+        <a href="{{ url }}">
+            <h6 class="group-hover:text-violet-900 mb-2 2xl:text-[20px] 1xl:text-lg lg:text-[17px] md:text-base sm:text-sm text-[15px] 2xl:leading-[30px] 1xl:leading-7 md:leading-6 leading-5 font-medium line-clamp-2">
+                {{ title }}
+            </h6>
+        </a>
+        <p class="2xl:text-lg xl:text-sm lg:text-base md:text-[15px] sm:text-[13px] text-sm line-clamp-2">{{ excerpt }}</p>
+        <div class="flex xl:gap-3 gap-1 items-center 1xl:mt-[15px] mt-[10px]">
+            <a href="{{ url }}" class="underline underline-offset-4 group-hover:text-violet-900 2xl:text-base text-sm font-normal">Read more</a>
+        </div>
+    </div>
+</div>

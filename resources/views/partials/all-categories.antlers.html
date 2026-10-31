@@ -10,8 +10,58 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
         </svg>
     </button>
-    <div x-show="open" x-transition:enter="transition ease-out duration-200 transform" x-transition:enter-start="opacity-0 -translate-y-2 z-0" x-transition:enter-end="opacity-100 translate-y-0 z-50" x-transition:leave="transition ease-in duration-150 transform" x-transition:leave-start="opacity-100 translate-y-0 z-50" x-transition:leave-end="opacity-0 -translate-y-2 z-0" id="all-categories-menu" class="all-categories-mainmenu">
-        <div class="py-2 text-gray-700 text-sm" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+    <div x-show="open" x-transition:enter="transition ease-out duration-200 transform" x-transition:enter-start="opacity-0 -translate-y-2 z-0" x-transition:enter-end="opacity-100 translate-y-0 z-50" x-transition:leave="transition ease-in duration-150 transform" x-transition:leave-start="opacity-100 translate-y-0 z-50" x-transition:leave-end="opacity-0 -translate-y-2 z-0" id="all-categories-menu" class="all-categories-mainmenu{{ if tone == 'ink' }} shadow-none{{ /if }}">
+        <div class="py-2 text-gray-700 text-sm{{ if tone == 'ink' }} 2xl:space-y-2 space-y-0{{ /if }}" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+            {{ if tone == "ink" }}
+            <a href="{{ partial:partials/shop-href }}" class="menuitem group" role="menuitem">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="xl:size-5 size-4 -translate-x-5 group-hover:block group-hover:translate-x-0 group-hover:opacity-100 opacity-0 transition duration-700 ease-in-out" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+                <p class="menuitem-name group-hover:translate-x-0">Best Sellers</p>
+            </a>
+            <a href="{{ partial:partials/shop-href }}" class="menuitem group" role="menuitem">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="xl:size-5 size-4 -translate-x-5 group-hover:block group-hover:translate-x-0 group-hover:opacity-100 opacity-0 transition duration-700 ease-in-out" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+                <p class="menuitem-name group-hover:translate-x-0">Trending this week</p>
+            </a>
+            <a href="{{ partial:partials/shop-href }}" class="menuitem group" role="menuitem">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="xl:size-5 size-4 -translate-x-5 group-hover:block group-hover:translate-x-0 group-hover:opacity-100 opacity-0 transition duration-700 ease-in-out" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+                <p class="menuitem-name group-hover:translate-x-0">back in stock</p>
+            </a>
+            <a href="{{ partial:partials/shop-href }}" class="menuitem group" role="menuitem">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="xl:size-5 size-4 -translate-x-5 group-hover:block group-hover:translate-x-0 group-hover:opacity-100 opacity-0 transition duration-700 ease-in-out" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+                <p class="menuitem-name group-hover:translate-x-0">Woman’s clothing</p>
+            </a>
+            <a href="{{ partial:partials/shop-href }}" class="menuitem group" role="menuitem">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="xl:size-5 size-4 -translate-x-5 group-hover:block group-hover:translate-x-0 group-hover:opacity-100 opacity-0 transition duration-700 ease-in-out" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+                <p class="menuitem-name group-hover:translate-x-0">Man’s clothing</p>
+            </a>
+            <a href="{{ partial:partials/shop-href }}" class="menuitem group" role="menuitem">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="xl:size-5 size-4 -translate-x-5 group-hover:block group-hover:translate-x-0 group-hover:opacity-100 opacity-0 transition duration-700 ease-in-out" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+                <p class="menuitem-name group-hover:translate-x-0">Kid’s clothing</p>
+            </a>
+            <a href="{{ partial:partials/shop-href }}" class="menuitem group" role="menuitem">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="xl:size-5 size-4 -translate-x-5 group-hover:block group-hover:translate-x-0 group-hover:opacity-100 opacity-0 transition duration-700 ease-in-out" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+                <p class="menuitem-name group-hover:translate-x-0">New arrival</p>
+            </a>
+            <a href="{{ partial:partials/shop-href }}" class="menuitem group" role="menuitem">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="xl:size-5 size-4 -translate-x-5 group-hover:block group-hover:translate-x-0 group-hover:opacity-100 opacity-0 transition duration-700 ease-in-out" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+                <p class="menuitem-name group-hover:translate-x-0">Shoes &amp; accessories</p>
+            </a>
+            <a href="{{ partial:partials/shop-href }}" class="menuitem group" role="menuitem">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="xl:size-5 size-4 -translate-x-5 group-hover:block group-hover:translate-x-0 group-hover:opacity-100 opacity-0 transition duration-700 ease-in-out" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+                <p class="menuitem-name group-hover:translate-x-0">Oversized</p>
+            </a>
+            <a href="{{ partial:partials/shop-href }}" class="menuitem group" role="menuitem">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="xl:size-5 size-4 -translate-x-5 group-hover:block group-hover:translate-x-0 group-hover:opacity-100 opacity-0 transition duration-700 ease-in-out" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+                <p class="menuitem-name group-hover:translate-x-0">Work outfits</p>
+            </a>
+            <a href="{{ partial:partials/shop-href }}" class="menuitem group" role="menuitem">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="xl:size-5 size-4 -translate-x-5 group-hover:block group-hover:translate-x-0 group-hover:opacity-100 opacity-0 transition duration-700 ease-in-out" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+                <p class="menuitem-name group-hover:translate-x-0">The gift shop</p>
+            </a>
+            <a href="{{ partial:partials/shop-href }}" class="menuitem group" role="menuitem">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="xl:size-5 size-4 -translate-x-5 group-hover:block group-hover:translate-x-0 group-hover:opacity-100 opacity-0 transition duration-700 ease-in-out" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+                <p class="menuitem-name group-hover:translate-x-0">Premium Cloth</p>
+            </a>
+            {{ else }}
             {{ taxonomy:categories }}
             <a href="{{ url }}" class="menuitem group" role="menuitem">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="xl:size-5 size-4 -translate-x-5 group-hover:block group-hover:translate-x-0 group-hover:opacity-100 opacity-0 transition duration-700 ease-in-out" aria-hidden="true">
@@ -20,6 +70,7 @@
                 <p class="menuitem-name group-hover:translate-x-0">{{ title }}</p>
             </a>
             {{ /taxonomy:categories }}
+            {{ /if }}
         </div>
     </div>
 </div>

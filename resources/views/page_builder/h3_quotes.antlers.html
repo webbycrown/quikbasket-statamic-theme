@@ -4,7 +4,7 @@
             <h3 class="text-center">{{ heading }}</h3>
         </div>
         <div class="relative testimonial">
-            <div class="swiper myClient">
+            <div thumbsSlider class="swiper myClient">
                 <div class="swiper-wrapper">
                     {{ quotes }}
                     <div class="swiper-slide">
@@ -15,12 +15,12 @@
                     {{ /quotes }}
                 </div>
             </div>
-            <div class="swiper myClient2">
+            <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper myClient2">
                 <div class="swiper-wrapper">
                     {{ quotes }}
                     <div class="swiper-slide">
                         <div class="grid lg:gap-[30px] gap-[20px] text-center">
-                            <p class="text-[#374151] 2xl:text-lg lg:text-base text-sm 2xl:leading-8">{{ quote }}</p>
+                            <p class="text-[#374151] 2xl:text-lg lg:text-base text-sm 2xl:leading-8">“{{ quote }}”</p>
                             <div class="client-info">
                                 <h6 class="lg:text-[22px] text-[20px] text-violet-900">{{ name }}</h6>
                                 <p class="lg:text-base text-sm font-normal text-[#374151]">{{ role }}</p>
@@ -29,6 +29,10 @@
                     </div>
                     {{ /quotes }}
                 </div>
+            </div>
+            <div class="absolute relative md:top-0 bottom-0 md:left-0 md:right-0 md:p-0 mx-auto pt-11 sm:mt-5">
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
         </div>
     </div>

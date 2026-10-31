@@ -1,25 +1,33 @@
 <section class="relative 2xl:py-[50px] 1xl:py-[45px] xl:py-[40px] lg:py-[35px] md:py-[30px] sm:py-[25px] py-[20px]">
     <div class="container">
-        <div class="flex sm:flex-row flex-col sm:items-center justify-between border-b border-lightborder-100 lg:pb-[39px] pb-[20px] mb-[20px] gap-4">
-            <div class="flex md:flex-row flex-col md:items-center gap-4">
-                <h3>{{ heading }}</h3>
-                {{ if timer }}<p class="bg-yellow-400 lg:py-[11px] lg:px-7 py-[10px] px-6">{{ timer }}</p>{{ /if }}
+        <div class="flex sm:flex-row flex-col sm:items-center justify-between border-b border-lightborder-100 lg:pb-[39px] md:pb-[25px] pb-[20px] 1xl:mb-[30px] mb-[20px] sm:gap-4 gap-[15px]">
+            <div class="flex md:flex-row flex-col md:items-center sm:items-start items-center xl:gap-[35px] md:gap-[20px] gap-[16px] sm:w-auto w-full min-w-0">
+                <h3 class="sm:text-start text-center text-black">{{ heading }}</h3>
+                {{ if timer }}
+                <div class="bg-yellow-400 lg:py-[11px] lg:px-7 sm:py-[8px] py-[10px] sm:w-auto w-full sm:px-6 px-3 flex items-center justify-center text-center">
+                    <p class="2xl:text-[20px] xl:text-lg text-base text-black leading-none">{{ timer }}</p>
+                </div>
+                {{ /if }}
             </div>
-            <a class="all-btn" href="{{ button_url }}">{{ button_label }}</a>
+            <a class="all-btn sm:w-auto w-full text-center" href="{{ if product }}{{ product:url }}{{ else }}{{ button_url }}{{ /if }}">{{ button_label }}</a>
         </div>
-        <div class="grid lg:grid-cols-2 gap-6">
-            <div class="relative min-h-[320px]">
-                <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="{{ banner_heading }}" class="w-full h-full object-cover object-left" />
-                <div class="absolute bottom-0 p-6 text-white bg-gradient-to-t from-black/60 to-transparent w-full">
-                    <p>{{ eyebrow }}</p>
-                    <h3 class="text-white text-2xl my-3">{{ banner_heading }}</h3>
-                    <p class="text-xl">{{ price }}</p>
-                    <a href="{{ button_url }}" class="underline text-white">{{ banner_button }}</a>
+
+        <div class="flex lg:flex-row flex-col 2xl:gap-6 lg:gap-4 sm:gap-5 gap-4 lg:items-stretch">
+            <div class="relative lg:w-1/2 w-full overflow-hidden sm:h-56 h-80 lg:h-auto lg:min-h-full">
+                <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="{{ banner_heading }}" class="absolute inset-0 w-full h-full object-cover object-left" />
+                <div class="absolute inset-x-0 bottom-0 z-[1] flex flex-col 1xl:pb-[50px] lg:pb-[35px] py-[22px] 1xl:pl-[50px] md:pl-[35px] pl-[22px] 2xl:pr-[80px] lg:pr-[40px] pr-[22px] bg-gradient-to-t from-black/70 via-black/35 to-transparent">
+                    <p class="1xl:text-base xl:text-sm text-[15px] text-white">{{ eyebrow }}</p>
+                    <h3 class="text-white 1xl:mb-[22px] 1xl:mt-[12px] sm:mb-[16px] sm:mt-[10px] mb-[14px] mt-[8px] font-medium 2xl:text-3xl lg:text-[32px] sm:text-[27px] text-[25px] leading-tight">{{ banner_heading }}</h3>
+                    <div class="flex flex-wrap items-center gap-6 sm:gap-10">
+                        <h6 class="2xl:text-[24px] 1xl:text-[20px] lg:text-lg text-[20px] text-white">{{ price }}</h6>
+                        <a href="{{ if product }}{{ product:url }}{{ else }}{{ button_url }}{{ /if }}" class="underline underline-offset-4 text-white">{{ banner_button }}</a>
+                    </div>
                 </div>
             </div>
-            <div class="grid sm:grid-cols-2 gap-4">
-                {{ products }}
-                {{ partial:partials/product-card }}
+
+            <div class="lg:w-1/2 w-full grid grid-cols-1 sm:grid-cols-2 2xl:gap-6 lg:gap-4 gap-5 content-start">
+                {{ products limit="4" }}
+                    {{ partial:partials/popular-product-card }}
                 {{ /products }}
             </div>
         </div>

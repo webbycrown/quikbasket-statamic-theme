@@ -5,7 +5,7 @@
                     <div
                         class="flex flex-col lg:col-span-1 md:col-span-2 col-span-1 justify-start lg:items-start items-center">
                         <a href="{{ partial:partials/page-href id='home-four' }}">
-                            <img decoding="async" loading="lazy" src="/assets/image/main-white-logo.webp" alt="company logo"
+                            <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="setting:logo_white" fallback="image/main-white-logo.webp" }}" alt="{{ setting:site_name }}"
                                 class="xl:w-full md:mx-0 mx-auto" />
                         </a>
                         <div class="flex flex-col lg:mt-9 mt-7 2xl:gap-[23px] sm:gap-[15px] gap-[10px]">
@@ -125,8 +125,7 @@
                     </div>
                 </div>
                 <div class="flex md:flex-row flex-col justify-between items-center md:gap-0 gap-[15px] py-[27px]">
-                    <p class="text-[#A5A5A5] sm:text-start text-center xl:text-lg text-base">© 2024 QuickBasket All
-                        Right Reserved.</p>
+                    <p class="text-[#A5A5A5] sm:text-start text-center xl:text-lg text-base">{{ setting:copyright }}</p>
                 </div>
             </div>
         </footer>

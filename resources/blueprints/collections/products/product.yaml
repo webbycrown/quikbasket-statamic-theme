@@ -9,17 +9,69 @@ tabs:
             handle: title
             field: { type: text, required: true, validate: required }
           -
+            handle: sku
+            field: { type: text, display: SKU }
+          -
             handle: image
             field: { type: assets, container: assets, max_files: 1, display: Image }
           -
             handle: price
-            field: { type: float, display: Price }
+            field:
+              type: float
+              display: 'Sale price'
+              instructions: 'Current price used in the cart and inquiry. Nothing is charged.'
+          -
+            handle: compare_price
+            field:
+              type: float
+              display: 'Regular price'
+              instructions: 'Optional. Shown crossed out next to the sale price when it is higher.'
           -
             handle: description
             field: { type: textarea, display: 'Short text' }
           -
             handle: gallery
             field: { type: assets, container: assets, display: Gallery }
+          -
+            handle: variants
+            field:
+              type: grid
+              display: Variants
+              instructions: 'Add as many rows as you need (size, colour, qty). Qty is demo stock for that row — nothing is charged. Leave empty for a simple product with no options.'
+              add_row: 'Add variant'
+              reorderable: true
+              fields:
+                -
+                  handle: size
+                  field: { type: text, display: Size, width: 25 }
+                -
+                  handle: color
+                  field: { type: text, display: Color, width: 25, instructions: 'Name or hex, e.g. Navy or #247A4D' }
+                -
+                  handle: qty
+                  field: { type: integer, display: Qty, width: 25, default: 10, instructions: 'How many a shopper can add for this row' }
+                -
+                  handle: sku
+                  field: { type: text, display: 'Variant SKU', width: 25 }
+          -
+            handle: sizes
+            field:
+              type: list
+              display: 'Sizes (simple)'
+              instructions: 'Optional shortcut if you are not using Variants. Prefer Variants when you need qty per size/colour.'
+          -
+            handle: colors
+            field:
+              type: list
+              display: 'Colors (simple)'
+              instructions: 'Optional shortcut if you are not using Variants.'
+          -
+            handle: max_qty
+            field:
+              type: integer
+              display: 'Max qty (no variants)'
+              default: 99
+              instructions: 'Used when Variants is empty. Caps the quantity picker on the product page.'
           -
             handle: related
             field:

@@ -1,15 +1,19 @@
 <section class="relative 2xl:py-[50px] 1xl:py-[45px] xl:py-[40px] lg:py-[35px] md:py-[30px] sm:py-[25px] py-[20px]">
     <div class="container">
-        <div class="flex sm:flex-row flex-col sm:justify-between justify-center items-center gap-4 mb-8">
-            <h3>{{ heading }}</h3>
-            {{ if timer }}<p class="bg-yellow-400 lg:py-[11px] lg:px-7 py-[10px] px-6">{{ timer }}</p>{{ /if }}
-        </div>
-        <div class="swiper myCollection">
-            <div class="swiper-wrapper">
-                {{ products }}
-                <div class="swiper-slide">{{ partial:partials/product-card }}</div>
-                {{ /products }}
+        <div class="flex sm:flex-row sm:gap-0 gap-[15px] flex-col sm:items-center justify-between border-b border-lightborder-100 lg:pb-[39px] md:pb-[25px] pb-[20px] 2xl:mb-[40px] 1xl:mb-[30px] mb-[20px]">
+            <div class="flex lg:flex-row flex-col lg:items-center sm:items-start items-center lg:gap-[35px] sm:gap-[18px] gap-2 sm:w-auto w-full">
+                <h3 class="sm:text-start text-center">{{ heading }}</h3>
+                {{ if timer }}
+                <div class="bg-yellow-400 lg:py-[11px] lg:px-7 sm:py-[8px] py-[10px] sm:w-auto w-full sm:px-6 px-3 flex items-center justify-center text-center">
+                    <p class="2xl:text-[20px] xl:text-lg text-base">{{ timer }}</p>
+                </div>
+                {{ /if }}
             </div>
+        </div>
+        <div class="h4-product-grid grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-6">
+            {{ products limit="8" }}
+                {{ partial:partials/product-card }}
+            {{ /products }}
         </div>
     </div>
 </section>

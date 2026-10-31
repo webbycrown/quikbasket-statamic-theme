@@ -131,13 +131,17 @@
                     <ul class="flex items-center flex-wrap lg:w-auto w-full lg:justify-start justify-center">
                         <li
                             class="after:content-[''] last:after:hidden after:inline-block after:w-[4px] after:h-[1px] after:bg-gray-800 md:after:mx-3 after:mx-2 after:align-middle">
+                            {{ collection:pages id:is="terms" limit="1" }}
                             <a class="2xl:text-base 1xl:text-[15px] text-sm text-gray-800 hover:text-violet-900"
-                                href="{{ partial:partials/page-href id='terms' }}">Terms & Conditions</a>
+                                href="{{ url }}">{{ title }}</a>
+                            {{ /collection:pages }}
                         </li>
                         <li
                             class="after:content-[''] last:after:hidden after:inline-block after:w-[4px] after:h-[1px] after:bg-gray-800 md:after:mx-3 after:mx-2 after:align-middle">
+                            {{ collection:pages id:is="privacy" limit="1" }}
                             <a class="2xl:text-base 1xl:text-[15px] text-sm text-gray-800 hover:text-violet-900"
-                                href="{{ partial:partials/page-href id='privacy' }}">Privacy Policy</a>
+                                href="{{ url }}">{{ title }}</a>
+                            {{ /collection:pages }}
                         </li>
                         <li
                             class="after:content-[''] last:after:hidden after:inline-block after:w-[4px] after:h-[1px] after:bg-gray-800 md:after:mx-3 after:mx-2 after:align-middle">

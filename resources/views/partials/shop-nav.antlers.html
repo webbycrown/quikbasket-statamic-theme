@@ -2,18 +2,45 @@
     {{ nav:header_menu }}
         {{ partial:partials/nav-text :href="url" :label="title" pad="lg:py-5 sm:py-7 py-4" }}
     {{ /nav:header_menu }}
-{{ elseif variant == "row6" }}
+{{ elseif variant == "row5" or variant == "home5" }}
     {{ nav:header_menu }}
-        {{ partial:partials/nav-text :href="url" :label="title" pad="lg:py-[25px] sm:py-7 py-4" }}
+        {{ if first }}
+            {{ partial:partials/menu-drop which="pages" :label="title" id="home" variant="row5" }}
+            {{ partial:partials/menu-drop which="mega" :label="setting:pages_menu_label" id="pages" variant="row5" }}
+        {{ else }}
+            {{ partial:partials/nav-text :href="url" :label="title" pad="lg:py-5 sm:py-7 py-4" }}
+        {{ /if }}
     {{ /nav:header_menu }}
+{{ elseif variant == "row6" or variant == "home6" }}
+    {{ nav:header_menu }}
+        {{ if first }}
+            {{ partial:partials/menu-drop which="pages" :label="title" id="home" variant="row6" }}
+            {{ partial:partials/menu-drop which="mega" :label="setting:pages_menu_label" id="pages" variant="row6" }}
+        {{ else }}
+            {{ partial:partials/nav-text :href="url" :label="title" pad="lg:py-[25px] sm:py-7 py-4" }}
+        {{ /if }}
+    {{ /nav:header_menu }}
+{{ elseif variant == "home7" }}
+    {{ partial:partials/menu-drop which="pages" :label="setting:pages_menu_label" id="pages" variant="home7" }}
+    {{ partial:partials/menu-drop which="h7_new" label="New Arrivals" id="new" variant="home7" }}
+    {{ partial:partials/menu-drop which="h7_best" label="Best-Sellers" id="best" variant="home7" }}
+    {{ partial:partials/menu-drop which="h7_clothing" label="Clothing" id="clothing" variant="home7" }}
+    {{ partial:partials/menu-drop which="h7_tops" label="Tops & Sweaters" id="tops" variant="home7" }}
+    {{ partial:partials/menu-drop which="h7_pants" label="Pants & Jeans" id="pants" variant="home7" }}
+    {{ partial:partials/menu-drop which="h7_outwear" label="Outwear" id="outwear" variant="home7" }}
+    {{ partial:partials/menu-drop which="h7_shoes" label="Shoes & Bags" id="shoes" variant="home7" }}
 {{ elseif variant == "sidebar" }}
-    {{ partial:partials/menu-drop which="pages" label="Pages" id="pages" variant="sidebar" }}
+    {{ partial:partials/menu-drop which="pages" :label="setting:pages_menu_label" id="pages" variant="sidebar" }}
     {{ taxonomy:categories }}
         {{ partial:partials/menu-drop :which="slug" :label="title" :id="slug" variant="sidebar" }}
     {{ /taxonomy:categories }}
 {{ else }}
-    {{ partial:partials/menu-drop which="pages" label="Pages" id="pages" :variant="variant" }}
-    {{ taxonomy:categories }}
-        {{ partial:partials/menu-drop :which="slug" :label="title" :id="slug" :variant="variant" }}
-    {{ /taxonomy:categories }}
+    {{ partial:partials/menu-drop which="pages" :label="setting:pages_menu_label" id="pages" :variant="variant" }}
+    {{ partial:partials/menu-drop which="h7_new" label="New Arrivals" id="new" :variant="variant" }}
+    {{ partial:partials/menu-drop which="h7_best" label="Best-Sellers" id="best" :variant="variant" }}
+    {{ partial:partials/menu-drop which="h7_clothing" label="Clothing" id="clothing" :variant="variant" }}
+    {{ partial:partials/menu-drop which="h7_tops" label="Tops & Sweaters" id="tops" :variant="variant" }}
+    {{ partial:partials/menu-drop which="h7_pants" label="Pants & Jeans" id="pants" :variant="variant" }}
+    {{ partial:partials/menu-drop which="h7_outwear" label="Outwear" id="outwear" :variant="variant" }}
+    {{ partial:partials/menu-drop which="h7_shoes" label="Shoes & Bags" id="shoes" :variant="variant" }}
 {{ /if }}

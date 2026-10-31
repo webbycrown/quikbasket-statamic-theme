@@ -1,0 +1,470 @@
+{{ if which == "h7_new" }}
+<div class="2xl:container grid lg:grid-cols-7 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 justify-between text-gray-700 text-sm">
+    <div>
+        <h6 class="product-heading">Man</h6>
+        <ul class="product">
+            <li><a href="{{ partial:partials/shop-href }}">T-shirt</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Shirt</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Shoes</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Belts</a></li>
+        </ul>
+        <h6 class="product-heading">Beauty</h6>
+        <ul class="product">
+            <li><a href="{{ partial:partials/shop-href }}">Mackup</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Skincare</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Fragrance</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Perfumes</a></li>
+        </ul>
+    </div>
+    <div>
+        <h6 class="product-heading">Woman</h6>
+        <ul class="product">
+            <li><a href="/categories/jeans">Jeans</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">T-shirts</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Shirts</a></li>
+            <li><a href="/categories/tops">Tops</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Jumpsuits</a></li>
+            <li><a href="/categories/outerwear">Coats</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Mackup</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Sweater</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Lingerie</a></li>
+        </ul>
+    </div>
+    <div>
+        <h6 class="product-heading">Footwear</h6>
+        <ul class="product">
+            <li><a href="{{ partial:partials/shop-href }}">Heals</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Boots</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Casual</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Lofer</a></li>
+        </ul>
+        <h6 class="product-heading">Dresses</h6>
+        <ul class="product">
+            <li><a href="/categories/dresses">Part Dress</a></li>
+            <li><a href="/categories/dresses">Summer Dress</a></li>
+            <li><a href="/categories/dresses">Wedding Dress</a></li>
+            <li><a href="/categories/dresses">Midi Dress</a></li>
+        </ul>
+    </div>
+    <div>
+        <h6 class="product-heading">Bags</h6>
+        <ul class="product">
+            <li><a href="{{ partial:partials/shop-href }}">Handbag</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Purse</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Makeup Bag</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Wallet</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Laptop Bag</a></li>
+        </ul>
+        <h6 class="product-heading">Accesories</h6>
+        <ul class="product">
+            <li><a href="/categories/accessories">Handbag</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Shoes</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Wallets</a></li>
+        </ul>
+    </div>
+    <div>
+        <h6 class="product-heading">Sunglasses</h6>
+        <ul class="product">
+            <li><a href="{{ partial:partials/shop-href }}">Aviator</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Rectangle</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Oval</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Cat-eye</a></li>
+        </ul>
+        <h6 class="product-heading">Summerwear</h6>
+        <ul class="product">
+            <li><a href="{{ partial:partials/shop-href }}">Lounge Wear</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Beach Wear</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Resort Wear</a></li>
+        </ul>
+    </div>
+    <div class="newArrival-post md:col-span-2">
+        <p>Featured</p>
+        <div class="insta-post">
+            {{ collection:products limit="6" }}
+            <div class="instaPost">
+                <a class="post group/insta block" href="{{ url }}">
+                    <img decoding="async" loading="lazy" alt="{{ title }}" src="{{ partial:partials/media-url :file="image" }}" />
+                    <div class="insta hover-stake group-hover/insta:opacity-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="white" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 16a4 4 0 1 0 0-8a4 4 0 0 0 0 8" /><path d="M3 16V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5Z" /><path stroke-linecap="round" stroke-linejoin="round" d="m17.5 6.51l.01-.011" /></g></svg>
+                    </div>
+                </a>
+            </div>
+            {{ /collection:products }}
+        </div>
+        <p class="mt-3"><a class="border-b border-black hover:text-violet-900" href="{{ partial:partials/shop-href }}">View shop</a></p>
+    </div>
+</div>
+{{ elseif which == "h7_best" }}
+<div class="2xl:container grid lg:grid-cols-6 md:grid-cols-4 grid-cols-2 2xl:gap-5 w-full text-sm font-semibold bg-transparent lg:gap-0 gap-4">
+    <div>
+        <h6 class="product-heading">Women’s Fashion</h6>
+        <ul class="product">
+            <li><a href="{{ partial:partials/shop-href }}">Maxi Dresses</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Cocktail Dresses</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Sundresses</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Blouses</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Sweaters</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Tees</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Leather Jackets</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Trench Coats</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Waisted Jeans</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Tailored Trousers</a></li>
+        </ul>
+    </div>
+    <div>
+        <h6 class="product-heading">Fashion</h6>
+        <ul class="product">
+            <li><a href="{{ partial:partials/shop-href }}">Slim-Fit Jeans</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Button-Down Shirts</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Casual Polos</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Graphic Tees</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Leather Jackets</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Warm Parkas</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Tailored Blazers</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Chinos</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Performance Hoodies</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Trendy Sneakers</a></li>
+        </ul>
+    </div>
+    <div>
+        <h6 class="product-heading">Best-Sellers</h6>
+        <ul class="product">
+            <li><a href="{{ partial:partials/shop-href }}">Little Black Dress</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">White Button Shirt</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Skinny Jeans</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Leather Jacket</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Sneakers</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Blazers</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Maxi Dresses</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Ankle Boots</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Graphic Tees</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Tote Bags</a></li>
+        </ul>
+    </div>
+    <div>
+        <h6 class="product-heading">Accessories</h6>
+        <ul class="product">
+            <li><a href="/categories/accessories">Necklaces</a></li>
+            <li><a href="/categories/accessories">Elegant Earrings</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Watches</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Handbags</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Backpacks</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Wallets</a></li>
+        </ul>
+    </div>
+    <div class="md:col-span-2 grid sm:grid-cols-2 gap-4">
+        {{ collection:products limit="2" }}
+        <div class="card grid group/bestseller">
+            <a href="{{ url }}" class="relative before:block before:content-[''] before:pt-[124%] overflow-hidden">
+                <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="{{ title }}" class="absolute top-0 left-0 w-full h-full object-cover group-hover/bestseller:scale-105" />
+            </a>
+            <div class="product-name group-hover/bestseller:text-violet-900">
+                <a href="{{ url }}">{{ title }}</a>
+            </div>
+            <div class="product-price">$ {{ price }}</div>
+        </div>
+        {{ /collection:products }}
+    </div>
+</div>
+{{ elseif which == "h7_clothing" }}
+<div class="2xl:container grid lg:grid-cols-7 md:grid-cols-4 grid-cols-2 md:gap-5 w-full text-sm font-semibold bg-transparent">
+    <div>
+        <h6 class="product-heading">Tops</h6>
+        <ul class="product">
+            <li><a href="/categories/tops">Blouses</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">T-Shirts</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Sweaters</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Tank Tops</a></li>
+        </ul>
+        <h6 class="product-heading">Pants</h6>
+        <ul class="product">
+            <li><a href="/categories/jeans">Jeans</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Chinos</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Dress Pants</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Shorts</a></li>
+        </ul>
+    </div>
+    <div>
+        <h6 class="product-heading">Dresses</h6>
+        <ul class="product">
+            <li><a href="/categories/dresses">Maxi Dresses</a></li>
+            <li><a href="/categories/dresses">Midi Dresses</a></li>
+            <li><a href="/categories/dresses">Cocktail Dresses</a></li>
+            <li><a href="/categories/dresses">Casual Dresses</a></li>
+        </ul>
+        <h6 class="product-heading">Sweaters</h6>
+        <ul class="product">
+            <li><a href="{{ partial:partials/shop-href }}">Pullover Sweater</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Cardigan Sweater</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">V-Neck Sweater</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Sweater Vest</a></li>
+        </ul>
+    </div>
+    <div>
+        <h6 class="product-heading">Bottoms</h6>
+        <ul class="product">
+            <li><a href="/categories/jeans">Jeans</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Skirts</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Shorts</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Trousers</a></li>
+        </ul>
+        <h6 class="product-heading">Suits</h6>
+        <ul class="product">
+            <li><a href="{{ partial:partials/shop-href }}">Full Suits</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Suit Jackets</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Vests</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Trousers</a></li>
+        </ul>
+    </div>
+    <div>
+        <h6 class="product-heading">Shirts</h6>
+        <ul class="product">
+            <li><a href="{{ partial:partials/shop-href }}">Button Shirts</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Polo Shirts</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">T-Shirts</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Henleys</a></li>
+        </ul>
+        <h6 class="product-heading">Lingerie</h6>
+        <ul class="product">
+            <li><a href="{{ partial:partials/shop-href }}">Sports Bras</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Strapless Bras</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Plunge Bras</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Underwire Bras</a></li>
+        </ul>
+        <h6 class="product-heading">Activewear</h6>
+        <ul class="product">
+            <li><a href="{{ partial:partials/shop-href }}">Leggings</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Sports Bras</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Hoodies</a></li>
+        </ul>
+    </div>
+    <div class="md:col-span-3">
+        <p class="navContent-heading">Best-Seller Product</p>
+        <div class="grid grid-cols-3 gap-3">
+            {{ collection:products limit="3" }}
+            <a href="{{ url }}" class="block overflow-hidden group">
+                <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="{{ title }}" class="w-full aspect-square object-cover group-hover:scale-105 transition-transform" />
+                <p class="mt-2 text-sm">{{ title }}</p>
+            </a>
+            {{ /collection:products }}
+        </div>
+    </div>
+</div>
+{{ elseif which == "h7_tops" }}
+<div class="2xl:container grid lg:grid-cols-6 md:grid-cols-3 grid-cols-2 1xl:gap-5 md:gap-0 gap-3 w-full text-sm font-semibold bg-transparent">
+    <div class="sm:flex grid sm:justify-start sm:flex-col">
+        <h6 class="product-heading">Tops</h6>
+        <ul class="product">
+            <li><a href="/categories/tops">Blouses</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">T-Shirts</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Tank Tops</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Shirts</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Off-Shoulder tops</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Tunics</a></li>
+        </ul>
+    </div>
+    <div>
+        <h6 class="product-heading">Sweaters</h6>
+        <ul class="product">
+            <li><a href="{{ partial:partials/shop-href }}">Pullover Sweater</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Cardigan</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Turtleneck Sweater</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Hooded Sweater</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Sweater Vest</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Specialty Sweater</a></li>
+        </ul>
+    </div>
+    <div>
+        <h6 class="product-heading">Featured Collection</h6>
+        <ul class="product">
+            <li><a href="{{ partial:partials/shop-href }}">Latest Tops</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Latest Sweaters</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Top-Rated Tops</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Popular Sweaters</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Tops on Sale</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Sweaters on Sale</a></li>
+        </ul>
+    </div>
+    <div class="md:col-span-3 grid grid-cols-3 gap-3">
+        {{ collection:products taxonomy:categories="tops" limit="3" }}
+        <a href="{{ url }}" class="block overflow-hidden group">
+            <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="{{ title }}" class="w-full aspect-[3/4] object-cover group-hover:scale-105 transition-transform" />
+            <p class="mt-2 text-sm">{{ title }}</p>
+            <p class="text-sm">$ {{ price }}</p>
+        </a>
+        {{ /collection:products }}
+    </div>
+</div>
+{{ elseif which == "h7_pants" }}
+<div class="2xl:container grid 1xl:grid-cols-7 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 xl:gap-5 w-full text-sm font-semibold bg-transparent">
+    <div>
+        <h6 class="product-heading">Pants</h6>
+        <ul class="product">
+            <li><a href="{{ partial:partials/shop-href }}">Chinos</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Cargo Pants</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Joggers</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Sweatpants</a></li>
+        </ul>
+        <h6 class="product-heading">Skinny Jeans</h6>
+        <ul class="product">
+            <li><a href="/categories/jeans">High-Rise Skinny Jeans</a></li>
+            <li><a href="/categories/jeans">Mid-Rise Skinny Jeans</a></li>
+            <li><a href="/categories/jeans">Distressed Skinny Jeans</a></li>
+            <li><a href="/categories/jeans">Black Skinny Jeans</a></li>
+        </ul>
+    </div>
+    <div>
+        <h6 class="product-heading">Dress Pants</h6>
+        <ul class="product">
+            <li><a href="{{ partial:partials/shop-href }}">Tailored Trousers</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Wide-Leg Pants</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Slim-Fit Trousers</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Waisted Trousers</a></li>
+        </ul>
+        <h6 class="product-heading">Straight-Leg Jeans</h6>
+        <ul class="product">
+            <li><a href="/categories/jeans">Classic Straight Jeans</a></li>
+            <li><a href="/categories/jeans">High-Rise Straight Jeans</a></li>
+            <li><a href="/categories/jeans">Cropped Straight Jeans</a></li>
+        </ul>
+    </div>
+    <div>
+        <h6 class="product-heading">Leggings</h6>
+        <ul class="product">
+            <li><a href="{{ partial:partials/shop-href }}">Classic Leggings</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Printed Leggings</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Faux Leather Leggings</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Workout Leggings</a></li>
+        </ul>
+        <h6 class="product-heading">Bootcut Jeans</h6>
+        <ul class="product">
+            <li><a href="/categories/jeans">Classic Bootcut Jeans</a></li>
+            <li><a href="/categories/jeans">High-Rise Bootcut Jeans</a></li>
+            <li><a href="/categories/jeans">Stretch Bootcut Jeans</a></li>
+        </ul>
+    </div>
+    <div>
+        <h6 class="product-heading">Cropped Pants</h6>
+        <ul class="product">
+            <li><a href="{{ partial:partials/shop-href }}">Capris</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Ankle-Length Pants</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Culottes</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Ankle</a></li>
+        </ul>
+        <h6 class="product-heading">Flared Jeans</h6>
+        <ul class="product">
+            <li><a href="/categories/jeans">High-Rise Flared Jeans</a></li>
+            <li><a href="/categories/jeans">Stretch Flared Jeans</a></li>
+            <li><a href="/categories/jeans">Retro Flared Jeans</a></li>
+        </ul>
+    </div>
+    <div>
+        <h6 class="product-heading">Palazzo Pants</h6>
+        <ul class="product">
+            <li><a href="{{ partial:partials/shop-href }}">High-Waisted Palazzos</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Printed Palazzos</a></li>
+        </ul>
+        <h6 class="product-heading">Wide-Leg Jeans</h6>
+        <ul class="product">
+            <li><a href="/categories/jeans">Classic Wide-Leg</a></li>
+            <li><a href="/categories/jeans">High-Rise Wide-Leg</a></li>
+        </ul>
+    </div>
+</div>
+{{ elseif which == "h7_outwear" }}
+<div class="2xl:container sm:px-10 w-full text-sm font-semibold bg-transparent">
+    <p class="navContent-heading">Outwear</p>
+    <div class="nav-outwear">
+        <div class="group outwear-product">
+            <a href="{{ partial:partials/shop-href }}"><img decoding="async" loading="lazy" src="/assets/image/outerwear-1.webp" alt="Full Dress" class="group-hover:scale-105" /></a>
+            <p>Full Dress</p>
+        </div>
+        <div class="group outwear-product">
+            <a href="{{ partial:partials/shop-href }}"><img decoding="async" loading="lazy" src="/assets/image/outerwear-2.webp" alt="Leather Jacket" class="group-hover:scale-105" /></a>
+            <p>Leather Jacket</p>
+        </div>
+        <div class="group outwear-product">
+            <a href="{{ partial:partials/shop-href }}"><img decoding="async" loading="lazy" src="/assets/image/outerwear-3.webp" alt="Blazer" class="group-hover:scale-105" /></a>
+            <p>Blazer</p>
+        </div>
+        <div class="group outwear-product">
+            <a href="{{ partial:partials/shop-href }}"><img decoding="async" loading="lazy" src="/assets/image/outerwear-4.webp" alt="T-shirt" class="group-hover:scale-105" /></a>
+            <p>T-shirt</p>
+        </div>
+        <div class="group outwear-product">
+            <a href="{{ partial:partials/shop-href }}"><img decoding="async" loading="lazy" src="/assets/image/outerwear-5.webp" alt="Boy Jacket" class="group-hover:scale-105" /></a>
+            <p>Boy Jacket</p>
+        </div>
+        <div class="group outwear-product">
+            <a href="{{ partial:partials/shop-href }}"><img decoding="async" loading="lazy" src="/assets/image/outerwear-6.webp" alt="Coat" class="group-hover:scale-105" /></a>
+            <p>Coat</p>
+        </div>
+    </div>
+</div>
+{{ elseif which == "h7_shoes" }}
+<div class="2xl:container grid lg:grid-cols-6 sm:grid-cols-3 grid-cols-1 gap-5 w-full text-sm font-semibold bg-transparent">
+    <div>
+        <h6 class="product-heading">Men's Shoes</h6>
+        <ul class="product">
+            <li><a href="{{ partial:partials/shop-href }}">Dress Shoes</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Casual Sneakers</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Loafers</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Boots</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Running Shoes</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Sandals</a></li>
+        </ul>
+    </div>
+    <div>
+        <h6 class="product-heading">Women's Shoes</h6>
+        <ul class="product">
+            <li><a href="{{ partial:partials/shop-href }}">Heels</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Flats</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Sneakers</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Ankle Boots</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Over-the-Knee Boots</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Sandals</a></li>
+        </ul>
+    </div>
+    <div>
+        <h6 class="product-heading">Kid's Shoes</h6>
+        <ul class="product">
+            <li><a href="{{ partial:partials/shop-href }}">Kids' Shoes</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Boys' Sneakers</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Girls' Flats</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Boys' Dress Shoes</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Girls' Sandals</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Athletic Shoes</a></li>
+        </ul>
+    </div>
+    <div>
+        <h6 class="product-heading">Men's Bags</h6>
+        <ul class="product">
+            <li><a href="{{ partial:partials/shop-href }}">Briefcases</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Messenger Bags</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Backpacks</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Wallets</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Duffel Bags</a></li>
+        </ul>
+    </div>
+    <div>
+        <h6 class="product-heading">Women's Bags</h6>
+        <ul class="product">
+            <li><a href="{{ partial:partials/shop-href }}">Handbags</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Tote Bags</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Crossbody Bags</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Clutches</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Satchels</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Wallets</a></li>
+        </ul>
+    </div>
+    <div>
+        <h6 class="product-heading">Kid's Bags</h6>
+        <ul class="product">
+            <li><a href="{{ partial:partials/shop-href }}">Kids' Bags</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Lunch Bags</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">Mini Totes</a></li>
+            <li><a href="{{ partial:partials/shop-href }}">School Bags</a></li>
+        </ul>
+    </div>
+</div>
+{{ /if }}

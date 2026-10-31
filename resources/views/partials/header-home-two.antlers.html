@@ -45,8 +45,8 @@
                     </button>
                 </main>
                 <div class="white-logo lg:ms-56 md:ms-32 sm:ms-28 ms-10">
-                    <a href="{{ partial:partials/page-href id='home-two' }}"><img decoding="async" loading="lazy" src="/assets/image/main-white-logo.webp"
-                            alt="Main Logo" class="xl:w-full lg:w-[88%] sm:w-[80%] w-3/4"></a>
+                    <a href="{{ partial:partials/page-href id='home-two' }}"><img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="setting:logo_white" fallback="image/main-white-logo.webp" }}"
+                            alt="{{ setting:site_name }}" class="xl:w-full lg:w-[88%] sm:w-[80%] w-3/4"></a>
                 </div>
                 <div class="flex justify-between items-center xl:gap-[22px] lg:gap-[20px] sm:gap-[17px]">
                     <!-- modal -->

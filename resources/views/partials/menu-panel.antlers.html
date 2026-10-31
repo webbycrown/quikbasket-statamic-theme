@@ -7,6 +7,39 @@
         {{ partial:partials/home-switcher }}
     </div>
     {{ /if }}
+{{ elseif which == "h7_new" or which == "h7_best" or which == "h7_clothing" or which == "h7_tops" or which == "h7_pants" or which == "h7_outwear" or which == "h7_shoes" }}
+    {{ partial:partials/menu-panel-h7 :which="which" }}
+{{ elseif which == "mega" }}
+    <div class="2xl:container grid lg:grid-cols-7 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 justify-between text-gray-700 text-sm">
+        {{ partial:partials/menu-category-columns }}
+        <div class="lg:mb-0 mb-3">
+            {{ collection:pages id:is="shop" limit="1" }}
+            <h6 class="product-heading">{{ title }}</h6>
+            {{ /collection:pages }}
+            <ul class="product">
+                <li><a href="{{ partial:partials/shop-href }}">All products</a></li>
+                {{ nav:shop_menu }}
+                <li><a href="{{ url }}">{{ title }}</a></li>
+                {{ /nav:shop_menu }}
+            </ul>
+        </div>
+        <div class="newArrival-post md:col-span-2">
+            <p>Featured</p>
+            <div class="insta-post">
+                {{ collection:products limit="6" }}
+                <div class="instaPost">
+                    <a class="post group/insta block" href="{{ url }}">
+                        <img decoding="async" loading="lazy" alt="{{ title }}" src="{{ partial:partials/media-url :file="image" }}" />
+                        <div class="insta hover-stake group-hover/insta:opacity-100">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="white" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 16a4 4 0 1 0 0-8a4 4 0 0 0 0 8" /><path d="M3 16V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5Z" /><path stroke-linecap="round" stroke-linejoin="round" d="m17.5 6.51l.01-.011" /></g></svg>
+                        </div>
+                    </a>
+                </div>
+                {{ /collection:products }}
+            </div>
+            <p class="mt-3"><a class="border-b border-black hover:text-violet-900" href="{{ partial:partials/shop-href }}">View shop</a></p>
+        </div>
+    </div>
 {{ else }}
     <div class="2xl:container grid lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 justify-between text-gray-700 text-sm gap-4">
         {{ partial:partials/menu-category-columns :only="which" }}

@@ -4,7 +4,7 @@
                     <div class="flex flex-col items-center justify-center pt-[60px] md:pb-12 pb-8">
                         {{ collection:pages id:is="home-six" limit="1" }}
                         <a href="{{ url }}">
-                            <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="setting:footer_logo" fallback="image/main-white-logo.webp" }}" alt="{{ setting:site_name ?? 'Quikbasket' }}"
+                            <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="setting:footer_logo" fallback="image/main-white-logo.webp" }}" alt="{{ setting:site_name }}"
                                 class="lg:mb-[35px] mb-[30px]" />
                         </a>
                         {{ /collection:pages }}
@@ -31,10 +31,12 @@
                                 <a href="{{ url }}">{{ title }}</a>
                             </h4>
                             {{ /collection:pages }}
+                            {{ nav:utility_menu }}
                             <span class="text-white">|</span>
                             <h4 class="lg:text-base text-[15px] tracking-wide text-white hover:text-violet-900">
-                                <a href="/account/orders">Track order</a>
+                                <a href="{{ url }}">{{ title }}</a>
                             </h4>
+                            {{ /nav:utility_menu }}
                         </div>
                     </div>
 

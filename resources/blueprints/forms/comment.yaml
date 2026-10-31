@@ -1,0 +1,40 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: post
+            field:
+              type: text
+              display: Post
+              instructions: Blog entry ID (set by the theme form).
+          -
+            handle: name
+            field:
+              type: text
+              display: Name
+              validate:
+                - required
+          -
+            handle: email
+            field:
+              type: text
+              display: Email
+              validate:
+                - required
+                - email
+          -
+            handle: message
+            field:
+              type: textarea
+              display: Message
+              validate:
+                - required
+          -
+            handle: honeypot
+            field:
+              type: text
+              display: Honeypot
+              visibility: hidden

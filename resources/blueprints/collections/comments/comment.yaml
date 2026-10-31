@@ -1,0 +1,45 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              display: Title
+              validate:
+                - required
+          -
+            handle: post
+            field:
+              type: entries
+              display: Blog post
+              instructions: The journal entry this comment belongs to. Survives slug renames.
+              max_items: 1
+              collections:
+                - blogs
+              validate:
+                - required
+          -
+            handle: name
+            field:
+              type: text
+              display: Name
+              validate:
+                - required
+          -
+            handle: email
+            field:
+              type: text
+              display: Email
+              validate:
+                - email
+          -
+            handle: message
+            field:
+              type: textarea
+              display: Message
+              validate:
+                - required

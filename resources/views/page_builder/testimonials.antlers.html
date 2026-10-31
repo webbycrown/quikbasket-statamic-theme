@@ -11,7 +11,7 @@
                                 <h3 class="text-center block mb-3 2xl:mb-5 lg:text-[24px] text-[20px] text-black font-normal">{{ title }}</h3>
                                 <p class="leading-normal text-gray-200 text-center block">{{ quote }}</p>
                                 <div class="flex items-center mt-7 justify-center gap-[18px]">
-                                    <img decoding="async" loading="lazy" alt="{{ name }}" class="w-[60px] rounded-full" src="{{ partial:partials/media-url :file="photo" }}" />
+                                    <img decoding="async" loading="lazy" alt="{{ name }}" class="w-[60px] h-[60px] rounded-full object-cover object-top shrink-0" src="{{ partial:partials/media-url :file="photo" }}" />
                                     <div class="grid 1xl:gap-0 gap-1">
                                         <p class="text-base text-black font-medium">{{ name }}</p>
                                         <p class="text-base text-gray-800 font-normal text-left">{{ role }}</p>

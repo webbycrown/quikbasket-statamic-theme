@@ -1,0 +1,25 @@
+{{ partial:partials/crumb :label="heading" }}
+<section class="relative 1xl:py-[30px] md:py-[25px] py-[20px]">
+    <div class="container">
+        <div class="grid lg:grid-cols-2 gap-8 items-center">
+            <div class="grid sm:grid-cols-2 gap-4">
+                <div class="sm:row-span-2">
+                    <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="{{ heading }}" class="w-full h-full object-cover min-h-[280px]" />
+                </div>
+                <div>
+                    <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image_two" }}" alt="" class="w-full h-full object-cover min-h-[160px]" />
+                </div>
+                <div>
+                    <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image_three" }}" alt="" class="w-full h-full object-cover min-h-[160px]" />
+                </div>
+            </div>
+            <div>
+                <h1 class="font-medium sm:mb-[18px] mb-[15px]">{{ heading }}</h1>
+                {{ if quote }}
+                <p class="2xl:text-xl text-lg font-medium text-violet-900 mb-4">{{ quote }}</p>
+                {{ /if }}
+                <div class="prose max-w-none 2xl:text-lg text-base space-y-3">{{ body | nl2br }}</div>
+            </div>
+        </div>
+    </div>
+</section>

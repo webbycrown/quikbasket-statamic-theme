@@ -1,0 +1,26 @@
+<div class="group card bg-violet-400 xl:p-[15px] lg:p-[10px] p-4 flex flex-col">
+    <div class="flex justify-between items-center mb-[10px]">
+        <p class="1xl:text-[13px] xl:text-xs md:text-[13px] text-xs font-medium text-gray-400">IN STOCK</p>
+        <button type="button" class="js-shop-toggle group/wishlist wishlist-pro rounded-full flex items-center justify-center" data-list="wish" data-id="{{ id }}" aria-pressed="false" aria-label="Wishlist">
+            <svg viewBox="0 0 22 22" aria-hidden="true" class="stroke-[1.2] 2xl:w-[22px] w-[18px] stroke-black group-hover/wishlist:stroke-violet-900 fill-none">
+                <path d="M10.4697 5.59405C10.6103 5.7347 10.8011 5.81372 11 5.81372C11.1989 5.81372 11.3897 5.7347 11.5303 5.59405L11.9085 5.21592C12.8465 4.2779 14.118 3.75122 15.4447 3.75122H15.5616C18.3236 3.75122 20.5625 5.99012 20.5625 8.75216C20.5625 10.1386 19.9874 11.4622 18.9741 12.4079L11 19.8503L3.02592 12.4079C2.01262 11.4622 1.4375 10.1386 1.4375 8.75216C1.4375 5.99012 3.6764 3.75122 6.43844 3.75122H6.55531C7.88197 3.75122 9.15352 4.2779 10.0915 5.21593L10.4697 5.59405Z"></path>
+            </svg>
+        </button>
+    </div>
+    <div class="xl:mb-[15px] mb-[11px]">
+        <h5 class="2xl:leading-[25px] 1xl:leading-[23px] lg:leading-[20px] leading-6 1xl:text-[17px] lg:text-sm text-base font-normal group-hover:text-violet-900 line-clamp-2">
+            <a href="{{ url }}">{{ title }}</a>
+        </h5>
+    </div>
+    <div class="relative mb-[10px]">
+        <div class="relative before:block before:content-[''] before:pt-[86%] overflow-hidden">
+            <a href="{{ url }}">
+                <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="{{ title }}" class="absolute left-0 right-0 top-0 bottom-0 w-full h-full object-cover object-center group-hover:scale-105 transition duration-150 ease-in-out" />
+            </a>
+        </div>
+    </div>
+    <div class="flex items-center justify-between gap-2 mt-auto">
+        <p class="font-normal text-black 2xl:text-lg 1xl:text-base lg:text-sm text-base">{{ partial:partials/product-price }}</p>
+        <a href="{{ url }}" class="underline underline-offset-4 lg:text-sm text-sm font-normal hover:text-violet-900 shrink-0">Shop now</a>
+    </div>
+</div>

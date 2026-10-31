@@ -3,14 +3,14 @@
         <div class="list">
             {{ slides }}
             <div class="item">
-                <img decoding="async" loading="eager" alt="" src="{{ url }}" />
+                <img decoding="async" loading="eager" alt="" src="{{ partial:partials/media-url :file="url" }}" />
             </div>
             {{ /slides }}
         </div>
         <div class="thumbnail">
             {{ slides }}
             <div class="item">
-                <img decoding="async" loading="eager" alt="" src="{{ url }}" />
+                <img decoding="async" loading="eager" alt="" src="{{ partial:partials/media-url :file="url" }}" />
             </div>
             {{ /slides }}
         </div>
@@ -37,6 +37,11 @@
                 <h2 class="2xl:text-[55px] 1xl:text-[45px] xl:text-[43px] lg:text-[40px] md:text-[32px] sm:text-[28px] text-[20px] font-medium 1xl:leading-snug leading-tight text-white">{{ heading }}</h2>
                 <p class="text-white lg:text-lg text-base leading-7">{{ text }}</p>
                 <div class="flex">
+                    <a href="{{ button_url }}" class="bg-transparent border lg:px-4 px-3 lg:py-3 py-2 border-white text-white hover:bg-violet-900 hover:border-violet-900 transition ease-in-out duration-200 me-4" aria-label="{{ button_label }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 20V4m-7 9l7 7l7-7" />
+                        </svg>
+                    </a>
                     <a href="{{ button_url }}" class="bg-transparent border py-2 px-4 border-white text-white hover:bg-violet-900 hover:border-violet-900 flex items-center transition ease-in-out duration-200">{{ button_label }}</a>
                 </div>
             </div>

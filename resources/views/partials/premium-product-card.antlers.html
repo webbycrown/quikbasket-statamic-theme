@@ -1,0 +1,13 @@
+<div class="relative group transition-all">
+    <div class="w-full m-auto h-auto group">
+        <div class="relative before:block before:content-[''] before:pt-[133%] overflow-hidden">
+            <a href="{{ url or link }}" class="group-hover:scale-105 duration-500 absolute-img block transition-all">
+                <img decoding="async" loading="lazy" alt="{{ title }}" class="w-full h-full object-cover" src="{{ partial:partials/media-url :file="image" }}" />
+            </a>
+        </div>
+    </div>
+    <a href="{{ url or link }}" class="absolute bottom-0 left-0 1xl:p-10 lg:p-8 p-5 2xl:gap-[10px] 1xl:gap-[8px] gap-[3px] flex flex-col items-start justify-end w-full h-full bg-gradient-to-t from-black/75 to-black/0">
+        <h4 class="text-white font-bold 2xl:text-xl xl:text-[25px] lg:text-[20px] md:text-lg sm:text-[22px] text-[20px] group-hover:-translate-y-3 transition-all duration-500">{{ title }}</h4>
+        <p class="text-white xl:text-lg md:text-base sm:text-lg text-base group-hover:-translate-y-3 transition-all duration-500">{{ partial:partials/product-price regular_class="text-white/60" }}</p>
+    </a>
+</div>
