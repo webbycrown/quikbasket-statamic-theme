@@ -25,7 +25,7 @@ The heart and bag icons on a product save that product in the browser session an
 ## Installation
 
 Follow the [Starter Kit installation instructions](https://statamic.dev/starter-kits/installing-a-starter-kit).  
-Requires **Statamic 5.x** (PHP 8.2+).
+Requires **Statamic 5.x or 6.x** (PHP 8.2+ for Statamic 5; PHP 8.3+ for Statamic 6).
 
 ```bash
 statamic new my-site webbycrown/quikbasket-statamic-theme
@@ -50,6 +50,10 @@ php please stache:refresh
 ```
 
 Header links use the **header_menu** navigation. Category mega menus use the **Categories** taxonomy. Footer columns use the footer navigation trees.
+
+`/cart`, `/checkout`, `/wishlist`, and account routes are registered by `QuikbasketServiceProvider` (session bag and inquiry checkout). They are not Control Panel pages.
+
+Setting globals ship in both layouts: `data:` in `content/globals/setting.yaml` (Statamic 5) and `content/globals/default/setting.yaml` (Statamic 6).
 
 ## Pages
 
@@ -96,9 +100,11 @@ Questions and issues: [github.com/webbycrown/quikbasket-statamic-theme/issues](h
 
 ## Changelog
 
-### Unreleased
+### v1.0.1
 
-- README lists the live demo URL.
+- Compatible with Statamic 5 and 6 (`statamic/cms: ^5.0 || ^6.0`)
+- Setting globals ship in both the Statamic 5 `data:` layout and the Statamic 6 `content/globals/default/` layout
+- README lists the live demo URL
 
 ### v1.0.0
 

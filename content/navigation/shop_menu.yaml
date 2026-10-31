@@ -1,2 +1,16 @@
-title: 'Shop menu'
-max_depth: 2
+tree:
+  -
+    title: Tops
+    url: '/categories/tops'
+  -
+    title: Jeans
+    url: '/categories/jeans'
+  -
+    title: Dresses
+    url: '/categories/dresses'
+  -
+    title: Outerwear
+    url: '/categories/outerwear'
+  -
+    title: Accessories
+    url: '/categories/accessories'

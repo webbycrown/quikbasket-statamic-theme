@@ -4,4 +4,4 @@ tree:
     url: /account
   -
     title: HELP
-    url: /contact
+    entry: contact
