@@ -46,12 +46,12 @@
                     <h5 class="text-[25px] 1xl:mb-[12px] mb-[5px]">{{ setting:cookie_heading }}</h5>
                     <p class="2xl:text-lg text-base text-gray-400 1xl:mb-[34px] mb-[25px]">
                         {{ setting:cookie_text }}
-                        <a href="/privacy"
+                        <a href="{{ partial:partials/page-href id='privacy' }}"
                             class="underline underline-offset-2 decoration-violet-900 text-violet-900">Privacy
                             Policy</a>.
                     </p>
                     <div class="flex flex-wrap sm:justify-end justify-center gap-[20px] mt-3">
-                        <a href="/privacy"
+                        <a href="{{ partial:partials/page-href id='privacy' }}"
                             class="sm:w-auto w-full bg-transparent hover:bg-violet-900 border hover:border-violet-900 transition-all ease-in-out hover:text-white text-black 2xl:text-lg lg:text-[17px] text-md font-light cursor-pointer xl:py-2.5 lg:py-[9px] md:py-2 py-[0.475rem] md:px-9 px-6 inline-block text-center">{{ setting:cookie_manage }}</a>
                         <button id="acceptCookies" class="sm:w-auto w-full all-btn">{{ setting:cookie_accept }}</button>
                     </div>

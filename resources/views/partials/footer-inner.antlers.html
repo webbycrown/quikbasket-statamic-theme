@@ -4,7 +4,7 @@
                     class="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 1xl:gap-10 xl:gap-8 lg:gap-12 sm:gap-y-12 sm:gap-x-16 gap-8 2xl:py-20 1xl:py-[50px] md:py-12 py-10">
                     <!-- LOGO -->
                     <div class="flex flex-col 2xl:gap-10 1xl:gap-8 gap-6 pt-[5px]">
-                        <a href="/home-two">
+                        <a href="{{ partial:partials/page-href id='home-two' }}">
                             <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="setting:logo" fallback="image/main-logo.svg" }}" alt="main logo" />
                         </a>
                         <p class="2xl:text-lg text-base leading-[25px]">{{ setting:footer_intro }}</p>

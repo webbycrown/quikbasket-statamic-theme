@@ -4,13 +4,13 @@
                     class="grid lg:grid-cols-4 grid-cols-1 lg:gap-y-0 gap-y-8 justify-between sm:pt-[60px] pt-10 pb-10 border-b border-lightborder-100/10">
                     <div
                         class="flex flex-col lg:col-span-1 md:col-span-2 col-span-1 justify-start lg:items-start items-center">
-                        <a href="/home-four">
+                        <a href="{{ partial:partials/page-href id='home-four' }}">
                             <img decoding="async" loading="lazy" src="/assets/image/main-white-logo.webp" alt="company logo"
                                 class="xl:w-full md:mx-0 mx-auto" />
                         </a>
                         <div class="flex flex-col lg:mt-9 mt-7 2xl:gap-[23px] sm:gap-[15px] gap-[10px]">
                             <div class="flex gap-2 items-center md:justify-start justify-center group">
-                                <a href="/contact">
+                                <a href="{{ partial:partials/contact-href }}">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                         class="lg:w-[22px] lg:h-[22px] size-5 -rotate-6 group-hover:fill-violet-900 fill-[#A5A5A5]">
                                         <rect width="24" height="24" fill="none" />
@@ -22,7 +22,7 @@
                                     class="1xl:text-lg text-base text-[#A5A5A5] group-hover:text-violet-900">{{ setting:phone }}</a>
                             </div>
                             <div class="flex gap-2 items-center md:justify-start justify-center group">
-                                <a href="/shop">
+                                <a href="{{ partial:partials/shop-href }}">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5"
                                         class="size-5 group-hover:stroke-violet-900 stroke-[#A5A5A5]">
@@ -121,7 +121,7 @@
                         <h6 class="2xl:text-[20px] xl:text-lg lg:text-base sm:text-lg text-[17px]">{{ setting:newsletter_heading }}</h6>
                         <p class="text-[#A5A5A5] sm:mt-[15px] mt-[12px] sm:mb-[38px] mb-[25px] 1xl:text-lg text-[15px]">
                             {{ setting:newsletter_text }}</p>
-                        <a href="/contact" class="border-b border-white hover:text-violet-900">{{ setting:popup_button }}</a>
+                        <a href="{{ partial:partials/contact-href }}" class="border-b border-white hover:text-violet-900">{{ setting:popup_button }}</a>
                     </div>
                 </div>
                 <div class="flex md:flex-row flex-col justify-between items-center md:gap-0 gap-[15px] py-[27px]">

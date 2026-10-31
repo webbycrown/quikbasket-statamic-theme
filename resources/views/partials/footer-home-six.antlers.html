@@ -2,57 +2,35 @@
             <div class="container">
                 <div class="divide-y divide-gray-200">
                     <div class="flex flex-col items-center justify-center pt-[60px] md:pb-12 pb-8">
-                        <a href="/home-six">
-                            <img decoding="async" loading="lazy" src="/assets/image/main-white-logo.webp" alt="main logo"
+                        {{ collection:pages id:is="home-six" limit="1" }}
+                        <a href="{{ url }}">
+                            <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="setting:footer_logo" fallback="image/main-white-logo.webp" }}" alt="{{ setting:site_name ?? 'Quikbasket' }}"
                                 class="lg:mb-[35px] mb-[30px]" />
                         </a>
+                        {{ /collection:pages }}
                         <ul
                             class="flex items-center justify-center flex-wrap xl:gap-[42px] lg:gap-[33px] gap-x-[24px] gap-y-3 xl:mb-[42px] lg:mb-[35px] mb-[30px]">
+                            {{ nav:footer_menu }}
                             <li>
                                 <h6 class="text-white hover:text-violet-900 lg:text-[20px] text-lg">
-                                    <a href="/home-six">Home</a>
+                                    <a href="{{ url }}">{{ title }}</a>
                                 </h6>
                             </li>
-                            <li>
-                                <h6 class="text-white hover:text-violet-900 lg:text-[20px] text-lg">
-                                    <a href="/shop">Shop</a>
-                                </h6>
-                            </li>
-                            <li>
-                                <h6 class="text-white hover:text-violet-900 lg:text-[20px] text-lg">
-                                    <a href="/about">About</a>
-                                </h6>
-                            </li>
-                            <li>
-                                <h6 class="text-white hover:text-violet-900 lg:text-[20px] text-lg">
-                                    <a href="/blog">Blog</a>
-                                </h6>
-                            </li>
-                            <li>
-                                <h6 class="text-white hover:text-violet-900 lg:text-[20px] text-lg">
-                                    <a href="/shop">New Arrivals</a>
-                                </h6>
-                            </li>
-                            <li>
-                                <h6 class="text-white hover:text-violet-900 lg:text-[20px] text-lg">
-                                    <a href="/account/orders">Orders</a>
-                                </h6>
-                            </li>
-                            <li>
-                                <h6 class="text-white hover:text-violet-900 lg:text-[20px] text-lg">
-                                    <a href="/contact">Contact</a>
-                                </h6>
-                            </li>
+                            {{ /nav:footer_menu }}
                         </ul>
                         <div
                             class="flex items-center sm:justify-between justify-center flex-wrap w-[400px] max-w-full sm:gap-[7px] gap-[14px]">
+                            {{ collection:pages id:is="privacy" limit="1" }}
                             <h4 class="lg:text-base text-[15px] tracking-wide text-white hover:text-violet-900">
-                                <a href="/privacy">Privacy policy</a>
+                                <a href="{{ url }}">{{ title }}</a>
                             </h4>
+                            {{ /collection:pages }}
                             <span class="text-white">|</span>
+                            {{ collection:pages id:is="terms" limit="1" }}
                             <h4 class="lg:text-base text-[15px] tracking-wide text-white hover:text-violet-900">
-                                <a href="/terms">Terms & condition</a>
+                                <a href="{{ url }}">{{ title }}</a>
                             </h4>
+                            {{ /collection:pages }}
                             <span class="text-white">|</span>
                             <h4 class="lg:text-base text-[15px] tracking-wide text-white hover:text-violet-900">
                                 <a href="/account/orders">Track order</a>
@@ -62,7 +40,7 @@
 
                     <div class="flex sm:flex-row flex-col items-center justify-between sm:gap-0 gap-[15px] py-[27px]">
                         <p class="text-white sm:text-start text-center lg:text-lg sm:text-[17px] text-base">{{ setting:copyright }}</p>
-                        <img decoding="async" loading="lazy" src="/assets/image/payments-cards-2.svg" alt="payment cads"
+                        <img decoding="async" loading="lazy" src="/assets/image/payments-cards-2.svg" alt="" aria-hidden="true"
                             class="sm:w-[272px] w-[320px] max-w-full sm:mx-0 m-auto" />
                     </div>
                 </div>

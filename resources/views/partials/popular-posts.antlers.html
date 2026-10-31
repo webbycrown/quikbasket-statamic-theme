@@ -1,0 +1,17 @@
+<div class="divide-y divide-lightborder-200">
+    {{ collection:blogs limit="3" sort="date:desc" }}
+    <div class="grid {{ if first }}1xl:pb-3.5 pb-2.5{{ elseif last }}1xl:pt-3.5 pt-2.5{{ else }}1xl:py-3.5 py-2.5{{ /if }}">
+        <div class="flex 1xlgap-[17px] gap-[14px] items-center group">
+            <a href="{{ url }}">
+                {{ if image }}
+                <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="{{ title }}" class="w-full h-full object-cover">
+                {{ /if }}
+            </a>
+            <div class="grid gap-1">
+                <p class="text-[13px] text-[#757575] font-medium">{{ date format="jS M Y" }}</p>
+                <a href="{{ url }}" class="text-gray-800 group-hover:text-violet-900 2xl:text-base text-sm capitalize">{{ title }}</a>
+            </div>
+        </div>
+    </div>
+    {{ /collection:blogs }}
+</div>

@@ -1,0 +1,45 @@
+{{ if variant == "sidebar" }}
+<div class="dropdown-button group" x-data="{ open: false }">
+    <button type="button" @click="open = !open" class="button-name" :aria-expanded="open.toString()" aria-controls="dropdownMenu{{ id }}">
+        {{ label }}
+        <svg :class="{'rotate-180 stroke-violet-900': open}" class="ml-2 h-4 w-4 transition-transform duration-150 stroke-current" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+    </button>
+    <div @click.away="open = false" x-show="open" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="relative z-50 -mt-2 w-full pt-2">
+        <div id="dropdownMenu{{ id }}" class="dropdown-mainmenu2">
+            {{ partial:partials/menu-panel :which="which" :variant="variant" }}
+        </div>
+    </div>
+</div>
+{{ elseif variant == "home3" }}
+<div class="group/product dropdown-toggle2{{ if which == 'pages' }} !m-0{{ /if }}" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" @focusin="open = true" @focusout="open = false">
+    <button type="button" :aria-expanded="open.toString()" aria-controls="dropdownMenu{{ id }}" id="dropdownToggle{{ id }}" class="lg:group-hover/product:border-violet-900 lg:group-focus/product:border-violet-900 lg:group-active/product:border-violet-900" @click="open = !open">
+        <p class="group-hover/product:text-violet-900 group-focus/product:text-violet-900 group-active/product:text-violet-900 xl:!text-white text-black">{{ label }}</p>
+        <svg class="group-hover/product:rotate-180 group-hover/product:stroke-violet-900 xl:!stroke-white" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+    </button>
+    <div id="dropdownMenu{{ id }}" x-show="open" x-cloak class="{{ if which == 'pages' }}xl:w-[190px] xl:left-auto xl:right-auto {{ /if }}relative -mt-1 xl:absolute xl:mt-0 xl:top-full animate-dropdown left-0 right-0 w-full shadow-xl z-40 xl:border-t border-lightborder-200 dropdown-mainmenu">
+        {{ partial:partials/menu-panel :which="which" :variant="variant" }}
+    </div>
+</div>
+{{ elseif variant == "row5" or variant == "row6" }}
+<div class="group/product dropdown-toggle{{ if which == 'pages' }} mx-0{{ /if }} {{ if variant == 'row5' }}lg:py-5 sm:py-7 py-4{{ else }}{{ /if }}" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" @focusin="open = true" @focusout="open = false">
+    <button type="button" :aria-expanded="open.toString()" aria-controls="dropdownMenu{{ id }}" id="dropdownToggle{{ id }}" class="lg:group-hover/product:border-violet-900 lg:group-focus/product:border-violet-900 lg:group-active/product:border-violet-900 !w-auto !mx-auto !h-auto {{ if variant == 'row5' }}lg:!pb-[22px] !p-0{{ else }}lg:!py-[25px] sm:!py-7 !py-4{{ /if }}" @click="open = !open">
+        <p class="!text-black 1xl:!text-lg lg:!text-base sm:!text-lg !text-base group-hover/product:!text-violet-900 group-focus/product:!text-violet-900 group-active/product:!text-violet-900">{{ label }}</p>
+        <svg class="group-hover/product:rotate-180 group-hover/product:!stroke-violet-900 !stroke-black" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+    </button>
+    <div id="dropdownMenu{{ id }}" x-show="open" x-cloak class="dropdown-mainmenu {{ if which == 'pages' }}lg:w-[190px] lg:left-auto lg:right-auto py-4{{ else }}py-8{{ /if }} lg:bg-white {{ if variant == 'row5' }}lg:mt-12 sm:mt-6 mt-4{{ else }}lg:mt-20 shadow-none drop-shadow-lg border-0{{ /if }}">
+        {{ partial:partials/menu-panel :which="which" :variant="variant" }}
+    </div>
+</div>
+{{ else }}
+<div class="group/product dropdown-toggle{{ if which == 'pages' }}{{ if variant == 'home7' }} !ml-0{{ else }} mx-0{{ /if }}{{ /if }}" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" @focusin="open = true" @focusout="open = false">
+    <button type="button" id="dropdownToggle{{ id }}" :aria-expanded="open.toString()" aria-controls="dropdownMenu{{ id }}" class="lg:group-hover/product:border-violet-900 lg:group-focus/product:border-violet-900 lg:group-active/product:border-violet-900" @click="open = !open">
+        <p class="group-hover/product:text-violet-900 group-focus/product:text-violet-900 group-active/product:text-violet-900{{ if variant == 'light' or variant == 'home7' }} lg:!text-white{{ /if }}{{ if variant == 'home7' }} 2xl:!text-lg 1xl:!text-[15px] text-[13px]{{ /if }}">{{ label }}</p>
+        <svg class="group-hover/product:rotate-180 group-hover/product:stroke-violet-900{{ if variant == 'light' or variant == 'home7' }} lg:!stroke-white{{ /if }}" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+    </button>
+    <div id="dropdownMenu{{ id }}" x-show="open" x-cloak class="dropdown-mainmenu{{ if which == 'pages' }} lg:w-[190px] lg:left-auto lg:right-auto lg:py-4{{ /if }}">
+        {{ partial:partials/menu-panel :which="which" :variant="variant" }}
+    </div>
+</div>
+{{ /if }}

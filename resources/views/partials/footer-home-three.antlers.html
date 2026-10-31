@@ -2,7 +2,7 @@
             <div class="container">
                 <div class="flex md:flex-row flex-col col-span-2 items-center sm:justify-between xl:hidden">
                     <div>
-                        <a href="/home-three">
+                        <a href="{{ partial:partials/page-href id='home-three' }}">
                             <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="setting:logo" fallback="image/main-logo.svg" }}" alt="main logo"
                                 class="w-auto md:m-0 mx-auto" />
                         </a>
@@ -102,11 +102,11 @@
                     </div>
 
                     <div class="xl:flex col-span-2 flex-col items-center sm:justify-center hidden">
-                        <a href="/home-three">
+                        <a href="{{ partial:partials/page-href id='home-three' }}">
                             <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="setting:logo" fallback="image/main-logo.svg" }}" alt="main logo"
                                 class="xl:w-full w-11/12 mx-auto" />
                         </a>
-                        <p class="my-10 1xl:text-lg text-[17px] text-center"><a href="/privacy">{{ setting:copyright }}</a></p>
+                        <p class="my-10 1xl:text-lg text-[17px] text-center"><a href="{{ partial:partials/page-href id='privacy' }}">{{ setting:copyright }}</a></p>
                         <ul class="flex gap-4">
                             <li>
                                 <a href="{{ setting:facebook_url }}"
@@ -194,7 +194,7 @@
                     <div class="grid xl:w-[30%] lg:w-[35%] md:w-[45%] sm:w-[50%] w-full gap-[15px]">
                         <h6 class="list-heading m-0">{{ setting:newsletter_heading }}</h6>
                         <p class="text-sm">{{ setting:newsletter_text }}</p>
-                        <a href="/contact" class="border-b border-black hover:text-violet-900">{{ setting:popup_button }}</a>
+                        <a href="{{ partial:partials/contact-href }}" class="border-b border-black hover:text-violet-900">{{ setting:popup_button }}</a>
                     </div>
                 </div>
             </div>

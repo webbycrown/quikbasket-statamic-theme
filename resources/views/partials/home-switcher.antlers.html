@@ -1,0 +1,7 @@
+<ul class="{{ list_class or 'product' }}">
+    {{ collection:pages }}
+        {{ if slug == "home" or slug == "home-two" or slug == "home-three" or slug == "home-four" or slug == "home-five" or slug == "home-six" or slug == "home-seven" }}
+            <li><a href="{{ url }}">{{ title }}</a></li>
+        {{ /if }}
+    {{ /collection:pages }}
+</ul>

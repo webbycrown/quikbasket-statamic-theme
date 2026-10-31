@@ -5,7 +5,7 @@
                 <div class="flex md:justify-between justify-end gap-3 items-center 2xl:py-1 py-1.5">
                     <p class="text-sm text-black md:block hidden">
                         Inquiries only. Nothing is charged. |
-                        <a href="/shop"
+                        <a href="{{ partial:partials/shop-href }}"
                             class="underline underline-offset-4 hover:text-violet-900 hover:decoration-violet-900">Click
                             and Shop Now.</a>
                     </p>
@@ -138,7 +138,7 @@
                 <div class="flex items-center justify-between lg:py-7 md:py-4 py-[15px] transition-all">
                     <!-- First Button: Opens the navbar -->
                     <div class="site-logo">
-                        <a href="/home-four">
+                        <a href="{{ partial:partials/page-href id='home-four' }}">
                             <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="setting:logo" fallback="image/main-logo.svg" }}" alt="main-logo"
                                 title="main-logo" class="1xl:w-[229px] xl:w-[215px] sm:w-[185px] w-[135px] m-auto" />
                         </a>
@@ -276,6 +276,8 @@
                 <div class="mx-auto flex justify-between items-center">
                     
 
+                    {{ partial:partials/all-categories tone="ink" }}
+
                     <!-- Links Section -->
                     <div id="navMenu"
                         class="lg:flex lg:flex-row justify-start 1xl:m-0 lg:overflow-hidden overflow-auto lg:justify-end 1xl:h-[51px] lg:h-[46px] h-full fixed inset-0 bg-white z-40 animate-slide xl:m-0 lg:m-auto flex-col items-center lg:static space-y-0 2xl:space-x-8 lg:space-x-3 lg:bg-transparent lg:p-0 lg:divide-y-0 divide-y divide-lightborder-100 ml-0">
@@ -296,49 +298,7 @@
                             </button>
                         </div>
 
-                        <!-- 1ST -->
-                        <div class="group/product dropdown-toggle !ml-0">
-                            <button type="button" aria-expanded="false" id="dropdownToggle1"
-                                class="lg:group-hover/product:border-violet-900 lg:group-focus/product:border-violet-900 lg:group-active/product:border-violet-900">
-                                <p
-                                    class="group-hover/product:text-violet-900 group-focus/product:text-violet-900 group-active/product:text-violet-900 lg:!text-white 2xl:!text-lg 1xl:!text-[15px] text-[13px]">
-                                    Pages
-                                </p>
-                                <svg class="group-hover/product:rotate-180 group-hover/product:stroke-violet-900 lg:!stroke-white"
-                                    fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M19 9l-7 7-7-7"></path>
-                                </svg>
-                            </button>
-                            <!-- Dropdown -->
-                            <div id="dropdownMenu1"
-                                class="dropdown-mainmenu hidden lg:group-hover/product:block lg:w-[190px] lg:left-auto lg:right-auto">
-                                <div>
-                                    <h6 class="product-heading">Menu</h6>
-                                    {{ partial:partials/page-nav }}
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- 2ND -->
-                        <div class="group/product dropdown-toggle">
-                            <button type="button" aria-expanded="false" id="dropdownToggle2"
-                                class="lg:group-hover/product:border-violet-900 lg:group-focus/product:border-violet-900 lg:group-active/product:border-violet-900">
-                                <p
-                                    class="group-hover/product:text-violet-900 group-focus/product:text-violet-900 group-active/product:text-violet-900 lg:!text-white 2xl:!text-lg 1xl:!text-[15px] text-[13px]">
-                                    New Arrivals
-                                </p>
-                                <svg class="group-hover/product:rotate-180 group-hover/product:stroke-violet-900 lg:!stroke-white"
-                                    fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M19 9l-7 7-7-7"></path>
-                                </svg>
-                            </button>
-                            <!-- Dropdown -->
-                            <div id="dropdownMenu2" class="dropdown-mainmenu hidden lg:group-hover/product:block">
-{{ partial:partials/mega-nav }}
-</div>
-                        </div>
+                        {{ partial:partials/shop-nav variant="home7" }}
 
                         
                     </div>
@@ -354,7 +314,7 @@
                     </div>
                     <div
                         class="all-btn bg-white text-black hover:text-white hover:border-white text-center lg:block hidden 2xl:text-[17px] 1xl:text-[15px] text-[13px] 1xl:px-9 px-3">
-                        <a href="/shop">Shop Now</a>
+                        <a href="{{ partial:partials/shop-href }}">Shop Now</a>
                     </div>
                 </div>
             </div>

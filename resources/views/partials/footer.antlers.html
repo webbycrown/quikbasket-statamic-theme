@@ -14,7 +14,7 @@
                                 <p class="text-base leading-[1.7rem] text-gray-800 block 2xl:mb-[15px] mb-[13px]">
                                     {{ setting:newsletter_text }}
                                 </p>
-                                <a href="/contact" class="inline-block border-b border-black hover:text-violet-900">{{ setting:popup_button }}</a>
+                                <a href="{{ partial:partials/contact-href }}" class="inline-block border-b border-black hover:text-violet-900">{{ setting:popup_button }}</a>
                             </div>
                             <ul class="flex items-center 1xl:gap-[25px] gap-4 mt-[20px]">
                                 <li>
@@ -132,17 +132,17 @@
                         <li
                             class="after:content-[''] last:after:hidden after:inline-block after:w-[4px] after:h-[1px] after:bg-gray-800 md:after:mx-3 after:mx-2 after:align-middle">
                             <a class="2xl:text-base 1xl:text-[15px] text-sm text-gray-800 hover:text-violet-900"
-                                href="/terms">Terms & Conditions</a>
+                                href="{{ partial:partials/page-href id='terms' }}">Terms & Conditions</a>
                         </li>
                         <li
                             class="after:content-[''] last:after:hidden after:inline-block after:w-[4px] after:h-[1px] after:bg-gray-800 md:after:mx-3 after:mx-2 after:align-middle">
                             <a class="2xl:text-base 1xl:text-[15px] text-sm text-gray-800 hover:text-violet-900"
-                                href="/privacy">Privacy Policy</a>
+                                href="{{ partial:partials/page-href id='privacy' }}">Privacy Policy</a>
                         </li>
                         <li
                             class="after:content-[''] last:after:hidden after:inline-block after:w-[4px] after:h-[1px] after:bg-gray-800 md:after:mx-3 after:mx-2 after:align-middle">
                             <a class="2xl:text-base 1xl:text-[15px] text-sm text-gray-800 hover:text-violet-900"
-                                href="/privacy">{{ setting:cookie_heading }}</a>
+                                href="{{ partial:partials/page-href id='privacy' }}">{{ setting:cookie_heading }}</a>
                         </li>
                     </ul>
                     <p

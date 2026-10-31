@@ -68,7 +68,7 @@
                     <div class="flex items-center xl:my-[30px] sm:my-6 my-5">
                         <label class="flex items-center text-gray-800">
                             <input type="checkbox" name="terms" class="1xl:h-5 1xl:w-5 h-4 w-4 accent-violet-900" required />
-                            <p class="ml-2 xl:text-lg text-base">I agree to the <a href="/terms" class="border-b hover:text-violet-900">Terms</a> and <a href="/privacy" class="border-b hover:text-violet-900">Privacy Policy</a></p>
+                            <p class="ml-2 xl:text-lg text-base">I agree to the <a href="{{ partial:partials/page-href id='terms' }}" class="border-b hover:text-violet-900">Terms</a> and <a href="{{ partial:partials/page-href id='privacy' }}" class="border-b hover:text-violet-900">Privacy Policy</a></p>
                         </label>
                     </div>
                     <button type="submit" class="all-btn">Submit</button>

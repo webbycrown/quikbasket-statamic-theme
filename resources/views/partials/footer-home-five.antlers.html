@@ -6,7 +6,7 @@
                             <div
                                 class="flex sm:flex-row flex-col sm:items-center items-start justify-between sm:gap-4 gap-4">
                                 <p class="text-white xl:text-lg text-base sm:w-[70%] w-full">{{ setting:newsletter_text }}</p>
-                                <a href="/contact"
+                                <a href="{{ partial:partials/contact-href }}"
                                     class="2xl:py-4 sm:py-3 py-2 2xl:px-[63px] 1xl:px-[40px] xl:px-[30px] px-[20px] group hover:bg-black border hover:border-s sm:border-0 border-white bg-white text-black hover:text-white">
                                     <p class="group-hover:text-white xl:text-lg md:text-base text-sm font-medium">
                                         {{ setting:popup_button }}</p>
@@ -21,7 +21,7 @@
                                     <h6 class="list-heading text-white ml-0">Contact</h6>
                                     <div class="flex flex-col 2xl:gap-[23px] sm:gap-[15px] gap-[10px] items-start">
                                         <div class="flex gap-2 items-center md:justify-start justify-center group">
-                                            <a href="/contact">
+                                            <a href="{{ partial:partials/contact-href }}">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                     viewBox="0 0 24 24"
                                                     class="lg:w-[22px] lg:h-[22px] size-5 -rotate-6 group-hover:fill-violet-900 fill-[#A5A5A5]">
@@ -34,7 +34,7 @@
                                                 class="1xl:text-lg text-base text-[#A5A5A5] group-hover:text-violet-900 font-light">{{ setting:phone }}</a>
                                         </div>
                                         <div class="flex gap-2 items-center md:justify-start justify-center group">
-                                            <a href="/shop">
+                                            <a href="{{ partial:partials/shop-href }}">
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                                     stroke-width="1.5"
                                                     class="size-5 group-hover:stroke-violet-900 stroke-[#A5A5A5]">
@@ -302,7 +302,7 @@
 
                 <div
                     class="flex items-center sm:flex-row flex-col justify-between border-t border-lightgray-100 mt-10 sm:pt-10 pt-8 lg:hidden gap-3">
-                    <a href="/privacy"
+                    <a href="{{ partial:partials/page-href id='privacy' }}"
                         class="text-white hover:text-violet-900 sm:text-lg text-base sm:text-start text-center">{{ setting:copyright }}</a>
                     <ul class="flex items-center gap-4">
                         <li>

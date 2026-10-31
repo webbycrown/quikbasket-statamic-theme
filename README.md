@@ -18,6 +18,18 @@ The heart and bag icons on a product save that product in the browser session an
 - /wishlist
 - /compare
 
+## Installation
+
+Follow the [Starter Kit installation instructions](https://statamic.dev/starter-kits/installing-a-starter-kit).  
+Requires **Statamic 5.x** (PHP 8.2+).
+
+```bash
+statamic new my-site webbycrown/quikbasket-statamic-theme
+
+# or into an existing site
+php please starter-kit:install webbycrown/quikbasket-statamic-theme
+```
+
 ## After install
 
 Register the kit provider once after install (do not replace AppServiceProvider):
@@ -26,6 +38,14 @@ Register the kit provider once after install (do not replace AppServiceProvider)
 // bootstrap/providers.php
 App\Providers\QuikbasketServiceProvider::class,
 ```
+
+Then refresh the Stache:
+
+```bash
+php please stache:refresh
+```
+
+Header links use the **header_menu** navigation. Category mega menus use the **Categories** taxonomy. Footer columns use the footer navigation trees.
 
 ## Pages
 
@@ -72,7 +92,11 @@ Questions and issues: [github.com/webbycrown/quikbasket-statamic-theme/issues](h
 
 ## Changelog
 
-### Unreleased
+### v1.0.0
 
+- Header and shop menus use `nav:header_menu` and the Categories taxonomy instead of hard-coded paths.
+- Popular journal posts and contact/shop/home links resolve from entries.
+- Unused Font Awesome and duplicate Alpine (`cdn.min.js`) files are removed. `THIRD_PARTY.md` matches the scripts that ship.
 - Product photographs are original stills made for Quikbasket. The stock demo video is not included.
 - A checkout inquiry empties the session cart after it is saved. The contact form does not.
+- Home pages use Theme sections. Installation notes are in the README.

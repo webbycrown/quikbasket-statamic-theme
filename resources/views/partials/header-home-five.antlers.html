@@ -9,7 +9,7 @@
             <div class="2xl:container">
                 <div class="mx-auto px-4 flex justify-between items-center">
                     <div class="site-logo">
-                        <a href="/home-five">
+                        <a href="{{ partial:partials/page-href id='home-five' }}">
                             <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="setting:logo" fallback="image/main-logo.svg" }}" alt="company logo"
                                 class="lg:w-[350px] pe-6" />
                         </a>
@@ -20,7 +20,7 @@
                         class="overflow-auto lg:overflow-visible lg:h-16 h-full fixed inset-0 w-full bg-white z-50 flex flex-col items-center lg:justify-center lg:static lg:flex lg:flex-row space-y-0 2xl:space-x-10 1xl:space-x-8 space-x-6 lg:bg-transparent lg:divide-y-0 divide-y divide-lightborder-100">
                         <div
                             class="flex items-center justify-between w-full lg:hidden bg-violet-400 sm:py-6 py-3 px-6">
-                            <a href="/home-five">
+                            <a href="{{ partial:partials/page-href id='home-five' }}">
                                 <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="setting:logo" fallback="image/main-logo.svg" }}"
                                     alt="company logo" />
                             </a>
@@ -33,52 +33,7 @@
                             </button>
                         </div>
 
-                        <!-- 1ST -->
-                        <div class="group/product dropdown-toggle mx-0 lg:py-5 sm:py-7 py-4">
-                            <button type="button" aria-expanded="false" id="dropdownToggle1"
-                                class="lg:group-hover/product:border-violet-900 lg:group-focus/product:border-violet-900 lg:group-active/product:border-violet-900 !w-auto !mx-auto !h-auto lg:!pb-[22px] !p-0">
-                                <p
-                                    class="!text-black 1xl:!text-lg lg:!text-base sm:!text-lg !text-base group-hover/product:!text-violet-900 group-focus/product:!text-violet-900 group-active/product:!text-violet-900">
-                                    Home
-                                </p>
-                                <svg class="group-hover/product:rotate-180 group-hover/product:!stroke-violet-900 !stroke-black"
-                                    fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M19 9l-7 7-7-7"></path>
-                                </svg>
-                            </button>
-                            <!-- Dropdown -->
-                            <div id="dropdownMenu1"
-                                class="dropdown-mainmenu hidden lg:group-hover/product:block lg:w-[190px] lg:left-auto lg:right-auto py-4 lg:bg-white lg:mt-12 sm:mt-6 mt-4">
-                                <div class="lg:mb-0 mb-3">
-                                    <h6 class="product-heading">Menu</h6>
-                                    {{ partial:partials/page-nav }}
-                                </div>
-                            </div>
-                        </div>
-
-                        
-
-                        <!-- 3RD -->
-                        <div class="group/product dropdown-toggle lg:py-5 sm:py-7 py-4">
-                            <button type="button" aria-expanded="false" id="dropdownToggle2"
-                                class="lg:group-hover/product:border-violet-900 lg:group-focus/product:border-violet-900 lg:group-active/product:border-violet-900 !w-auto !mx-auto !h-auto lg:!pb-[22px] !p-0">
-                                <p
-                                    class="!text-black 1xl:!text-lg lg:!text-base sm:!text-lg !text-base group-hover/product:!text-violet-900 group-focus/product:!text-violet-900 group-active/product:!text-violet-900">
-                                    New Arrivals
-                                </p>
-                                <svg class="group-hover/product:rotate-180 group-hover/product:!stroke-violet-900 !text-black"
-                                    fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M19 9l-7 7-7-7"></path>
-                                </svg>
-                            </button>
-                            <!-- Dropdown -->
-                            <div id="dropdownMenu2"
-                                class="dropdown-mainmenu hidden lg:group-hover/product:block py-8 lg:bg-white lg:mt-12">
-{{ partial:partials/mega-nav }}
-</div>
-                        </div>
+                        {{ partial:partials/shop-nav variant="row" }}
 
                         
 
@@ -205,7 +160,7 @@
                                                             <!-- Sidebar Content -->
 <div class="mt-4">
     <p class="text-sm">This screen is a design example. Nothing is saved.</p>
-    <p class="text-sm mt-3"><a class="border-b border-black" href="/contact">Send an inquiry</a></p>
+    <p class="text-sm mt-3"><a class="border-b border-black" href="{{ partial:partials/contact-href }}">Send an inquiry</a></p>
 </div>
 
                                                         </div>

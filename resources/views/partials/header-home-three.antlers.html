@@ -132,7 +132,7 @@
                 </button>
                 <div
                     class="site-logo xl:border-r border-lightborder-100/25 h-auto 1xl:w-[14%] xl:w-[16%] sm:w-[200px] w-[157px] 1xl:pe-[26px] xl:pe-4 justify-center flex items-center">
-                    <a href="/home-three">
+                    <a href="{{ partial:partials/page-href id='home-three' }}">
                         <img decoding="async" loading="lazy" src="/assets/image/main-white-logo.webp" alt="main-logo"
                             class="w-full h-full" />
                     </a>
@@ -159,53 +159,7 @@
                         </button>
                     </div>
 
-                    <!-- 1ST -->
-                    <div class="group/product dropdown-toggle2 !m-0">
-                        <button type="button" aria-expanded="false" id="dropdownToggle1"
-                            class="lg:group-hover/product:border-violet-900 lg:group-focus/product:border-violet-900 lg:group-active/product:border-violet-900">
-                            <p
-                                class="group-hover/product:text-violet-900 group-focus/product:text-violet-900 group-active/product:text-violet-900 xl:!text-white text-black">
-                                Pages
-                            </p>
-                            <svg class="group-hover/product:rotate-180 group-hover/product:stroke-violet-900 xl:!stroke-white"
-                                fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </button>
-                        <!-- Dropdown -->
-                        <div id="dropdownMenu1"
-                            class="xl:w-[190px] xl:left-auto xl:right-auto relative hidden -mt-1 xl:group-hover/product:block xl:absolute xl:mt-0 xl:top-full
-                            animate-dropdown left-0 right-0 w-full shadow-xl z-40 xl:border-t border-lightborder-200 dropdown-mainmenu">
-                            <div>
-                                <h6 class="product-heading">Home
-                                    Pages</h6>
-                                {{ partial:partials/page-nav }}
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 2ND -->
-                    <div class="group/product dropdown-toggle2">
-                        <button type="button" aria-expanded="false" id="dropdownToggle2"
-                            class="xl:group-hover/product:border-violet-900 xl:group-focus/product:border-violet-900 xl:group-active/product:border-violet-900">
-                            <p
-                                class="group-hover/product:text-violet-900 group-focus/product:text-violet-900 group-active/product:text-violet-900 xl:!text-white text-black">
-                                New Arrivals
-                            </p>
-                            <svg class="group-hover/product:rotate-180 group-hover/product:stroke-violet-900 xl:!stroke-white"
-                                fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </button>
-                        <!-- Dropdown -->
-                        <div id="dropdownMenu2"
-                            class="relative hidden -mt-1 xl:group-hover/product:block xl:absolute xl:mt-0 xl:left-0 xl:top-full
-                            animate-dropdown left-0 right-0 w-full shadow-xl z-40 xl:border-t border-lightborder-200 dropdown-mainmenu">
-{{ partial:partials/mega-nav }}
-</div>
-                    </div>
+                    {{ partial:partials/shop-nav variant="home3" }}
 
                     
                 </div>

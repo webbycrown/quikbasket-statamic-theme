@@ -18,11 +18,11 @@
 
                             <li>
                                 <div class="flex items-center 1xl:gap-[6px] gap-[4px]">
-                                    <a href="/shop">
+                                    <a href="{{ partial:partials/shop-href }}">
                                         <img decoding="async" loading="lazy" src="/assets/image/location-pin.svg" alt="store"
                                             class="sm:w-5 sm:h-5 w-[18px] h-[18px]" />
                                     </a>
-                                    <a href="/shop">
+                                    <a href="{{ partial:partials/shop-href }}">
                                         <p
                                             class="text-[#282828] xl:text-sm text-xs hover:opacity-80 font-normal sm:leading-[26px] xl:block hidden">
                                             Store Locator</p>
@@ -33,7 +33,7 @@
 
                             <li class="border-r border-lightborder-100">
                                 <div class="flex items-center 1xl:gap-[6px] gap-[4px] pr-3">
-                                    <a href="/shop">
+                                    <a href="{{ partial:partials/shop-href }}">
                                         <img decoding="async" loading="lazy" src="/assets/image/order-truck.svg" alt="order"
                                             class="sm:w-5 sm:h-5 w-[18px] h-[18px]" />
 
@@ -164,7 +164,7 @@
                 <div class="flex items-center justify-between md:py-4 py-3 lg:py-7 transition-all">
                     <!-- First Button: Opens the navbar -->
                     <div class="site-logo">
-                        <a href="/home-four">
+                        <a href="{{ partial:partials/page-href id='home-four' }}">
                             <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="setting:logo" fallback="image/main-logo.svg" }}" alt="main-logo"
                                 title="main-logo" class="1xl:w-[229px] xl:w-[215px] sm:w-[185px] w-[135px] m-auto" />
                         </a>
@@ -311,50 +311,7 @@
                             </button>
                         </div>
 
-                        <!-- 1ST -->
-                        <div class="group/product dropdown-toggle mx-0">
-                            <button type="button" aria-expanded="false" id="dropdownToggle1"
-                                class="lg:group-hover/product:border-violet-900 lg:group-focus/product:border-violet-900 lg:group-active/product:border-violet-900">
-                                <p
-                                    class="group-hover/product:text-violet-900 group-focus/product:text-violet-900 group-active/product:text-violet-900 lg:!text-white">
-                                    Pages
-                                </p>
-                                <svg class="group-hover/product:rotate-180 group-hover/product:stroke-violet-900 lg:!stroke-white"
-                                    fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M19 9l-7 7-7-7"></path>
-                                </svg>
-                            </button>
-                            <!-- Dropdown -->
-                            <div id="dropdownMenu1"
-                                class="dropdown-mainmenu hidden lg:group-hover/product:block lg:w-[190px] lg:left-auto lg:right-auto">
-                                <div class="lg:mb-0 mb-3">
-                                    <h6 class="product-heading">Home
-                                        Pages</h6>
-                                    {{ partial:partials/page-nav }}
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- 2ND -->
-                        <div class="group/product dropdown-toggle">
-                            <button type="button" aria-expanded="false" id="dropdownToggle2"
-                                class="lg:group-hover/product:border-violet-900 lg:group-focus/product:border-violet-900 lg:group-active/product:border-violet-900">
-                                <p
-                                    class="group-hover/product:text-violet-900 group-focus/product:text-violet-900 group-active/product:text-violet-900 lg:!text-white">
-                                    New Arrivals
-                                </p>
-                                <svg class="group-hover/product:rotate-180 group-hover/product:stroke-violet-900 lg:!stroke-white"
-                                    fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M19 9l-7 7-7-7"></path>
-                                </svg>
-                            </button>
-                            <!-- Dropdown -->
-                            <div id="dropdownMenu2" class="dropdown-mainmenu hidden lg:group-hover/product:block">
-{{ partial:partials/mega-nav }}
-</div>
-                        </div>
+                        {{ partial:partials/shop-nav variant="light" }}
 
                         
                     </div>
