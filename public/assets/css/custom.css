@@ -89,18 +89,18 @@ details summary {
 
 .main-nav.full-screen::-webkit-scrollbar {
   width: 5px;
-  background-color: #e9ddd7;
+  background-color: #EBF4F1;
 }
 
 .main-nav.full-screen::-webkit-scrollbar-thumb {
   background-color: #333;
-  outline: 1px solid #f5efec;
+  outline: 1px solid #EBF4F1;
 }
 
 .tabulator .tabulator-header .tabulator-headers .tabulator-col {
   background-color: #fff;
   text-transform: uppercase;
-  color: #805a81;
+  color: #247A4D;
   font-weight: 600;
   font-size: 13.2px;
   border-color: #c8c8c8;
@@ -132,7 +132,7 @@ details summary {
 .tabulator .tabulator-row.tabulator-selectable:hover,
 .tabulator .tabulator-row.tabulator-selected,
 .tabulator .tabulator-row.tabulator-row-even.tabulator-selected {
-  background-color: #f5efec;
+  background-color: #EBF4F1;
 }
 
 .tabulator
@@ -140,7 +140,7 @@ details summary {
   .tabulator-headers
   .tabulator-col.tabulator-sortable:hover {
   cursor: pointer;
-  background-color: #805a81;
+  background-color: #247A4D;
   color: #fff;
 }
 
@@ -182,8 +182,8 @@ details summary {
   .tabulator-col-sorter
   .tabulator-arrow {
   border-top: none !important;
-  border-bottom: 2px solid #805a81 !important;
-  border-left: 2px solid #805a81;
+  border-bottom: 2px solid #247A4D !important;
+  border-left: 2px solid #247A4D;
   border-right: 0;
   width: 8px;
   height: 8px;

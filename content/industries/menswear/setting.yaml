@@ -1,0 +1,14 @@
+industry: menswear
+industry_label: 'Menswear shop'
+theme_color: '#1B4F72'
+theme_color_soft: '#E8F1F8'
+theme_color_dark: '#143B56'
+seo_description: 'A menswear demo catalogue. Nothing is charged.'
+hero_eyebrow: 'New season menswear'
+hero_heading: 'Sharp layers for the week ahead'
+hero_text: 'Shirts, knits, denim, and outerwear for a clean everyday edit. Send an inquiry — nothing is charged.'
+hero_image: image/menswear-hero.jpg
+about_heading: 'Menswear Unveiled: Cuts Made for Daily Wear'
+about_image: image/menswear-about-1.jpg
+about_image_two: image/menswear-about-2.jpg
+video_image: image/menswear-video.jpg

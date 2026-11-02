@@ -8402,7 +8402,7 @@ video {
 }
 .border-violet-600 {
   --tw-border-opacity: 1;
-  border-color: rgb(124 58 237 / var(--tw-border-opacity, 1));
+  border-color: rgb(36 122 77 / var(--tw-border-opacity, 1));
 }
 .border-violet-900 {
   --tw-border-opacity: 1;
@@ -8631,11 +8631,11 @@ video {
 }
 .bg-violet-500 {
   --tw-bg-opacity: 1;
-  background-color: rgb(139 92 246 / var(--tw-bg-opacity, 1));
+  background-color: rgb(36 122 77 / var(--tw-bg-opacity, 1));
 }
 .bg-violet-600 {
   --tw-bg-opacity: 1;
-  background-color: rgb(124 58 237 / var(--tw-bg-opacity, 1));
+  background-color: rgb(30 102 64 / var(--tw-bg-opacity, 1));
 }
 .bg-violet-900 {
   --tw-bg-opacity: 1;
@@ -8788,7 +8788,7 @@ video {
   --tw-gradient-to: transparent var(--tw-gradient-to-position);
 }
 .to-violet-500 {
-  --tw-gradient-to: #8b5cf6 var(--tw-gradient-to-position);
+  --tw-gradient-to: #247A4D var(--tw-gradient-to-position);
 }
 .to-violet-900 {
   --tw-gradient-to: #247A4D var(--tw-gradient-to-position);
@@ -10311,9 +10311,9 @@ video {
   --background: #1e1d1f;
   --background-secondary: #374151;
 
-  --accent-dark: #b95177;
-  --accent-medium: #be185d;
-  --accent-light: #ec4899;
+  --accent-dark: #247A4D;
+  --accent-medium: #1e6640;
+  --accent-light: #5A9E78;
 
   --primary-dark: #F3F3F3;
   --primary-medium: #454545;

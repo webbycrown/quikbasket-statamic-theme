@@ -1,0 +1,14 @@
+industry: jewellery
+industry_label: 'Jewellery shop'
+theme_color: '#B45309'
+theme_color_soft: '#FEF3C7'
+theme_color_dark: '#92400E'
+seo_description: 'A jewellery demo catalogue. Nothing is charged.'
+hero_eyebrow: 'Fine pieces, quiet light'
+hero_heading: 'Jewellery worn close to the skin'
+hero_text: 'Necklaces, rings, and studs for everyday wear. Send an inquiry — nothing is charged.'
+hero_image: image/jewellery-hero.jpg
+about_heading: 'Jewellery Unveiled: Small Pieces, Clear Finish'
+about_image: image/jewellery-about-1.jpg
+about_image_two: image/jewellery-about-2.jpg
+video_image: image/jewellery-video.jpg

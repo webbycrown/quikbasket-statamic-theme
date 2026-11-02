@@ -9,6 +9,25 @@ tabs:
             handle: site_name
             field: { type: text, display: 'Site name' }
           -
+            handle: industry
+            field:
+              type: select
+              display: Catalogue
+              options:
+                fashion: Fashion
+                menswear: Menswear
+                womenswear: Womenswear
+                kids: Kids
+                streetwear: Streetwear
+                jewellery: Jewellery
+                beauty: Beauty
+                accessories: Accessories
+                homeware: Homeware
+              default: fashion
+          -
+            handle: industry_label
+            field: { type: text, display: 'Catalogue label' }
+          -
             handle: logo
             field: { type: assets, container: assets, max_files: 1, display: Logo }
           -
@@ -150,6 +169,27 @@ tabs:
             handle: pages_menu_label
             field: { type: text, display: 'Pages mega-menu label' }
           -
+            handle: nav_new
+            field: { type: text, display: 'Nav · New' }
+          -
+            handle: nav_best
+            field: { type: text, display: 'Nav · Best' }
+          -
+            handle: nav_group
+            field: { type: text, display: 'Nav · Group' }
+          -
+            handle: nav_line1
+            field: { type: text, display: 'Nav · Line 1' }
+          -
+            handle: nav_line2
+            field: { type: text, display: 'Nav · Line 2' }
+          -
+            handle: nav_line3
+            field: { type: text, display: 'Nav · Line 3' }
+          -
+            handle: nav_line4
+            field: { type: text, display: 'Nav · Line 4' }
+          -
             handle: popup_heading
             field: { type: text, display: 'Popup heading' }
           -
@@ -171,11 +211,29 @@ tabs:
             handle: cookie_manage
             field: { type: text, display: 'Cookie manage' }
           -
+            handle: theme_color
+            field:
+              type: text
+              display: 'Theme color'
+              instructions: 'Primary brand hex for this catalogue (buttons, top bar, links). Each demo niche should use a different colour.'
+          -
+            handle: theme_color_soft
+            field:
+              type: text
+              display: 'Theme soft color'
+              instructions: 'Light tint of the theme colour for soft bars and chips.'
+          -
+            handle: theme_color_dark
+            field:
+              type: text
+              display: 'Theme dark color'
+              instructions: 'Darker shade for hover and emphasis.'
+          -
             handle: invoice_color
             field:
               type: text
               display: 'Invoice PDF color'
-              instructions: 'Hex color for the inquiry invoice PDF header and accents. Default is theme green #247A4D.'
+              instructions: 'Hex color for the inquiry invoice PDF header and accents. Usually matches Theme color.'
           -
             handle: coupons
             field:

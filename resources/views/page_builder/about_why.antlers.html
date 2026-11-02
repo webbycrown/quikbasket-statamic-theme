@@ -1,13 +1,16 @@
-<section class="relative 2xl:py-[50px] 1xl:py-[45px] xl:py-[40px] lg:py-[35px] md:py-[30px] sm:py-[25px] py-[20px]">
+<section class="relative 2xl:py-[50px] 1xl:py-[45px] xl:py-[40px] lg:py-[35px] md:py-[30px] sm:py-[25px] py-[20px] bg-white">
     <div class="container">
-        <div class="grid lg:grid-cols-2 gap-10 items-center">
-            <div>
-                <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="{{ heading }}" class="w-full object-cover" />
+        {{# Image column height follows the text column #}}
+        <div class="grid lg:grid-cols-2 gap-10">
+            <div class="relative max-lg:min-h-[280px] min-h-0">
+                <div class="absolute inset-0 overflow-hidden">
+                    <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="{{ heading }}" class="absolute inset-0 w-full h-full object-cover" />
+                </div>
             </div>
-            <div>
-                <h2 class="sm:mb-[15px] mb-3">{{ heading }}</h2>
+            <div class="text-black">
+                <h2 class="sm:mb-[15px] mb-3 text-black">{{ heading }}</h2>
                 {{ if text }}
-                <p class="2xl:text-lg text-base mb-8">{{ text }}</p>
+                <p class="2xl:text-lg text-base mb-8 text-black">{{ text }}</p>
                 {{ /if }}
                 <div class="grid sm:grid-cols-2 gap-6">
                     {{ items }}
@@ -16,8 +19,8 @@
                         <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="icon" }}" alt="" class="w-12 h-12 object-contain flex-shrink-0" />
                         {{ /if }}
                         <div>
-                            <h3 class="text-lg font-medium mb-1">{{ title }}</h3>
-                            <p class="text-sm text-gray-800">{{ line }}</p>
+                            <h3 class="text-lg font-medium mb-1 text-black">{{ title }}</h3>
+                            <p class="text-sm text-black">{{ line }}</p>
                         </div>
                     </div>
                     {{ /items }}

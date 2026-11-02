@@ -30,9 +30,11 @@ Every file that ships in that folder is listed below. Prefer your own brand phot
 
 | File | Notes | Licence |
 |---|---|---|
-| `main-logo.svg` | Quikbasket wordmark | Original kit branding |
+| `main-logo.svg` | Quikbasket wordmark (synced to active catalogue on setup) | Original kit branding |
+| `main-white-logo.svg` | White wordmark for dark headers | Original kit branding |
+| `main-white-logo.webp` | Legacy white raster (kept for older installs) | Original kit branding |
 | `main-Circle-logo Type.svg.svg` | Quikbasket circle mark | Original kit branding |
-| `main-white-logo.webp` | White wordmark rasterised from `main-logo.svg` | Original kit branding |
+| `{catalogue}-logo.svg` / `{catalogue}-logo-white.svg` | Per-catalogue wordmarks (fashion, menswear, womenswear, kids, streetwear, jewellery, beauty, accessories, homeware) | Original kit branding |
 | `favicon.svg` | Site favicon mark | Original kit artwork |
 
 ### Generic payment marks (not real brands)
@@ -544,7 +546,6 @@ Full list:
 - `us-1.webp`
 - `video-img.webp`
 - `white purse round.webp`
-- `yellow-tshirt'.webp`
 - `yellow-tshirt.webp`
 
 ### Video
@@ -559,10 +560,76 @@ None. Only `.svg` and `.webp` files are present.
 
 | Kind | Count |
 |---|---|
-| SVG | 70 |
-| WebP (photos) | 435 |
-| WebP (brand wordmark) | 1 |
+| SVG | 60 |
+| WebP | 497 |
 | Other | 0 |
-| **Total files in `image/`** | **506** |
+| **Total files in `image/`** | **557** |
 
 Theme copy in `content/` is original WebbyCrown writing for the Quikbasket demo.
+
+### Catalogue niche demo photos (Unsplash Licence)
+Used by `content/industries/{kids,menswear,womenswear,streetwear}` product packs so each catalogue shows matching photography.
+
+| File | Notes | Licence |
+|---|---|---|
+| `kids-01.webp` | kids catalogue product/hero photo | Unsplash Licence |
+| `kids-02.webp` | kids catalogue product/hero photo | Unsplash Licence |
+| `kids-03.webp` | kids catalogue product/hero photo | Unsplash Licence |
+| `kids-04.webp` | kids catalogue product/hero photo | Unsplash Licence |
+| `kids-05.webp` | kids catalogue product/hero photo | Unsplash Licence |
+| `kids-06.webp` | kids catalogue product/hero photo | Unsplash Licence |
+| `kids-07.webp` | kids catalogue product/hero photo | Unsplash Licence |
+| `kids-08.webp` | kids catalogue product/hero photo | Unsplash Licence |
+| `kids-09.webp` | kids catalogue product/hero photo | Unsplash Licence |
+| `kids-10.webp` | kids catalogue product/hero photo | Unsplash Licence |
+| `kids-11.webp` | kids catalogue product/hero photo | Unsplash Licence |
+| `kids-12.webp` | kids catalogue product/hero photo | Unsplash Licence |
+| `kids-13.webp` | kids catalogue product/hero photo | Unsplash Licence |
+| `menswear-01.webp` | menswear catalogue product/hero photo | Unsplash Licence |
+| `menswear-02.webp` | menswear catalogue product/hero photo | Unsplash Licence |
+| `menswear-03.webp` | menswear catalogue product/hero photo | Unsplash Licence |
+| `menswear-04.webp` | menswear catalogue product/hero photo | Unsplash Licence |
+| `menswear-05.webp` | menswear catalogue product/hero photo | Unsplash Licence |
+| `menswear-06.webp` | menswear catalogue product/hero photo | Unsplash Licence |
+| `menswear-07.webp` | menswear catalogue product/hero photo | Unsplash Licence |
+| `menswear-08.webp` | menswear catalogue product/hero photo | Unsplash Licence |
+| `menswear-09.webp` | menswear catalogue product/hero photo | Unsplash Licence |
+| `menswear-10.webp` | menswear catalogue product/hero photo | Unsplash Licence |
+| `menswear-11.webp` | menswear catalogue product/hero photo | Unsplash Licence |
+| `menswear-12.webp` | menswear catalogue product/hero photo | Unsplash Licence |
+| `menswear-13.webp` | menswear catalogue product/hero photo | Unsplash Licence |
+| `menswear-14.webp` | menswear catalogue product/hero photo | Unsplash Licence |
+| `menswear-15.webp` | menswear catalogue product/hero photo | Unsplash Licence |
+| `menswear-16.webp` | menswear catalogue product/hero photo | Unsplash Licence |
+| `menswear-17.webp` | menswear catalogue product/hero photo | Unsplash Licence |
+| `menswear-18.webp` | menswear catalogue product/hero photo | Unsplash Licence |
+| `menswear-19.webp` | menswear catalogue product/hero photo | Unsplash Licence |
+| `streetwear-01.webp` | streetwear catalogue product/hero photo | Unsplash Licence |
+| `streetwear-02.webp` | streetwear catalogue product/hero photo | Unsplash Licence |
+| `streetwear-03.webp` | streetwear catalogue product/hero photo | Unsplash Licence |
+| `streetwear-04.webp` | streetwear catalogue product/hero photo | Unsplash Licence |
+| `streetwear-05.webp` | streetwear catalogue product/hero photo | Unsplash Licence |
+| `streetwear-06.webp` | streetwear catalogue product/hero photo | Unsplash Licence |
+| `streetwear-07.webp` | streetwear catalogue product/hero photo | Unsplash Licence |
+| `streetwear-08.webp` | streetwear catalogue product/hero photo | Unsplash Licence |
+| `streetwear-09.webp` | streetwear catalogue product/hero photo | Unsplash Licence |
+| `streetwear-10.webp` | streetwear catalogue product/hero photo | Unsplash Licence |
+| `streetwear-11.webp` | streetwear catalogue product/hero photo | Unsplash Licence |
+| `streetwear-12.webp` | streetwear catalogue product/hero photo | Unsplash Licence |
+| `streetwear-13.webp` | streetwear catalogue product/hero photo | Unsplash Licence |
+| `streetwear-14.webp` | streetwear catalogue product/hero photo | Unsplash Licence |
+| `womenswear-01.webp` | womenswear catalogue product/hero photo | Unsplash Licence |
+| `womenswear-02.webp` | womenswear catalogue product/hero photo | Unsplash Licence |
+| `womenswear-03.webp` | womenswear catalogue product/hero photo | Unsplash Licence |
+| `womenswear-04.webp` | womenswear catalogue product/hero photo | Unsplash Licence |
+| `womenswear-05.webp` | womenswear catalogue product/hero photo | Unsplash Licence |
+| `womenswear-06.webp` | womenswear catalogue product/hero photo | Unsplash Licence |
+| `womenswear-07.webp` | womenswear catalogue product/hero photo | Unsplash Licence |
+| `womenswear-08.webp` | womenswear catalogue product/hero photo | Unsplash Licence |
+| `womenswear-09.webp` | womenswear catalogue product/hero photo | Unsplash Licence |
+| `womenswear-10.webp` | womenswear catalogue product/hero photo | Unsplash Licence |
+| `womenswear-11.webp` | womenswear catalogue product/hero photo | Unsplash Licence |
+| `womenswear-12.webp` | womenswear catalogue product/hero photo | Unsplash Licence |
+| `womenswear-13.webp` | womenswear catalogue product/hero photo | Unsplash Licence |
+| `womenswear-14.webp` | womenswear catalogue product/hero photo | Unsplash Licence |
+| `womenswear-15.webp` | womenswear catalogue product/hero photo | Unsplash Licence |

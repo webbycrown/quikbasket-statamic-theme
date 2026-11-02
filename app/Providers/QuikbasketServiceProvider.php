@@ -2,9 +2,13 @@
 
 namespace App\Providers;
 
+use App\Console\Commands\SetupIndustryCommand;
+use App\Http\Middleware\PrefixAbsolutePaths;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Validation\ValidationException;
 use Statamic\Events\FormSubmitted;
@@ -22,6 +26,25 @@ class QuikbasketServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
+        if ($this->app->runningInConsole()) {
+            $this->commands([SetupIndustryCommand::class]);
+        }
+
+        $this->app->booted(function () {
+            $appUrl = rtrim((string) config('app.url'), '/');
+            $path = (string) (parse_url($appUrl, PHP_URL_PATH) ?: '');
+            if ($path !== '' && $path !== '/') {
+                URL::forceRootUrl($appUrl);
+                $scheme = parse_url($appUrl, PHP_URL_SCHEME);
+                if (is_string($scheme) && $scheme !== '') {
+                    URL::forceScheme($scheme);
+                }
+            }
+            View::share('qb_path_prefix', ($path !== '/' ? $path : ''));
+        });
+
+        $this->app->make('router')->pushMiddlewareToGroup('web', PrefixAbsolutePaths::class);
+
         Event::listen(FormSubmitted::class, function (FormSubmitted $event) {
             $handle = $event->submission->form()->handle();
 

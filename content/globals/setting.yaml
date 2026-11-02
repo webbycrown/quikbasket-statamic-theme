@@ -1,9 +1,11 @@
 title: Setting
 data:
-  site_name: Quikbasket
-  logo: image/main-logo.svg
-  logo_white: image/main-white-logo.webp
-  footer_logo: image/main-white-logo.webp
+  site_name: 'Quikbasket Fashion'
+  industry: fashion
+  industry_label: 'Fashion shop'
+  logo: image/fashion-logo.svg
+  logo_white: image/fashion-logo-white.svg
+  footer_logo: image/fashion-logo-white.svg
   favicon: image/favicon.svg
   phone: '+1 555 0100'
   email: info@quikbasket.example

@@ -346,7 +346,7 @@ function qbAccount() {
         },
         loadOrders() {
             var self = this;
-            fetch('/shop/orders', { headers: { Accept: 'application/json' }, credentials: 'same-origin' })
+            fetch((window.QB_PATH_PREFIX || '') + '/shop/orders', { headers: { Accept: 'application/json' }, credentials: 'same-origin' })
                 .then(function (r) { return r.json(); })
                 .then(function (data) { self.orders = data.orders || []; })
                 .catch(function () { self.orders = []; });

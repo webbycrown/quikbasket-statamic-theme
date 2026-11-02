@@ -10,7 +10,7 @@
                 <div class="mx-auto px-4 flex justify-between items-center">
                     <div class="site-logo">
                         <a href="{{ partial:partials/page-href id='home-five' }}">
-                            <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="setting:logo" fallback="image/main-logo.svg" }}" alt="company logo"
+                            <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="setting:logo" fallback="image/main-logo.svg" }}" alt="{{ setting:site_name }}"
                                 class="lg:w-[350px] pe-6" />
                         </a>
                     </div>
@@ -22,7 +22,7 @@
                             class="flex items-center justify-between w-full lg:hidden bg-violet-400 sm:py-6 py-3 px-6">
                             <a href="{{ partial:partials/page-href id='home-five' }}">
                                 <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="setting:logo" fallback="image/main-logo.svg" }}"
-                                    alt="company logo" />
+                                    alt="{{ setting:site_name }}" />
                             </a>
                             <button type="button" aria-label="Close menu" id="menuClose" class="self-end lg:hidden">
                                 <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor"

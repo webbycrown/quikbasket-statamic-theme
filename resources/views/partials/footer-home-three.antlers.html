@@ -3,7 +3,7 @@
                 <div class="flex md:flex-row flex-col col-span-2 items-center sm:justify-between xl:hidden">
                     <div>
                         <a href="{{ partial:partials/page-href id='home-three' }}">
-                            <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="setting:logo" fallback="image/main-logo.svg" }}" alt="main logo"
+                            <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="setting:logo" fallback="image/main-logo.svg" }}" alt="{{ setting:site_name }}"
                                 class="w-auto md:m-0 mx-auto" />
                         </a>
                         <p class="md:mt-7 md:mb-2 my-5 1xl:text-lg lg:text-[17px] md:text-base text-[15px] text-center">
@@ -99,7 +99,7 @@
 
                     <div class="xl:flex col-span-2 flex-col items-center sm:justify-center hidden">
                         <a href="{{ partial:partials/page-href id='home-three' }}">
-                            <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="setting:logo" fallback="image/main-logo.svg" }}" alt="main logo"
+                            <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="setting:logo" fallback="image/main-logo.svg" }}" alt="{{ setting:site_name }}"
                                 class="xl:w-full w-11/12 mx-auto" />
                         </a>
                         <p class="my-10 1xl:text-lg text-[17px] text-center"><a href="{{ partial:partials/page-href id='privacy' }}">{{ setting:copyright }}</a></p>

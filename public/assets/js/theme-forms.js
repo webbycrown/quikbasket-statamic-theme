@@ -1,4 +1,13 @@
 (function ($) {
+  function qbUrl(path) {
+    var prefix = String(window.QB_PATH_PREFIX || '').replace(/\/$/, '');
+    var p = String(path || '');
+    if (p.charAt(0) !== '/') {
+      p = '/' + p;
+    }
+    return prefix + p;
+  }
+
   function fillIfEmpty($el, value) {
     if (!$el.length || value == null || value === '') {
       return;
@@ -360,14 +369,14 @@
     });
   }
 
-  $.getJSON('/shop/saved').done(markSaved);
+  $.getJSON(qbUrl('/shop/saved')).done(markSaved);
 
   $(document).on('click', '.js-shop-toggle', function (e) {
     e.preventDefault();
     var $btn = $(this);
     var list = $btn.data('list');
     $.ajax({
-      url: '/shop/saved',
+      url: qbUrl('/shop/saved'),
       method: 'POST',
       data: {
         id: $btn.data('id'),
@@ -459,7 +468,7 @@
       return;
     }
     $.ajax({
-      url: '/shop/saved',
+      url: qbUrl('/shop/saved'),
       method: 'POST',
       data: {
         id: id,
@@ -570,7 +579,7 @@
     var $msg = $('.js-coupon-msg');
     $msg.text('');
     $.ajax({
-      url: '/shop/cart/coupon',
+      url: qbUrl('/shop/cart/coupon'),
       method: 'POST',
       data: {
         code: $form.find('[name="code"]').val(),
@@ -592,7 +601,7 @@
 
   $(document).on('click', '.js-coupon-remove', function () {
     $.ajax({
-      url: '/shop/cart/coupon',
+      url: qbUrl('/shop/cart/coupon'),
       method: 'POST',
       data: { action: 'remove', _token: cartToken() },
       headers: { 'X-Requested-With': 'XMLHttpRequest', Accept: 'application/json' }
@@ -611,7 +620,7 @@
     $('.js-cart-row').each(function () {
       var row = $(this);
       requests.push($.ajax({
-        url: '/shop/cart/qty',
+        url: qbUrl('/shop/cart/qty'),
         method: 'POST',
         data: {
           id: row.data('id'),
@@ -633,7 +642,7 @@
     window.setTimeout(function () {
       refreshCartTotals();
       $.ajax({
-        url: '/shop/cart/qty',
+        url: qbUrl('/shop/cart/qty'),
         method: 'POST',
         data: {
           id: row.data('id'),
@@ -648,7 +657,7 @@
   $(document).on('click', '.js-cart-remove', function () {
     var row = $(this).closest('.js-cart-row');
     $.ajax({
-      url: '/shop/saved',
+      url: qbUrl('/shop/saved'),
       method: 'POST',
       data: { id: row.data('id'), list: 'cart', _token: cartToken() },
       headers: { 'X-Requested-With': 'XMLHttpRequest', Accept: 'application/json' }
@@ -667,7 +676,7 @@
     e.preventDefault();
     var id = $(this).data('id');
     $.ajax({
-      url: '/shop/saved',
+      url: qbUrl('/shop/saved'),
       method: 'POST',
       data: { id: id, list: 'cart', mode: 'add', _token: cartToken() },
       headers: { 'X-Requested-With': 'XMLHttpRequest', Accept: 'application/json' }
@@ -682,7 +691,7 @@
   $(document).on('click', '.js-wish-remove', function () {
     var row = $(this).closest('.js-wish-row');
     $.ajax({
-      url: '/shop/saved',
+      url: qbUrl('/shop/saved'),
       method: 'POST',
       data: { id: row.data('id'), list: 'wish', _token: cartToken() },
       headers: { 'X-Requested-With': 'XMLHttpRequest', Accept: 'application/json' }

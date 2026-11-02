@@ -9,7 +9,7 @@
                     <div
                         class="flex justify-between items-center bg-violet-400 xl:py-6 xl:px-8 md:py-4 md:px-6 py-2 px-4">
                         <a href="{{ partial:partials/page-href id='home-two' }}" class="1xl:w-[19%] sm:w-auto w-3/5">
-                            <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="setting:logo" fallback="image/main-logo.svg" }}" alt="Company Logo">
+                            <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="setting:logo" fallback="image/main-logo.svg" }}" alt="{{ setting:site_name }}">
                         </a>
                         <button type="button" @click="sidebarOpen = false" name="close" class="wc-close-btn text-900 text-[22px] py-3"
                             aria-label="Close">
@@ -45,7 +45,7 @@
                     </button>
                 </main>
                 <div class="white-logo lg:ms-56 md:ms-32 sm:ms-28 ms-10">
-                    <a href="{{ partial:partials/page-href id='home-two' }}"><img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="setting:logo_white" fallback="image/main-white-logo.webp" }}"
+                    <a href="{{ partial:partials/page-href id='home-two' }}"><img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="setting:logo_white" fallback="image/main-white-logo.svg" }}"
                             alt="{{ setting:site_name }}" class="xl:w-full lg:w-[88%] sm:w-[80%] w-3/4"></a>
                 </div>
                 <div class="flex justify-between items-center xl:gap-[22px] lg:gap-[20px] sm:gap-[17px]">

@@ -1,0 +1,14 @@
+industry: homeware
+industry_label: 'Homeware shop'
+theme_color: '#0F766E'
+theme_color_soft: '#CCFBF1'
+theme_color_dark: '#115E59'
+seo_description: 'A homeware demo catalogue. Nothing is charged.'
+hero_eyebrow: 'Objects for the table'
+hero_heading: 'Quiet pieces for rooms you live in'
+hero_text: 'Bowls, linen, candles, and trays for the table. Send an inquiry — nothing is charged.'
+hero_image: image/homeware-hero.jpg
+about_heading: 'Homeware Unveiled: Table and Room'
+about_image: image/homeware-about-1.jpg
+about_image_two: image/homeware-about-2.jpg
+video_image: image/homeware-video.jpg

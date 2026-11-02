@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quikbasket — nine shop catalogues</title>
+  <link rel="icon" href="/fashion/assets/image/favicon.svg">
+  <style>
+    @font-face {
+      font-family: "Sora";
+      src: url("/fashion/assets/font/Sora-Regular.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body {
+      background: #f3f3f3;
+      color: #454545;
+      font-family: "Sora", "Segoe UI", Helvetica, Arial, sans-serif;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible { outline: 2px solid #247A4D; outline-offset: 3px; }
+    .bar {
+      background: #247A4D;
+      color: #fff;
+      font-size: 13px;
+      line-height: 1.4;
+      padding: 10px 16px;
+      text-align: center;
+    }
+    .wrap { width: min(1200px, calc(100% - 32px)); margin: 0 auto; }
+    .utility {
+      background: #fff;
+      border-bottom: 1px solid #e8e8e8;
+    }
+    .utility .inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 0;
+    }
+    .mark img { height: 34px; width: auto; display: block; }
+    .search {
+      flex: 1;
+      max-width: 420px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #f3f3f3;
+      border: 1px solid #e5e5e5;
+      border-radius: 4px;
+      padding: 10px 14px;
+      color: #777;
+      font-size: 14px;
+    }
+    .count { margin: 0; color: #777; font-size: 13px; white-space: nowrap; }
+    .navstrip {
+      background: #247A4D;
+      color: #fff;
+    }
+    .navstrip .inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 22px;
+      align-items: center;
+      padding: 12px 0;
+      font-size: 13px;
+    }
+    .navstrip span {
+      opacity: 0.85;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 11px;
+    }
+    .navstrip a { color: #fff; opacity: 0.92; }
+    .navstrip a:hover { color: #d7f0e2; }
+    .intro { padding: 42px 0 22px; max-width: 720px; }
+    h1 {
+      margin: 0;
+      font-size: clamp(30px, 4.5vw, 46px);
+      line-height: 1.15;
+      color: #1f1f1f;
+      font-weight: 700;
+    }
+    .lede { margin: 12px 0 0; color: #777; font-size: 16px; line-height: 1.55; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 8px 0 64px;
+    }
+    a.card {
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      border: 1px solid #e8e8e8;
+      overflow: hidden;
+      color: #454545;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    }
+    a.card:hover {
+      border-color: var(--card-accent, #247A4D);
+      box-shadow: 0 12px 28px color-mix(in srgb, var(--card-accent, #247A4D) 22%, transparent);
+      transform: translateY(-2px);
+    }
+    .photo {
+      aspect-ratio: 16 / 11;
+      overflow: hidden;
+      background: #e8e8e8;
+    }
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.45s ease;
+    }
+    a.card:hover img { transform: scale(1.04); }
+    .body { padding: 16px 16px 18px; display: flex; flex-direction: column; flex: 1; }
+    .card-logo { height: 28px; width: auto; display: block; margin-bottom: 10px; }
+    .kind {
+      margin: 0;
+      color: var(--card-accent, #247A4D);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    h2 { margin: 6px 0 0; font-size: 22px; line-height: 1.2; color: #1f1f1f; }
+    .line { margin: 4px 0 0; font-size: 14px; color: #777; }
+    .body > p { margin: 10px 0 0; font-size: 13px; line-height: 1.5; color: #777; flex: 1; }
+    .pieces {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 10px;
+      margin: 12px 0 0;
+      padding: 0;
+      list-style: none;
+      font-size: 12px;
+      color: #454545;
+    }
+    .pieces li:not(:last-child)::after { content: "·"; margin-left: 10px; color: #bbb; }
+    .open {
+      margin-top: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      align-self: flex-start;
+      background: var(--card-accent, #247A4D);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 9px 14px;
+    }
+    .open::after { content: "→"; transition: transform 0.25s ease; }
+    a.card:hover .open::after { transform: translateX(3px); }
+    .note {
+      margin: 0 auto 56px;
+      padding-top: 20px;
+      border-top: 1px solid #e5e5e5;
+      max-width: 720px;
+      text-align: center;
+      color: #777;
+      font-size: 13px;
+    }
+    @media (max-width: 980px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+      .search { display: none; }
+    }
+    @media (max-width: 640px) {
+      .grid { grid-template-columns: 1fr; }
+      .utility .inner { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bar">One Quikbasket design · nine catalogues · inquiry only — nothing is charged</div>
+  <header class="utility">
+    <div class="wrap inner">
+      <div class="mark"><img src="/fashion/assets/image/fashion-logo.svg" alt="Quikbasket catalogues"></div>
+      <div class="search" aria-hidden="true">What are you looking for...</div>
+      <p class="count">9 shop catalogues</p>
+    </div>
+  </header>
+  <nav class="navstrip" aria-label="Catalogue shortcuts">
+    <div class="wrap inner">
+      <span>Catalogues</span>
+      <a href="/fashion/">Fashion</a>
+      <a href="/menswear/">Menswear</a>
+      <a href="/womenswear/">Womenswear</a>
+      <a href="/kids/">Kids</a>
+      <a href="/streetwear/">Streetwear</a>
+      <a href="/jewellery/">Jewellery</a>
+      <a href="/beauty/">Beauty</a>
+      <a href="/accessories/">Accessories</a>
+      <a href="/homeware/">Homeware</a>
+    </div>
+  </nav>
+  <section class="wrap intro">
+    <h1>One Quikbasket theme. Nine niche catalogues.</h1>
+    <p class="lede">Same shop layout, cart, and inquiry checkout. Open a catalogue to swap products, photos, menu labels, and hero copy for that niche.</p>
+  </section>
+  <main class="wrap grid">
+    <a class="card" href="/fashion/" target="_blank" rel="noopener" style="--card-accent: #247A4D;">
+      <div class="photo"><img src="/fashion/assets/image/best-seller-1.webp" alt="Fashion catalogue"></div>
+      <div class="body">
+        <img class="card-logo" src="/fashion/assets/image/fashion-logo.svg" alt="Quikbasket fashion">
+        <p class="kind">Fashion</p>
+        <h2>Fashion shop</h2>
+        <p class="line">Full clothing edit</p>
+        <p>Tops, denim, dresses, and outerwear for a complete fashion demo.</p>
+        <ul class="pieces"><li>Sweaters</li><li>Jeans</li><li>Dresses</li><li>Jackets</li></ul>
+        <span class="open">Open fashion</span>
+      </div>
+    </a>
+    <a class="card" href="/menswear/" target="_blank" rel="noopener" style="--card-accent: #1B4F72;">
+      <div class="photo"><img src="/menswear/assets/image/menswear-01.webp" alt="Menswear catalogue"></div>
+      <div class="body">
+        <img class="card-logo" src="/menswear/assets/image/menswear-logo.svg" alt="Quikbasket menswear">
+        <p class="kind">Menswear</p>
+        <h2>Menswear shop</h2>
+        <p class="line">Sharp everyday layers</p>
+        <p>Shirts, knits, denim, and outerwear cut for a clean mens edit.</p>
+        <ul class="pieces"><li>Oxfords</li><li>Knits</li><li>Denim</li><li>Coats</li></ul>
+        <span class="open">Open menswear</span>
+      </div>
+    </a>
+    <a class="card" href="/womenswear/" target="_blank" rel="noopener" style="--card-accent: #9D174D;">
+      <div class="photo"><img src="/womenswear/assets/image/womenswear-01.webp" alt="Womenswear catalogue"></div>
+      <div class="body">
+        <img class="card-logo" src="/womenswear/assets/image/womenswear-logo.svg" alt="Quikbasket womenswear">
+        <p class="kind">Womenswear</p>
+        <h2>Womenswear shop</h2>
+        <p class="line">Soft colour and ease</p>
+        <p>Dresses, tops, and soft sets with a calm seasonal silhouette.</p>
+        <ul class="pieces"><li>Dresses</li><li>Blouses</li><li>Knits</li><li>Heels</li></ul>
+        <span class="open">Open womenswear</span>
+      </div>
+    </a>
+    <a class="card" href="/kids/" target="_blank" rel="noopener" style="--card-accent: #EA580C;">
+      <div class="photo"><img src="/kids/assets/image/kids-01.webp" alt="Kids catalogue"></div>
+      <div class="body">
+        <img class="card-logo" src="/kids/assets/image/kids-logo.svg" alt="Quikbasket kids">
+        <p class="kind">Kids</p>
+        <h2>Kids shop</h2>
+        <p class="line">Soft sets that move</p>
+        <p>Tees, dresses, and shoes sized for growing wardrobes.</p>
+        <ul class="pieces"><li>Tees</li><li>Sets</li><li>Dresses</li><li>Shoes</li></ul>
+        <span class="open">Open kids</span>
+      </div>
+    </a>
+    <a class="card" href="/streetwear/" target="_blank" rel="noopener" style="--card-accent: #DC2626;">
+      <div class="photo"><img src="/streetwear/assets/image/streetwear-01.webp" alt="Streetwear catalogue"></div>
+      <div class="body">
+        <img class="card-logo" src="/streetwear/assets/image/streetwear-logo.svg" alt="Quikbasket streetwear">
+        <p class="kind">Streetwear</p>
+        <h2>Streetwear shop</h2>
+        <p class="line">City layers and trainers</p>
+        <p>Graphic tees, denim, cargos, and sneakers for a street edit.</p>
+        <ul class="pieces"><li>Graphics</li><li>Denim</li><li>Hoodies</li><li>Trainers</li></ul>
+        <span class="open">Open streetwear</span>
+      </div>
+    </a>
+    <a class="card" href="/jewellery/" target="_blank" rel="noopener" style="--card-accent: #B45309;">
+      <div class="photo"><img src="/jewellery/assets/image/jewellery-01.webp" alt="Jewellery catalogue"></div>
+      <div class="body">
+        <img class="card-logo" src="/jewellery/assets/image/jewellery-logo.svg" alt="Quikbasket jewellery">
+        <p class="kind">Jewellery</p>
+        <h2>Jewellery shop</h2>
+        <p class="line">Pieces worn close</p>
+        <p>Necklaces, rings, studs, and bracelets with a quiet finish.</p>
+        <ul class="pieces"><li>Necklaces</li><li>Rings</li><li>Studs</li><li>Bracelets</li></ul>
+        <span class="open">Open jewellery</span>
+      </div>
+    </a>
+    <a class="card" href="/beauty/" target="_blank" rel="noopener" style="--card-accent: #BE185D;">
+      <div class="photo"><img src="/beauty/assets/image/beauty-01.webp" alt="Beauty catalogue"></div>
+      <div class="body">
+        <img class="card-logo" src="/beauty/assets/image/beauty-logo.svg" alt="Quikbasket beauty">
+        <p class="kind">Beauty</p>
+        <h2>Beauty shop</h2>
+        <p class="line">Soft everyday colour</p>
+        <p>Lip colour, face oil, cream, and brow tools for a calm shelf.</p>
+        <ul class="pieces"><li>Lip colour</li><li>Face oil</li><li>Cream</li><li>Brow</li></ul>
+        <span class="open">Open beauty</span>
+      </div>
+    </a>
+    <a class="card" href="/accessories/" target="_blank" rel="noopener" style="--card-accent: #0369A1;">
+      <div class="photo"><img src="/accessories/assets/image/accessories-01.webp" alt="Accessories catalogue"></div>
+      <div class="body">
+        <img class="card-logo" src="/accessories/assets/image/accessories-logo.svg" alt="Quikbasket accessories">
+        <p class="kind">Accessories</p>
+        <h2>Accessories shop</h2>
+        <p class="line">The finishing edit</p>
+        <p>Bags, sunglasses, belts, and small leather goods.</p>
+        <ul class="pieces"><li>Bags</li><li>Shades</li><li>Belts</li><li>Scarves</li></ul>
+        <span class="open">Open accessories</span>
+      </div>
+    </a>
+    <a class="card" href="/homeware/" target="_blank" rel="noopener" style="--card-accent: #0F766E;">
+      <div class="photo"><img src="/homeware/assets/image/homeware-01.webp" alt="Homeware catalogue"></div>
+      <div class="body">
+        <img class="card-logo" src="/homeware/assets/image/homeware-logo.svg" alt="Quikbasket homeware">
+        <p class="kind">Homeware</p>
+        <h2>Homeware shop</h2>
+        <p class="line">Table and room</p>
+        <p>Bowls, linen, candles, and trays for quiet rooms.</p>
+        <ul class="pieces"><li>Bowls</li><li>Linen</li><li>Candles</li><li>Trays</li></ul>
+        <span class="open">Open homeware</span>
+      </div>
+    </a>
+  </main>
+  <p class="wrap note">Demo inquiry checkout only — nothing is charged. Each catalogue is the same Quikbasket theme with its own products, photos, and menu labels.</p>
+</body>
+</html>

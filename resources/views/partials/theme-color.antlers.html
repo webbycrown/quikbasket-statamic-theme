@@ -1,0 +1,79 @@
+{{# Per-catalogue brand colour — remaps violet utilities used across the theme. #}}
+{{ theme_primary = setting:theme_color ?? setting:invoice_color ?? '#247A4D' }}
+{{ theme_soft = setting:theme_color_soft ?? '#EBF4F1' }}
+{{ theme_dark = setting:theme_color_dark ?? theme_primary }}
+<style id="qb-theme-color">
+:root {
+  --qb-primary: {{ theme_primary }};
+  --qb-primary-soft: {{ theme_soft }};
+  --qb-primary-dark: {{ theme_dark }};
+  --color-primary: {{ theme_primary }};
+}
+.bg-violet-900,
+.hover\:bg-violet-900:hover,
+.hover\/grid\:bg-violet-900:hover,
+.hover\/list\:bg-violet-900:hover,
+.sm\:bg-violet-900,
+.md\:bg-violet-900,
+.lg\:bg-violet-900,
+.from-violet-900,
+.to-violet-900 {
+  background-color: var(--qb-primary) !important;
+}
+.bg-violet-900\/30 {
+  background-color: color-mix(in srgb, var(--qb-primary) 30%, transparent) !important;
+}
+.bg-violet-400,
+.sm\:bg-violet-400,
+.hover\:bg-violet-400:hover {
+  background-color: var(--qb-primary-soft) !important;
+}
+.text-violet-900,
+.\!text-violet-900,
+.hover\:text-violet-900:hover,
+.focus\:text-violet-900:focus,
+.active\:text-violet-900:active,
+.group:hover .group-hover\:text-violet-900 {
+  color: var(--qb-primary) !important;
+}
+.border-violet-900,
+.hover\:border-violet-900:hover,
+.focus\:border-violet-900:focus,
+.active\:border-violet-900:active {
+  border-color: var(--qb-primary) !important;
+}
+.fill-violet-900,
+.hover\:fill-violet-900:hover,
+.focus\:fill-violet-900:focus,
+.active\:fill-violet-900:active {
+  fill: var(--qb-primary) !important;
+}
+.stroke-violet-900,
+.\!stroke-violet-900,
+.hover\:stroke-violet-900:hover,
+.focus\:stroke-violet-900:focus,
+.active\:stroke-violet-900:active {
+  stroke: var(--qb-primary) !important;
+}
+.decoration-violet-900,
+.hover\:decoration-violet-900:hover {
+  text-decoration-color: var(--qb-primary) !important;
+}
+.accent-violet-900,
+.checked\:accent-violet-900:checked {
+  accent-color: var(--qb-primary) !important;
+}
+.outline-violet-900,
+.focus\:ring-violet-900:focus {
+  outline-color: var(--qb-primary) !important;
+}
+.from-violet-900 { --tw-gradient-from: var(--qb-primary) var(--tw-gradient-from-position) !important; }
+.to-violet-900 { --tw-gradient-to: var(--qb-primary) var(--tw-gradient-to-position) !important; }
+.bg-\[\#247A4D80\]\/50 {
+  background-color: color-mix(in srgb, var(--qb-primary) 50%, transparent) !important;
+}
+.all-btn,
+.top-bar.bg-violet-900 {
+  background-color: var(--qb-primary) !important;
+}
+</style>

@@ -23,7 +23,7 @@
             <div class="container mx-auto px-4 flex justify-between items-center relative lg:h-full h-20">
                 <div class="site-logo">
                     <a href="{{ partial:partials/page-href id='home-six' }}">
-                        <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="setting:logo" fallback="image/main-logo.svg" }}" alt="company logo"
+                        <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="setting:logo" fallback="image/main-logo.svg" }}" alt="{{ setting:site_name }}"
                             class="lg:w-[350px] sm:w-11/12 w-full pe-6" />
                     </a>
                 </div>
@@ -34,7 +34,7 @@
                     lg:flex lg:flex-row space-y-0 2xl:space-x-10 1xl:space-x-8 lg:space-x-[1.3rem] lg:bg-transparent lg:divide-y-0 divide-y divide-lightborder-100">
                     <div class="flex items-center justify-between w-full lg:hidden bg-violet-400 sm:py-6 py-5 px-6">
                         <a href="{{ partial:partials/page-href id='home-six' }}">
-                            <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="setting:logo" fallback="image/main-logo.svg" }}" alt="company logo"
+                            <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="setting:logo" fallback="image/main-logo.svg" }}" alt="{{ setting:site_name }}"
                                 class="w-11/12" />
                         </a>
                         <button type="button" aria-label="Close menu" id="menuClose" class="self-end lg:hidden">

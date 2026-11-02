@@ -1,6 +1,10 @@
 # Quikbasket — Statamic Starter Kit
 
-Quikbasket is a multi-department shop starter kit. Marketing pages use one Page template and Theme sections. Products, journal posts, and categories are collections and a taxonomy the Control Panel edits.
+Quikbasket is a multi-department shop starter kit with nine catalogues: fashion, menswear, womenswear, kids, streetwear, jewellery, beauty, accessories, and homeware. One visual design; demo products and journal copy swap with a post-install catalogue setup. Marketing pages use one Page template and Theme sections. Products, journal posts, and categories are collections and a taxonomy the Control Panel edits.
+
+## Live demo
+
+[https://quickbasket-statmic.webbydemo.in](https://quickbasket-statmic.webbydemo.in)
 
 Shoppers send an inquiry from the contact page or checkout. Journal posts take moderated comments. Nothing is charged and no card is taken. The kit ships two forms (inquiry and comment), so use **Statamic Pro** (Statamic Core includes one form).
 
@@ -31,7 +35,22 @@ statamic new my-site webbycrown/quikbasket-statamic-theme
 php please starter-kit:install webbycrown/quikbasket-statamic-theme
 ```
 
-## After install
+## After install — choose a catalogue
+
+Starter-kit install is non-interactive. Run one command to apply a niche demo pack:
+
+```bash
+php please quikbasket:setup fashion
+# or: menswear | womenswear | kids | streetwear | jewellery | beauty | accessories | homeware
+```
+
+This sets `Setting.industry`, replaces sample products (and matching journal titles), updates the home hero copy, and refreshes the Stache. If you skip it, the default pack is **fashion**.
+
+The command asks before it deletes products and journal entries. Pass `--force` to skip that question:
+
+```bash
+php please quikbasket:setup jewellery --force
+```
 
 Register the kit provider once after install (do not replace AppServiceProvider):
 
@@ -50,7 +69,7 @@ Header links use the **header_menu** navigation. Utility links (Order Tracking, 
 
 `/cart`, `/checkout`, `/wishlist`, and account routes are registered by `QuikbasketServiceProvider` (session bag and inquiry checkout). They are not Control Panel pages.
 
-Setting globals ship in both layouts: `data:` in `content/globals/setting.yaml` (Statamic 5) and `content/globals/default/setting.yaml` (Statamic 6).
+Setting globals ship in both layouts: `data:` in `content/globals/setting.yaml` (Statamic 5) and `content/globals/default/setting.yaml` (Statamic 6). Catalogue packs live under `content/industries/` (nine niches). Changing the Setting → Catalogue select alone does not swap products — run `php please quikbasket:setup {slug}` for that.
 
 ## Pages
 

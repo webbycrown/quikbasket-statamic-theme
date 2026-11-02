@@ -1,0 +1,14 @@
+industry: beauty
+industry_label: 'Beauty shop'
+theme_color: '#BE185D'
+theme_color_soft: '#FCE7F3'
+theme_color_dark: '#9D174D'
+seo_description: 'A beauty demo catalogue. Nothing is charged.'
+hero_eyebrow: 'Quiet colour edit'
+hero_heading: 'Soft colour for everyday routines'
+hero_text: 'Lip colour, face oil, and hand cream for a calm beauty shelf. Send an inquiry — nothing is charged.'
+hero_image: image/beauty-hero.jpg
+about_heading: 'Beauty Unveiled: Soft Finish, Clear Labels'
+about_image: image/beauty-about-1.jpg
+about_image_two: image/beauty-about-2.jpg
+video_image: image/beauty-video.jpg

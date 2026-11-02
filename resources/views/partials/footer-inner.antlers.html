@@ -5,7 +5,7 @@
                     <!-- LOGO -->
                     <div class="flex flex-col 2xl:gap-10 1xl:gap-8 gap-6 pt-[5px]">
                         <a href="{{ partial:partials/page-href id='home-two' }}">
-                            <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="setting:logo" fallback="image/main-logo.svg" }}" alt="main logo" />
+                            <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="setting:logo" fallback="image/main-logo.svg" }}" alt="{{ setting:site_name }}" />
                         </a>
                         <p class="2xl:text-lg text-base leading-[25px]">{{ setting:footer_intro }}</p>
                         <ul class="flex gap-4">

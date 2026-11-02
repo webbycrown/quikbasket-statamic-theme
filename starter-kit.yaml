@@ -4,6 +4,9 @@ repo: webbycrown/quikbasket-statamic-theme
 export_paths:
   - content
   - app/Providers/QuikbasketServiceProvider.php
+  - app/Support
+  - app/Console
+  - app/Http
   - app/Tags/InstagramReels.php
   - config/quikbasket.php
   - resources/blueprints

@@ -1,24 +1,27 @@
 {{ partial:partials/crumb :label="heading" }}
-<section class="relative 1xl:py-[30px] md:py-[25px] py-[20px]">
+<section class="relative 1xl:py-[30px] md:py-[25px] py-[20px] bg-white">
     <div class="container">
-        <div class="grid lg:grid-cols-2 gap-8 items-center">
-            <div class="grid sm:grid-cols-2 gap-4">
-                <div class="sm:row-span-2">
-                    <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="{{ heading }}" class="w-full h-full object-cover min-h-[280px]" />
-                </div>
-                <div>
-                    <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image_two" }}" alt="" class="w-full h-full object-cover min-h-[160px]" />
-                </div>
-                <div>
-                    <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image_three" }}" alt="" class="w-full h-full object-cover min-h-[160px]" />
+        {{# Default stretch: image column height follows the text column #}}
+        <div class="grid lg:grid-cols-2 gap-8">
+            <div class="relative max-lg:min-h-[300px] min-h-0">
+                <div class="absolute inset-0 grid sm:grid-cols-2 gap-4">
+                    <div class="sm:row-span-2 relative overflow-hidden">
+                        <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image" }}" alt="{{ heading }}" class="absolute inset-0 w-full h-full object-cover" />
+                    </div>
+                    <div class="relative overflow-hidden">
+                        <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image_two" }}" alt="" class="absolute inset-0 w-full h-full object-cover" />
+                    </div>
+                    <div class="relative overflow-hidden">
+                        <img decoding="async" loading="lazy" src="{{ partial:partials/media-url :file="image_three" }}" alt="" class="absolute inset-0 w-full h-full object-cover" />
+                    </div>
                 </div>
             </div>
-            <div>
-                <h1 class="font-medium sm:mb-[18px] mb-[15px]">{{ heading }}</h1>
+            <div class="text-black">
+                <h1 class="font-medium sm:mb-[18px] mb-[15px] text-black">{{ heading }}</h1>
                 {{ if quote }}
-                <p class="2xl:text-xl text-lg font-medium text-violet-900 mb-4">{{ quote }}</p>
+                <p class="2xl:text-xl text-lg font-medium text-black mb-4">{{ quote }}</p>
                 {{ /if }}
-                <div class="prose max-w-none 2xl:text-lg text-base space-y-3">{{ body | nl2br }}</div>
+                <div class="prose max-w-none 2xl:text-lg text-base space-y-3 text-black">{{ body | nl2br }}</div>
             </div>
         </div>
     </div>

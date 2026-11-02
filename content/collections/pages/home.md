@@ -12,7 +12,7 @@ page_builder:
     eyebrow: '45% off - SALE IN LIVE'
     heading: 'Elevate Your Style: Discover the Latest Trends'
     text: 'Discover the latest trends, timeless classics, and exclusive collections designed to elevate your style.'
-    image: image/Hero.webp
+    image: image/fashion-hero.jpg
     button_label: New Arrivals
     button_url: /shop
   -
