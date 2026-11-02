@@ -26,7 +26,7 @@ The heart and bag icons on a product save that product in the browser session an
 ## Installation
 
 Follow the [Starter Kit installation instructions](https://statamic.dev/starter-kits/installing-a-starter-kit).  
-Requires **Statamic 5.x** (PHP 8.2+).
+Requires **Statamic 5.x or 6.x** (PHP 8.2+ for Statamic 5; PHP 8.4+ for Statamic 6).
 
 ```bash
 statamic new my-site webbycrown/quikbasket-statamic-theme
@@ -52,7 +52,7 @@ The command asks before it deletes products and journal entries. Pass `--force` 
 php please quikbasket:setup jewellery --force
 ```
 
-Register the kit provider once after install (do not replace AppServiceProvider):
+The install post-hook adds `QuikbasketServiceProvider` to `bootstrap/providers.php` when possible (it does not replace `AppServiceProvider`). If it is missing, register it yourself:
 
 ```php
 // bootstrap/providers.php
@@ -119,6 +119,12 @@ Third-party scripts, the font licence, and the photograph note are listed in THI
 Questions and issues: [github.com/webbycrown/quikbasket-statamic-theme/issues](https://github.com/webbycrown/quikbasket-statamic-theme/issues) or [WebbyCrown](https://www.webbycrown.com/custom-statamic-development-services-company/).
 
 ## Changelog
+
+### v1.0.3
+
+- `composer.json` requires `statamic/cms: ^5.0 || ^6.0` so marketplace installs resolve on Statamic 6
+- README states Statamic 5 and 6 support (PHP 8.4+ for Statamic 6)
+- Install post-hook registers `QuikbasketServiceProvider` in `bootstrap/providers.php`
 
 ### v1.0.1
 
